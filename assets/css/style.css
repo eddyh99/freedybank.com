@@ -445,7 +445,7 @@ section {
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  height: 100vh;
+  height: auto;
   /* background: url(../img/hero-bg.png) top center no-repeat; */
   background-size: cover;
 }
@@ -2424,397 +2424,17 @@ section {
   font-family: 'Be Vietnam Pro', sans-serif !important;
 }
 
-.nav-link.navbar-freedy {
-  background: none;
-  padding: 12px 0;
-  margin-right: 25px;
-  margin-bottom: -2px;
-
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 110%;
-  letter-spacing: 0.05em;
-
-  color: #000000;
+.f-poppins {
+  font-family: 'Poppins', sans-serif !important;
 }
 
-.nav-link.navbar-freedy.active {
-  color: #4154f1;
+.f-roboto {
+  font-family: 'Roboto', sans-serif !important;
 }
 
-.navbar .btn-signin,
-.navbar .btn-signin:focus {
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  padding: 8px 20px;
-  margin-left: 30px;
-  border-radius: 8px;
-  color: #fff;
-
-  border: solid 1px;
-  border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
+.f-publicsans {
+  font-family: 'Public Sans', sans-serif !important;
 }
-
-.navbar .btn-signin:hover,
-.navbar .btn-signin:focus:hover {
-  color: #fff;
-}
-
-.navbar .btn-login,
-.navbar .btn-login:focus {
-  padding: 8px 20px;
-  margin-left: 30px;
-  border-radius: 8px;
-
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-
-  border: solid 1px;
-  border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
-}
-
-.navbar .btn-login:hover,
-.navbar .btn-login:focus:hover {
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-.slider-freedy h1 {
-  font-weight: 700;
-  font-size: 49.6203px;
-  line-height: 110%;
-  letter-spacing: 0.005em;
-
-  color: #274D75;
-}
-
-.slider-freedy h2 {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 110%;
-
-  letter-spacing: -0.015em;
-
-  color: #2384E9;
-}
-
-.slider-freedy p {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 180%;
-
-  color: rgba(6, 6, 6, 0.8);
-}
-
-.slider-freedy p span {
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 180%;
-
-  /* Style */
-
-  color: #0078F0;
-}
-
-.hero .btn-slider-signin {
-  /* margin-top: 40rem; */
-  line-height: 0;
-  padding: 1.5rem 4rem;
-  transition: 0.5s;
-  color: #fff;
-
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  box-shadow: 0px 4px 25px #3430FA;
-  border-radius: 44px;
-}
-
-.box-card-freedy {
-  position: relative;
-  padding: 30px;
-  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
-  transition: 0.3s;
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  border-radius: 18px;
-  /* min-width: 417px; */
-  min-height: 222px;
-  height: 100%;
-}
-
-.box-card-freedy img {
-  padding: 30px 25px;
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-
-.box-card-freedy h3 {
-  font-weight: 600;
-  font-size: 34.73px;
-  line-height: 110%;
-
-  color: #FFFFFF;
-}
-
-.box-card-freedy span {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 110%;
-
-  color: #FFFFFF;
-}
-
-.box-card-freedy a {
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 110%;
-
-  text-decoration-line: underline;
-
-  color: #FFFFFF;
-}
-
-.box-card-freedy:hover {
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-}
-
-.sidikjari-card {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  height: 100px;
-}
-
-.incard-card {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  height: 150px;
-}
-
-.content-freedy h2 {
-  font-weight: 700;
-  font-size: 49.6203px;
-  line-height: 110%;
-  letter-spacing: 0.005em;
-
-  color: #274D75;
-}
-
-.content-freedy p {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 180%;
-
-  color: #6D6E70;
-}
-
-.about .btn-content-freedy {
-  padding: 1rem 3rem;
-  transition: 0.5s;
-  color: #fff;
-
-
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  box-shadow: 0px 4px 15px #3430FA;
-  border-radius: 8px;
-}
-
-.phone-content {
-  position: relative;
-}
-
-.phone-content img {
-  position: absolute;
-
-  height: 75%;
-  object-fit: cover;
-}
-
-.bg-img-3 {
-  position: absolute;
-  top: 150px;
-  left: -150px;
-
-  height: 150px;
-  object-fit: cover;
-}
-
-.bg-img-2 {
-  position: absolute;
-  bottom: -75px;
-  right: 50px;
-
-  height: 100px;
-  object-fit: cover;
-}
-
-.bg-img-1 {
-  position: absolute;
-  top: 75px;
-  left: -250px;
-
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-freedy {
-  height: 100%;
-}
-
-.service-freedy .box-service {
-  background: #FFFFFF;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  min-height: 250px;
-}
-
-.service-freedy .box-service h4 {
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 110%;
-
-  color: #000000;
-}
-
-.service-freedy .box-service a {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 110%;
-
-  color: #0078F0;
-}
-
-.service-freedy .box-service img {
-  height: 100px;
-}
-
-.img-fluid.phone-card {
-  max-width: 300px;
-}
-
-.content-freedy ul li {
-  padding: 3px 0 3px 10px;
-}
-
-.content-freedy ul {
-  margin-top: 1rem;
-  list-style-image: url(../img/freedy/check_ring_round.png);
-}
-
-.payment img {
-  height: 25px;
-}
-
-.logo-features {
-  display: inline;
-  height: 75px;
-}
-
-.features-freedy {
-  height: 100%;
-}
-
-.features-freedy .box-features {
-  min-height: 250px;
-
-  background: #FFFFFF;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-}
-
-.features-freedy .box-features h4 {
-  line-height: 110%;
-  font-weight: 500;
-  font-size: 22px;
-
-  color: #000000;
-}
-
-.features-freedy .box-features a {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 110%;
-
-  color: #0078F0;
-}
-
-.features-freedy .box-features img {
-  width: 50px;
-}
-
-.btn-footer-signin {
-  line-height: 0;
-  padding: 1.5rem 4rem;
-  transition: 0.5s;
-  color: #fff;
-
-  background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
-  box-shadow: 0px 4px 25px #3430FA;
-  border-radius: 44px;
-}
-
-.mt-10r {
-  margin-top: 10rem;
-}
-
-.features-bg {
-  background: url(../img/freedy/bg-bot.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom;
-}
-
-.footer-bg {
-  background: url(../img/freedy/bg-footer-bot.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom;
-
-  padding: 10rem 0;
-}
-
-.logo-footer img {
-  height: 150px;
-}
-
-.footer-info span {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 110%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.footer-info img.tracklessbank {
-  height: 50px;
-}
-
-.footer-links h4 {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 110%;
-  color: #FFFFFF;
-}
-
-.book-footer {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-
-  height: 150px;
-}
-
-
 
 @media (max-width: 575px) {
   .nav-link.navbar-freedy {
@@ -2881,6 +2501,1110 @@ section {
 
   .slider-freedy h1 {
     font-weight: 700;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.005em;
+
+    color: #274D75;
+  }
+
+  .slider-freedy h2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 110%;
+
+    letter-spacing: -0.015em;
+
+    color: #2384E9;
+  }
+
+  .slider-freedy p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 180%;
+
+    color: rgba(6, 6, 6, 0.8);
+  }
+
+  .slider-freedy p span {
+    font-weight: 800;
+    line-height: 180%;
+
+    /* Style */
+
+    color: #0078F0;
+  }
+
+  .hero .btn-slider-signin {
+    /* margin-top: 40rem; */
+    line-height: 0;
+    padding: 1.5rem 4rem;
+    transition: 0.5s;
+    color: #fff;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 25px #3430FA;
+    border-radius: 44px;
+
+    font-size: 16px;
+  }
+
+  .box-card-freedy {
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+    transition: 0.3s;
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    border-radius: 18px;
+    /* min-width: 417px; */
+    min-height: 222px;
+    height: 100%;
+  }
+
+  .box-card-freedy img {
+    padding: 30px 25px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .box-card-freedy h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy a {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+
+    text-decoration-line: underline;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy:hover {
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  }
+
+  .sidikjari-card {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 85px;
+  }
+
+  .incard-card {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 125px;
+  }
+
+  .content-freedy h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.005em;
+
+    color: #274D75;
+  }
+
+  .content-freedy p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+
+    color: #6D6E70;
+  }
+
+  .about .btn-content-freedy {
+    padding: 1rem 3rem;
+    transition: 0.5s;
+    color: #fff;
+
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 15px #3430FA;
+    border-radius: 8px;
+  }
+
+  .phone-content {
+    position: relative;
+  }
+
+  .phone-content img {
+    position: absolute;
+
+    height: 75%;
+    object-fit: cover;
+  }
+
+  .bg-img-3 {
+    position: absolute;
+    top: 150px;
+    left: -150px;
+
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .bg-img-2 {
+    position: absolute;
+    bottom: -75px;
+    right: 50px;
+
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .bg-img-1 {
+    position: absolute;
+    top: 75px;
+    left: -250px;
+
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .service-freedy {
+    height: auto;
+  }
+
+  .service-freedy .box-service {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    min-height: 250px;
+  }
+
+  .service-freedy .box-service h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #000000;
+  }
+
+  .service-freedy .box-service a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .service-freedy .box-service img {
+    height: 75px;
+  }
+
+  .img-fluid.phone-card {
+    max-width: 300px;
+  }
+
+  .content-freedy ul li {
+    padding: 3px 0 3px 10px;
+  }
+
+  .content-freedy ul {
+    margin-top: 1rem;
+    list-style-image: url(../img/freedy/check_ring_round.png);
+  }
+
+  .payment img {
+    height: 20px;
+  }
+
+  .logo-features {
+    display: inline;
+    height: 50px;
+  }
+
+  .features-freedy {
+    height: auto;
+  }
+
+  .features-freedy .box-features {
+    min-height: 250px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+
+  .features-freedy .box-features h4 {
+    line-height: 110%;
+    font-weight: 500;
+    font-size: 16px;
+
+    color: #000000;
+  }
+
+  .features-freedy .box-features a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .features-freedy .box-features img {
+    width: 50px;
+  }
+
+  .btn-footer-signin {
+    line-height: 0;
+    padding: 1.5rem 4rem;
+    transition: 0.5s;
+    color: #fff;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 25px #3430FA;
+    border-radius: 44px;
+  }
+
+  .mt-10r {
+    margin-top: 10rem;
+  }
+
+  .features-bg {
+    background: url(../img/freedy/bg-bot.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+  }
+
+  .footer-bg {
+    background: url(../img/freedy/bg-footer-bot.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+
+    padding: 10rem 0;
+  }
+
+  .logo-footer img {
+    height: 75px;
+  }
+
+  .footer-info span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 110%;
+
+    letter-spacing: 0.1em;
+
+    color: #000000;
+  }
+
+  .footer-info img.tracklessbank {
+    height: 25px;
+  }
+
+  .footer-links h4 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .book-footer {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+
+    height: 50px;
+  }
+
+  /* Login */
+  .login {
+    height: 90vh;
+    min-height: 700px;
+    width: 100%;
+    position: relative;
+  }
+
+  .bg-login {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin-succes {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-forgot-pass {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .box-form {
+    background: #FFFFFF;
+
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    min-height: 500px;
+    height: auto;
+
+    padding: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .link-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .link-back img {
+    height: 25px !important;
+  }
+
+  .box-form span.title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .box-form img {
+    height: 50px;
+    display: inline-block;
+  }
+
+  .box-form img.succes-regis-logo {
+    height: 100px;
+    display: inline-block;
+  }
+
+  .box-form h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 180%;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #0078F0;
+  }
+
+  .form-login-freedy input,
+  .form-login-freedy .input-group-text {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.54);
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .form-login-freedy input {
+    padding: 0;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy a {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #0078F0;
+  }
+
+  .form-login-freedy label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
+  .form-login-freedy .btn-login {
+    background: #0078F0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 26px;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .footer-login {
+    position: relative;
+    background: #0078F0;
+    height: 10vh;
+  }
+
+  /* Login */
+}
+
+@media (min-width: 576px) {
+  .nav-link.navbar-freedy {
+    background: none;
+    padding: 12px 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .nav-link.navbar-freedy.active {
+    color: #4154f1;
+  }
+
+  .navbar .btn-signin,
+  .navbar .btn-signin:focus {
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 8px;
+    color: #fff;
+
+    border: solid 1px;
+    border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
+  }
+
+  .navbar .btn-signin:hover,
+  .navbar .btn-signin:focus:hover {
+    color: #fff;
+  }
+
+  .navbar .btn-login,
+  .navbar .btn-login:focus {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 8px;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    border: solid 1px;
+    border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
+  }
+
+  .navbar .btn-login:hover,
+  .navbar .btn-login:focus:hover {
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .slider-freedy h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.005em;
+
+    color: #274D75;
+  }
+
+  .slider-freedy h2 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+
+    letter-spacing: -0.015em;
+
+    color: #2384E9;
+  }
+
+  .slider-freedy p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+
+    color: rgba(6, 6, 6, 0.8);
+  }
+
+  .slider-freedy p span {
+    font-weight: 800;
+    line-height: 180%;
+
+    /* Style */
+
+    color: #0078F0;
+  }
+
+  .hero .btn-slider-signin {
+    /* margin-top: 40rem; */
+    line-height: 0;
+    padding: 1.5rem 4rem;
+    transition: 0.5s;
+    color: #fff;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 25px #3430FA;
+    border-radius: 44px;
+
+    font-size: 16px;
+  }
+
+  .box-card-freedy {
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+    transition: 0.3s;
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    border-radius: 18px;
+    /* min-width: 417px; */
+    min-height: 222px;
+    height: 100%;
+  }
+
+  .box-card-freedy img {
+    padding: 30px 25px;
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+
+  .box-card-freedy h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy a {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+
+    text-decoration-line: underline;
+
+    color: #FFFFFF;
+  }
+
+  .box-card-freedy:hover {
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  }
+
+  .sidikjari-card {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 85px;
+  }
+
+  .incard-card {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 125px;
+  }
+
+  .content-freedy h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.005em;
+
+    color: #274D75;
+  }
+
+  .content-freedy p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+
+    color: #6D6E70;
+  }
+
+  .about .btn-content-freedy {
+    padding: 1rem 3rem;
+    transition: 0.5s;
+    color: #fff;
+
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 15px #3430FA;
+    border-radius: 8px;
+  }
+
+  .phone-content {
+    position: relative;
+  }
+
+  .phone-content img {
+    position: absolute;
+
+    height: 75%;
+    object-fit: cover;
+  }
+
+  .bg-img-3 {
+    position: absolute;
+    top: 150px;
+    left: -150px;
+
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .bg-img-2 {
+    position: absolute;
+    bottom: -75px;
+    right: 50px;
+
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .bg-img-1 {
+    position: absolute;
+    top: 75px;
+    left: -250px;
+
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .service-freedy {
+    height: auto;
+  }
+
+  .service-freedy .box-service {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    min-height: 250px;
+  }
+
+  .service-freedy .box-service h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #000000;
+  }
+
+  .service-freedy .box-service a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .service-freedy .box-service img {
+    height: 75px;
+  }
+
+  .img-fluid.phone-card {
+    max-width: 300px;
+  }
+
+  .content-freedy ul li {
+    padding: 3px 0 3px 10px;
+  }
+
+  .content-freedy ul {
+    margin-top: 1rem;
+    list-style-image: url(../img/freedy/check_ring_round.png);
+  }
+
+  .payment img {
+    height: 25px;
+  }
+
+  .logo-features {
+    display: inline;
+    height: 50px;
+  }
+
+  .features-freedy {
+    height: auto;
+  }
+
+  .features-freedy .box-features {
+    min-height: 250px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+
+  .features-freedy .box-features h4 {
+    line-height: 110%;
+    font-weight: 500;
+    font-size: 16px;
+
+    color: #000000;
+  }
+
+  .features-freedy .box-features a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .features-freedy .box-features img {
+    width: 50px;
+  }
+
+  .btn-footer-signin {
+    line-height: 0;
+    padding: 1.5rem 4rem;
+    transition: 0.5s;
+    color: #fff;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    box-shadow: 0px 4px 25px #3430FA;
+    border-radius: 44px;
+  }
+
+  .mt-10r {
+    margin-top: 10rem;
+  }
+
+  .features-bg {
+    background: url(../img/freedy/bg-bot.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+  }
+
+  .footer-bg {
+    background: url(../img/freedy/bg-footer-bot.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+
+    padding: 10rem 0;
+  }
+
+  .logo-footer img {
+    height: 75px;
+  }
+
+  .footer-info span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 110%;
+
+    letter-spacing: 0.1em;
+
+    color: #000000;
+  }
+
+  .footer-info img.tracklessbank {
+    height: 25px;
+  }
+
+  .footer-links h4 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .book-footer {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+
+    height: 75px;
+  }
+
+  /* Login */
+  .login {
+    height: 90vh;
+    min-height: 700px;
+    width: 100%;
+    position: relative;
+  }
+
+  .bg-login {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin-succes {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-forgot-pass {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .box-form {
+    background: #FFFFFF;
+
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    min-height: 450px;
+    height: auto;
+
+    padding: 2.5rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .link-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .link-back img {
+    height: 25px !important;
+  }
+
+  .box-form span.title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .box-form img {
+    height: 50px;
+    display: inline-block;
+  }
+
+  .box-form img.succes-regis-logo {
+    height: 100px;
+    display: inline-block;
+  }
+
+  .box-form h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 180%;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #0078F0;
+  }
+
+  .form-login-freedy input,
+  .form-login-freedy .input-group-text {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.54);
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .form-login-freedy input {
+    padding: 0;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0078F0;
+  }
+
+  .form-login-freedy label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
+  .form-login-freedy .btn-login {
+    background: #0078F0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .footer-login {
+    position: relative;
+    background: #0078F0;
+    height: 10vh;
+  }
+
+  /* Login */
+
+}
+
+@media (min-width: 768px) {
+  .nav-link.navbar-freedy {
+    background: none;
+    padding: 12px 0;
+    margin-bottom: -2px;
+
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+  }
+
+  .nav-link.navbar-freedy.active {
+    color: #4154f1;
+  }
+
+  .navbar .btn-signin,
+  .navbar .btn-signin:focus {
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 22px;
+
+    border: solid 1px;
+    border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
+  }
+
+  .navbar .btn-signin:hover,
+  .navbar .btn-signin:focus:hover {
+    color: #fff;
+  }
+
+  .navbar .btn-login,
+  .navbar .btn-login:focus {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 8px;
+    font-size: 22px;
+
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    border: solid 1px;
+    border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
+  }
+
+  .navbar .btn-login:hover,
+  .navbar .btn-login:focus:hover {
+    background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .slider-freedy h1 {
+    font-weight: 700;
     font-size: 49.6203px;
     line-height: 110%;
     letter-spacing: 0.005em;
@@ -2948,7 +3672,7 @@ section {
 
   .box-card-freedy h3 {
     font-weight: 600;
-    font-size: 34.73px;
+    font-size: 26px;
     line-height: 110%;
 
     color: #FFFFFF;
@@ -3071,7 +3795,7 @@ section {
 
   .service-freedy .box-service h4 {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 110%;
 
     color: #000000;
@@ -3087,7 +3811,7 @@ section {
   }
 
   .service-freedy .box-service img {
-    height: 100px;
+    height: 75px;
   }
 
   .img-fluid.phone-card {
@@ -3177,7 +3901,7 @@ section {
   }
 
   .logo-footer img {
-    height: 150px;
+    height: 125px;
   }
 
   .footer-info span {
@@ -3208,13 +3932,307 @@ section {
 
     height: 150px;
   }
+
+  /* Login */
+  .login {
+    height: 90vh;
+    min-height: 700px;
+    width: 100%;
+    position: relative;
+  }
+
+  .bg-login {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bg-signin-succes {
+    background: url(../img/freedy/bg-login-hp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .box-form {
+    background: #FFFFFF;
+
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    min-height: 550px;
+    height: auto;
+
+    padding: 2.5rem 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .link-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .link-back img {
+    height: 30px !important;
+  }
+
+  .box-form span.title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .box-form img {
+    height: 75px;
+    display: inline-block;
+  }
+
+  .box-form img.succes-regis-logo {
+    height: 150px;
+    display: inline-block;
+  }
+
+  .box-form h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 180%;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #0078F0;
+  }
+
+  .form-login-freedy input,
+  .form-login-freedy .input-group-text {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.54);
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .form-login-freedy input {
+    padding: 0;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0078F0;
+  }
+
+  .form-login-freedy label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
+  .form-login-freedy .btn-login {
+    background: #0078F0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .footer-login {
+    position: relative;
+    background: #0078F0;
+    height: 10vh;
+  }
+
+  /* Login */
 }
 
-@media (min-width: 576px) {}
+@media (min-width: 992px) {
 
-@media (min-width: 768px) {}
+  /* Login */
+  .login {
+    height: 90vh;
+    min-height: 700px;
+    width: 100%;
+    position: relative;
+  }
 
-@media (min-width: 992px) {}
+  .bg-login {
+    background: url(../img/freedy/bg-login.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-signin {
+    background: url(../img/freedy/bg-signin.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-signin-succes {
+    background: url(../img/freedy/bg-signin-succes.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-forgot-pass {
+    background: url(../img/freedy/bg-forgotpass.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .box-form {
+    background: #FFFFFF;
+
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    min-height: 550px;
+    height: auto;
+
+    padding: 2.5rem 5rem;
+    margin-top: 3rem;
+  }
+
+  .link-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .link-back img {
+    height: 35px !important;
+  }
+
+  .box-form span.title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .box-form img {
+    height: 75px;
+    display: inline-block;
+  }
+
+  .box-form img.succes-regis-logo {
+    height: 150px;
+    display: inline-block;
+  }
+
+  .box-form h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 180%;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #0078F0;
+  }
+
+  .form-login-freedy input,
+  .form-login-freedy .input-group-text {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.54);
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .form-login-freedy input {
+    padding: 0;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0078F0;
+  }
+
+  .form-login-freedy label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
+  .form-login-freedy .btn-login {
+    background: #0078F0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .footer-login {
+    position: relative;
+    background: #0078F0;
+    height: 10vh;
+  }
+
+  /* Login */
+}
 
 @media (min-width: 1200px) {
   .nav-link.navbar-freedy {
@@ -3242,6 +4260,7 @@ section {
     margin-left: 30px;
     border-radius: 8px;
     color: #fff;
+    font-size: 18px;
 
     border: solid 1px;
     border-image-source: linear-gradient(to left rgba(52, 48, 250, 1), rgba(24, 147, 237, 1));
@@ -3257,6 +4276,7 @@ section {
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 8px;
+    font-size: 18px;
 
     background: linear-gradient(180deg, #3430FA 0%, #1893ED 100%);
     -webkit-background-clip: text;
@@ -3606,8 +4626,166 @@ section {
 
     height: 150px;
   }
+
+  /* Login */
+  .login {
+    height: 90vh;
+    min-height: 700px;
+    width: 100%;
+    position: relative;
+  }
+
+  .bg-login {
+    background: url(../img/freedy/bg-login.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-signin {
+    background: url(../img/freedy/bg-signin.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-signin-succes {
+    background: url(../img/freedy/bg-signin-succes.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .bg-forgot-pass {
+    background: url(../img/freedy/bg-forgotpass.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .box-form {
+    background: #FFFFFF;
+
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    min-height: 550px;
+    height: auto;
+
+    padding: 2.5rem 5rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .link-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+  }
+
+  .link-back img {
+    height: 35px !important;
+  }
+
+  .box-form span.title {
+    display: block;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
+  .box-form img {
+    height: 75px;
+    display: inline-block;
+  }
+
+  .box-form img.succes-regis-logo {
+    height: 150px;
+    display: inline-block;
+  }
+
+  .box-form h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 180%;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #0078F0;
+  }
+
+  .form-login-freedy input,
+  .form-login-freedy .input-group-text {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.54);
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .form-login-freedy input {
+    padding: 0;
+  }
+
+  .form-login-freedy p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0078F0;
+  }
+
+  .form-login-freedy label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
+  .form-login-freedy .btn-login {
+    background: #0078F0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .footer-login {
+    position: relative;
+    background: #0078F0;
+    height: 10vh;
+  }
+
+
+
+  /* Login */
 }
 
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+  .hero {
+    padding: 10rem 0;
+  }
+}
 
 @media (min-width: 1600px) {}
