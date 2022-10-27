@@ -52,6 +52,33 @@ $("#btnref").click(function () {
     navigator.clipboard.writeText(copyText.value);
 });
 
+// COPY Receive Currency
+$("#btnus1").click(function () {
+    var copyText = document.getElementById("us1");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+$("#btnus2").click(function () {
+    var copyText = document.getElementById("us2");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+
+$("#btninter1").click(function () {
+    var copyText = document.getElementById("inter1");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+$("#btninter2").click(function () {
+    var copyText = document.getElementById("inter2");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+
 
 // SALDO
 var input = document.querySelector('#saldo'); // get the input element
@@ -120,3 +147,5 @@ $('select').each(function () {
     });
 
 });
+
+
