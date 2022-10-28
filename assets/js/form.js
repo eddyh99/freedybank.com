@@ -79,6 +79,13 @@ $("#btninter2").click(function () {
     navigator.clipboard.writeText(copyText.value);
 });
 
+$("#btn-copy-qr").click(function () {
+    var copyText = document.getElementById("copy-qr");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+
 
 // SALDO
 var input = document.querySelector('#saldo'); // get the input element

@@ -3750,6 +3750,19 @@ section {
     height: 35px;
   }
 
+  .app-confirm img.img-confirm {
+    height: 100px;
+  }
+
+  .app-confirm span {
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
   /* App */
 }
 
@@ -5056,6 +5069,19 @@ section {
     height: 35px;
   }
 
+  .app-confirm img.img-confirm {
+    height: 100px;
+  }
+
+  .app-confirm span {
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
   /* App */
 
 }
@@ -6078,16 +6104,66 @@ section {
     height: 35px;
   }
 
+  .app-confirm img.img-confirm {
+    height: 150px;
+  }
+
+  .app-confirm span {
+
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 110%;
+
+    color: #0078F0;
+  }
+
 
   /* App */
 }
 
 @media (min-width: 992px) {
 
+
+  .mt-slider-8 {
+    margin-top: 8rem;
+  }
+
+  .nav-link.navbar-freedy {
+    background: none;
+    padding: 12px 0;
+    margin-right: 25px;
+    margin-bottom: -2px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+
+    color: #000000;
+  }
+
+  .sidephone-1 {
+    position: absolute;
+    top: -100px;
+    right: 0px;
+
+
+    height: 100px;
+  }
+
+  .sidephone-2 {
+    position: absolute;
+    bottom: 0px;
+    right: -50px;
+
+
+    height: 100px;
+  }
+
   /* Login */
   .login {
     height: 90vh;
-    min-height: 700px;
+    min-height: 800px;
     width: 100%;
     position: relative;
   }
@@ -6237,6 +6313,10 @@ section {
 }
 
 @media (min-width: 1200px) {
+  .mt-slider-8 {
+    margin-top: 8rem;
+  }
+
   .nav-link.navbar-freedy {
     background: none;
     padding: 12px 0;
@@ -6527,6 +6607,24 @@ section {
     height: 25px;
   }
 
+  .sidephone-1 {
+    position: absolute;
+    top: -100px;
+    right: 0px;
+
+
+    height: 100px;
+  }
+
+  .sidephone-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+
+    height: 100px;
+  }
+
   .logo-features {
     display: inline;
     height: 75px;
@@ -6632,7 +6730,7 @@ section {
   /* Login */
   .login {
     height: 90vh;
-    min-height: 700px;
+    min-height: 800px;
     width: 100%;
     position: relative;
   }
@@ -7522,6 +7620,19 @@ section {
 
   .qr-receive-wallet .icon-action svg {
     height: 50px;
+  }
+
+  .app-confirm img.img-confirm {
+    height: 200px;
+  }
+
+  .app-confirm span {
+
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 110%;
+
+    color: #0078F0;
   }
 
   /* App */
