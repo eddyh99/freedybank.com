@@ -6,7 +6,7 @@
                     <img src="assets/img/freedy/back.png" alt="">
                 </a>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
-                    action="<?= base_url(); ?>auth/login">
+                    action="<?= base_url(); ?>auth/resetpass">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">Forgot Password</span>
                         <img src="assets/img/freedy/logo.png" alt="">
@@ -14,7 +14,7 @@
                     <div class="col-12 mb-auto">
                         <label for="email" class="form-label f-publicsans">Email</label>
                         <div class="input-group">
-                            <input type="text" class="form-control f-publicsans" id="email" placeholder="Confirm email">
+                            <input type="text" class="form-control f-publicsans" name="email" id="email" placeholder="Email" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-user"></i>
