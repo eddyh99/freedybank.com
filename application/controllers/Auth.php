@@ -8,25 +8,6 @@ class Auth extends CI_Controller
 		parent::__construct();
 	}
 
- public function apitrackless($url,$postData=NULL){
-        $token="MgX7HTkke3KK70uVEwEc304ijKVcyoaaA4mjoFMT6Au3zXgoQM";
-
-        $ch     = curl_init($url);
-        $headers    = array(
-            'Authorization: Bearer '.$token,
-            'Content-Type: application/json'
-        );
-        
-        curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData); 
-        $result = json_decode(curl_exec($ch));
-        curl_close($ch);
-        return $result;
-    }
-
 	public function index()
 	{
 		$data['title'] = "Freedy - Digital Bank";
@@ -84,7 +65,7 @@ class Auth extends CI_Controller
 		    );
 		
 		$url="https://api.tracklessbank.com/v1/auth/register";
-	    $result=$this->apitrackless($url,json_encode($mdata));
+	    $result=apitrackless($url,json_encode($mdata));
 	    if ($result->code==200){
 			//kirim email registrasi
 
@@ -120,7 +101,7 @@ class Auth extends CI_Controller
 	public function activate(){
 	    $token = $this->security->xss_clean($this->input->get('token'));
 		$url="https://api.tracklessbank.com/v1/auth/activate?token=".$token;
-	    $result=$this->apitrackless($url);
+	    $result=apitrackless($url);
 	    
 	    if (!empty(@$result->code==200)){
 	        $this->session->set_flashdata('success', "<p style='color:black'>Activation success</p>");
@@ -152,8 +133,8 @@ class Auth extends CI_Controller
 		    );
 		    
 		$url="https://api.tracklessbank.com/v1/auth/signin";
-	    $result=$this->apitrackless($url,json_encode($mdata));
-        
+	    $result=apitrackless($url,json_encode($mdata));
+
 	    if (!empty(@$result->code==200)){
 			$session_data = array(
 				'user_id'   => $result->message->id,
@@ -194,7 +175,7 @@ class Auth extends CI_Controller
 		}
 
 		$url="https://api.tracklessbank.com/v1/auth/signin";
-	    $result=$this->apitrackless($url,json_encode($mdata));
+	    $result=apitrackless($url,json_encode($mdata));
         
 	    if (!empty(@$result->code==200)){
 		
