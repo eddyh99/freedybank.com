@@ -8,7 +8,7 @@
                 <div class="col-12 col-sm-10 col-lg-10 box-code-freedy px-4 py-3">
                     <div class="copy-uqcode d-flex flex-row mb-3">
                         <span class="me-1">Unique Code :</span>
-                        <input class="me-2" type="text" name="" id="uqcode" value="<?=$_SESSION["ucode"]?>" readonly>
+                        <input class="me-2" type="text" name="" id="uqcode" value="<?= $_SESSION["ucode"] ?>" readonly>
                         <a class="btn btn-copy" id="btnuq">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
                     <span>Copy and share your referral code to earn money</span>
                     <div class="copy-refcode d-flex flex-row">
                         <input class="w-100 me-2" type="text" name="" id="refcode"
-                            value="<?=base_url()?>auth/signup?ref=<?=$_SESSION["referral"]?>" readonly>
+                            value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>
                         <a class="btn btn-copy me-2" id="btnref">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -41,5 +41,47 @@
                     </div>
                 </div>
             </div>
-            <div class="d-none d-lg-grid col-lg-2">&nbsp;</div>
+            <div class="d-none d-lg-grid col-lg-2">
+                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#logout">
+                    <svg width="53" height="84" viewBox="0 0 53 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M51 24.603L2 24.603" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M51 42L2 42" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M51 59.397L2 59.397" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="menu-logout">
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#logout">
+                <svg width="53" height="84" viewBox="0 0 53 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M51 24.603L2 24.603" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M51 42L2 42" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M51 59.397L2 59.397" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="logoutLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="logoutLabel">Warning</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure ?
+                    </div>
+                    <div class="modal-footer">
+                        <a href="<?= base_url('auth/logout') ?>" type="button" class="btn btn-primary">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>

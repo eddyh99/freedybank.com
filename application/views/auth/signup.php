@@ -2,19 +2,18 @@
     <div class="container">
         <div class="row d-flex d-lg-inline-grid justify-content-center justify-content-lg-start">
             <div class="col-10 col-sm-8 col-md-6 col-lg-5 box-form">
-                <?php if (@isset($_SESSION["failed"])){?>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong><?=$_SESSION["failed"]?></strong>
-                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php }?>
-                <?php if (@isset($_SESSION["success"])){?>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong><?=@$_SESSION["success"]?></strong>
-                        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                <?php }?>
-                
+                <?php if (@isset($_SESSION["failed"])) { ?>
+                <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
+                <?php if (@isset($_SESSION["success"])) { ?>
+                <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
                     action="<?= base_url(); ?>auth/register">
                     <div class="col-12 mb-4 text-center">
@@ -24,7 +23,8 @@
                     <div class="col-12 mb-4">
                         <label for="email" class="form-label f-publicsans">Email</label>
                         <div class="input-group">
-                            <input type="email" class="form-control f-publicsans" id="email" name='email' placeholder="" required>
+                            <input type="email" class="form-control f-publicsans" id="email" name='email' placeholder=""
+                                required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-user"></i>
@@ -35,7 +35,8 @@
                     <div class="col-12 mb-4">
                         <label for="email" class="form-label f-publicsans">Confirm Email</label>
                         <div class="input-group">
-                            <input type="email" class="form-control f-publicsans" id="email" name="confirmemail" placeholder="" required>
+                            <input type="email" class="form-control f-publicsans" id="email" name="confirmemail"
+                                placeholder="" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-user"></i>
@@ -46,7 +47,8 @@
                     <div class="col-12 mb-4">
                         <label for="password1" class="form-label f-publicsans">Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control f-publicsans" name="pass" id="password1" placeholder="" required>
+                            <input type="password" class="form-control f-publicsans" name="pass" id="password1"
+                                placeholder="" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-eye" id="togglePassword1" style="cursor: pointer"
@@ -58,7 +60,8 @@
                     <div class="col-12 mb-4">
                         <label for="password2" class="form-label f-publicsans">Confirm Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control f-publicsans" name="confirmpass" id="password2" placeholder="" required>
+                            <input type="password" class="form-control f-publicsans" name="confirmpass" id="password2"
+                                placeholder="" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-eye" id="togglePassword2" style="cursor: pointer"
@@ -72,7 +75,8 @@
                                 optional )</span>
                         </label>
                         <div class="input-group">
-                            <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral" placeholder="">
+                            <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral"
+                                placeholder="">
                         </div>
                     </div>
                     <div class="col-12 d-grid gap-2">

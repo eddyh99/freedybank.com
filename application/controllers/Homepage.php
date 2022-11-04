@@ -6,7 +6,7 @@ class Homepage extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!isset($_SESSION)){
+        if (!isset($_SESSION)) {
             redirect(base_url());
         }
     }
@@ -14,6 +14,13 @@ class Homepage extends CI_Controller
     public function index()
     {
         $data['title'] = "Freedy - Homepage";
+        if (!$this->session->userdata('user_id')) {
+            redirect("auth/login");
+        } else {
+            if ($this->session->userdata('role') == 'admin') {
+                redirect("/admin/dashboard");
+            }
+        }
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
