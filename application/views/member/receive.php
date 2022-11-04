@@ -1,7 +1,6 @@
 <div class="container" style="margin-bottom: 8rem;">
     <div class="app-container py-5">
         <?php $this->load->view("member/header"); ?>
-
         <div class="row d-flex justify-content-center">
             <div class="col-10 mt-5">
                 <div class="d-flex flex-row justify-content-center flex-wrap" id="myTab" role="tablist">
