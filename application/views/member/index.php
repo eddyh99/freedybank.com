@@ -4,9 +4,18 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-sm-10 col-lg-10 d-flex pt-2 pt-md-4 pb-5 py-lg-5">
                 <div class="currency-selection me-auto">
-                    <select name="" id="">
-                        <option value="">USD</option>
-                        <option value="">EUR</option>
+                    <select name="activecurrency" id="activecurrency">
+                        <option value="USD" <?php echo ($_SESSION["currency"]=="USD") ? "selected":""?>>USD</option>
+                        <option value="EUR" <?php echo ($_SESSION["currency"]=="EUR") ? "selected":""?>>EUR</option>
+                        <?php foreach ($currency as $dt){
+                                if ($dt->status=='active'){ 
+                                    if (($dt->currency!="USD") && ($dt->currency!="EUR")){
+                        ?>
+                            <option value="<?=$dt->currency?>" <?php echo ($_SESSION["currency"]==$dt->currency) ? "selected":""?>><?=$dt->currency?></option>
+                        <?php       }
+                                }
+                              }
+                        ?>
                     </select>
                 </div>
                 <div class="d-flex flex-column">
@@ -23,7 +32,7 @@
                         </a>
                     </div>
                     <div class="mt-3 saldo-freedy d-flex flex-row">
-                        <label class="ms-auto me-2">$
+                        <label class="ms-auto me-2"><?=$_SESSION["symbol"]?>
                             <input type="text" value="999,87" id="saldo" readonly>
                         </label>
                         <i class="fa fa-eye" toggle="#saldo" id="togglesaldo" style="cursor: pointer"></i>

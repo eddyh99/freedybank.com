@@ -76,7 +76,7 @@
                         </label>
                         <div class="input-group">
                             <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral"
-                                placeholder="">
+                                placeholder="" value="<?=@$_GET["ref"]?>">
                         </div>
                     </div>
                     <div class="col-12 d-grid gap-2">

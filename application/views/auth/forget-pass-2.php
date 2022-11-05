@@ -2,11 +2,12 @@
     <div class="container">
         <div class="row d-flex d-lg-inline-grid justify-content-center justify-content-lg-start">
             <div class="col-10 col-sm-8 col-md-6 col-lg-5 box-form">
-                <a href="<?= base_url(); ?>auth/login" class="link-back">
+                <a href="<?= base_url(); ?>auth/changepass" class="link-back">
                     <img src="assets/img/freedy/back.png" alt="">
                 </a>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
-                    action="<?= base_url(); ?>auth/resetpass">
+                    action="<?= base_url(); ?>auth/changepass">
+                    <input type="hidden" name="token" value="<?=$_SESSION["token"]?>">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">Forgot Password</span>
                         <img src="assets/img/freedy/logo.png" alt="">

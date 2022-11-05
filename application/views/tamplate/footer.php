@@ -18,6 +18,11 @@
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TYM4CBBPQ"></script>
+<?php
+if (isset($extra)){
+    $this->load->view($extra);
+}
+?>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

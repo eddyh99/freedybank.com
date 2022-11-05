@@ -185,6 +185,8 @@ class Auth extends CI_Controller
 				'ucode'     => $result->message->ucode,
 				'referral'  => $result->message->refcode,
 				'time_location' => $result->message->time_location,
+				'currency'  => "USD",
+				'symbol'    => "&dollar;"
 			);
 			$this->session->set_userdata($session_data);
 			if ($result->message->role == 'member') {
@@ -216,16 +218,35 @@ class Auth extends CI_Controller
 		$this->load->view('auth/forget-pass');
 		$this->load->view('tamplate/footer');
 	}
+	
+	public function recovery(){
+	    $token=$this->security->xss_clean($_GET["token"]);
+/*	    $now=time();
+	    
+	    $result=$this->member->decode_token($token);
+	    if (($result[1]+3600000)<$now){
+    		$this->session->set_flashdata('failed', "<p style='color:black'>Your reset token has been expired, please try again</p>");
+    	    redirect(base_url()."auth/forgotpass");
+            return;
+	    }
+	    
+	    $member = $this->member->get_single_by_token($token);
+*/        
+        $this->session->set_flashdata("token",$token);
+        redirect(base_url()."auth/updatepassword");
 
-	public function forget_pass_2()
+	}
+
+	public function updatepassword()
 	{
 		if ($this->session->userdata('user_id')) {
 			if ($this->session->userdata('role') == 'member') {
 				redirect("homepage");
 			} elseif ($this->session->userdata('role') == 'admin') {
-				redirect("/admin/dashboard");
+				redirect("admin/dashboard");
 			}
 		}
+		
 
 		$data['title'] = "Freedy - Forgot Password";
 
@@ -243,9 +264,9 @@ class Auth extends CI_Controller
 			return;
 		}
 
-		$url = "https://api.tracklessbank.com/v1/auth/signin";
-		$result = apitrackless($url, json_encode($mdata));
-
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$url = "https://api.tracklessbank.com/v1/auth/resetpassword?email=".$email;
+		$result = apitrackless($url);
 		if (!empty(@$result->code == 200)) {
 
 			$subject = "Reset Password for FreedyBank Account";
@@ -272,7 +293,36 @@ class Auth extends CI_Controller
 		}
 	}
 
+    public function changepass(){
+		$this->form_validation->set_rules('pass', 'Password', 'trim|required|min_length[9]|max_length[15]');
+		$this->form_validation->set_rules('confirmpass', 'Confirm Password', 'trim|required|matches[pass]');
+		$this->form_validation->set_rules('token', 'Token', 'trim|required');
+		
+		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
+			redirect(base_url() . "auth/login");
+			return;
+		}
 
+		$input		= $this->input;
+		$pass		= $this->security->xss_clean($input->post("pass"));
+		$token		= $this->security->xss_clean($input->post("token"));
+
+		$mdata = array(
+			'password'  => sha1($pass),
+			'token'     => $token
+		);
+
+		$url = "https://api.tracklessbank.com/v1/auth/updatepassword";
+		$result = apitrackless($url, json_encode($mdata));
+		if ($result->code == 200) {
+		    $this->session->set_flashdata("success","Your password is successfully changed");
+		    redirect(base_url()."auth/login");
+		}else{
+		    $this->session->set_flashdata("failed",$result->message);
+		    redirect(base_url()."auth/forget_pass");
+		}
+    }
 
 	public function logout()
 	{
