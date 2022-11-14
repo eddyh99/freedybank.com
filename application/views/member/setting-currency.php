@@ -16,8 +16,7 @@
                     <a href="<?= base_url() ?>homepage">
                         <img src="<?= base_url() ?>assets/img/freedy/back.png" alt="">
                     </a>
-                    <div class="col-12 px-0 px-lg-5">
-                        <form action="" class="check-currency">
+                    <div class="col-12 px-0 px-lg-5 check-currency">
                             <div class="d-flex flex-row align-items-center form-check form-switch my-2">
                                 <label class="form-check-label w-50 me-2" for="usdollar">US DOLLAR</label>
                                 <input class="form-check-input pill-currency" type="checkbox" id="usdollar" checked
@@ -25,41 +24,22 @@
                             </div>
                             <div class="d-flex flex-row align-items-center form-check form-switch my-2">
                                 <label class="form-check-label w-50 me-2" for="euro">EURO</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="euro">
+                                <input class="form-check-input pill-currency" type="checkbox" id="euro" checked disabled>
                             </div>
+                            <?php 
+                            foreach($currency as $dt){
+                                if ($dt->currency!="USD" && $dt->currency!="EUR"){
+                            ?>
                             <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="aeddirham">AED DIRHAM</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="aeddirham">
+                                <label class="form-check-label w-50 me-2" for="aeddirham"><?=$dt->name?></label>
+                                <input class="form-check-input pill-currency" type="checkbox" id="<?=$dt->currency?>" <?php echo ($dt->status=='active') ? "checked":"" ?> onclick="enablecurrency('<?=$dt->currency?>','<?php echo ($dt->status=='active')?"disabled":"active"?>')">
                             </div>
-                            <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="argentina">ARGENTINA
-                                    PESO</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="argentina">
-                            </div>
-                            <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="australia">AUSTRALIA
-                                    DOLLAR</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="australia">
-                            </div>
-                            <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="british">BRITISH
-                                    POUND</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="british">
-                            </div>
-                            <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="bulgarian">BULGARIAN
-                                    LEV</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="bulgarian">
-                            </div>
-                            <div class="d-flex flex-row align-items-center form-check form-switch my-2">
-                                <label class="form-check-label w-50 me-2" for="canadian">CANADIAN
-                                    DOLLAR</label>
-                                <input class="form-check-input pill-currency" type="checkbox" id="canadian">
-                            </div>
+                            <?php  
+                                  }}
+                            ?>
                             <div class="col-12 mt-5 text-end">
-                                <button class="btn btn-currency">Confirm</button>
+                                <a href="<?=base_url()."homepage"?>" class="btn btn-currency">Confirm</a>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

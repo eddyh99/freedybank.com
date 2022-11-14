@@ -4,9 +4,18 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-sm-10 col-lg-10 d-flex pt-2 pt-md-4 pb-5 py-lg-5">
                 <div class="currency-selection me-auto">
-                    <select name="" id="">
-                        <option value="">USD</option>
-                        <option value="">EUR</option>
+                    <select name="activecurrency" id="activecurrency" class="form-select">
+                        <option value="USD" <?php echo ($_SESSION["currency"]=="USD") ? "selected":""?>>USD</option>
+                        <option value="EUR" <?php echo ($_SESSION["currency"]=="EUR") ? "selected":""?>>EUR</option>
+                        <?php foreach ($currency as $dt){
+                                if ($dt->status=='active'){ 
+                                    if (($dt->currency!="USD") && ($dt->currency!="EUR")){
+                        ?>
+                            <option value="<?=$dt->currency?>" <?php echo ($_SESSION["currency"]==$dt->currency) ? "selected":""?>><?=$dt->currency?></option>
+                        <?php       }
+                                }
+                              }
+                        ?>
                     </select>
                 </div>
                 <div class="d-flex flex-column">
@@ -23,8 +32,8 @@
                         </a>
                     </div>
                     <div class="mt-3 saldo-freedy d-flex flex-row">
-                        <label class="ms-auto me-2">$
-                            <input type="text" value="999,87" id="saldo" readonly>
+                        <label class="ms-auto me-2"><?=$_SESSION["symbol"]?>
+                            <input type="text" value="<?=number_format($_SESSION["balance"],2)?>" id="saldo" readonly>
                         </label>
                         <i class="fa fa-eye" toggle="#saldo" id="togglesaldo" style="cursor: pointer"></i>
                     </div>
@@ -43,24 +52,10 @@
                         </span>
                     </div>
                     <div class="app-calendar">
-                        <a href="">
-                            <svg width="57" height="57" viewBox="0 0 57 57" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="7.125" y="14.25" width="42.75" height="35.625" rx="2" stroke="#33363F"
-                                    stroke-width="2" />
-                                <path
-                                    d="M7.125 18.25C7.125 16.3644 7.125 15.4216 7.71079 14.8358C8.29657 14.25 9.23938 14.25 11.125 14.25H45.875C47.7606 14.25 48.7034 14.25 49.2892 14.8358C49.875 15.4216 49.875 16.3644 49.875 18.25V23.75H7.125V18.25Z"
-                                    fill="#33363F" />
-                                <path d="M16.625 7.125L16.625 14.25" stroke="#33363F" stroke-width="2"
-                                    stroke-linecap="round" />
-                                <path d="M40.375 7.125L40.375 14.25" stroke="#33363F" stroke-width="2"
-                                    stroke-linecap="round" />
-                                <rect x="16.625" y="28.5" width="9.5" height="4.75" rx="0.5" fill="#33363F" />
-                                <rect x="16.625" y="38" width="9.5" height="4.75" rx="0.5" fill="#33363F" />
-                                <rect x="30.875" y="28.5" width="9.5" height="4.75" rx="0.5" fill="#33363F" />
-                                <rect x="30.875" y="38" width="9.5" height="4.75" rx="0.5" fill="#33363F" />
-                            </svg>
-                        </a>
+                        <form id="frmhistory">
+                            <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                            <input type="text" name="tgl" id="tgl" readonly>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -69,42 +64,7 @@
                     <span class="text-wt">Today</span>
                 </div>
                 <div class="col-12 box-transaction overflow-auto">
-                    <div class="list-transaction d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <img src="assets/img/freedy/withdraw.png" alt="tc">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h4>Withdraw</h4>
-                            <span>08:58 PM</span>
-                        </div>
-                    </div>
-                    <div class="list-transaction d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <img src="assets/img/freedy/topup.png" alt="tc">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h4>Topup</h4>
-                            <span>08:58 PM</span>
-                        </div>
-                    </div>
-                    <div class="list-transaction d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <img src="assets/img/freedy/withdraw.png" alt="tc">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h4>Withdraw</h4>
-                            <span>08:58 PM</span>
-                        </div>
-                    </div>
-                    <div class="list-transaction d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <img src="assets/img/freedy/withdraw.png" alt="tc">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h4>Withdraw</h4>
-                            <span>08:58 PM</span>
-                        </div>
-                    </div>
+                    <div id="history"></div>
                 </div>
             </div>
         </div>

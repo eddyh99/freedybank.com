@@ -61,6 +61,24 @@ class Auth extends CI_Controller
 			}
 		}
 
+        $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+        $userIp=$this->input->ip_address();
+        $secret = $this->config->item('google_secret');
+        $url="https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$recaptchaResponse."&remoteip=".$userIp;
+ 
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_URL, $url); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        $output = curl_exec($ch); 
+        curl_close($ch);      
+         
+        $status= json_decode($output, true);
+ 
+        if (!$status['success']) {
+            $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
+			redirect(base_url() . "auth/signup");
+        }
+        
 		$this->form_validation->set_rules('email', 'E-mail', 'trim|required|valid_email');
 		$this->form_validation->set_rules('confirmemail', 'Confirm Email', 'trim|required|valid_email|matches[email]');
 		$this->form_validation->set_rules('pass', 'Password', 'trim|required|min_length[9]|max_length[15]');
@@ -177,26 +195,33 @@ class Auth extends CI_Controller
 
 		$url = "https://api.tracklessbank.com/v1/auth/signin";
 		$result = apitrackless($url, json_encode($mdata));
-
-		if (!empty(@$result->code == 200)) {
-			$session_data = array(
-				'user_id'   => $result->message->id,
-				'role'      => $result->message->role,
-				'ucode'     => $result->message->ucode,
-				'referral'  => $result->message->refcode,
-				'time_location' => $result->message->time_location,
-			);
-			$this->session->set_userdata($session_data);
-			if ($result->message->role == 'member') {
-				redirect("homepage");
-			} elseif ($result->message->role == 'admin') {
-				$this->session->set_userdata($session_data);
-				redirect("/admin/dashboard");
-			}
-		} else {
-			$this->session->set_flashdata('failed', $result->message);
+		if (@$result->code!=200){
+			$this->session->set_flashdata('failed',$result->message);
 			redirect(base_url() . "auth/login");
 			return;
+		}
+		
+		$userid = $result->message->id;
+
+		$session_data = array(
+			'user_id'   => $userid,
+			'role'      => $result->message->role,
+			'time_location' => $result->message->time_location,
+			'currency'  => "USD",
+			'symbol'    => "&dollar;"
+		);
+		$this->session->set_userdata($session_data);
+		if ($result->message->role == 'member') {
+		    $member_session=array(
+				'ucode'     => $result->message->ucode,
+				'referral'  => $result->message->refcode,
+				'balance'   => apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=USD&userid=".$userid)->message->balance
+			);
+		    $this->session->set_userdata($member_session);
+			redirect("homepage");
+		} elseif ($result->message->role == 'admin') {
+            $_SESSION["mwallet"]=apitrackless("https://api.tracklessbank.com/v1/admin/user/getMasterwallet")->message->ucode_mwallet;
+			redirect("/admin/dashboard");
 		}
 	}
 
@@ -216,16 +241,35 @@ class Auth extends CI_Controller
 		$this->load->view('auth/forget-pass');
 		$this->load->view('tamplate/footer');
 	}
+	
+	public function recovery(){
+	    $token=$this->security->xss_clean($_GET["token"]);
+/*	    $now=time();
+	    
+	    $result=$this->member->decode_token($token);
+	    if (($result[1]+3600000)<$now){
+    		$this->session->set_flashdata('failed', "<p style='color:black'>Your reset token has been expired, please try again</p>");
+    	    redirect(base_url()."auth/forgotpass");
+            return;
+	    }
+	    
+	    $member = $this->member->get_single_by_token($token);
+*/        
+        $this->session->set_flashdata("token",$token);
+        redirect(base_url()."auth/updatepassword");
 
-	public function forget_pass_2()
+	}
+
+	public function updatepassword()
 	{
 		if ($this->session->userdata('user_id')) {
 			if ($this->session->userdata('role') == 'member') {
 				redirect("homepage");
 			} elseif ($this->session->userdata('role') == 'admin') {
-				redirect("/admin/dashboard");
+				redirect("admin/dashboard");
 			}
 		}
+		
 
 		$data['title'] = "Freedy - Forgot Password";
 
@@ -243,9 +287,9 @@ class Auth extends CI_Controller
 			return;
 		}
 
-		$url = "https://api.tracklessbank.com/v1/auth/signin";
-		$result = apitrackless($url, json_encode($mdata));
-
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$url = "https://api.tracklessbank.com/v1/auth/resetpassword?email=".$email;
+		$result = apitrackless($url);
 		if (!empty(@$result->code == 200)) {
 
 			$subject = "Reset Password for FreedyBank Account";
@@ -272,7 +316,36 @@ class Auth extends CI_Controller
 		}
 	}
 
+    public function changepass(){
+		$this->form_validation->set_rules('pass', 'Password', 'trim|required|min_length[9]|max_length[15]');
+		$this->form_validation->set_rules('confirmpass', 'Confirm Password', 'trim|required|matches[pass]');
+		$this->form_validation->set_rules('token', 'Token', 'trim|required');
+		
+		if ($this->form_validation->run() == FALSE) {
+			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
+			redirect(base_url() . "auth/login");
+			return;
+		}
 
+		$input		= $this->input;
+		$pass		= $this->security->xss_clean($input->post("pass"));
+		$token		= $this->security->xss_clean($input->post("token"));
+
+		$mdata = array(
+			'password'  => sha1($pass),
+			'token'     => $token
+		);
+
+		$url = "https://api.tracklessbank.com/v1/auth/updatepassword";
+		$result = apitrackless($url, json_encode($mdata));
+		if ($result->code == 200) {
+		    $this->session->set_flashdata("success","Your password is successfully changed");
+		    redirect(base_url()."auth/login");
+		}else{
+		    $this->session->set_flashdata("failed",$result->message);
+		    redirect(base_url()."auth/forget_pass");
+		}
+    }
 
 	public function logout()
 	{
@@ -292,15 +365,8 @@ class Auth extends CI_Controller
 		$mail->Username     = 'no-reply@freedybank.com';
 		$mail->Password     = 't)X^m&KTTNmr';
 		$mail->SMTPAutoTLS	= false;
-		$mail->SMTPSecure	= "tls";
-		$mail->Port			= 587;
-		$mail->SMTPOptions = array(
-			'ssl' => array(
-				'verify_peer' => false,
-				'verify_peer_name' => false,
-				'allow_self_signed' => true
-			)
-		);
+		$mail->SMTPSecure	= false;
+		$mail->Port			= 587;           
 
 		$mail->setFrom('no-reply@freedybank.com', 'FreedyBank');
 		$mail->isHTML(true);

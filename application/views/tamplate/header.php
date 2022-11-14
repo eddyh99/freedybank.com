@@ -26,16 +26,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
     <link href="<?= base_url() ?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
