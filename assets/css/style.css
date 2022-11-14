@@ -2868,7 +2868,7 @@ section {
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
-    min-height: 500px;
+    min-height: 600px;
     height: auto;
 
     padding: 2.5rem;
@@ -2971,6 +2971,14 @@ section {
     color: #333333;
   }
 
+  .form-login-freedy .notif-login {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
   .form-login-freedy .btn-login {
     background: #0078F0;
     border-radius: 5px;
@@ -2985,7 +2993,8 @@ section {
   }
 
   .footer-login {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background: #0078F0;
     height: 10vh;
   }
@@ -2994,15 +3003,12 @@ section {
 
   /* App */
 
-  .navbar-app {
-    margin-bottom: .5rem;
-  }
+
 
   .navbar-app>.box-navbar-freedy {
     background: #FFFFFF;
-    border: 3px solid #0078F0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
+    border-top: 1px solid #0078F0;
+
     padding: 1rem;
   }
 
@@ -3763,7 +3769,76 @@ section {
     color: #0078F0;
   }
 
+  .menu-logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+  }
+
+  .menu-logout button svg {
+    height: 25px;
+  }
+
   /* App */
+}
+
+@media (min-width: 375px) {
+
+
+
+  .navbar-app>.box-navbar-freedy {
+    background: #FFFFFF;
+    border-top: 1px solid #0078F0;
+
+    padding: 1rem;
+  }
+
+
+  .navbar-app>.box-navbar-freedy a {
+    margin: 0 .25rem;
+
+    font-weight: 500;
+    font-size: 6px;
+    line-height: 20px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus {
+    color: #0078F0;
+    padding: .5rem;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus.active {
+    background: linear-gradient(115.7deg, #2400FF 2.16%, rgba(0, 240, 255, 0.88) 115.54%);
+    box-shadow: -4.74877px 13.0591px 29.6798px rgba(35, 63, 120, 0.23);
+    border-radius: 100px;
+    color: #fff;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus>svg {
+    stroke: #0078F0;
+    fill: #0078F0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
+    stroke: #0078F0;
+    fill: #fff;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus.active>svg {
+    stroke: #FFFFFF;
+    fill: #fff;
+  }
+
+  .navbar-app>.box-navbar-freedy a .icon-menus.active.home-svg>svg {
+    stroke: #FFFFFF;
+    fill: none;
+  }
+
 }
 
 @media (min-width: 576px) {
@@ -4198,11 +4273,12 @@ section {
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
-    min-height: 450px;
+    min-height: 550px;
     height: auto;
 
     padding: 2.5rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
     position: relative;
   }
 
@@ -4291,6 +4367,14 @@ section {
     color: #333333;
   }
 
+  .form-login-freedy .notif-login {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
   .form-login-freedy .btn-login {
     background: #0078F0;
     border-radius: 5px;
@@ -4305,7 +4389,8 @@ section {
   }
 
   .footer-login {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background: #0078F0;
     height: 10vh;
   }
@@ -4313,15 +4398,12 @@ section {
   /* Login */
 
   /* App */
-  .navbar-app {
-    margin-bottom: .5rem;
-  }
+
 
   .navbar-app>.box-navbar-freedy {
     background: #FFFFFF;
-    border: 3px solid #0078F0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
+    border-top: 1px solid #0078F0;
+
     padding: 1rem;
   }
 
@@ -5082,6 +5164,17 @@ section {
     color: #0078F0;
   }
 
+  .menu-logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+  }
+
+  .menu-logout button svg {
+    height: 25px;
+  }
+
   /* App */
 
 }
@@ -5603,6 +5696,14 @@ section {
     color: #333333;
   }
 
+  .form-login-freedy .notif-login {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
   .form-login-freedy .btn-login {
     background: #0078F0;
     border-radius: 5px;
@@ -5617,22 +5718,21 @@ section {
   }
 
   .footer-login {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background: #0078F0;
     height: 10vh;
   }
 
   /* Login */
   /* App */
-  .navbar-app {
-    margin-bottom: .5rem;
-  }
+
+
 
   .navbar-app>.box-navbar-freedy {
     background: #FFFFFF;
-    border: 3px solid #0078F0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
+    border-top: 1px solid #0078F0;
+
     padding: 1rem;
   }
 
@@ -6117,11 +6217,28 @@ section {
     color: #0078F0;
   }
 
+  .menu-logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+  }
+
+  .menu-logout button svg {
+    height: 50px;
+  }
+
 
   /* App */
 }
 
 @media (min-width: 992px) {
+  .menu-logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
 
 
   .mt-slider-8 {
@@ -6290,6 +6407,14 @@ section {
     color: #333333;
   }
 
+  .form-login-freedy .notif-login {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
   .form-login-freedy .btn-login {
     background: #0078F0;
     border-radius: 5px;
@@ -6304,7 +6429,8 @@ section {
   }
 
   .footer-login {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background: #0078F0;
     height: 10vh;
   }
@@ -6770,6 +6896,7 @@ section {
 
     padding: 2.5rem 5rem;
     margin-top: 3rem;
+    margin-bottom: 7rem;
     position: relative;
   }
 
@@ -6858,6 +6985,14 @@ section {
     color: #333333;
   }
 
+  .form-login-freedy .notif-login {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+
   .form-login-freedy .btn-login {
     background: #0078F0;
     border-radius: 5px;
@@ -6872,7 +7007,8 @@ section {
   }
 
   .footer-login {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     background: #0078F0;
     height: 10vh;
   }
@@ -6880,57 +7016,51 @@ section {
   /* Login */
 
   /* App */
+  .title-top-navbar {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+
+    color: #0078F0;
+  }
 
   .navbar-app>.box-navbar-freedy {
     background: #FFFFFF;
-    border: 3px solid #0078F0;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
+    border-top: 1px solid #0078F0;
+
     padding: 1rem;
   }
 
   .navbar-app>.box-navbar-freedy a {
     margin: 0 2rem;
 
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 12px;
     line-height: 20px;
-    color: #000000;
+    color: #0078F0;
     text-align: center;
+
+
+    border: 1px solid #0078F0;
+    border-radius: 10px;
+    padding: 0 1rem;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus {
     color: #0078F0;
-    padding: 1rem;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active {
-    background: linear-gradient(115.7deg, #2400FF 2.16%, rgba(0, 240, 255, 0.88) 115.54%);
-    box-shadow: -4.74877px 13.0591px 29.6798px rgba(35, 63, 120, 0.23);
-    border-radius: 100px;
-    color: #fff;
+    padding: 1rem .25rem;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus>svg {
     stroke: #0078F0;
     fill: #0078F0;
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
     stroke: #0078F0;
     fill: #fff;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active>svg {
-    stroke: #FFFFFF;
-    fill: #fff;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active.home-svg>svg {
-    stroke: #FFFFFF;
-    fill: none;
   }
 
   .app-logo {
@@ -6942,39 +7072,58 @@ section {
     border-radius: 25px;
   }
 
-  .box-code-freedy>span {
-    font-weight: 400;
+  .box-code-freedy .currency-btn-setting a {
+
+    background: #0078F0;
+    border: 1px solid rgba(0, 120, 240, 0.47);
+    border-radius: 10px;
+
+    font-weight: 600;
     font-size: 12px;
-    line-height: 30px;
-    color: #000000;
+    line-height: 15px;
+
+    color: #FFFFFF;
+  }
+
+  .box-code-freedy>span {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 17px;
+    color: #0078F0;
   }
 
   .copy-uqcode span {
     padding: 0;
 
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #0078F0;
+  }
+
+  .copy-uqcode img {
+    height: 50px;
+  }
+
+  .mywallet .balance {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+  }
+
+  .mywallet .saldo {
+    font-weight: 600;
+    font-size: 25px;
     line-height: 30px;
 
     color: #000000;
   }
 
-  .copy-uqcode input,
-  .copy-uqcode a {
-    padding: 0;
-    border: 0;
-
-    font-style: italic;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-
-    text-align: center;
-    color: #0078F0;
-  }
-
   .copy-refcode input {
-    background: #A1EDFE;
+    background: none;
   }
 
   .copy-refcode input,
@@ -6982,11 +7131,97 @@ section {
     padding: 0;
     border: 0;
 
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 17px;
+
+    color: #000000;
+  }
+
+  .menus-list-app a {
+    background: #FFFFFF;
+    border: 1px solid #0078F0;
+    border-radius: 5px;
+
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 21px;
+    line-height: 32px;
 
     color: #0078F0;
+  }
+
+  .menus-list-app a.menus-blue {
+    background: #0078F0;
+    border: 1px solid #0078F0;
+    border-radius: 5px;
+
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 32px;
+
+    color: #FFFFFF;
+  }
+
+  .menus-list-app a.menus-blue:hover {
+    background: #FFFFFF;
+    color: #0078F0;
+  }
+
+  .menus-list-app a.menus-blue svg {
+    fill: #fff;
+    stroke: #fff;
+  }
+
+  .menus-list-app a.menus-blue:hover svg {
+    fill: #0078F0;
+    stroke: #0078F0;
+  }
+
+  .menus-list-app a.menus-blue.special svg {
+    fill: #0078F0;
+    stroke: #fff;
+  }
+
+  .menus-list-app a.menus-blue.special:hover svg {
+    fill: #fff;
+    stroke: #0078F0;
+  }
+
+  .menus-list-app svg {
+    height: 40px;
+  }
+
+  .curencies-list-app .title-curencies-list span {
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #0078F0;
+  }
+
+  .curencies-list-app .curencies-list {
+
+    border: 1px solid rgba(0, 120, 240, 0.47);
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #0078F0;
+  }
+
+  .curencies-list-app .curencies-list:hover {
+    background: #0078F0;
+    border: 1px solid rgba(0, 120, 240, 0.6);
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFF;
   }
 
   .currency-selection .select-hidden {
@@ -7272,23 +7507,64 @@ section {
     font-size: 24px;
   }
 
-  .check-currency input,
-  .check-currency label {
-    float: left;
-  }
-
-  .check-currency label {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 43px;
+  .info-currency-bimg {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
 
     color: #000000;
   }
 
+  .com-currency-bimg {
+    font-weight: 400;
+    font-size: 7px;
+    line-height: 10px;
+
+    color: rgba(0, 0, 0, 0.65);
+
+    color: #000000;
+  }
+
+  .currency-next-btn {
+    display: inline-block;
+    background: rgba(0, 120, 240, 0.19);
+    border-radius: 6px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #0078F0;
+  }
+
+  .check-currency {
+    max-height: 300px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .check-currency::-webkit-scrollbar {
+    display: none;
+  }
+
+  .check-currency input,
+  .check-currency label {
+    position: relative !important;
+  }
+
+  .check-currency label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #0078F0;
+  }
+
   .check-currency input.pill-currency {
     margin-left: 0 !important;
-    width: 7em;
-    height: 2.5em;
+    width: 3.5em;
+    height: 1.5em;
     background-color: #EFEFEF !important;
     background: url(../img/freedy/checkbox-ball.png);
     background-repeat: no-repeat;
@@ -7299,8 +7575,8 @@ section {
 
   .check-currency input.pill-currency:checked {
     margin-left: 0 !important;
-    width: 7em;
-    height: 2.5em;
+    width: 3.5em;
+    height: 1.5em;
     background-color: #0078F0 !important;
     background: url(../img/freedy/checkbox-ball-chacked.png);
     background-repeat: no-repeat;
@@ -7633,6 +7909,49 @@ section {
     line-height: 110%;
 
     color: #0078F0;
+  }
+
+  .receive-title span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #0078F0;
+  }
+
+  .receive-note span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .recive-bank a {
+    background: #0078F0;
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 34px;
+    color: #FFFFFF;
+  }
+
+  .recive-bank a:hover {
+    background: #0078F0;
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 34px;
+    color: #FFFFFF;
+  }
+
+  .infobank-list-app {
+
+    background: #FFFFFF;
+    border: 1px solid #0078F0;
+    border-radius: 5px;
   }
 
   /* App */

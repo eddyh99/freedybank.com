@@ -10,8 +10,11 @@
                     <div class="col-12 my-auto">
                         <h3 class="text-center f-roboto">successfully Register</h3>
                     </div>
+                    <div class="col-12 my-auto">
+                        <p class="text-center f-roboto">Check your email to activate your account</p>
+                    </div>
                     <div class="col-12 d-grid gap-2">
-                        <button type="submit" class="btn btn-login f-roboto">ENTER</button>
+                        <a href="<?=base_url()?>auth/login" class="btn btn-login f-roboto">ENTER</a>
                     </div>
                 </form>
             </div>
