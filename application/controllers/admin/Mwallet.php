@@ -15,14 +15,17 @@ class Mwallet extends CI_Controller
     {
         if (!empty($_GET["cur"])){
             
-            $url="https://api.tracklessbank.com/v1/member/currency/getByCurrency?currency=".$_GET["cur"];
+            $url="https://api.tracklessbank.com/v1/admin/wallet/balance_ByCurrency?currency=".$_GET["cur"];
             $result=apitrackless($url);
             if ($result->code==200){
                 $_SESSION["currency"]=@$_GET["cur"];    
-                $_SESSION["symbol"]=$result->message->symbol;
+                $_SESSION["symbol"]=$result->message->detail->symbol;
+                $_SESSION["balance"]=$result->message->balance;
             }else{
+                $result=apitrackless($url);
                 $_SESSION["currency"]="USD";    
                 $_SESSION["symbol"]="&dollar;";
+                $_SESSION["balance"]=apitrackless("https://api.tracklessbank.com/v1/admin/wallet/balance_ByCurrency?currency=USD")->message->balance;
             }
         }
         

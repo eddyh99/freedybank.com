@@ -96,9 +96,10 @@ class Homepage extends CI_Controller
                 "timezone"  => $_SESSION["time_location"]
             );
         $result=apitrackless("https://api.tracklessbank.com/v1/member/history/getAll",json_encode($mdata));
+        $data["history"]=$result->message;
         $response=array(
                     "token"     => $this->security->get_csrf_hash(),
-                    "message"   => utf8_encode($this->load->view('member/history',$result->message,TRUE))
+                    "message"   => utf8_encode($this->load->view('member/history',$data,TRUE))
                 );
         echo json_encode($response);
     }
