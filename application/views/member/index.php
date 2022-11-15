@@ -23,7 +23,7 @@
                                 <span class="">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
                             </div>
                             <div class="currency-btn-setting mb-5">
-                                <a href="<?= base_url() ?>homepage/setting_currency" class="p-3">Active/Disactive
+                                <a href="<?= base_url() ?>homepage/setting_currency" class="p-3">Active/Deactive
                                     Currencies</a>
                             </div>
                             <span class="">Copy & share your referral link to earn money</span>
@@ -70,7 +70,7 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= $dt->status ?></span>
+                                <span><?= $dt->symbol; ?> <?= $dt->balance ?></span>
                             </a>
                             <?php
                                 }
