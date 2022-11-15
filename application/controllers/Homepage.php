@@ -35,12 +35,31 @@ class Homepage extends CI_Controller
         );
         $url = "https://api.tracklessbank.com/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
+
+        // $balance = "";
+        // $lists = "";
+        // foreach ($body["currency"] as $dt) {
+        //     if ($dt->status == 'active') {
+        //         $list = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $dt->currency . "&userid=" . $_SESSION["user_id"])->message->balance;
+
+        //         // $balance = '"currency" => ' . $dt->currency . ', "balance" => ' . $list . ',' . $balance;
+        //         $lists = $lists . '("currency" => ' . $dt->currency . ',"balance" => ' . $list . ')' . ', ';
+        //     }
+        // }
+
+
+        // $arr_kalimat = explode(", ", $lists);
+        // $balance = array($arr_kalimat);
+        // print_r($balance['currency']);
+        // die;
+
+        // $body["balance"] =  array($balance);
         $data['title'] = "Freedy - Homepage";
         $footer["extra"]    = "member/js/js_index";
 
 
         $this->load->view('tamplate/header', $data);
-        $this->load->view('tamplate/navbar-bottom', $data);
+        $this->load->view('tamplate/navbar-bottom-homepage', $data);
         $this->load->view('member/index', $body);
         $this->load->view('tamplate/footer', $footer);
     }

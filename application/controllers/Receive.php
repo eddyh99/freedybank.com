@@ -25,6 +25,7 @@ class Receive extends CI_Controller
         $data['title'] = "Freedy - Add Receve";
 
         $this->load->view('tamplate/header', $data);
+        $this->load->view('tamplate/navbar-bottom', $data);
         $this->load->view('member/topup/receive', $body);
         $this->load->view('tamplate/footer');
     }

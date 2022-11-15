@@ -52,7 +52,7 @@
 
                                 <span class="ms-2">Add/receive funds</span>
                             </a>
-                            <a href=""
+                            <a href="<?= base_url() ?>wallet"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue special">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
 
                                 <span class="ms-2">Wallet to wallet</span>
                             </a>
-                            <a href=""
+                            <a href="<?= base_url() ?>swap"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
                                 <svg width="43" height="43" viewBox="0 0 43 43" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@
 
                                 <span class="ms-2">Swap</span>
                             </a>
-                            <a href=""
+                            <a href="<?= base_url() ?>bank"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
                                 <svg width="39" height="36" viewBox="0 0 39 36" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,7 @@
 
                                 <span class="ms-2">Wallet to bank</span>
                             </a>
-                            <a href=""
+                            <a href="#"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue special">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@
 
                                 <span class="ms-2">Wallet to card</span>
                             </a>
-                            <a href=""
+                            <a href="<?= base_url() ?>search"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
                                 <span class="">History</span>
                             </a>

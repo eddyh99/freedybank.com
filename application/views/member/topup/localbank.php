@@ -92,8 +92,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <a href="<?= base_url() ?>receive">OK</a>
+                    <div class="col-12 text-center">
+                        <a href="<?= base_url() ?>receive" class="btn-receive-bank px-5 py-2">OK</a>
                     </div>
                 </div>
             </div>
