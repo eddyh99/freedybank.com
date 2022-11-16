@@ -41,9 +41,15 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-12">Wallet to Wallet</label>
+                                <label class="col-12">Wallet to Wallet Send</label>
                                 <div class="col-12">
-                                    <input type="text" id="wallet2wallet" name="wallet2wallet" class="form-control"  value="<?=$fee["wallet2wallet"]?>">
+                                    <input type="text" id="wallet2wallet" name="wallet2wallet_send" class="form-control"  value="<?=$fee["wallet2wallet_send"]?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-12">Wallet to Wallet Receive</label>
+                                <div class="col-12">
+                                    <input type="text" id="wallet2wallet" name="wallet2wallet_receive" class="form-control"  value="<?=$fee["wallet2wallet_receive"]?>">
                                 </div>
                             </div>
                             <div class="row">

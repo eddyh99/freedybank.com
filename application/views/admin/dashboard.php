@@ -11,30 +11,41 @@
                             <span class="fw-bold text-blue-freedy">Balance</span>
                         </div>
                         <div class="list-currency">
+                            <?php foreach ($currency as $dt){
+                                    if ($dt->currency=="USD"){?>
                             <div class="my-3">
                                 <a href="<?=base_url()?>admin/mwallet?cur=USD">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">USD</span>
-                                        <span>&dollar; 1500</span>
+                                        <span>&dollar; <?=$dt->amount?></span>
                                     </div>
                                 </a>
                             </div>
+                            <?php 
+                                    }
+                                  }
+                                foreach ($currency as $dt){
+                                    if ($dt->currency=="EUR"){
+                            ?>
                             <div class="my-3">
                                 <a href="<?=base_url()?>admin/mwallet?cur=EUR">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">EUR</span>
-                                        <span>&euro; 1500</span>
+                                        <span>&euro; <?=$dt->amount?></span>
                                     </div>
                                 </a>
                             </div>
-                            <?php foreach ($currency as $dt){
-                                    if (($dt->status=='active') && ($dt->currency!='USD') && ($dt->currency!='EUR')){
+                            <?php 
+                                    }
+                                  }
+                                foreach ($currency as $dt){
+                                    if (($dt->currency!='USD') && ($dt->currency!='EUR')){
                             ?>
                                 <div class="my-3">
                                     <a href="<?=base_url()?>admin/mwallet?cur=<?=$dt->currency?>">
                                         <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                             <span class="me-auto"><?=$dt->currency?></span>
-                                            <span><?=$dt->symbol?> 1500</span>
+                                            <span><?=$dt->symbol?> <?=$dt->amount?></span>
                                         </div>
                                     </a>
                                 </div>

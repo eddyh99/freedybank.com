@@ -33,23 +33,25 @@ class Fee extends CI_Controller
         $mdata = array();
         if (@$mfee->code==200) {
      		$mdata=array(
-     		        "topup"             => number_format($mfee->message->topup, 2,".",","),
-     		        "walletbank_local"  => number_format($mfee->message->walletbank_circuit, 2,".",","),
-     		        "walletbank_inter"  => number_format($mfee->message->walletbank_outside, 2,".",","),
-     		        "wallet2wallet"     => number_format($mfee->message->wallet, 2,".",","),
-     		        "ref_send"          => number_format($mfee->message->referral_send, 2,".",","),
-     		        "ref_receive"       => number_format($mfee->message->referral_receive, 2,".",","),
-     		        "swap"              => number_format($mfee->message->swap, 2,".",","),
+     		        "topup"                 => number_format($mfee->message->topup, 2,".",","),
+     		        "walletbank_local"      => number_format($mfee->message->walletbank_circuit, 2,".",","),
+     		        "walletbank_inter"      => number_format($mfee->message->walletbank_outside, 2,".",","),
+     		        "wallet2wallet_send"    => number_format($mfee->message->wallet_sender, 2,".",","),
+     		        "wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2,".",","),
+     		        "ref_send"              => number_format($mfee->message->referral_send, 2,".",","),
+     		        "ref_receive"           => number_format($mfee->message->referral_receive, 2,".",","),
+     		        "swap"                  => number_format($mfee->message->swap, 2,".",","),
      		    );
         } else {
             $mdata=array(
-     		        "topup"             => number_format(0, 2,".",","),
-     		        "walletbank_local"  => number_format(0, 2,".",","),
-     		        "walletbank_inter"  => number_format(0, 2,".",","),
-     		        "wallet2wallet"     => number_format(0, 2,".",","),
-     		        "ref_send"          => number_format(0, 2,".",","),
-     		        "ref_receive"       => number_format(0, 2,".",","),
-     		        "swap"              => number_format(0, 2,".",","),
+     		        "topup"                 => number_format(0, 2,".",","),
+     		        "walletbank_local"      => number_format(0, 2,".",","),
+     		        "walletbank_inter"      => number_format(0, 2,".",","),
+     		        "wallet2wallet_send"    => number_format(0, 2,".",","),
+     		        "wallet2wallet_receive" => number_format(0, 2,".",","),
+     		        "ref_send"              => number_format(0, 2,".",","),
+     		        "ref_receive"           => number_format(0, 2,".",","),
+     		        "swap"                  => number_format(0, 2,".",","),
      		    );
         }
         echo json_encode($mdata);
@@ -65,20 +67,22 @@ class Fee extends CI_Controller
      		        "topup"             => number_format($mfee->message->topup, 2,".",","),
      		        "walletbank_local"  => number_format($mfee->message->walletbank_circuit, 2,".",","),
      		        "walletbank_inter"  => number_format($mfee->message->walletbank_outside, 2,".",","),
-     		        "wallet2wallet"     => number_format($mfee->message->wallet, 2,".",","),
+     		        "wallet2wallet_send"    => number_format($mfee->message->wallet_sender, 2,".",","),
+     		        "wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2,".",","),
      		        "ref_send"          => number_format($mfee->message->referral_send, 2,".",","),
      		        "ref_receive"       => number_format($mfee->message->referral_receive, 2,".",","),
      		        "swap"              => number_format($mfee->message->swap, 2,".",","),
      		    );
         } else {
             $mdata=array(
-     		        "topup"             => number_format(0, 2,".",","),
-     		        "walletbank_local"  => number_format(0, 2,".",","),
-     		        "walletbank_inter"  => number_format(0, 2,".",","),
-     		        "wallet2wallet"     => number_format(0, 2,".",","),
-     		        "ref_send"          => number_format(0, 2,".",","),
-     		        "ref_receive"       => number_format(0, 2,".",","),
-     		        "swap"              => number_format(0, 2,".",","),
+     		        "topup"                 => number_format(0, 2,".",","),
+     		        "walletbank_local"      => number_format(0, 2,".",","),
+     		        "walletbank_inter"      => number_format(0, 2,".",","),
+     		        "wallet2wallet_send"    => number_format(0, 2,".",","),
+     		        "wallet2wallet_receive" => number_format(0, 2,".",","),
+     		        "ref_send"              => number_format(0, 2,".",","),
+     		        "ref_receive"           => number_format(0, 2,".",","),
+     		        "swap"                  => number_format(0, 2,".",","),
      		    );
         }
 
@@ -97,7 +101,8 @@ class Fee extends CI_Controller
         $this->form_validation->set_rules('topup', 'Topup', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('walletbank_local', 'Wallet to Bank Local', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('walletbank_inter', 'Wallet to Bank International', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('wallet2wallet', 'Wallet to Wallet', 'trim|required|greater_than[0]|decimal');
+		$this->form_validation->set_rules('wallet2wallet_send', 'Wallet to Wallet Send', 'trim|required|greater_than[0]|decimal');
+		$this->form_validation->set_rules('wallet2wallet_receive', 'Wallet to Wallet Receive', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('referral_send', 'Referral Sender', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('referral_receive', 'Referral Receiver', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('swap', 'Swap', 'trim|required|greater_than[0]|decimal');
@@ -112,19 +117,21 @@ class Fee extends CI_Controller
 			return;
 		}
 		
-		$topup		        = $this->security->xss_clean($input->post("topup"));
-		$walletbank_local   = $this->security->xss_clean($input->post("walletbank_local"));
-		$walletbank_inter	= $this->security->xss_clean($input->post("walletbank_inter"));
-		$wallet2wallet		= $this->security->xss_clean($input->post("wallet2wallet"));
-		$referral_send		= $this->security->xss_clean($input->post("referral_send"));
-		$referral_receive   = $this->security->xss_clean($input->post("referral_receive"));
-		$swap		        = $this->security->xss_clean($input->post("swap"));
+		$topup		            = $this->security->xss_clean($input->post("topup"));
+		$walletbank_local       = $this->security->xss_clean($input->post("walletbank_local"));
+		$walletbank_inter	    = $this->security->xss_clean($input->post("walletbank_inter"));
+		$wallet2wallet_send     = $this->security->xss_clean($input->post("wallet2wallet_send"));
+		$wallet2wallet_receive  = $this->security->xss_clean($input->post("wallet2wallet_receive"));
+		$referral_send		    = $this->security->xss_clean($input->post("referral_send"));
+		$referral_receive       = $this->security->xss_clean($input->post("referral_receive"));
+		$swap		            = $this->security->xss_clean($input->post("swap"));
 		
         $mdata=array(
      		        "topup"                 => $topup,
      		        "walletbank_circuit"    => $walletbank_local,
      		        "walletbank_outside"    => $walletbank_inter,
-     		        "wallet"                => $wallet2wallet,
+     		        "wallet_send"           => $wallet2wallet_send,
+     		        "wallet_receiver"       => $wallet2wallet_receive,
      		        "referral_send"         => $referral_send,
      		        "referral_receive"      => $referral_receive,
      		        "swap"                  => $swap,

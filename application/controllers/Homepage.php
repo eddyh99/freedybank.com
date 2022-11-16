@@ -116,24 +116,24 @@ class Homepage extends CI_Controller
             return;
         }
 
-        $input = $this->input;
-        $tgl = explode("-", $this->security->xss_clean($input->post("tgl")));
-        $awal = date_format(date_create($tgl[0]), "Y-m-d");
-        $akhir = date_format(date_create($tgl[1]), "Y-m-d");
-
-        $mdata = array(
-            "userid"    => $_SESSION["user_id"],
-            "currency"  => $_SESSION["currency"],
-            "date_start" => $awal,
-            "date_end"  => $akhir,
-            "timezone"  => $_SESSION["time_location"]
-        );
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/history/getAll", json_encode($mdata));
-        $data['history'] = $result->message;
-        $response = array(
-            "token"     => $this->security->get_csrf_hash(),
-            "message"   => utf8_encode($this->load->view('member/history', $data, TRUE))
-        );
+        $input=$this->input;
+		$tgl= explode("-",$this->security->xss_clean($input->post("tgl")));
+        $awal=date_format(date_create($tgl[0]),"Y-m-d");
+        $akhir=date_format(date_create($tgl[1]),"Y-m-d");
+        
+        $mdata=array(
+                "userid"    => $_SESSION["user_id"],
+                "currency"  => $_SESSION["currency"],
+                "date_start"=> $awal,
+                "date_end"  => $akhir,
+                "timezone"  => $_SESSION["time_location"]
+            );
+        $result=apitrackless("https://api.tracklessbank.com/v1/member/history/getAll",json_encode($mdata));
+        $data["history"]=$result->message;
+        $response=array(
+                    "token"     => $this->security->get_csrf_hash(),
+                    "message"   => utf8_encode($this->load->view('member/history',$data,TRUE))
+                );
         echo json_encode($response);
     }
 }

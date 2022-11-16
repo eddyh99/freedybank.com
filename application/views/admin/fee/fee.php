@@ -43,15 +43,21 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-12">Wallet to International</label>
+                                <label class="col-12">Wallet to Bank International</label>
                                 <div class="col-12">
                                     <input type="text" id="walletbank_inter" name="walletbank_inter" class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-12">Wallet to Wallet</label>
+                                <label class="col-12">Wallet to Wallet Send</label>
                                 <div class="col-12">
-                                    <input type="text" id="wallet2wallet" name="wallet2wallet" class="form-control" readonly>
+                                    <input type="text" id="w2w_send" name="w2w_send" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-12">Wallet to Wallet Receive</label>
+                                <div class="col-12">
+                                    <input type="text" id="w2w_receive" name="w2w_receive" class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="row">
