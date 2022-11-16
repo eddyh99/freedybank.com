@@ -325,7 +325,7 @@ $countries_list = array(
                                     </div>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <select name="account_type" class="form-select">
-                                            <option value="saving">Saving</option>
+                                            <option value="savings">Savings</option>
                                             <option value="checking">Checking</option>
                                         </select>
                                     </div>

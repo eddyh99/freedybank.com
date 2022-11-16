@@ -11,9 +11,6 @@
                         </div>
                         <img src="assets/img/logo.png" alt="" style="height: 75px;" class="me-5">
                     </div>
-                    <div class="col-12 my-5">
-                        <a href="<?=base_url()?>admin/mwallet/withdraw" class="btn btn-freedy-blue fw-bold px-5 py-3">Withdraw</a>
-                    </div>
                     <input type="text" name="tgl" id="tgl" readonly><button id="view" type="button">View</button>
                     <div class="col-12 card mb-5">
                         <div class="card-header fw-bold">

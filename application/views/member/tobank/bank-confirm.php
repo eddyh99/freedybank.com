@@ -16,6 +16,17 @@
             <input type="hidden" name="causal" value="<?=$data["causal"]?>">
             <input type="hidden" name="amount" value="<?=$data["amount"]?>">
             <input type="hidden" name="transfer_type" value="<?=$data["transfer_type"]?>">
+            <input type="hidden" name="swift" value="<?=$data["swift"]?>">
+            <?php 
+                if ($_SESSION["currency"]=="USD"){?>
+                    <input type="hidden" name="bank_name" value="<?=$data["bank_name"]?>">
+                    <input type="hidden" name="address" value="<?=$data["address"]?>">
+                    <input type="hidden" name="account_type" value="<?=$data["account_type"]?>">
+                    <input type="hidden" name="city" value="<?=$data["city"]?>">
+                    <input type="hidden" name="state" value="<?=$data["state"]?>">
+                    <input type="hidden" name="postalcode" value="<?=$data["postalcode"]?>">
+                    <input type="hidden" name="country" value="<?=$data["country"]?>">
+            <?php }?>
             <div class="row d-flex justify-content-center">
                 <div class="col-12 settings-currency col-sm-8 col-lg-8 d-flex pt-2 pt-md-4 pb-5 py-lg-0">
                     <div class="col-12 back-btn-transaction my-4 text-start border-top-freedy">

@@ -56,21 +56,38 @@ class Bank extends CI_Controller
         );
 
         $result=apitrackless("https://api.tracklessbank.com/v1/member/wallet/bankSummary",json_encode($mdata));
-
+        
         if (@$result->code!=200){
             $this->session->set_flashdata("failed","Insuffisient Fund");
             redirect(base_url()."bank");
         }
+        
+        $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
+		$temp["account_number"]    = $this->security->xss_clean($input->post("account_number"));
+		$temp["recipient"]         = $this->security->xss_clean($input->post("recipient"));
+		$temp["amount"]            = $this->security->xss_clean($input->post("amount"));
+		$temp["causal"]            = $this->security->xss_clean($input->post("causal"));
+		$temp["transfer_type"]     = $transfer_type;
+		$temp["swift"]             = $this->security->xss_clean($input->post("swift"));
 
-		$body["data"]=array(
-		    "account_number"    => $this->security->xss_clean($input->post("account_number")),
-		    "recipient"         => $this->security->xss_clean($input->post("recipient")),
-		    "amount"            => $this->security->xss_clean($input->post("amount")),
-		    "causal"            => $this->security->xss_clean($input->post("causal")),
-		    "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
-        );
+        if ($_SESSION["currency"]=="USD"){
+		    if ($transfer_type=="circuit"){
+		        $country    = "US";
+		    }elseif ($transfer_type=="outside"){
+                $country     = $this->security->xss_clean($input->post("country"));
+		    }
+
+            $temp["bank_name"]      = $this->security->xss_clean($input->post("bank_name"));
+            $temp["address"]        = $this->security->xss_clean($input->post("address"));
+            $temp["account_type"]   = $this->security->xss_clean($input->post("account_type"));
+            $temp["city"]           = $this->security->xss_clean($input->post("city"));
+            $temp["state"]          = $this->security->xss_clean($input->post("state"));
+            $temp["postalcode"]     = $this->security->xss_clean($input->post("postalcode"));
+            $temp["country"]        = $country;
+        }
         
-        
+        $body["data"]=$temp;
+
         $data['title'] = "Freedy - Wallet to Bank Confirmation";
 
         $this->load->view('tamplate/header', $data);
@@ -85,39 +102,23 @@ class Bank extends CI_Controller
 		$this->form_validation->set_rules('recipient', 'Recipient', 'trim|required');
 		$this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
 		$this->form_validation->set_rules('causal', 'Causal', 'trim|required');
-	    $this->form_validation->set_rules('transfer_type', 'Transfer Type', array(
+        if ($_SESSION["currency"]=="USD"){
+            $this->form_validation->set_rules('account_type', 'Account Type', array(
 		            'trim',
 		            'required',
 		            array(
                         'undefined',
                         function($str)
                         {
-	                        return $str === "circuit" || $str === "outside";
+	                        return $str === "savings" || $str === "checking";
                         }
                     )
 		        ),
 		        array(
-		            'undefined' => 'Unknown {field} [' . $this->input->post('transfer_type') . ']',
+		            'undefined' => 'Unknown {field} [' . $this->input->post('account_type') . ']',
 		            )
 		    );
-            
-            if ($_SESSION["currency"]=="USD"){
-                $this->form_validation->set_rules('account_type', 'Account Type', array(
-    		            'trim',
-    		            'required',
-    		            array(
-                            'undefined',
-                            function($str)
-                            {
-    	                        return $str === "saving" || $str === "checking";
-                            }
-                        )
-    		        ),
-    		        array(
-    		            'undefined' => 'Unknown {field} [' . $this->input->post('account_type') . ']',
-    		            )
-    		    );
-            }
+        }
 
 		if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed",validation_errors());
@@ -130,14 +131,20 @@ class Bank extends CI_Controller
         $recipient      = $this->security->xss_clean($input->post("recipient"));
         $account_number = $this->security->xss_clean($input->post("account_number"));
         $causal         = $this->security->xss_clean($input->post("causal"));
-		if (($_SESSION["currency"]=="USD") && ($transfer_type=="circuit")){
-            $swift          = $this->security->xss_clean($input->post("swift"));
+        $swift          = $this->security->xss_clean($input->post("swift"));
+		if ($_SESSION["currency"]=="USD"){
             $bank_name      = $this->security->xss_clean($input->post("bank_name"));
-            $address        = $this->security->xss_clean($input->post("bank_address"));
+            $address        = $this->security->xss_clean($input->post("address"));
             $account_type   = $this->security->xss_clean($input->post("account_type"));
             $city           = $this->security->xss_clean($input->post("city"));
             $state          = $this->security->xss_clean($input->post("state"));
             $postalcode     = $this->security->xss_clean($input->post("postalcode"));
+		    
+		    if ($transfer_type=="circuit"){
+		        $country    = "US";
+		    }elseif ($transfer_type=="outside"){
+                $country     = $this->security->xss_clean($input->post("country"));
+		    }
 		}
         
         $mdata=array(
@@ -155,6 +162,7 @@ class Bank extends CI_Controller
 		            "city"              => @$city,
 		            "state"             => @$state,
 		            "postalcode"        => @$postalcode,
+		            "country"           => @$country,
 		            "causal"            => @$causal,
 		        )
         );
