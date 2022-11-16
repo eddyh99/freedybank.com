@@ -1,25 +1,28 @@
-<div class="container" style="margin-bottom: 8rem;">
-    <div class="app-container py-5">
-        <div class="row">
-            <div class="col-12 col-lg-2 text-center mb-3 mb-lg-0">
-                <img src="<?= base_url() ?>assets/img/freedy/logo-app.png" alt="" class="app-logo">
-            </div>
-            <div class="col-12 col-lg-8 d-flex justify-content-center">
-                &nbsp;
-            </div>
-            <div class="d-none d-lg-grid col-lg-2">&nbsp;</div>
-        </div>
-
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 settings-currency col-sm-8 col-lg-8 d-flex pt-2 pt-md-4 pb-5 py-lg-5">
-                <div class="col-12 back-btn-transaction app-confirm my-4 text-start">
-                    <div class="col-12 px-0 px-lg-5 text-center d-flex flex-column justify-content-center">
-                        <div class="mb-4">
-                            <img src="<?= base_url() ?>assets/img/freedy/confirm.png" alt="" class="img-confirm">
+<div class="d-flex justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
+        <div class="container" style="margin-bottom: 8rem;">
+            <div class="app-container py-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12">
+                        <div class="text-end">
+                            <a href="<?= base_url() ?>wallet">
+                                <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.625 13.375L13.375 23.625M13.375 13.375L23.625 23.625M35.5833 18.5C35.5833 27.9349 27.9349 35.5833 18.5 35.5833C9.06512 35.5833 1.41666 27.9349 1.41666 18.5C1.41666 9.06513 9.06512 1.41666 18.5 1.41666C27.9349 1.41666 35.5833 9.06513 35.5833 18.5Z"
+                                        stroke="#0078F0" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
                         </div>
-                        <span> Send <b><?=$_SESSION["symbol"]?> <?=$data["amount"]?></b> to <b><?=$data["ucode"]?></b> was placed successfully!</span>
-                        <div class="col-12 mt-5 text-center">
-                            <a href="<?= base_url() ?>homepage" class="btn btn-currency">Confirm</a>
+                    </div>
+                    <div class="col-12 my-4">
+                        <div class="col-12 py-4">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <img src="<?= base_url() ?>assets/img/logo-2.png" alt="" style="width: 100px;"
+                                    class="mt-5">
+                                <span class="b-qr">Your transfer successed</span>
+                            </div>
                         </div>
                     </div>
                 </div>
