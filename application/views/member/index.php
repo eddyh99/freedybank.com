@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-center">
-    <div class="col-5">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex align-items-center flex-row mb-3">
                             <span class="me-auto f-monserat title-top-navbar">Home</span>
-                            <a href="" class="btn btn-primary p-2 d-flex align-items-center">
+                            <a href="<?= base_url() ?>soon" class="btn btn-primary p-2 d-flex align-items-center">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -66,13 +66,27 @@
                         <div class="col-12">
                             <?php foreach ($currency as $dt) {
                                 if ($dt->status == 'active') {
+                                    if (($dt->currency == "USD") || ($dt->currency == "EUR")) {
                             ?>
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
                                 <span><?= $dt->symbol; ?> <?= $dt->balance ?></span>
                             </a>
-                            <?php
+                            <?php }
+                                }
+                            }
+                            ?>
+                            <?php foreach ($currency as $dt) {
+                                if ($dt->status == 'active') {
+                                    if (($dt->currency != "USD") && ($dt->currency != "EUR")) {
+                            ?>
+                            <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
+                                class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
+                                <span class="me-auto"><?= $dt->currency ?></span>
+                                <span><?= $dt->symbol; ?> <?= $dt->balance ?></span>
+                            </a>
+                            <?php }
                                 }
                             }
                             ?>

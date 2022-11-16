@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-    <div class="col-5">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
                 <div class="row d-flex justify-content-center">

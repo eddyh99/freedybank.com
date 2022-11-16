@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-    <div class="col-5">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
                 <div class="row d-flex justify-content-center">
@@ -29,16 +29,8 @@
                                         placeholder="Amount" value="<?= $data["amount"] ?>" hidden>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Transaction fee</span>
-                                    <span><?= $data["fee"] ?></span>
-                                </div>
-                                <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Total Deducted</span>
-                                    <span><?= $data["deduct"] ?></span>
-                                </div>
-                                <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>New Balance</span>
-                                    <span><?= $_SESSION['balance'] - $data["deduct"] ?></span>
+                                    <span><?= $_SESSION['balance'] - $data["amount"] ?></span>
                                 </div>
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>swap"
@@ -55,7 +47,7 @@
 </div>
 
 <div class="navbar-app fixed-bottom d-flex justify-content-center">
-    <div class="col-12 col-sm-10 col-lg-5 box-navbar-freedy d-flex justify-content-start align-items-center">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4 box-navbar-freedy d-flex justify-content-center align-items-center">
         <a href="<?= base_url() ?>swap" class="d-flex align-items-center border-0">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">

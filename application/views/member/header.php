@@ -12,7 +12,7 @@
             </div>
             <span class="">Copy & share your referral link to earn money</span>
             <div class="copy-refcode d-flex flex-row justify-content-start mb-4">
-                <input class="col-7 me-2" type="text" name="" id="refcode"
+                <input class="col-10 me-2" type="text" name="" id="refcode"
                     value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>
                 <a class="btn btn-copy me-2" id="btnref">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

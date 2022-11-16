@@ -20,22 +20,22 @@ class Homepage extends CI_Controller
         $url = "https://api.tracklessbank.com/v1/member/currency/getActiveCurrency";
         $currency   = apitrackless($url, json_encode($mdata))->message;
 
-        $data=array();
+        $data = array();
         foreach ($currency as $dt) {
             if ($dt->status == 'active') {
-                $temp["currency"]=$dt->currency;
-                $temp["symbol"]=$dt->symbol;
-                $temp["status"]=$dt->status;
-                $temp["balance"]=apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $dt->currency . "&userid=" . $_SESSION["user_id"])->message->balance;
-                array_push($data,(object) $temp);
+                $temp["currency"] = $dt->currency;
+                $temp["symbol"] = $dt->symbol;
+                $temp["status"] = $dt->status;
+                $temp["balance"] = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $dt->currency . "&userid=" . $_SESSION["user_id"])->message->balance;
+                array_push($data, (object) $temp);
             }
         }
 
-        $dataobj=(object)$data;
+        $dataobj = (object)$data;
 
         $data['title'] = "Freedy - Homepage";
         $footer["extra"]    = "member/js/js_index";
-        $body["currency"]=$dataobj;
+        $body["currency"] = $dataobj;
 
 
         $this->load->view('tamplate/header', $data);
@@ -129,9 +129,10 @@ class Homepage extends CI_Controller
             "timezone"  => $_SESSION["time_location"]
         );
         $result = apitrackless("https://api.tracklessbank.com/v1/member/history/getAll", json_encode($mdata));
+        $data['history'] = $result->message;
         $response = array(
             "token"     => $this->security->get_csrf_hash(),
-            "message"   => utf8_encode($this->load->view('member/history', $result->message, TRUE))
+            "message"   => utf8_encode($this->load->view('member/history', $data, TRUE))
         );
         echo json_encode($response);
     }

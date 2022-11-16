@@ -63,7 +63,7 @@ class Wallet extends CI_Controller
             return;
         }
 
-        $datas = array(
+        $infolist = array(
             "userid"    => $_SESSION["user_id"],
             "currency"  => $_SESSION["currency"],
             "ucode"     => $ucode,
@@ -73,7 +73,7 @@ class Wallet extends CI_Controller
         );
 
         $data['title'] = "Freedy - Wallet to Wallet";
-        $body["data"] = $datas;
+        $body["data"] = $infolist;
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/wallet/wallet-send-confirm', $body);

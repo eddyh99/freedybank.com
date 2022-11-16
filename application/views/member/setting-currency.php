@@ -1,32 +1,33 @@
 <div class="d-flex justify-content-center">
-    <div class="col-5">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 text-center mb-3">
                         <img src="<?= base_url(); ?>assets/img/logo-app-2.png" alt="" class="app-logo">
                     </div>
-                    <div class="col-7 text-center mb-3">
+                    <div class="col-10 text-center mb-3">
                         <span class="info-currency-bimg w-50">You can convert, custody and send in 50 currencies.
                             Select wich you need and you will get the connected IBAN</span>
                     </div>
-                    <div class="col-7 text-center mb-3">
+                    <div class="col-10 text-center mb-3">
                         <span class="com-currency-bimg w-50"> *Remember, you can activate the currency you need at any
                             moment</span>
                     </div>
                 </div>
 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-9 settings-currency d-flex">
+                    <div class="col-12 col-md-9 col-lg-9 settings-currency d-flex">
                         <div class="col-12 my-2 text-start">
                             <div class="col-12 px-0 check-currency overflow-auto">
                                 <div class="d-flex flex-row align-items-center form-check form-switch my-1 ps-4">
-                                    <label class="form-check-label w-50 me-3" for="usdollar">US DOLLAR</label>
+                                    <label class="form-check-label w-50 me-3 me-md-auto me-lg-3" for="usdollar">US
+                                        DOLLAR</label>
                                     <input class="form-check-input pill-currency" type="checkbox" id="usdollar" checked
                                         disabled>
                                 </div>
                                 <div class="d-flex flex-row align-items-center form-check form-switch my-1 ps-4">
-                                    <label class="form-check-label w-50 me-3" for="euro">EURO</label>
+                                    <label class="form-check-label w-50 me-3 me-md-auto me-lg-3" for="euro">EURO</label>
                                     <input class="form-check-input pill-currency" type="checkbox" id="euro" checked
                                         disabled>
                                 </div>
@@ -35,7 +36,8 @@
                                     if ($dt->currency != "USD" && $dt->currency != "EUR") {
                                 ?>
                                 <div class="d-flex flex-row align-items-center form-check form-switch my-1 ps-4">
-                                    <label class="form-check-label w-50 me-3" for="aeddirham"><?= $dt->name ?></label>
+                                    <label class="form-check-label w-50 me-3 me-md-auto me-lg-3"
+                                        for="aeddirham"><?= $dt->name ?></label>
                                     <input class="form-check-input pill-currency" type="checkbox"
                                         id="<?= $dt->currency ?>"
                                         <?php echo ($dt->status == 'active') ? "checked" : "" ?>
