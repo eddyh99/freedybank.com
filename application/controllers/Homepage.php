@@ -64,20 +64,15 @@ class Homepage extends CI_Controller
     public function wallet()
     {
         if (!empty($_GET["cur"])) {
-
             $url = "https://api.tracklessbank.com/v1/member/currency/getByCurrency?currency=" . $_GET["cur"] . "&userid=" . $_SESSION["user_id"];
             $result = apitrackless($url);
             if ($result->code == 200) {
                 $_SESSION["currency"] = @$_GET["cur"];
                 $_SESSION["symbol"] = $result->message->symbol;
-                $_SESSION["balance"] = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $_GET["cur"] . "&userid=" . $_SESSION["user_id"])->message->balance;
             } else {
                 $_SESSION["currency"] = "USD";
                 $_SESSION["symbol"] = "&dollar;";
-                $_SESSION["balance"] = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=USD&userid=" . $_SESSION["user_id"])->message->balance;
             }
-        } else {
-            $_SESSION["balance"] = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $_SESSION["currency"] . "&userid=" . $_SESSION["user_id"])->message->balance;
         }
 
         $mdata = array(
@@ -116,24 +111,24 @@ class Homepage extends CI_Controller
             return;
         }
 
-        $input=$this->input;
-		$tgl= explode("-",$this->security->xss_clean($input->post("tgl")));
-        $awal=date_format(date_create($tgl[0]),"Y-m-d");
-        $akhir=date_format(date_create($tgl[1]),"Y-m-d");
-        
-        $mdata=array(
-                "userid"    => $_SESSION["user_id"],
-                "currency"  => $_SESSION["currency"],
-                "date_start"=> $awal,
-                "date_end"  => $akhir,
-                "timezone"  => $_SESSION["time_location"]
-            );
-        $result=apitrackless("https://api.tracklessbank.com/v1/member/history/getAll",json_encode($mdata));
-        $data["history"]=$result->message;
-        $response=array(
-                    "token"     => $this->security->get_csrf_hash(),
-                    "message"   => utf8_encode($this->load->view('member/history',$data,TRUE))
-                );
+        $input = $this->input;
+        $tgl = explode("-", $this->security->xss_clean($input->post("tgl")));
+        $awal = date_format(date_create($tgl[0]), "Y-m-d");
+        $akhir = date_format(date_create($tgl[1]), "Y-m-d");
+
+        $mdata = array(
+            "userid"    => $_SESSION["user_id"],
+            "currency"  => $_SESSION["currency"],
+            "date_start" => $awal,
+            "date_end"  => $akhir,
+            "timezone"  => $_SESSION["time_location"]
+        );
+        $result = apitrackless("https://api.tracklessbank.com/v1/member/history/getAll", json_encode($mdata));
+        $data["history"] = $result->message;
+        $response = array(
+            "token"     => $this->security->get_csrf_hash(),
+            "message"   => utf8_encode($this->load->view('member/history', $data, TRUE))
+        );
         echo json_encode($response);
     }
 }
