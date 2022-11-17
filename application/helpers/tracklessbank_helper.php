@@ -17,3 +17,10 @@
         curl_close($ch);
         return $result;
     }
+    
+    function balance($userid,$currency){
+        $balance=apitrackless(
+                    "https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $currency . "&userid=" . $userid
+                )->message->balance;
+        return $balance;
+    }

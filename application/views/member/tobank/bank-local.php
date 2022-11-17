@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <select name="account_type" class="form-control me-2">
-                                            <option value="saving">Saving</option>
+                                            <option value="savings">Saving</option>
                                             <option value="checking">Checking</option>
                                         </select>
                                     </div>
