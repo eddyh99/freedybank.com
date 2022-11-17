@@ -1,61 +1,72 @@
 <script>
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
 
-  var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+var currentMonth = moment().month();
+var currentYear = moment().year();
 
-  var currentMonth= moment().month();
-  var currentYear= moment().year();
+var start = moment().subtract(29, 'days'); // Subtract 29 days from today
+var end = moment(); // Today
 
-  var start = moment().subtract(29, 'days'); // Subtract 29 days from today
-  var end = moment(); // Today
+var dateRange = {};
+dateRange["Today"] = [moment(), moment()];
+dateRange["Yesterday"] = [moment().subtract(1, 'days'), moment()];
+dateRange["Last 7 Days"] = [moment().subtract(7, 'days'), moment()];
+dateRange["Last 30 Days"] = [moment().subtract(29, 'days'), moment()];
 
-  var dateRange = {};
-  dateRange["Today"] = [moment(), moment()];
-  dateRange["Yesterday"] = [moment().subtract(1, 'days'), moment()];
-  dateRange["Last 7 Days"] = [moment().subtract(7, 'days'), moment()];
-  dateRange["Last 30 Days"] = [moment().subtract(29, 'days'), moment()];
-
-  $('#tgl').daterangepicker({
+$('#tgl').daterangepicker({
     startDate: end,
     endDate: end,
     ranges: dateRange,
-    minDate:moment().subtract(90, 'days'),
-    maxDate:moment(),
+    minDate: moment().subtract(90, 'days'),
+    maxDate: moment(),
     locale: {
-      format: 'MM/DD/YYYY'
+        format: 'MM/DD/YYYY'
     }
-  });
+});
 
 
-var tblhistory=
+var tblhistory =
     $('#tbl_history').DataTable({
         "scrollX": true,
         "responsive": true,
         "ajax": {
-            "url": "<?=base_url()?>admin/transactions/historybank",
+            "url": "<?= base_url() ?>admin/transactions/historybank",
             "type": "POST",
-            "data": function ( d ) {
-                    d.csrf_freedy = $("#token").val();
-                    d.tgl=$("#tgl").val()
-                },
-            "dataSrc":function (data){
+            "data": function(d) {
+                d.csrf_freedy = $("#token").val();
+                d.tgl = $("#tgl").val()
+            },
+            "dataSrc": function(data) {
                 $("#token").val(data["token"]);
                 console.log(data["history"]);
-				return data["history"];
-			},
+                return data["history"];
+            },
         },
-        "columns": [
-            { "data": "ket" },
-            { "data": "amount" },
-            { "data": "cost" },
-            { "data": "referral" },
-            { "data": "fee" },
-            { "data": "date_created" },
-        ]    
-    });   
-    
-    $('#view').on("click",function(e){
-        e.preventDefault();
-        tblhistory.ajax.reload();
+        "columns": [{
+                "data": "ket"
+            },
+            {
+                "data": "amount"
+            },
+            {
+                "data": "cost"
+            },
+            {
+                "data": "referral"
+            },
+            {
+                "data": "fee"
+            },
+            {
+                "data": "date_created"
+            },
+        ]
     });
+
+$('#tgl').on("change", function(e) {
+    e.preventDefault();
+    tblhistory.ajax.reload();
+});
 </script>

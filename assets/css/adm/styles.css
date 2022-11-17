@@ -12902,3 +12902,89 @@ body {
   background: #fff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
+
+.dataTables_scrollHeadInner,
+.dataTables_scrollHead,
+.dataTables_scrollHead table {
+  width: 100% !important;
+}
+
+.dataTables_scrollFoot,
+.dataTables_scrollFootInner,
+.dataTables_scrollFoot table {
+  width: 100% !important;
+}
+
+.dataTables_scrollBody,
+.dataTables_scrollBody table {
+  width: 100% !important;
+}
+
+.dataTables_scroll {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.datepicker-af {
+  margin: 1rem 0;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.paginate_button.current {
+  background: rgba(0, 71, 255, 0.25) !important;
+  border-radius: 8px;
+}
+
+.paginate_button {
+  border-radius: 8px;
+}
+
+.paginate_button:hover {
+  background: rgba(0, 71, 255, 0.25) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px;
+}
+
+.paginate_button.disabled:hover {
+  background: none !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+}
+
+.swap-selection select {
+  background: #FFFFFF;
+  border: 2px solid #0078F0;
+  border-radius: 20px;
+
+  background-color: #fff !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right .75rem center !important;
+  background-size: 16px 12px !important;
+
+  width: 100%;
+  height: 50px;
+}
+
+.swap-form-icon {
+  background: #FFFFFF;
+  border: 2px solid #0078F0;
+  border-radius: 20px;
+}
+
+.swap-form-icon label,
+.swap-form-icon input {
+  border: 0;
+  box-shadow: 0;
+  padding: .5rem 2rem;
+  background: #FFFFFF;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+
+.swap-form-icon input[readonly] {
+  background: #FFFFFF !important;
+}

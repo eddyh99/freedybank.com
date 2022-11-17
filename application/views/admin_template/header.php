@@ -7,13 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title><?=$title?></title>
+    <title><?= $title ?></title>
+
+    <!-- Favicons -->
+    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="icon">
+    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="apple-touch-icon">
+
     <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="<?=base_url()?>assets/css/adm/styles.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>assets/css/adm/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
 </head>
+
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-navbartop-freedy">
         <!-- Navbar Brand-->

@@ -1,26 +1,25 @@
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <div class="col-6 card my-5">
-                        <div class="card-header fw-bold">
-                            <i class="fas fa-money-bill-transfer me-1"></i>
-                            Withdraw Master Wallet
-                        </div>
-                        <div class="card-body">
-                            <form action="">
-                                <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                                <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Confirm Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+<input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
+    value="<?php echo $this->security->get_csrf_hash(); ?>">
 
-                                <button class="btn btn-freedy-white px-4 py-2 mx-2 shadow-none">Cancel</button>
-                                <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none">Confirm</button>
-                            </form>
-                        </div>
-                    </div>
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <div class="col-12 box-dashboard-freedy-top px-3 py-5 mt-3 mb-4 d-flex flex-row align-items-center">
+                <div class="d-flex flex-column me-auto">
+                    <h3 class="fw-bold text-blue-freedy mb-4">MASTER WALLET <?= $_SESSION["mwallet"] ?></h3>
+                    <h6 class="fw-bold">Balance</h6>
+                    <h4 class="fw-bold"><?= $_SESSION["symbol"] ?> <?= $_SESSION["balance"] ?></h4>
                 </div>
-            </main>
+                <img src="assets/img/logo.png" alt="" style="height: 75px;" class="me-5">
+            </div>
+            <div class="col-12 my-5 text-center">
+                <a href="<?= base_url() ?>admin/mwallet/wdlocal"
+                    class="btn btn-freedy-blue fw-bold px-5 py-3 mx-3">Local
+                    Bank</a>
+                <a href="<?= base_url() ?>admin/mwallet/wdinter"
+                    class="btn btn-freedy-blue fw-bold px-5 py-3 mx-3">Outside
+                    Circuit</a>
+            </div>
         </div>
-    </div>
+    </main>
+</div>
