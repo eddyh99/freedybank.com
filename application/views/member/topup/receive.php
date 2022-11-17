@@ -1,200 +1,88 @@
-<div class="container" style="margin-bottom: 8rem;">
-    <div class="app-container py-5">
-        <?php $this->load->view("member/header"); ?>
-        <div class="row d-flex justify-content-center">
-            <div class="col-10 mt-5">
-                <div class="d-flex flex-row justify-content-center flex-wrap" id="myTab" role="tablist">
-                    <label class="my-2" for="us-tab" style="cursor: pointer;">
-                        <div class="btn-selected-receive d-flex align-items-center">
-                            <?php 
-                            if (
-                                    ($_SESSION["currency"]=="USD") || 
-                                    ($_SESSION["currency"]=="EUR") ||
-                                    ($_SESSION["currency"]=="AUD") ||
-                                    ($_SESSION["currency"]=="NZD") ||
-                                    ($_SESSION["currency"]=="CAD") ||
-                                    ($_SESSION["currency"]=="HUF") ||
-                                    ($_SESSION["currency"]=="SGD") ||
-                                    ($_SESSION["currency"]=="TRY")
-                            ){?>
-                                <input class="form-check-input" name="bank" id="us-tab" data-bs-toggle="tab"
-                                    data-bs-target="#us" type="radio" role="tab" aria-controls="us" aria-selected="true"
-                                    autocomplete="off">
-                                <label for="us-tab">Local bank</label>
-                            <?php }else{?>
-                                <h1>If you want to topup <?=$_SESSION["currency"]?>, You need to convert another currency
-                            <?php }?>
-                        </div>
-                    </label>
-                    <?php if (($_SESSION["currency"]=="USD") || ($_SESSION["currency"]=="EUR")){?>
-                        <label class="my-2" for="inter-tab" style="cursor: pointer;">
-                            <div class="btn-selected-receive d-flex align-items-center">
-                                    <input class="form-check-input" name="bank" id="inter-tab" data-bs-toggle="tab"
-                                        data-bs-target="#inter" type="radio" role="tab" aria-controls="inter"
-                                        aria-selected="true" autocomplete="off">
-                                    <label for="inter-tab">International</label>
-                            </div>
-                        </label>
-                    <?php }?>
-                </div>
-                <div class="tab-content mt-5" id="myTabContent">
-                    <div class="tab-pane fade box-tab-currency" id="us" role="tabpanel" aria-labelledby="us-tab">
-                        <div class="row">
-                            <label>Registered Name</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="us1" placeholder="Registered Name" value="<?=@$bank->c_registered_name?>" readonly>
-                                <a class="btn btn-copy" id="btnus1">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label>Account Number</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="us2" placeholder="Routing Number" value="<?=@$bank->c_account_number?>" readonly>
-                                <a class="btn btn-copy" id="btnus2">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label>Routing Number</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="us3" placeholder="Account Number" value="<?=@$bank->c_routing_number?>" readonly>
-                                <a class="btn btn-copy" id="btnus3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label>Causal</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="us4" placeholder="Causal" value="Topup <?=$_SESSION["ucode"]?>" readonly>
-                                <a class="btn btn-copy" id="btnus4">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label>Company Address</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="us5" placeholder="Company Address" value="<?=@$bank->c_bank_address?>" readonly>
-                                <a class="btn btn-copy" id="btnus5">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
+<div class="d-flex justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
+        <div class="container" style="margin-bottom: 8rem;">
+            <div class="app-container py-5">
+                <?php $this->load->view("member/header"); ?>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 menus-list-app mb-4">
+                        <div class="col-12">
+                            <a href="<?= base_url() ?>homepage"
+                                class="d-flex flex-row justify-content-center align-items-center py-2 my-3">
+                                <svg width="26" height="27" viewBox="0 0 26 27" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.1 26.7982H3.9C3.55522 26.7982 3.22456 26.6463 2.98076 26.3759C2.73696 26.1055 2.6 25.7388 2.6 25.3564V13.8218H0L12.0796 0.422869C12.2003 0.288813 12.3437 0.182465 12.5015 0.109906C12.6593 0.0373469 12.8285 0 12.9993 0C13.1702 0 13.3394 0.0373469 13.4972 0.109906C13.655 0.182465 13.7984 0.288813 13.9191 0.422869L26 13.8218H23.4V25.3564C23.4 25.7388 23.263 26.1055 23.0192 26.3759C22.7754 26.6463 22.4448 26.7982 22.1 26.7982ZM10.4 16.7054H15.6V23.9146H20.8V12.132L13 3.48099L5.2 12.132V23.9146H10.4V16.7054Z"
+                                        fill="#0078F0" />
+                                </svg>
+                                <span class="ms-2">Home</span>
+                            </a>
+                            <a href="<?= base_url() ?>homepage/wallet"
+                                class="d-flex flex-row justify-content-center align-items-center py-2 my-3">
+                                <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M31.1666 16.3333C31.1666 20.0152 28.1818 23 24.4999 23C20.818 23 17.8333 20.0152 17.8333 16.3333C17.8333 12.6514 20.818 9.66667 24.4999 9.66667C28.1818 9.66667 31.1666 12.6514 31.1666 16.3333Z"
+                                        stroke="#0078F0" stroke-width="3" stroke-linecap="round" />
+                                    <path
+                                        d="M11.3017 30.8551C12.3529 28.6639 14.6856 27.5625 17.1158 27.5625H31.8842C34.3144 27.5625 36.6471 28.6639 37.6983 30.8551C38.6461 32.8308 39.6148 35.5852 39.7859 38.8115C39.8151 39.363 39.3648 39.8125 38.8125 39.8125H10.1875C9.63521 39.8125 9.18485 39.363 9.2141 38.8115C9.38522 35.5852 10.3539 32.8308 11.3017 30.8551Z"
+                                        stroke="#0078F0" stroke-width="3" stroke-linecap="round" />
+                                </svg>
+
+                                <span class="ms-2">My wallet</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="tab-pane fade box-tab-currency" id="inter" role="tabpanel" aria-labelledby="inter-tab">
-                        <div class="row'">
-                            <label>Registered Name</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="inter1"
-                                    value="<?=@$bank->oc_registered_name?>" readonly>
-                                <a class="btn btn-copy" id="btninter1">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
+                    <div class="col-12">
+                        <div class="receive-title d-flex flex-row justify-content-center align-items-center">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.0313 23.6979H16.2897C14.3501 23.6979 12.7605 22.0646 12.7605 20.0521C12.7605 19.4541 13.2563 18.9583 13.8542 18.9583C14.4522 18.9583 14.948 19.4541 14.948 20.0521C14.948 20.8541 15.5459 21.5104 16.2897 21.5104H19.0313C19.6001 21.5104 20.0522 21 20.0522 20.3729C20.0522 19.5854 19.8334 19.4687 19.3376 19.2937L14.948 17.7625C14.0147 17.4416 12.7605 16.7562 12.7605 14.6125C12.7605 12.7896 14.2043 11.2875 15.9688 11.2875H18.7105C20.6501 11.2875 22.2397 12.9208 22.2397 14.9333C22.2397 15.5312 21.7438 16.0271 21.1459 16.0271C20.548 16.0271 20.0522 15.5312 20.0522 14.9333C20.0522 14.1312 19.4542 13.475 18.7105 13.475H15.9688C15.4001 13.475 14.948 13.9854 14.948 14.6125C14.948 15.4 15.1667 15.5166 15.6626 15.6916L20.0522 17.2229C20.9855 17.5437 22.2397 18.2291 22.2397 20.3729C22.2397 22.2104 20.7959 23.6979 19.0313 23.6979Z"
+                                    fill="#0078F0" />
+                                <path
+                                    d="M17.5 25.1562C16.9021 25.1562 16.4062 24.6604 16.4062 24.0625V10.9375C16.4062 10.3396 16.9021 9.84375 17.5 9.84375C18.0979 9.84375 18.5938 10.3396 18.5938 10.9375V24.0625C18.5938 24.6604 18.0979 25.1562 17.5 25.1562Z"
+                                    fill="#0078F0" />
+                                <path
+                                    d="M17.5001 33.1771C8.85216 33.1771 1.823 26.1479 1.823 17.5C1.823 8.85209 8.85216 1.82292 17.5001 1.82292C18.098 1.82292 18.5938 2.31876 18.5938 2.91667C18.5938 3.51459 18.098 4.01042 17.5001 4.01042C10.0626 4.01042 4.0105 10.0625 4.0105 17.5C4.0105 24.9375 10.0626 30.9896 17.5001 30.9896C24.9376 30.9896 30.9897 24.9375 30.9897 17.5C30.9897 16.9021 31.4855 16.4063 32.0834 16.4063C32.6813 16.4063 33.1772 16.9021 33.1772 17.5C33.1772 26.1479 26.148 33.1771 17.5001 33.1771Z"
+                                    fill="#0078F0" />
+                                <path
+                                    d="M30.6251 11.3021H24.7917C24.1938 11.3021 23.698 10.8062 23.698 10.2083V4.375C23.698 3.77708 24.1938 3.28125 24.7917 3.28125C25.3897 3.28125 25.8855 3.77708 25.8855 4.375V9.11458H30.6251C31.223 9.11458 31.7188 9.61042 31.7188 10.2083C31.7188 10.8062 31.223 11.3021 30.6251 11.3021Z"
+                                    fill="#0078F0" />
+                                <path
+                                    d="M24.7915 11.3021C24.5144 11.3021 24.2374 11.2 24.0186 10.9813C23.5957 10.5583 23.5957 9.85834 24.0186 9.43542L31.3103 2.14376C31.7332 1.72084 32.4332 1.72084 32.8561 2.14376C33.279 2.56667 33.279 3.26667 32.8561 3.68959L25.5644 10.9813C25.3457 11.2 25.0686 11.3021 24.7915 11.3021Z"
+                                    fill="#0078F0" />
+                            </svg>
+                            <span class="ms-2">Add/receive funds</span>
                         </div>
-                        <div class="row">
-                            <label>Account Number</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="inter2"
-                                    value="<?=@$bank->oc_iban?>" readonly>
-                                <a class="btn btn-copy" id="btninter2">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
+                        <div class="col-12 receive-note d-flex justify-content-center text-center my-4">
+                            <span class="w-50">*You can recive in 10 currencies, each one
+                                have a connected IBAN :
+                            </span>
                         </div>
-                        <div class="row">
-                            <label>Swift Code</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="inter3"
-                                    value="<?=@$bank->oc_bic?>" readonly>
-                                <a class="btn btn-copy" id="btninter3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
+                        <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
+                            <?php
+                            if (
+                                ($_SESSION["currency"] == "USD") ||
+                                ($_SESSION["currency"] == "EUR") ||
+                                ($_SESSION["currency"] == "AUD") ||
+                                ($_SESSION["currency"] == "NZD") ||
+                                ($_SESSION["currency"] == "CAD") ||
+                                ($_SESSION["currency"] == "HUF") ||
+                                ($_SESSION["currency"] == "SGD") ||
+                                ($_SESSION["currency"] == "TRY")
+                            ) { ?>
+                            <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">Local bank</a>
+                            <?php } else { ?>
+
+                            <div class="receive-note">
+                                <span>If you want to topup <?= $_SESSION["currency"] ?>, You need to convert another
+                                    currency</span>
                             </div>
-                        </div>
-                        <div class="row">
-                            <label>Causal</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="inter4"
-                                    value="Topup <?=$_SESSION["ucode"]?>" readonly>
-                                <a class="btn btn-copy" id="btninter4">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label>Company Address</label>
-                            <div class="d-flex flex-row align-items-center my-3">
-                                <input class="form-control me-2" type="text" name="" id="inter5"
-                                    value="<?=@$bank->oc_bank_address?>" readonly>
-                                <a class="btn btn-copy" id="btninter5">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                            stroke="#0078F0" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
+
+                            <?php } ?>
+                            <?php if (($_SESSION["currency"] == "USD") || ($_SESSION["currency"] == "EUR")) { ?>
+                            <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

@@ -1,440 +1,68 @@
-<?php
-$countries_list = array(
-    array("name" => "Afghanistan", "code" => "AF"),
-    array("name" => "Aland Islands", "code" => "AX"),
-    array("name" => "Albania", "code" => "AL"),
-    array("name" => "Algeria", "code" => "DZ"),
-    array("name" => "American Samoa", "code" => "AS"),
-    array("name" => "Andorra", "code" => "AD"),
-    array("name" => "Angola", "code" => "AO"),
-    array("name" => "Anguilla", "code" => "AI"),
-    array("name" => "Antarctica", "code" => "AQ"),
-    array("name" => "Antigua and Barbuda", "code" => "AG"),
-    array("name" => "Argentina", "code" => "AR"),
-    array("name" => "Armenia", "code" => "AM"),
-    array("name" => "Aruba", "code" => "AW"),
-    array("name" => "Australia", "code" => "AU"),
-    array("name" => "Austria", "code" => "AT"),
-    array("name" => "Azerbaijan", "code" => "AZ"),
-    array("name" => "Bahamas", "code" => "BS"),
-    array("name" => "Bahrain", "code" => "BH"),
-    array("name" => "Bangladesh", "code" => "BD"),
-    array("name" => "Barbados", "code" => "BB"),
-    array("name" => "Belarus", "code" => "BY"),
-    array("name" => "Belgium", "code" => "BE"),
-    array("name" => "Belize", "code" => "BZ"),
-    array("name" => "Benin", "code" => "BJ"),
-    array("name" => "Bermuda", "code" => "BM"),
-    array("name" => "Bhutan", "code" => "BT"),
-    array("name" => "Bolivia", "code" => "BO"),
-    array("name" => "Bonaire, Sint Eustatius and Saba", "code" => "BQ"),
-    array("name" => "Bosnia and Herzegovina", "code" => "BA"),
-    array("name" => "Botswana", "code" => "BW"),
-    array("name" => "Bouvet Island", "code" => "BV"),
-    array("name" => "Brazil", "code" => "BR"),
-    array("name" => "British Indian Ocean Territory", "code" => "IO"),
-    array("name" => "Brunei Darussalam", "code" => "BN"),
-    array("name" => "Bulgaria", "code" => "BG"),
-    array("name" => "Burkina Faso", "code" => "BF"),
-    array("name" => "Burundi", "code" => "BI"),
-    array("name" => "Cambodia", "code" => "KH"),
-    array("name" => "Cameroon", "code" => "CM"),
-    array("name" => "Canada", "code" => "CA"),
-    array("name" => "Cape Verde", "code" => "CV"),
-    array("name" => "Cayman Islands", "code" => "KY"),
-    array("name" => "Central African Republic", "code" => "CF"),
-    array("name" => "Chad", "code" => "TD"),
-    array("name" => "Chile", "code" => "CL"),
-    array("name" => "China", "code" => "CN"),
-    array("name" => "Christmas Island", "code" => "CX"),
-    array("name" => "Cocos (Keeling) Islands", "code" => "CC"),
-    array("name" => "Colombia", "code" => "CO"),
-    array("name" => "Comoros", "code" => "KM"),
-    array("name" => "Congo", "code" => "CG"),
-    array("name" => "Congo, Democratic Republic of the Congo", "code" => "CD"),
-    array("name" => "Cook Islands", "code" => "CK"),
-    array("name" => "Costa Rica", "code" => "CR"),
-    array("name" => "Cote D'Ivoire", "code" => "CI"),
-    array("name" => "Croatia", "code" => "HR"),
-    array("name" => "Cuba", "code" => "CU"),
-    array("name" => "Curacao", "code" => "CW"),
-    array("name" => "Cyprus", "code" => "CY"),
-    array("name" => "Czech Republic", "code" => "CZ"),
-    array("name" => "Denmark", "code" => "DK"),
-    array("name" => "Djibouti", "code" => "DJ"),
-    array("name" => "Dominica", "code" => "DM"),
-    array("name" => "Dominican Republic", "code" => "DO"),
-    array("name" => "Ecuador", "code" => "EC"),
-    array("name" => "Egypt", "code" => "EG"),
-    array("name" => "El Salvador", "code" => "SV"),
-    array("name" => "Equatorial Guinea", "code" => "GQ"),
-    array("name" => "Eritrea", "code" => "ER"),
-    array("name" => "Estonia", "code" => "EE"),
-    array("name" => "Ethiopia", "code" => "ET"),
-    array("name" => "Falkland Islands (Malvinas)", "code" => "FK"),
-    array("name" => "Faroe Islands", "code" => "FO"),
-    array("name" => "Fiji", "code" => "FJ"),
-    array("name" => "Finland", "code" => "FI"),
-    array("name" => "France", "code" => "FR"),
-    array("name" => "French Guiana", "code" => "GF"),
-    array("name" => "French Polynesia", "code" => "PF"),
-    array("name" => "French Southern Territories", "code" => "TF"),
-    array("name" => "Gabon", "code" => "GA"),
-    array("name" => "Gambia", "code" => "GM"),
-    array("name" => "Georgia", "code" => "GE"),
-    array("name" => "Germany", "code" => "DE"),
-    array("name" => "Ghana", "code" => "GH"),
-    array("name" => "Gibraltar", "code" => "GI"),
-    array("name" => "Greece", "code" => "GR"),
-    array("name" => "Greenland", "code" => "GL"),
-    array("name" => "Grenada", "code" => "GD"),
-    array("name" => "Guadeloupe", "code" => "GP"),
-    array("name" => "Guam", "code" => "GU"),
-    array("name" => "Guatemala", "code" => "GT"),
-    array("name" => "Guernsey", "code" => "GG"),
-    array("name" => "Guinea", "code" => "GN"),
-    array("name" => "Guinea-Bissau", "code" => "GW"),
-    array("name" => "Guyana", "code" => "GY"),
-    array("name" => "Haiti", "code" => "HT"),
-    array("name" => "Heard Island and Mcdonald Islands", "code" => "HM"),
-    array("name" => "Holy See (Vatican City State)", "code" => "VA"),
-    array("name" => "Honduras", "code" => "HN"),
-    array("name" => "Hong Kong", "code" => "HK"),
-    array("name" => "Hungary", "code" => "HU"),
-    array("name" => "Iceland", "code" => "IS"),
-    array("name" => "India", "code" => "IN"),
-    array("name" => "Indonesia", "code" => "ID"),
-    array("name" => "Iran, Islamic Republic of", "code" => "IR"),
-    array("name" => "Iraq", "code" => "IQ"),
-    array("name" => "Ireland", "code" => "IE"),
-    array("name" => "Isle of Man", "code" => "IM"),
-    array("name" => "Israel", "code" => "IL"),
-    array("name" => "Italy", "code" => "IT"),
-    array("name" => "Jamaica", "code" => "JM"),
-    array("name" => "Japan", "code" => "JP"),
-    array("name" => "Jersey", "code" => "JE"),
-    array("name" => "Jordan", "code" => "JO"),
-    array("name" => "Kazakhstan", "code" => "KZ"),
-    array("name" => "Kenya", "code" => "KE"),
-    array("name" => "Kiribati", "code" => "KI"),
-    array("name" => "Korea, Democratic People's Republic of", "code" => "KP"),
-    array("name" => "Korea, Republic of", "code" => "KR"),
-    array("name" => "Kosovo", "code" => "XK"),
-    array("name" => "Kuwait", "code" => "KW"),
-    array("name" => "Kyrgyzstan", "code" => "KG"),
-    array("name" => "Lao People's Democratic Republic", "code" => "LA"),
-    array("name" => "Latvia", "code" => "LV"),
-    array("name" => "Lebanon", "code" => "LB"),
-    array("name" => "Lesotho", "code" => "LS"),
-    array("name" => "Liberia", "code" => "LR"),
-    array("name" => "Libyan Arab Jamahiriya", "code" => "LY"),
-    array("name" => "Liechtenstein", "code" => "LI"),
-    array("name" => "Lithuania", "code" => "LT"),
-    array("name" => "Luxembourg", "code" => "LU"),
-    array("name" => "Macao", "code" => "MO"),
-    array("name" => "Macedonia, the Former Yugoslav Republic of", "code" => "MK"),
-    array("name" => "Madagascar", "code" => "MG"),
-    array("name" => "Malawi", "code" => "MW"),
-    array("name" => "Malaysia", "code" => "MY"),
-    array("name" => "Maldives", "code" => "MV"),
-    array("name" => "Mali", "code" => "ML"),
-    array("name" => "Malta", "code" => "MT"),
-    array("name" => "Marshall Islands", "code" => "MH"),
-    array("name" => "Martinique", "code" => "MQ"),
-    array("name" => "Mauritania", "code" => "MR"),
-    array("name" => "Mauritius", "code" => "MU"),
-    array("name" => "Mayotte", "code" => "YT"),
-    array("name" => "Mexico", "code" => "MX"),
-    array("name" => "Micronesia, Federated States of", "code" => "FM"),
-    array("name" => "Moldova, Republic of", "code" => "MD"),
-    array("name" => "Monaco", "code" => "MC"),
-    array("name" => "Mongolia", "code" => "MN"),
-    array("name" => "Montenegro", "code" => "ME"),
-    array("name" => "Montserrat", "code" => "MS"),
-    array("name" => "Morocco", "code" => "MA"),
-    array("name" => "Mozambique", "code" => "MZ"),
-    array("name" => "Myanmar", "code" => "MM"),
-    array("name" => "Namibia", "code" => "NA"),
-    array("name" => "Nauru", "code" => "NR"),
-    array("name" => "Nepal", "code" => "NP"),
-    array("name" => "Netherlands", "code" => "NL"),
-    array("name" => "Netherlands Antilles", "code" => "AN"),
-    array("name" => "New Caledonia", "code" => "NC"),
-    array("name" => "New Zealand", "code" => "NZ"),
-    array("name" => "Nicaragua", "code" => "NI"),
-    array("name" => "Niger", "code" => "NE"),
-    array("name" => "Nigeria", "code" => "NG"),
-    array("name" => "Niue", "code" => "NU"),
-    array("name" => "Norfolk Island", "code" => "NF"),
-    array("name" => "Northern Mariana Islands", "code" => "MP"),
-    array("name" => "Norway", "code" => "NO"),
-    array("name" => "Oman", "code" => "OM"),
-    array("name" => "Pakistan", "code" => "PK"),
-    array("name" => "Palau", "code" => "PW"),
-    array("name" => "Palestinian Territory, Occupied", "code" => "PS"),
-    array("name" => "Panama", "code" => "PA"),
-    array("name" => "Papua New Guinea", "code" => "PG"),
-    array("name" => "Paraguay", "code" => "PY"),
-    array("name" => "Peru", "code" => "PE"),
-    array("name" => "Philippines", "code" => "PH"),
-    array("name" => "Pitcairn", "code" => "PN"),
-    array("name" => "Poland", "code" => "PL"),
-    array("name" => "Portugal", "code" => "PT"),
-    array("name" => "Puerto Rico", "code" => "PR"),
-    array("name" => "Qatar", "code" => "QA"),
-    array("name" => "Reunion", "code" => "RE"),
-    array("name" => "Romania", "code" => "RO"),
-    array("name" => "Russian Federation", "code" => "RU"),
-    array("name" => "Rwanda", "code" => "RW"),
-    array("name" => "Saint Barthelemy", "code" => "BL"),
-    array("name" => "Saint Helena", "code" => "SH"),
-    array("name" => "Saint Kitts and Nevis", "code" => "KN"),
-    array("name" => "Saint Lucia", "code" => "LC"),
-    array("name" => "Saint Martin", "code" => "MF"),
-    array("name" => "Saint Pierre and Miquelon", "code" => "PM"),
-    array("name" => "Saint Vincent and the Grenadines", "code" => "VC"),
-    array("name" => "Samoa", "code" => "WS"),
-    array("name" => "San Marino", "code" => "SM"),
-    array("name" => "Sao Tome and Principe", "code" => "ST"),
-    array("name" => "Saudi Arabia", "code" => "SA"),
-    array("name" => "Senegal", "code" => "SN"),
-    array("name" => "Serbia", "code" => "RS"),
-    array("name" => "Serbia and Montenegro", "code" => "CS"),
-    array("name" => "Seychelles", "code" => "SC"),
-    array("name" => "Sierra Leone", "code" => "SL"),
-    array("name" => "Singapore", "code" => "SG"),
-    array("name" => "Sint Maarten", "code" => "SX"),
-    array("name" => "Slovakia", "code" => "SK"),
-    array("name" => "Slovenia", "code" => "SI"),
-    array("name" => "Solomon Islands", "code" => "SB"),
-    array("name" => "Somalia", "code" => "SO"),
-    array("name" => "South Africa", "code" => "ZA"),
-    array("name" => "South Georgia and the South Sandwich Islands", "code" => "GS"),
-    array("name" => "South Sudan", "code" => "SS"),
-    array("name" => "Spain", "code" => "ES"),
-    array("name" => "Sri Lanka", "code" => "LK"),
-    array("name" => "Sudan", "code" => "SD"),
-    array("name" => "Suriname", "code" => "SR"),
-    array("name" => "Svalbard and Jan Mayen", "code" => "SJ"),
-    array("name" => "Swaziland", "code" => "SZ"),
-    array("name" => "Sweden", "code" => "SE"),
-    array("name" => "Switzerland", "code" => "CH"),
-    array("name" => "Syrian Arab Republic", "code" => "SY"),
-    array("name" => "Taiwan, Province of China", "code" => "TW"),
-    array("name" => "Tajikistan", "code" => "TJ"),
-    array("name" => "Tanzania, United Republic of", "code" => "TZ"),
-    array("name" => "Thailand", "code" => "TH"),
-    array("name" => "Timor-Leste", "code" => "TL"),
-    array("name" => "Togo", "code" => "TG"),
-    array("name" => "Tokelau", "code" => "TK"),
-    array("name" => "Tonga", "code" => "TO"),
-    array("name" => "Trinidad and Tobago", "code" => "TT"),
-    array("name" => "Tunisia", "code" => "TN"),
-    array("name" => "Turkey", "code" => "TR"),
-    array("name" => "Turkmenistan", "code" => "TM"),
-    array("name" => "Turks and Caicos Islands", "code" => "TC"),
-    array("name" => "Tuvalu", "code" => "TV"),
-    array("name" => "Uganda", "code" => "UG"),
-    array("name" => "Ukraine", "code" => "UA"),
-    array("name" => "United Arab Emirates", "code" => "AE"),
-    array("name" => "United Kingdom", "code" => "GB"),
-    array("name" => "United States", "code" => "US"),
-    array("name" => "United States Minor Outlying Islands", "code" => "UM"),
-    array("name" => "Uruguay", "code" => "UY"),
-    array("name" => "Uzbekistan", "code" => "UZ"),
-    array("name" => "Vanuatu", "code" => "VU"),
-    array("name" => "Venezuela", "code" => "VE"),
-    array("name" => "Viet Nam", "code" => "VN"),
-    array("name" => "Virgin Islands, British", "code" => "VG"),
-    array("name" => "Virgin Islands, U.s.", "code" => "VI"),
-    array("name" => "Wallis and Futuna", "code" => "WF"),
-    array("name" => "Western Sahara", "code" => "EH"),
-    array("name" => "Yemen", "code" => "YE"),
-    array("name" => "Zambia", "code" => "ZM"),
-    array("name" => "Zimbabwe", "code" => "ZW")
-);
+<div class="d-flex justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
+        <div class="container" style="margin-bottom: 8rem;">
+            <div class="app-container py-5">
+                <?php $this->load->view("member/header"); ?>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 menus-list-app mb-4">
+                        <div class="col-12">
+                            <a href="<?= base_url() ?>homepage"
+                                class="d-flex flex-row justify-content-center align-items-center py-2 my-3">
+                                <svg width="26" height="27" viewBox="0 0 26 27" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.1 26.7982H3.9C3.55522 26.7982 3.22456 26.6463 2.98076 26.3759C2.73696 26.1055 2.6 25.7388 2.6 25.3564V13.8218H0L12.0796 0.422869C12.2003 0.288813 12.3437 0.182465 12.5015 0.109906C12.6593 0.0373469 12.8285 0 12.9993 0C13.1702 0 13.3394 0.0373469 13.4972 0.109906C13.655 0.182465 13.7984 0.288813 13.9191 0.422869L26 13.8218H23.4V25.3564C23.4 25.7388 23.263 26.1055 23.0192 26.3759C22.7754 26.6463 22.4448 26.7982 22.1 26.7982ZM10.4 16.7054H15.6V23.9146H20.8V12.132L13 3.48099L5.2 12.132V23.9146H10.4V16.7054Z"
+                                        fill="#0078F0" />
+                                </svg>
+                                <span class="ms-2">Home</span>
+                            </a>
+                            <a href="<?= base_url() ?>homepage/wallet"
+                                class="d-flex flex-row justify-content-center align-items-center py-2 my-3">
+                                <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M31.1666 16.3333C31.1666 20.0152 28.1818 23 24.4999 23C20.818 23 17.8333 20.0152 17.8333 16.3333C17.8333 12.6514 20.818 9.66667 24.4999 9.66667C28.1818 9.66667 31.1666 12.6514 31.1666 16.3333Z"
+                                        stroke="#0078F0" stroke-width="3" stroke-linecap="round" />
+                                    <path
+                                        d="M11.3017 30.8551C12.3529 28.6639 14.6856 27.5625 17.1158 27.5625H31.8842C34.3144 27.5625 36.6471 28.6639 37.6983 30.8551C38.6461 32.8308 39.6148 35.5852 39.7859 38.8115C39.8151 39.363 39.3648 39.8125 38.8125 39.8125H10.1875C9.63521 39.8125 9.18485 39.363 9.2141 38.8115C9.38522 35.5852 10.3539 32.8308 11.3017 30.8551Z"
+                                        stroke="#0078F0" stroke-width="3" stroke-linecap="round" />
+                                </svg>
+                                <span class="ms-2">My wallet</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="receive-title d-flex flex-row justify-content-center align-items-center mb-4">
+                            <svg width="39" height="36" viewBox="0 0 39 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.875 31.5H34.125M9.75 27V15M16.25 27V15M22.75 27V15M29.25 27V15M32.5 10.5L20.189 3.39749C19.939 3.25329 19.8141 3.18119 19.68 3.15307C19.5615 3.12822 19.4385 3.12822 19.32 3.15307C19.1859 3.18119 19.061 3.25329 18.811 3.39749L6.5 10.5H32.5Z"
+                                    stroke="#0078F0" stroke-width="2.7" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
 
-?>
-<div class="container" style="margin-bottom: 8rem;">
-    <div class="app-container py-5">
-        <?php $this->load->view("member/header"); ?>
-        <?php if (@isset($_SESSION["failed"])) { ?>
-        <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
-        <?php if (@isset($_SESSION["success"])) { ?>
-        <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
-        <div class="row d-flex justify-content-center">
-            <div class="col-10 col-lg-8 mt-5">
-                <div class="d-flex flex-row justify-content-center flex-wrap" id="myTab" role="tablist">
-                    <label class="my-2" for="us-tab" style="cursor: pointer;">
-                        <div class="btn-selected-receive d-flex align-items-center">
-                            <input class="form-check-input" name="transfer_type" id="us-tab" data-bs-toggle="tab"
-                                data-bs-target="#us" type="radio" role="tab" aria-controls="us" aria-selected="true"
-                                autocomplete="off" value="circuit">
-                            <label for="us-tab">Local bank</label>
+
+                            <span class="ms-2">Wallet to bank</span>
                         </div>
-                    </label>
-                    <?php if ($_SESSION["currency"]=="USD" || $_SESSION["currency"]=="EUR"){?>
-                    <label class="my-2" for="inter-tab" style="cursor: pointer;">
-                        <div class="btn-selected-receive d-flex align-items-center">
-                            <input class="form-check-input" name="transfer_type" id="inter-tab" data-bs-toggle="tab"
-                                data-bs-target="#inter" type="radio" role="tab" aria-controls="inter"
-                                aria-selected="true" autocomplete="off" value="outside">
-                            <label for="inter-tab">International</label>
+                        <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
+                            <?php if (@isset($_SESSION["failed"])) { ?>
+                            <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <?php } ?>
+                            <?php if (@isset($_SESSION["success"])) { ?>
+                            <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
+                                <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <?php } ?>
+                            <a href="<?= base_url() ?>bank/local" class="col-8 py-3 my-2">Local bank</a>
+                            <a href="<?= base_url() ?>bank/inter" class="col-8 py-3 my-2">Outside Circuit</a>
                         </div>
-                    </label>
-                    <?php }?>
-                </div>
-                <div class="tab-content mt-5" id="myTabContent">
-                    <form action="<?=base_url()?>bank/bankconfirm" method="post">
-                        <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                        <input type="hidden" name="transfer_type" value="circuit">
-                        <div class="tab-pane fade box-tab-bank" id="us" role="tabpanel" aria-labelledby="us-tab">
-                            <?php if (($_SESSION["currency"]=="AED")||($_SESSION["currency"]=="EUR")){?>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="us1" placeholder="Recipient's Name">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="us2" placeholder="IBAN">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="us3" placeholder="Amount">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="us4" placeholder="Causal">
-                                    </div>
-                            <?php }elseif ($_SESSION["currency"]=="USD"){?>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="inter1"
-                                            placeholder="Recipient">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="inter2"
-                                            placeholder="Account Number">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="swift" id="inter3"
-                                            placeholder="Routing Number">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <select name="account_type" class="form-select">
-                                            <option value="savings">Savings</option>
-                                            <option value="checking">Checking</option>
-                                        </select>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="inter4"
-                                            placeholder="Amount">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="inter5"
-                                            placeholder="Causal">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="address" id="inter6"
-                                            placeholder="Recipient Address">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="city" id="inter7"
-                                            placeholder="Recipient City">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="state" id="inter8"
-                                            placeholder="Recipient State">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="postalcode" id="inter9"
-                                            placeholder="Recipient Postalcode">
-                                    </div>
-                            <?php }?>
-                            <button type="submit" class="btn btn-primary">Next</button>
-                        </div>
-                    </form>
-                    <form action="<?=base_url()?>bank/bankconfirm" method="post">
-                        <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                        <input type="hidden" name="transfer_type" value="outside">
-                        <div class="tab-pane fade box-tab-bank" id="inter" role="tabpanel" aria-labelledby="inter-tab">
-                            <?php if ($_SESSION["currency"]=="USD"){?>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="recipient" id="inter1"
-                                        placeholder="Recipient">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="account_number" id="inter2"
-                                        placeholder="Account Number">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="swift" id="inter3"
-                                        placeholder="BIC/swift">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <select name="account_type" class="form-select">
-                                        <option value="saving">Saving</option>
-                                        <option value="checking">Checking</option>
-                                    </select>
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="amount" id="inter4"
-                                        placeholder="Amount">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="causal" id="inter5"
-                                        placeholder="Causal">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="address" id="inter6"
-                                        placeholder="Recipient Address">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="city" id="inter7"
-                                        placeholder="Recipient City">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="state" id="inter8"
-                                        placeholder="Recipient State">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="postalcode" id="inter9"
-                                        placeholder="Recipient Postalcode">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <select name="country" class="form-select" id="country">
-                                        <?php foreach ($countries_list as $dt){
-                                            if ($dt["code"]!="US"){
-                                        ?>
-                                                <option value="<?=$dt["code"]?>"><?=$dt["name"]?></option>
-                                        <?php }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            <?php }elseif($_SESSION["currency"]=="EUR"){?>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="recipient" id="us1" placeholder="Recipient's Name">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="account_number" id="us2" placeholder="IBAN">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="swift" id="us2" placeholder="BIC/SWIFT">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="amount" id="us3" placeholder="Amount">
-                                </div>
-                                <div class="d-flex flex-row align-items-center my-3">
-                                    <input class="form-control me-2" type="text" name="causal" id="us4" placeholder="Causal">
-                                </div>
-                            <?php }?>
-                            <button type="submit" class="btn btn-primary">Next</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

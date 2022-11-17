@@ -1,87 +1,27 @@
-        <div class="row">
-            <div class="col-12 col-lg-2 text-center mb-3 mb-lg-0">
-                <a href="<?= base_url() ?>homepage/">
-                    <img src="assets/img/freedy/logo-app.png" alt="" class="app-logo">
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+        <div class="col-12 box-code-freedy px-4 py-3">
+            <div class="copy-uqcode mt-3 mb-4 d-flex flex-row">
+                <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
+                <img src="<?= base_url() ?>assets/img/logo-2.png" alt="">
+            </div>
+            <div class="mywallet d-flex flex-column mb-4">
+                <span class="balance">Balance</span>
+                <span class="saldo"><?= $_SESSION["symbol"] ?>
+                    <?= number_format($_SESSION["balance"], 2) ?></span>
+            </div>
+            <span class="">Copy & share your referral link to earn money</span>
+            <div class="copy-refcode d-flex flex-row justify-content-start mb-4">
+                <input class="col-10 me-2" type="text" name="" id="refcode"
+                    value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>
+                <a class="btn btn-copy me-2" id="btnref">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.16675 12.5C3.39018 12.5 3.00189 12.5 2.69561 12.3731C2.28723 12.204 1.96277 11.8795 1.79362 11.4711C1.66675 11.1649 1.66675 10.7766 1.66675 10V4.33333C1.66675 3.39991 1.66675 2.9332 1.8484 2.57668C2.00819 2.26308 2.26316 2.00811 2.57676 1.84832C2.93328 1.66666 3.39999 1.66666 4.33341 1.66666H10.0001C10.7767 1.66666 11.1649 1.66666 11.4712 1.79353C11.8796 1.96269 12.2041 2.28714 12.3732 2.69553C12.5001 3.00181 12.5001 3.39009 12.5001 4.16666M10.1667 18.3333H15.6667C16.6002 18.3333 17.0669 18.3333 17.4234 18.1517C17.737 17.9919 17.992 17.7369 18.1518 17.4233C18.3334 17.0668 18.3334 16.6001 18.3334 15.6667V10.1667C18.3334 9.23324 18.3334 8.76653 18.1518 8.41001C17.992 8.09641 17.737 7.84144 17.4234 7.68165C17.0669 7.5 16.6002 7.5 15.6667 7.5H10.1667C9.23333 7.5 8.76662 7.5 8.4101 7.68165C8.09649 7.84144 7.84153 8.09641 7.68174 8.41001C7.50008 8.76653 7.50008 9.23324 7.50008 10.1667V15.6667C7.50008 16.6001 7.50008 17.0668 7.68174 17.4233C7.84153 17.7369 8.09649 17.9919 8.4101 18.1517C8.76662 18.3333 9.23333 18.3333 10.1667 18.3333Z"
+                            stroke="#0078F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </a>
             </div>
-            <div class="col-12 col-lg-8 d-flex justify-content-center">
-                <div class="col-12 col-sm-10 col-lg-10 box-code-freedy px-4 py-3">
-                    <div class="copy-uqcode d-flex flex-row mb-3">
-                        <span class="me-1">Unique Code :</span>
-                        <input class="me-2" type="text" name="" id="uqcode" value="<?= $_SESSION["ucode"] ?>" readonly>
-                        <a class="btn btn-copy" id="btnuq">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                    stroke="#0078F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                    <span>Copy and share your referral code to earn money</span>
-                    <div class="copy-refcode d-flex flex-row">
-                        <input class="w-100 me-2" type="text" name="" id="refcode"
-                            value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>
-                        <a class="btn btn-copy me-2" id="btnref">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M10.5 2.0028C9.82495 2.01194 9.4197 2.05103 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8.05103 3.4197 8.01194 3.82495 8.0028 4.5M19.5 2.0028C20.1751 2.01194 20.5803 2.05103 20.908 2.21799C21.2843 2.40973 21.5903 2.71569 21.782 3.09202C21.949 3.4197 21.9881 3.82494 21.9972 4.49999M21.9972 13.5C21.9881 14.175 21.949 14.5803 21.782 14.908C21.5903 15.2843 21.2843 15.5903 20.908 15.782C20.5803 15.949 20.1751 15.9881 19.5 15.9972M22 7.99999V9.99999M14.0001 2H16M5.2 22H12.8C13.9201 22 14.4802 22 14.908 21.782C15.2843 21.5903 15.5903 21.2843 15.782 20.908C16 20.4802 16 19.9201 16 18.8V11.2C16 10.0799 16 9.51984 15.782 9.09202C15.5903 8.71569 15.2843 8.40973 14.908 8.21799C14.4802 8 13.9201 8 12.8 8H5.2C4.0799 8 3.51984 8 3.09202 8.21799C2.71569 8.40973 2.40973 8.71569 2.21799 9.09202C2 9.51984 2 10.0799 2 11.2V18.8C2 19.9201 2 20.4802 2.21799 20.908C2.40973 21.2843 2.71569 21.5903 3.09202 21.782C3.51984 22 4.07989 22 5.2 22Z"
-                                    stroke="#0078F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                        <a class="btn btn-copy me-2">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M20.7914 12.6075C21.0355 12.3982 21.1575 12.2936 21.2023 12.1691C21.2415 12.0598 21.2415 11.9403 21.2023 11.831C21.1575 11.7065 21.0355 11.6019 20.7914 11.3926L12.3206 4.13202C11.9004 3.77182 11.6903 3.59172 11.5124 3.58731C11.3578 3.58348 11.2101 3.6514 11.1124 3.77128C11 3.90921 11 4.18595 11 4.73942V9.03468C8.86532 9.40813 6.91159 10.4898 5.45971 12.1139C3.87682 13.8846 3.00123 16.176 3 18.551V19.163C4.04934 17.8989 5.35951 16.8766 6.84076 16.166C8.1467 15.5395 9.55842 15.1684 11 15.0706V19.2607C11 19.8141 11 20.0909 11.1124 20.2288C11.2101 20.3487 11.3578 20.4166 11.5124 20.4128C11.6903 20.4084 11.9004 20.2283 12.3206 19.8681L20.7914 12.6075Z"
-                                    stroke="#0078F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="d-none d-lg-grid col-lg-2">
-                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#logout">
-                    <svg width="53" height="84" viewBox="0 0 53 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M51 24.603L2 24.603" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M51 42L2 42" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M51 59.397L2 59.397" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
         </div>
-        <div class="menu-logout">
-            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#logout">
-                <svg width="53" height="84" viewBox="0 0 53 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M51 24.603L2 24.603" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M51 42L2 42" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M51 59.397L2 59.397" stroke="#0078F0" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="logoutLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="logoutLabel">Warning</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure ?
-                    </div>
-                    <div class="modal-footer">
-                        <a href="<?= base_url('auth/logout') ?>" type="button" class="btn btn-primary">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
