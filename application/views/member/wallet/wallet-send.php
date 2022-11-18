@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
                                         <a href="<?= base_url() ?>wallet"
-                                            class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                            class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
                                     </div>
                                 </div>

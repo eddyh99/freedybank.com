@@ -71,7 +71,7 @@
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <select name="country" class="form-control me-2" id="country">
                                             <?php
-                                            foreach ($countries_list as $dt) {
+                                                foreach ($countries_list as $dt) {
                                                     if ($dt["code"] != "US") {
                                                 ?>
                                             <option value="<?= $dt["code"] ?>"><?= $dt["name"] ?></option>
@@ -104,7 +104,7 @@
                                     <?php } ?>
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
-                                            class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                            class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-1" type="submit">Confirm</button>
                                     </div>
                                 </div>

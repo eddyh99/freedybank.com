@@ -94,7 +94,7 @@
                                     <?php } ?>
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
-                                            class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                            class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-1" type="submit">Confirm</button>
                                     </div>
                                 </div>

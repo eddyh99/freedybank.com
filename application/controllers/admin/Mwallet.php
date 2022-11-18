@@ -71,7 +71,7 @@ class Mwallet extends CI_Controller
     public function wdlocal()
     {
         $data = array(
-            "title"     => "FreedyBank - Withdraw Master Wallet",
+            "title"     => "FreedyBank - Withdraw Local",
             "content"   => "admin/mwallet/withdraw-local",
         );
 
@@ -81,24 +81,14 @@ class Mwallet extends CI_Controller
     public function wdinter()
     {
         $data = array(
-            "title"     => "FreedyBank - Withdraw Master Wallet",
+            "title"     => "FreedyBank - Withdraw International",
             "content"   => "admin/mwallet/withdraw-inter",
         );
 
         $this->load->view('admin_template/wrapper2', $data);
     }
 
-    public function confirm()
-    {
-        $data = array(
-            "title"     => "FreedyBank - Withdraw Master Wallet",
-            "content"   => "admin/mwallet/wdconfirm",
-        );
-
-        $this->load->view('admin_template/wrapper2', $data);
-    }
-
-    public function wdlocalconfirm()
+    public function wdconfirm()
     {
         $this->form_validation->set_rules('account_number', 'Account Number/IBAN', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('recipient', 'Recipient', 'trim|required');
@@ -129,13 +119,12 @@ class Mwallet extends CI_Controller
 
         $input    = $this->input;
         $mdata = array(
-            "userid"            => $_SESSION["user_id"],
-            "currency"          => $_SESSION["currency"],
             "amount"            => $this->security->xss_clean($input->post("amount")),
+            "currency"          => $_SESSION["currency"],
             "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/bankSummary", json_encode($mdata));
+        $result = apitrackless("https://api.tracklessbank.com/v1/admin/withdraw/withdrawSummary", json_encode($mdata));
 
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", "Insuffisient Fund");
@@ -143,6 +132,8 @@ class Mwallet extends CI_Controller
         }
 
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
+        $temp["fee"]               = $result->message->fee;
+        $temp["deduct"]            = $result->message->deduct;
         $temp["account_number"]    = $this->security->xss_clean($input->post("account_number"));
         $temp["recipient"]         = $this->security->xss_clean($input->post("recipient"));
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
@@ -175,38 +166,41 @@ class Mwallet extends CI_Controller
         $this->load->view('admin_template/wrapper2', $data);
     }
 
-    public function wdinterconfirm()
+    public function wdnotif()
     {
+        $input          = $this->input;
+        $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $this->form_validation->set_rules('account_number', 'Account Number/IBAN', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('recipient', 'Recipient', 'trim|required');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('causal', 'Causal', 'trim|required');
         if ($_SESSION["currency"] == "USD") {
-            $this->form_validation->set_rules(
-                'account_type',
-                'Account Type',
-                array(
-                    'trim',
-                    'required',
+            if ($transfer_type == 'circuit') {
+                $this->form_validation->set_rules(
+                    'account_type',
+                    'Account Type',
                     array(
-                        'undefined',
-                        function ($str) {
-                            return $str === "savings" || $str === "checking";
-                        }
+                        'trim',
+                        'required',
+                        array(
+                            'undefined',
+                            function ($str) {
+                                return $str === "savings" || $str === "checking";
+                            }
+                        )
+                    ),
+                    array(
+                        'undefined' => 'Unknown {field} [' . $this->input->post('account_type') . ']',
                     )
-                ),
-                array(
-                    'undefined' => 'Unknown {field} [' . $this->input->post('account_type') . ']',
-                )
-            );
+                );
+            }
         }
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());
-            redirect(base_url() . "admin/mwallet/wdinter");
+            redirect(base_url() . "admin/mwallet/withdraw");
         }
 
-        $input            = $this->input;
         $amount         = $this->security->xss_clean($input->post("amount"));
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $recipient      = $this->security->xss_clean($input->post("recipient"));
@@ -216,15 +210,16 @@ class Mwallet extends CI_Controller
         if ($_SESSION["currency"] == "USD") {
             $bank_name      = $this->security->xss_clean($input->post("bank_name"));
             $address        = $this->security->xss_clean($input->post("address"));
-            $account_type   = $this->security->xss_clean($input->post("account_type"));
             $city           = $this->security->xss_clean($input->post("city"));
             $state          = $this->security->xss_clean($input->post("state"));
             $postalcode     = $this->security->xss_clean($input->post("postalcode"));
 
             if ($transfer_type == "circuit") {
-                $country    = "US";
+                $country        = "US";
+                $account_type   = $this->security->xss_clean($input->post("account_type"));
             } elseif ($transfer_type == "outside") {
-                $country     = $this->security->xss_clean($input->post("country"));
+                $country        = $this->security->xss_clean($input->post("country"));
+                $account_type   = NULL;
             }
         }
 
@@ -248,21 +243,18 @@ class Mwallet extends CI_Controller
             )
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/bankTransfer", json_encode($mdata));
+        $result = apitrackless("https://api.tracklessbank.com/v1/admin/withdraw/withdrawTransfer", json_encode($mdata));
+
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", $result->message);
-            redirect(base_url() . "admin/mwallet/wdinter");
+            redirect(base_url() . "admin/mwallet/withdraw");
         }
 
-        $receive = array(
+        $data = array(
+            "title"     => "FreedyBank - Withdraw Success",
+            "content"   => "admin/mwallet/wdnotif",
             "amount"    => $amount,
             "recipient" => $recipient
-        );
-
-        $data = array(
-            "title"     => "FreedyBank - Withdraw Confirm",
-            "content"   => "admin/mwallet/wdconfirm",
-            "data"      => $receive
         );
 
         $this->load->view('admin_template/wrapper2', $data);

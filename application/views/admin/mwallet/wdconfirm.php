@@ -7,7 +7,7 @@
                     Withdraw International
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url() ?>bank/banknotif" method="post">
+                    <form action="<?= base_url() ?>admin/mwallet/wdnotif" method="post">
                         <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
                             value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <input type="hidden" name="account_number" value="<?= $data["account_number"] ?>">
@@ -27,7 +27,7 @@
                         <input type="hidden" name="country" value="<?= $data["country"] ?>">
                         <?php } ?>
                         <div class="mb-3">
-                            <span class="form-label">Receptients uniqeu code</span>
+                            <span class="form-label">Receptients Name</span>
                             <span class="form-control border-0 px-0"><?= $data["recipient"] ?></span>
                         </div>
                         <div class="mb-3">
@@ -45,7 +45,7 @@
                         <div class="mb-3">
                             <span class="form-label">New Balance</span>
                             <span
-                                class="form-control border-0 px-0"><?= $_SESSION['balance'] - $data["deduct"] ?></span>
+                                class="form-control border-0 px-0"><?= balanceadmin($_SESSION["currency"]) - $data["deduct"] ?></span>
                         </div>
                         <div class="mb-3">
                             <a href="<?= base_url() ?>admin/mwallet/withdraw"
