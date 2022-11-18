@@ -1,4 +1,4 @@
-<?php $this->load->view("admin/mwallet/countries-list"); ?>
+<?php require_once("countries-list.php"); ?>
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
@@ -35,12 +35,6 @@
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="swift" id="inter3" placeholder="BIC/swift">
-                        </div>
-                        <div class="mb-3">
-                            <select name="account_type" class="form-select">
-                                <option value="saving">Saving</option>
-                                <option value="checking">Checking</option>
-                            </select>
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="amount" id="inter4" placeholder="Amount">
