@@ -31,7 +31,7 @@
                                 <input type="hidden" name="country" value="<?= $data["country"] ?>">
                                 <?php } ?>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Receptients uniqeu code</span>
+                                    <span>Recipients Name</span>
                                     <span><?= $data["recipient"] ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Transaction fee</span>
-                                    <span><?= number_format($data["fee"] + $data["cost"], 2) ?></span>
+                                    <span><?= number_format($data["fee"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Total Deducted</span>
@@ -53,7 +53,7 @@
 
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>bank"
-                                        class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                        class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                     <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
                                 </div>
                             </form>

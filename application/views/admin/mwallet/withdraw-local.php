@@ -20,7 +20,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php } ?>
-                    <form action="<?= base_url() ?>admin/mwallet/wdlocalconfirm" method="post">
+                    <form action="<?= base_url() ?>admin/mwallet/wdconfirm" method="post">
                         <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
                             value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <input type="hidden" name="transfer_type" value="circuit">
