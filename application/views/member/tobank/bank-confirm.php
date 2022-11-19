@@ -19,30 +19,41 @@
                                 <input type="hidden" name="causal" value="<?= $data["causal"] ?>">
                                 <input type="hidden" name="amount" value="<?= $data["amount"] ?>">
                                 <input type="hidden" name="transfer_type" value="<?= $data["transfer_type"] ?>">
+                                <input type="hidden" name="swift" value="<?= $data["swift"] ?>">
+                                <?php
+                                if ($_SESSION["currency"] == "USD") { ?>
+                                <input type="hidden" name="bank_name" value="<?= $data["bank_name"] ?>">
+                                <input type="hidden" name="address" value="<?= $data["address"] ?>">
+                                <input type="hidden" name="account_type" value="<?= $data["account_type"] ?>">
+                                <input type="hidden" name="city" value="<?= $data["city"] ?>">
+                                <input type="hidden" name="state" value="<?= $data["state"] ?>">
+                                <input type="hidden" name="postalcode" value="<?= $data["postalcode"] ?>">
+                                <input type="hidden" name="country" value="<?= $data["country"] ?>">
+                                <?php } ?>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Receptients uniqeu code</span>
+                                    <span>Recipients Name</span>
                                     <span><?= $data["recipient"] ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Amount</span>
-                                    <span><?= $data["amount"] ?></span>
+                                    <span><?= number_format($data["amount"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Transaction fee</span>
-                                    <span><?= $data["fee"] ?></span>
+                                    <span><?= number_format($data["fee"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Total Deducted</span>
-                                    <span><?= $data["deduct"] ?></span>
+                                    <span><?= number_format($data["deduct"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>New Balance</span>
-                                    <span><?= $_SESSION['balance'] - $data["deduct"] ?></span>
+                                    <span><?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["deduct"], 2)  ?></span>
                                 </div>
 
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>bank"
-                                        class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                        class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                     <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
                                 </div>
                             </form>

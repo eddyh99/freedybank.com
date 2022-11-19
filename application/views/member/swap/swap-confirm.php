@@ -24,17 +24,17 @@
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Amount</span>
-                                    <span><?= $data["amount"] ?></span>
+                                    <span><?= number_format($data["amount"], 2) ?></span>
                                     <input type="text" class="form-control mb-4" name="amount" id="amount"
                                         placeholder="Amount" value="<?= $data["amount"] ?>" hidden>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>New Balance</span>
-                                    <span><?= $_SESSION['balance'] - $data["amount"] ?></span>
+                                    <span><?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["amount"], 2) ?></span>
                                 </div>
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>swap"
-                                        class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                        class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                     <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
                                 </div>
                             </form>

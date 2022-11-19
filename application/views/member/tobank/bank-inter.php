@@ -1,4 +1,4 @@
-<?php $this->load->view("member/tobank/countries-list"); ?>
+<?php require_once("countries-list.php"); ?>
 <div class="d-flex justify-content-center">
     <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
@@ -25,7 +25,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <?php } ?>
-                            <form action="<?= base_url() ?>bank/bankinterconfirm" method="post">
+                            <form action="<?= base_url() ?>bank/banklocalconfirm" method="post">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
@@ -43,12 +43,6 @@
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="swift" id="inter3"
                                             placeholder="BIC/swift">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <select name="account_type" class="form-control me-2">
-                                            <option value="saving">Saving</option>
-                                            <option value="checking">Checking</option>
-                                        </select>
                                     </div>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="amount" id="inter4"
@@ -76,7 +70,8 @@
                                     </div>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <select name="country" class="form-control me-2" id="country">
-                                            <?php foreach ($countries_list as $dt) {
+                                            <?php
+                                                foreach ($countries_list as $dt) {
                                                     if ($dt["code"] != "US") {
                                                 ?>
                                             <option value="<?= $dt["code"] ?>"><?= $dt["name"] ?></option>
@@ -109,7 +104,7 @@
                                     <?php } ?>
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
-                                            class="btn btn-wallet-cancle py-2 me-auto">Cancle</a>
+                                            class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-1" type="submit">Confirm</button>
                                     </div>
                                 </div>

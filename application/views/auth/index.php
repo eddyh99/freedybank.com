@@ -2,15 +2,18 @@
 <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="<?= base_url(); ?>auth" class="logo d-flex align-items-center">
-            <img src="assets/img/freedy/logo-freedy-text.png" alt="">
+            <img src="<?= base_url() ?>assets/img/freedy/logo-freedy-text.png" alt="">
         </a>
 
         <nav id="navbar" class="navbar">
             <ul class="px-5">
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="#services">Services</a></li>
-                <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="<?= base_url(); ?>auht/soon">Work with
+                <li><a class="f-bevietnam nav-link navbar-freedy scrollto"
+                        href="<?= base_url(); ?>link/work_with_us">Work with
                         us</a></li>
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="#contact">Contact us</a></li>
+                <li><a class="f-bevietnam nav-link navbar-freedy scrollto"
+                        href="<?= base_url(); ?>link/translate">Translate</a></li>
                 <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-login"
                         href="<?= base_url(); ?>auth/login">Log
                         in</a>
@@ -80,7 +83,7 @@
                         <img src="<?= base_url(); ?>assets/img/freedy/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="f-lexend">No KYC & No AML</h3>
                         <span class="mb-auto f-lexend">No limit without KYC</span>
-                        <a href="<?= base_url(); ?>auth/soon" class="f-lexend">Read more</a>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=1" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
@@ -88,7 +91,7 @@
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="mb-auto f-lexend">Receiving funds in 10 currencies</h3>
-                        <a href="<?= base_url(); ?>auth/soon" class="f-lexend">Read more</a>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=2" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
@@ -96,7 +99,7 @@
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="mb-auto f-lexend">Convert, custody and send in 50 currencies</h3>
-                        <a href="<?= base_url(); ?>auth/soon" class="f-lexend">Read more</a>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=3" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
@@ -104,7 +107,7 @@
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
                         <h3 class="mb-auto f-lexend">Zero exchange fees</h3>
-                        <a href="<?= base_url(); ?>auth/soon" class="f-lexend">Read more</a>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=4" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
@@ -112,7 +115,7 @@
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
                         <h3 class="mb-auto f-lexend">Freedy is FREE</h3>
-                        <a href="<?= base_url(); ?>auth/soon" class="f-lexend">Read more</a>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=5" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
