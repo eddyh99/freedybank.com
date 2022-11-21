@@ -24,7 +24,7 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-navbartop-freedy">
         <!-- Navbar Brand-->
         <a class="navbar-brand text-center" href="index.html">
-            <img src="assets/img/logo.png" alt="" class="" style="height: 25px;">
+            <img src="<?= base_url() ?>assets/img/logo.png" alt="" class="" style="height: 25px;">
             Freedy
         </a>
         <!-- Sidebar Toggle-->
