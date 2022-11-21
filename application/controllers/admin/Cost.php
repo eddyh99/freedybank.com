@@ -19,7 +19,7 @@ class Cost extends CI_Controller
                 "content"   => "admin/cost/cost",
                 "mn_cost"    => "active",
                 "extra"     => "admin/cost/js/js_cost",
-                "currency"  => apitrackless("https://api.tracklessbank.com/v1/admin/currency/getAllCurrency")->message,                
+                "currency"  => apitrackless("https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency")->message,                
             );
 
         $this->load->view('admin_template/wrapper2', $data);
@@ -36,7 +36,8 @@ class Cost extends CI_Controller
      		        "topup"             => number_format($mfee->message->topup, 2,".",","),
      		        "walletbank_local"  => number_format($mfee->message->walletbank_circuit, 2,".",","),
      		        "walletbank_inter"  => number_format($mfee->message->walletbank_outside, 2,".",","),
-     		        "wallet2wallet"     => number_format($mfee->message->wallet, 2,".",","),
+     		        "wallet_send"       => number_format($mfee->message->wallet_sender, 2,".",","),
+     		        "wallet_receive"    => number_format($mfee->message->wallet_receiver, 2,".",","),
      		        "swap"              => number_format($mfee->message->swap, 2,".",","),
      		    );
         } else {
@@ -44,7 +45,8 @@ class Cost extends CI_Controller
      		        "topup"             => number_format(0, 2,".",","),
      		        "walletbank_local"  => number_format(0, 2,".",","),
      		        "walletbank_inter"  => number_format(0, 2,".",","),
-     		        "wallet2wallet"     => number_format(0, 2,".",","),
+     		        "wallet_send"       => number_format(0, 2,".",","),
+     		        "wallet_receive"    => number_format(0, 2,".",","),
      		        "swap"              => number_format(0, 2,".",","),
      		    );
         }

@@ -19,7 +19,7 @@ class Fee extends CI_Controller
                 "content"   => "admin/fee/fee",
                 "mn_fee"    => "active",
                 "extra"     => "admin/fee/js/js_fee",
-                "currency"  => apitrackless("https://api.tracklessbank.com/v1/admin/currency/getAllCurrency")->message,                
+                "currency"  => apitrackless("https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency")->message,                
             );
 
         $this->load->view('admin_template/wrapper2', $data);

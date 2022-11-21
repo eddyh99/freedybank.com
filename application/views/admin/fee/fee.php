@@ -25,9 +25,13 @@
                         <label for="currency" class="col-sm-2 col-form-label">Currency</label>
                         <div class="col-sm-10">
                             <select name="currency" id="currency" class="form-select">
-                                <?php foreach ($currency as $dt) { ?>
+                                <?php foreach ($currency as $dt) {
+                                        if ($dt->status=='active'){
+                                ?>
                                 <option value="<?= $dt->currency ?>"><?= $dt->name ?></option>
-                                <?php } ?>
+                                <?php       }
+                                        }
+                                ?>
                             </select>
                         </div>
                     </div>

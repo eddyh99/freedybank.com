@@ -25,9 +25,13 @@
                         <label for="currency" class="col-sm-2 col-form-label">Currency</label>
                         <div class="col-sm-10">
                             <select name="currency" id="currency" class="form-select">
-                                <?php foreach ($currency as $dt) { ?>
-                                <option value="<?= $dt->currency ?>"><?= $dt->name ?></option>
-                                <?php } ?>
+                                <?php foreach ($currency as $dt) {
+                                        if ($dt->status=='active'){
+                                ?>
+                                    <option value="<?= $dt->currency ?>"><?= $dt->name ?></option>
+                                <?php   }
+                                      }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -44,9 +48,12 @@
                         <input type="text" id="walletbank_inter" name="walletbank_inter" class="form-control" readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Wallet to Wallet</label>
-                        <input type="text" id="wallet2wallet" name="wallet2wallet" class="form-control" readonly>
-
+                        <label class="form-label">Wallet to Wallet Send</label>
+                        <input type="text" id="w2w_send" name="w2w_send" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Wallet to Wallet Receive</label>
+                        <input type="text" id="w2w_receive" name="w2w_receive" class="form-control" readonly>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Swap</label>

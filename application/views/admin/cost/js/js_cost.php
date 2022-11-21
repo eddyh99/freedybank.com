@@ -10,7 +10,8 @@
                 $("#topup").val(data.topup)
                 $("#walletbank_local").val(data.walletbank_local)
                 $("#walletbank_inter").val(data.walletbank_inter)
-                $("#wallet2wallet").val(data.wallet2wallet)
+                $("#w2w_send").val(data.wallet_send)
+                $("#w2w_receive").val(data.wallet_receive)
                 $("#swap").val(data.swap)
             },
             error: function(response){
