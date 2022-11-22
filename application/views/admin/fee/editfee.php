@@ -64,7 +64,8 @@
                         </div>
                         <div class="mb-3">
                             <a href="<?= base_url() ?>admin/fee" class="btn btn-warning">Cancel</a>
-                            <button type="submit" class="btn btn-primary">Confirm</button>
+                            <button type="submit" class="btn btn-primary"
+                                onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
                         </div>
                     </div>
                 </div>

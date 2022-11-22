@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="" class="hero d-flex align-items-center">
+<section id="" class="hero d-flex align-items-center pt-0">
     <div class="container">
         <div class="row">
             <div class="col-12">

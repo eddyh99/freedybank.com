@@ -33,7 +33,6 @@
                                 <th>Referral Code</th>
                                 <th>Status</th>
                                 <th>Last Login</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody style="border-top: 0;">

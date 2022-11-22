@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 mb-3">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 <p>Start today, capitalize your website userbase or social media
                     traffic.
                     We are looking for new online affiliates to help us to spread our
@@ -12,14 +12,14 @@
                     relative contents which will improve your website placement and SEO
                 </p>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-4 text-center d-none d-lg-grid">
                 <img src="<?= base_url() ?>assets/img/Finance.png" alt="" class="img-fluid" style="max-width: 200px;">
             </div>
         </div>
     </div>
     <div class="col-12 mb-5">
-        <div class="d-flex flex-row">
-            <div class="col-4 px-2">
+        <div class="d-flex flex-column flex-lg-row">
+            <div class="col-12 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 1</h5>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 px-2">
+            <div class="col-12 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 2</h5>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 px-2">
+            <div class="col-12 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 3</h5>
@@ -57,11 +57,11 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy fw-bold f-lexend  mb-3">Ready to be an
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Ready to be an
                             affiliate partner</h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"
-                                class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
+                                class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">
                                 <span>Start now</span>
                             </a>
                         </div>

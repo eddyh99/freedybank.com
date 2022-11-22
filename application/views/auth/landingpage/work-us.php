@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="" class="hero d-flex align-items-center">
+<section id="" class="hero d-flex align-items-center p-3 pt-lg-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -9,21 +9,21 @@
                     </a>
                 </div>
             </div>
-            <div class="col-12 mb-5">
+            <div class="col-12 mb-5 mt-5">
                 <div class="logo-text text-center">
                     <img src="<?= base_url() ?>assets/img/logo-2.png" alt="">
                     <span class="f-lexend">Work with us</span>
                 </div>
             </div>
             <div class="col-12 mb-5 d-flex flex-row">
-                <div class="col-8">
+                <div class="col-12 col-lg-8">
                     <h2 class="title-top-header fw-bold">It`s time to become your own boss with our affilate program
                         WIN-WIN
                     </h2>
                     <p class="mt-4">With FreedyBank you can choose from our 3 partnership programs :<br> Online
                         affiliate partner / Consultant partner / charging point</p>
                 </div>
-                <div class="col-4">
+                <div class="col-4 d-none d-lg-grid">
                     <img src="<?= base_url() ?>assets/img/img-3.png" alt="" class="img-fluid">
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         <h2 class="accordion-header m-0" id="pageOne">
                             <button id="btnaccorionOne" class="accordion-button freedy-accordion-button collapsed"
                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
+                                aria-expanded="false" aria-controls="collapseOne">
                                 <div class="box-title-accordion ms-auto text-center">
                                     <span class="head">ONLINE AFFILIATE PARTNER</span>
                                     <span class="small" id="seemoreOne">See more</span>
@@ -42,7 +42,7 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="pageOne"
                             data-bs-parent="#accordionFreedy">
-                            <div class="accordion-body freedy-accordion-body p-5">
+                            <div class="accordion-body freedy-accordion-body p-3 p-lg-5">
                                 <?php $this->load->view('auth/landingpage/work-us-1'); ?>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="pageTwo"
                             data-bs-parent="#accordionFreedy">
-                            <div class="accordion-body freedy-accordion-body p-5">
+                            <div class="accordion-body freedy-accordion-body p-3 p-lg-5">
                                 <?php $this->load->view('auth/landingpage/work-us-2'); ?>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="pageThree"
                             data-bs-parent="#accordionFreedy">
-                            <div class="accordion-body freedy-accordion-body p-5">
+                            <div class="accordion-body freedy-accordion-body p-3 p-lg-5">
                                 <?php $this->load->view('auth/landingpage/work-us-3'); ?>
                             </div>
                         </div>
@@ -88,6 +88,3 @@
         </div>
     </div>
 </section><!-- End Hero -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>

@@ -1,6 +1,7 @@
 <script>
 $("#btnaccorionOne").on("click", function() {
     var element = document.getElementById("seemoreOne");
+    var btnacc = document.getElementById("btnaccorionOne");
     var testClass = element.className;
 
     switch (testClass) {
@@ -14,6 +15,7 @@ $("#btnaccorionOne").on("click", function() {
             element.classList.remove("collapse");
     }
 })
+
 $("#btnaccorionTwo").on("click", function() {
     var element = document.getElementById("seemoreTwo");
     var testClass = element.className;

@@ -55,8 +55,8 @@
                         </div>
                         <div class="row">
                             <div class="d-flex flex-row mt-4">
-                                <button class="btn btn-freedy-blue px-4 py-2 mx-auto shadow-none"
-                                    type="submit">Confirm</button>
+                                <button class="btn btn-freedy-blue px-4 py-2 mx-auto shadow-none" type="submit"
+                                    onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
                             </div>
                         </div>
                     </form>

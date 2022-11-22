@@ -26,7 +26,8 @@
                             <div class="d-flex flex-row mt-4">
                                 <a href="<?= base_url() ?>admin/swap"
                                     class="btn btn-freedy-white px-4 py-2 me-2 shadow-none">Cancel</a>
-                                <button class="btn btn-freedy-blue px-4 py-2 shadow-none" type="submit">Confirm</button>
+                                <button class="btn btn-freedy-blue px-4 py-2 shadow-none" type="submit"
+                                    onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
                             </div>
                         </div>
                     </form>

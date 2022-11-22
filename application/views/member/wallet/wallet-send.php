@@ -54,7 +54,8 @@
                                     <div class="d-flex flex-row mt-4">
                                         <a href="<?= base_url() ?>wallet"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
-                                        <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
+                                        <button class="btn btn-receive-bank px-5 py-2" type="submit"
+                                            onClick="this.disabled=true; this.value='Sending…';">OK</button>
                                     </div>
                                 </div>
                             </form>
