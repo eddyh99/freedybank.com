@@ -54,7 +54,7 @@ class Mwallet extends CI_Controller
         );
         $result = apitrackless("https://api.tracklessbank.com/v1/admin/wallet/gethistory_bycurrency", json_encode($mdata));
         $data["token"] = $this->security->get_csrf_hash();
-        $data["history"] = $result->message;
+        $data["history"] = $result;
         echo json_encode($data);
     }
 

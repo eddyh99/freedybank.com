@@ -17,6 +17,7 @@
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
                     action="<?= base_url(); ?>auth/register">
                     <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                    <input type="hidden" name="time_location" id="time_location">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">SIGN UP</span>
                         <img src="<?= base_url(); ?>assets/img/freedy/logo.png" alt="">

@@ -15,6 +15,7 @@
                 $("#w2w_send").val(data.wallet2wallet_send)
                 $("#w2w_receive").val(data.wallet2wallet_receive)
                 $("#swap").val(data.swap)
+                $("#referral_topup").val(data.ref_topup)
                 $("#referral_send").val(data.ref_send)
                 $("#referral_receive").val(data.ref_receive)
             },

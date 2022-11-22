@@ -40,6 +40,7 @@ class Fee extends CI_Controller
      		        "wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2,".",","),
      		        "ref_send"              => number_format($mfee->message->referral_send, 2,".",","),
      		        "ref_receive"           => number_format($mfee->message->referral_receive, 2,".",","),
+     		        "ref_topup"             => number_format($mfee->message->referral_topup, 2,".",","),
      		        "swap"                  => number_format($mfee->message->swap, 2,".",","),
      		    );
         } else {
@@ -49,6 +50,7 @@ class Fee extends CI_Controller
      		        "walletbank_inter"      => number_format(0, 2,".",","),
      		        "wallet2wallet_send"    => number_format(0, 2,".",","),
      		        "wallet2wallet_receive" => number_format(0, 2,".",","),
+     		        "ref_topup"             => number_format(0, 2,".",","),
      		        "ref_send"              => number_format(0, 2,".",","),
      		        "ref_receive"           => number_format(0, 2,".",","),
      		        "swap"                  => number_format(0, 2,".",","),
@@ -71,6 +73,7 @@ class Fee extends CI_Controller
      		        "wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2,".",","),
      		        "ref_send"          => number_format($mfee->message->referral_send, 2,".",","),
      		        "ref_receive"       => number_format($mfee->message->referral_receive, 2,".",","),
+     		        "ref_topup"         => number_format($mfee->message->referral_topup, 2,".",","),
      		        "swap"              => number_format($mfee->message->swap, 2,".",","),
      		    );
         } else {
@@ -82,6 +85,7 @@ class Fee extends CI_Controller
      		        "wallet2wallet_receive" => number_format(0, 2,".",","),
      		        "ref_send"              => number_format(0, 2,".",","),
      		        "ref_receive"           => number_format(0, 2,".",","),
+     		        "ref_topup"             => number_format(0, 2,".",","),
      		        "swap"                  => number_format(0, 2,".",","),
      		    );
         }
@@ -89,6 +93,7 @@ class Fee extends CI_Controller
         $data=array(
                 "title"     => "FreedyBank - Edit Default Fee",
                 "content"   => "admin/fee/editfee",
+                "extra"     => "admin/fee/js/js_editfee",
                 "mn_fee"    => "active",
                 "fee"       => $mdata,
                 "currency"  => $currency
@@ -105,6 +110,7 @@ class Fee extends CI_Controller
 		$this->form_validation->set_rules('wallet2wallet_receive', 'Wallet to Wallet Receive', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('referral_send', 'Referral Sender', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('referral_receive', 'Referral Receiver', 'trim|required|greater_than[0]|decimal');
+		$this->form_validation->set_rules('referral_topup', 'Referral Topup', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('swap', 'Swap', 'trim|required|greater_than[0]|decimal');
 		$this->form_validation->set_rules('currency', 'Currency', 'trim|required|max_length[3]|min_length[3]');
 
@@ -124,25 +130,28 @@ class Fee extends CI_Controller
 		$wallet2wallet_receive  = $this->security->xss_clean($input->post("wallet2wallet_receive"));
 		$referral_send		    = $this->security->xss_clean($input->post("referral_send"));
 		$referral_receive       = $this->security->xss_clean($input->post("referral_receive"));
+		$referral_topup		    = $this->security->xss_clean($input->post("referral_topup"));
 		$swap		            = $this->security->xss_clean($input->post("swap"));
 		
         $mdata=array(
      		        "topup"                 => $topup,
      		        "walletbank_circuit"    => $walletbank_local,
      		        "walletbank_outside"    => $walletbank_inter,
-     		        "wallet_send"           => $wallet2wallet_send,
+     		        "wallet_sender"         => $wallet2wallet_send,
      		        "wallet_receiver"       => $wallet2wallet_receive,
      		        "referral_send"         => $referral_send,
      		        "referral_receive"      => $referral_receive,
+     		        "referral_topup"        => $referral_topup,
      		        "swap"                  => $swap,
      		        "currency"              => $currency,
      		    );
         $result = apitrackless("https://api.tracklessbank.com/v1/admin/fee/setFee",json_encode($mdata));
-        if ($result->code == 200) {
+        if (@$result->code == 200) {
             $this->session->set_flashdata("success","Default Fee is successfully updated");
             redirect('admin/fee');
         }else{
             $this->session->set_flashdata("failed",$result->message);
+            redirect(base_url() . "admin/fee/editfee/".$currency);
         }
     }
 

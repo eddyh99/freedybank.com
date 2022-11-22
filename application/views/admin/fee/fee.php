@@ -60,11 +60,15 @@
                         <input type="text" id="swap" name="swap" class="form-control" readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Referral Send</label>
+                        <label class="form-label">Referral Topup</label>
+                        <input type="text" id="referral_topup" name="referral_topup" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Sender</label>
                         <input type="text" id="referral_send" name="referral_send" class="form-control" readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Referral Receive</label>
+                        <label class="form-label">Referral Wallet to Wallet Receiver</label>
                         <input type="text" id="referral_receive" name="referral_receive" class="form-control" readonly>
                     </div>
                     <div class="text-start">

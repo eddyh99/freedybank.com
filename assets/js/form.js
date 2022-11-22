@@ -122,6 +122,8 @@ $("#btn-copy-qr").click(function () {
     navigator.clipboard.writeText(copyText.value);
 });
 
+$("#time_location").val(moment.tz.guess());
+
 // SALDO
 var input = document.querySelector('#saldo'); // get the input element
 input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
