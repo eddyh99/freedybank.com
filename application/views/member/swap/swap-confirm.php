@@ -35,7 +35,8 @@
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>swap"
                                         class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
-                                    <button class="btn btn-receive-bank px-5 py-2" type="submit">OK</button>
+                                    <button class="btn btn-receive-bank px-5 py-2"
+                                        onClick="this.disabled=true; this.value='Sending…';" type="submit">OK</button>
                                 </div>
                             </form>
                         </div>

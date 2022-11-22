@@ -96,7 +96,8 @@
                         <div class="col-12 mb-3">
                             <a href="<?= base_url() ?>admin/mwallet/withdraw"
                                 class="btn btn-freedy-white px-4 py-2 me-2 shadow-none">Cancel</a>
-                            <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none">Confirm</button>
+                            <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none"
+                                onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
                         </div>
                     </form>
                 </div>

@@ -2436,6 +2436,23 @@ section {
   font-family: 'Public Sans', sans-serif !important;
 }
 
+.g-b {
+  color: #4285F4;
+}
+
+.g-r {
+  color: #DB4437;
+}
+
+.g-y {
+  color: #F4B400;
+}
+
+.g-g {
+  color: #0F9D58;
+}
+
+
 @media (max-width: 575px) {
   .nav-link.navbar-freedy {
     background: none;
@@ -2897,6 +2914,7 @@ section {
     top: 0;
     left: 0;
     padding: 1rem;
+    z-index: 1;
   }
 
   .link-back img {
@@ -4056,6 +4074,173 @@ section {
   }
 
   /* App */
+
+  /* Link Landingpage */
+  .logo-text img {
+    height: 50px;
+  }
+
+  .logo-text span {
+    display: block;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 31px;
+
+    color: #000000;
+  }
+
+  .title-top-header {
+    font-weight: 600;
+    font-size: 24px !important;
+    line-height: 110%;
+    color: #0078F0 !important;
+  }
+
+  .freedy-accordion-item {
+    border: 3px solid #0078F0 !important;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+  }
+
+  .freedy-accordion-button {
+    border-radius: 10px !important;
+  }
+
+
+  .freedy-accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .freedy-accordion-button::after {
+    background-image: var(--bs-accordion-btn-active-icon) !important;
+  }
+
+  .box-title-accordion .head {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+    color: #0078F0;
+  }
+
+  .box-title-accordion .small {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 110%;
+    color: #000000;
+  }
+
+  .freedy-accordion-body p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 180%;
+    color: #000000;
+  }
+
+  .freedy-card {
+    background: #DBF2FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: .75rem;
+    min-height: auto;
+  }
+
+  .freedy-card.h-500 {
+    min-height: auto;
+  }
+
+  .freedy-card .card-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+
+    color: #000000;
+
+  }
+
+  .freedy-card .card-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 180%;
+
+    color: #000000;
+  }
+
+  .text-blue-freedy.link-lp {
+    font-size: 16px !important;
+  }
+
+  .btn-footer-signin.link-lp span {
+    font-size: 12px !important;
+  }
+
+  .title-accordion-freedy {
+    font-weight: 600;
+    font-size: 16px !important;
+    line-height: 110%;
+    color: #000000 !important;
+  }
+
+  .freedy-card .icon {
+    height: 50px;
+  }
+
+  .card-arrow-freedy {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-arrow-freedy p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 110%;
+    text-align: center;
+
+    color: #000000;
+    margin: 0;
+  }
+
+  .card-arrow-freedy .arrow {
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    transform: rotate(90deg);
+  }
+
+  .card-arrow-freedy .icon-arrow {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-arrow-freedy .icon-arrow .icon {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .translate p {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #000000;
+  }
+
+  .translate-link {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #474C51;
+  }
+
+  .translate-link:hover {
+    color: #474C51;
+  }
+
+  /* Link Landingpage */
 }
 
 @media (min-width: 375px) {
@@ -4562,6 +4747,7 @@ section {
     top: 0;
     left: 0;
     padding: 1rem;
+    z-index: 1;
   }
 
   .link-back img {
@@ -7976,6 +8162,7 @@ section {
     top: 0;
     left: 0;
     padding: 1rem;
+    z-index: 1;
   }
 
   .link-back img {
@@ -9126,6 +9313,165 @@ section {
   }
 
   /* App */
+
+  /* Link Landingpage */
+  .logo-text img {
+    height: 100px;
+  }
+
+  .logo-text span {
+    display: block;
+
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 31px;
+
+    color: #000000;
+  }
+
+  .title-top-header {
+    font-weight: 600;
+    font-size: 45px !important;
+    line-height: 110%;
+    color: #0078F0 !important;
+  }
+
+  .freedy-accordion-item {
+    border: 3px solid #0078F0 !important;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+  }
+
+  .freedy-accordion-button {
+    border-radius: 10px !important;
+  }
+
+
+  .freedy-accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .freedy-accordion-button::after {
+    background-image: var(--bs-accordion-btn-active-icon) !important;
+  }
+
+  .box-title-accordion .head {
+    display: block;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 110%;
+    color: #0078F0;
+  }
+
+  .box-title-accordion .small {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 110%;
+    color: #000000;
+  }
+
+  .freedy-accordion-body p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+  }
+
+  .freedy-card {
+    background: #DBF2FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: .75rem;
+    min-height: 250px;
+  }
+
+  .freedy-card.h-500 {
+    min-height: 500px;
+  }
+
+  .freedy-card .card-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 110%;
+
+    color: #000000;
+
+  }
+
+  .freedy-card .card-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+
+  .title-accordion-freedy {
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 110%;
+    color: #000000 !important;
+  }
+
+  .freedy-card .icon {
+    height: 50px;
+  }
+
+  .card-arrow-freedy {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-arrow-freedy p {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 110%;
+    text-align: center;
+
+    color: #000000;
+    margin: 0;
+  }
+
+  .card-arrow-freedy .arrow {
+    position: absolute;
+    right: 0;
+    height: 20px;
+    /* transform: rotate(90deg); */
+  }
+
+  .card-arrow-freedy .icon-arrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-arrow-freedy .icon-arrow .icon {
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .translate p {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #000000;
+  }
+
+  .translate-link {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #474C51;
+  }
+
+  .translate-link:hover {
+    color: #474C51;
+  }
+
+  /* Link Landingpage */
 }
 
 @media (min-width: 1400px) {

@@ -93,8 +93,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
-                                        <button class="btn btn-receive-bank px-3 py-2 ms-auto"
-                                            type="submit">Confirm</button>
+                                        <button class="btn btn-receive-bank px-3 py-2 ms-auto" type="submit"
+                                            onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
                                     </div>
                                 </div>
                             </form>
