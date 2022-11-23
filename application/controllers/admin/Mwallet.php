@@ -72,6 +72,7 @@ class Mwallet extends CI_Controller
     {
         $data = array(
             "title"     => "FreedyBank - Withdraw Local",
+            "extra"     => "admin/js/js_btn_disabled",
             "content"   => "admin/mwallet/withdraw-local",
         );
 
@@ -82,6 +83,7 @@ class Mwallet extends CI_Controller
     {
         $data = array(
             "title"     => "FreedyBank - Withdraw International",
+            "extra"     => "admin/js/js_btn_disabled",
             "content"   => "admin/mwallet/withdraw-inter",
         );
 
@@ -160,6 +162,7 @@ class Mwallet extends CI_Controller
         $data = array(
             "title"     => "FreedyBank - Withdraw Confirm",
             "content"   => "admin/mwallet/wdconfirm",
+            "extra"     => "admin/js/js_btn_disabled",
             "data"      => $temp
         );
 

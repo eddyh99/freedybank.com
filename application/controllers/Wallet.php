@@ -24,11 +24,12 @@ class Wallet extends CI_Controller
     public function send()
     {
         $data['title'] = "Freedy - Wallet to Wallet";
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
         $this->load->view('member/wallet/wallet-send');
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function send_confirm()
@@ -74,10 +75,11 @@ class Wallet extends CI_Controller
 
         $data['title'] = "Freedy - Wallet to Wallet";
         $body["data"] = $infolist;
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/wallet/wallet-send-confirm', $body);
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function send_notif()
@@ -130,11 +132,12 @@ class Wallet extends CI_Controller
     public function request()
     {
         $data['title'] = "Freedy - Wallet to Wallet";
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
         $this->load->view('member/wallet/wallet-request');
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function request_qrcode()
