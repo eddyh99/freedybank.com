@@ -426,7 +426,7 @@
 <!-- ======= Footer ======= -->
 <footer id="contact" class="footer p-0 p-r">
     <div class="footer-bg pt-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row gy-4">
                 <div class="col-12 col-lg-5 col-md-12 footer-info">
                     <a href="index.html" class="logo-footer d-flex align-items-center">
@@ -438,15 +438,26 @@
                     </a>
                 </div>
 
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">Contact us</h4>
+                    <div class="list">
+                        <a href="#">eeinformationservice@gmail.com</a>
+                    </div>
                 </div>
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">About us</h4>
                 </div>
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">FAQ</h4>
                 </div>
+            </div>
+        </div>
+        <div class="container pt-5 pb-4" style="z-index: 99; position: relative;">
+            <div class="copyright f-lexend">
+                2EE Information Technology Network Service CO.
+            </div>
+            <div class="credits f-lexend">
+                Burj Gate, Dubai, UAE
             </div>
         </div>
     </div>

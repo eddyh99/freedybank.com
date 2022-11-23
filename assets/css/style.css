@@ -2396,14 +2396,14 @@ section {
 .footer .copyright {
   text-align: center;
   padding-top: 30px;
-  color: #012970;
+  color: #fff;
 }
 
 .footer .credits {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
-  color: #012970;
+  color: #fff;
 }
 
 
@@ -2811,7 +2811,6 @@ section {
     background-size: 100% auto;
     background-position: bottom;
 
-    padding: 10rem 0;
   }
 
   .logo-footer img {
@@ -2835,6 +2834,13 @@ section {
   .footer-links h4 {
     font-weight: 400;
     font-size: 16px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .footer-links .list a {
+    font-weight: 400;
+    font-size: 10px;
     line-height: 110%;
     color: #FFFFFF;
   }
@@ -4658,8 +4664,6 @@ section {
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
-
-    padding: 10rem 0;
   }
 
   .logo-footer img {
@@ -4683,6 +4687,13 @@ section {
   .footer-links h4 {
     font-weight: 400;
     font-size: 16px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .footer-links .list a {
+    font-weight: 400;
+    font-size: 12px;
     line-height: 110%;
     color: #FFFFFF;
   }
@@ -6257,7 +6268,6 @@ section {
     background-size: 100% auto;
     background-position: bottom;
 
-    padding: 10rem 0;
   }
 
   .logo-footer img {
@@ -6281,6 +6291,13 @@ section {
   .footer-links h4 {
     font-weight: 400;
     font-size: 22px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .footer-links .list a {
+    font-weight: 400;
+    font-size: 18px;
     line-height: 110%;
     color: #FFFFFF;
   }
@@ -8074,7 +8091,6 @@ section {
     background-size: 100% auto;
     background-position: bottom;
 
-    padding: 10rem 0;
   }
 
   .logo-footer img {
@@ -8098,6 +8114,13 @@ section {
   .footer-links h4 {
     font-weight: 400;
     font-size: 22px;
+    line-height: 110%;
+    color: #FFFFFF;
+  }
+
+  .footer-links .list a {
+    font-weight: 400;
+    font-size: 18px;
     line-height: 110%;
     color: #FFFFFF;
   }
