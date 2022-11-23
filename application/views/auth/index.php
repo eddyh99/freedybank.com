@@ -433,7 +433,9 @@
                         <img src="<?= base_url(); ?>assets/img/freedy/logo-footer.png" alt="">
                     </a>
                     <span class="f-lexend">Empowered by</span>
-                    <img src="<?= base_url(); ?>assets/img/freedy/tracklessbank.png" alt="" class="tracklessbank">
+                    <a href="https://tracklessbank.com/">
+                        <img src="<?= base_url(); ?>assets/img/freedy/tracklessbank.png" alt="" class="tracklessbank">
+                    </a>
                 </div>
 
                 <div class="col-lg-2 col-12 footer-links">
