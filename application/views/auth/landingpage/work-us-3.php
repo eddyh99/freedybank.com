@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 mb-3">
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <h2 class="title-accordion-freedy mb-5 fw-bold">If you have a business or you are a
                     freelancer, you can offer the Fast Freedy service.</h2>
                 <p>
@@ -12,14 +12,14 @@
                     commission for each top-up / cashout operation.
                 </p>
             </div>
-            <div class="col-6 text-center  d-none d-lg-grid">
+            <div class="col-6 text-center d-none d-md-grid">
                 <img src="<?= base_url() ?>assets/img/img-6.png" alt="" class="img-fluid">
             </div>
         </div>
     </div>
     <div class="col-12 mb-5">
-        <div class="d-flex flex-column flex-lg-row">
-            <div class="col-12 col-lg-4 card-arrow-freedy px-3 flex-column py-5">
+        <div class="d-flex flex-column flex-md-row">
+            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column py-5">
                 <div class="col-12 icon-arrow text-center">
                     <img class="icon" src="<?= base_url() ?>assets/img/icon-4.png" alt="">
                     <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
@@ -27,7 +27,7 @@
                 <p>If you invite 100 person/companies
                     open an account using your link</p>
             </div>
-            <div class="col-12 col-lg-4 card-arrow-freedy px-3 flex-column py-5">
+            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column py-5">
                 <div class="col-12 icon-arrow text-center">
                     <img class="icon" src="<?= base_url() ?>assets/img/icon-5.png" alt="">
                     <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
@@ -35,7 +35,7 @@
                 <p>They do 5 operations a day
                     (payment by card, wallet to wallet etc)</p>
             </div>
-            <div class="col-12 col-lg-4 card-arrow-freedy px-3 flex-column pt-5">
+            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column pt-5 pt-md-0">
                 <div class="col-12 icon-arrow text-center">
                     <img class="icon" src="<?= base_url() ?>assets/img/icon-6.png" alt="">
                 </div>
@@ -46,10 +46,10 @@
     </div>
     <div class="col-12 mb-3">
         <div class="row">
-            <div class="col-6 text-center d-none d-lg-flex align-items-center">
+            <div class="col-6 text-center d-none d-md-flex align-items-center">
                 <img src="<?= base_url() ?>assets/img/img-7.png" alt="" class="img-fluid">
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <div class="col-12 mb-5">
                     <h2 class="title-accordion-freedy mb-3 fw-bold">What are the top-up limits?
                     </h2>
@@ -75,7 +75,7 @@
     </div>
     <div class="col-12 mb-3">
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <h2 class="title-accordion-freedy mb-3 fw-bold">Do I have to request or provide any document?
                 </h2>
                 <p>
@@ -84,7 +84,7 @@
                     exempted from the restrictive procedures of most countries.
                 </p>
             </div>
-            <div class="col-6 text-center d-none d-lg-grid">
+            <div class="col-6 text-center d-none d-md-grid">
                 <img src="<?= base_url() ?>assets/img/img-8.png" alt="" class="img-fluid" style="max-width: 350px;">
             </div>
         </div>

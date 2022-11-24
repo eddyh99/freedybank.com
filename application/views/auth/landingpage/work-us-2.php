@@ -4,7 +4,7 @@
             <div class="col-12 mb-3">
                 <h2 class="title-accordion-freedy fw-bold">You can be part of the next generation banking system</h2>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <p>
                     Our Sales Consultant Program was created for entrepreneurial people like
                     you, to start their own business.
@@ -15,23 +15,23 @@
                     single day.
                 </p>
             </div>
-            <div class="col-6 text-center d-none d-lg-grid">
+            <div class="col-6 text-center d-none d-md-grid">
                 <img src="<?= base_url() ?>assets/img/img-4.png" alt="" class="img-fluid">
             </div>
         </div>
         <div class="row">
             <div class="col-12 mb-3 d-flex justify-content-end">
-                <div class="col-12 col-lg-10">
+                <div class="col-12 col-md-10">
                     <h2 class="title-accordion-freedy fw-bold">With our service, we can solve the problems of millions
                         of people
                         and
                         businesses who are waiting to receive your consultation.</h2>
                 </div>
             </div>
-            <div class="col-6 text-center d-none d-lg-grid">
+            <div class="col-6 text-center d-none d-md-grid">
                 <img src="<?= base_url() ?>assets/img/img-5.png" alt="" class="img-fluid">
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-6">
                 <p>
                     If you are going to start selling something, to be profitable you should choose something that helps
                     other people or business.
@@ -47,8 +47,8 @@
         <div class="col-12 text-center mb-5">
             <h2 class="title-accordion-freedy fw-bold">How it works ?</h2>
         </div>
-        <div class="d-flex flex-column flex-lg-row">
-            <div class="col-12 col-lg-4 px-2 py-2">
+        <div class="d-flex flex-column flex-md-row flex-wrap justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center h-500">
                     <div class="card-body">
                         <img src="<?= base_url() ?>assets/img/icon-1.png" alt="" class="icon mb-3">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 px-2 py-2">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center h-500">
                     <div class="card-body">
                         <img src="<?= base_url() ?>assets/img/icon-2.png" alt="" class="icon mb-3">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 px-2 py-2">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center h-500">
                     <div class="card-body">
                         <img src="<?= base_url() ?>assets/img/icon-3.png" alt="" class="icon mb-3">
@@ -87,18 +87,18 @@
         <div class="col-12 text-center mb-5">
             <h2 class="title-accordion-freedy fw-bold">FOR EXAMPLE:</h2>
         </div>
-        <div class="d-flex flex-column flex-lg-row">
-            <div class="col-12 col-lg-4 card-arrow-freedy px-3 py-3 py-lg-0">
-                <p class="mb-5 me-lg-5 my-lg-0">If you invite 100 person/companies
+        <div class="d-flex flex-column flex-md-row">
+            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-3 py-3 py-md-0">
+                <p class="mb-5 me-lg-5 my-md-0">If you invite 100 person/companies
                     open an account using your link</p>
                 <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
             </div>
-            <div class="col-12 col-lg-4 card-arrow-freedy px-3 py-3 py-lg-0">
-                <p class="mt-5 mb-5 me-lg-5 my-lg-0">They do 5 operations a day
+            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-3 py-3 py-md-0">
+                <p class="mt-5 mb-5 me-lg-5 my-md-0">They do 5 operations a day
                     (payment by card, wallet to wallet etc)</p>
                 <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
             </div>
-            <div class="mt-5 my-lg-0 col-12 col-lg-4 card-arrow-freedy px-3 py-3 py-lg-0">
+            <div class="mt-5 my-md-0 col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-3 py-3 py-md-0">
                 <p>You would earn 750 euros monthly,
                     accedited directly to your wallet.</p>
             </div>
@@ -109,7 +109,7 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend  mb-3">Interested in becoming a Freedy Bank
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Interested in becoming a Freedy Bank
                             sales
                             consultant ?</h4>
                         <div class="text-center">

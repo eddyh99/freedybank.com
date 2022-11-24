@@ -114,8 +114,9 @@
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
-                        <h3 class="mb-auto f-lexend">Freedy is FREE</h3>
-                        <a href="<?= base_url(); ?>link/whychoosing?choose=5" class="f-lexend">Read more</a>
+                        <h3 class="f-lexend">Freedy is FREE</h3>
+                        <span class="f-lexend">Open a bank account is free of charge no monthly or yearly
+                            fees</span>
                     </div>
                 </div>
 
@@ -182,7 +183,7 @@
                                     services used.
                                 </p>
                                 <div class="text-center text-lg-start">
-                                    <a href="<?= base_url(); ?>auth/soon"
+                                    <a href="<?= base_url(); ?>link/lern_transparency"
                                         class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Learn more</span>
                                     </a>
