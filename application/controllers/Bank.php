@@ -24,21 +24,23 @@ class Bank extends CI_Controller
     public function local()
     {
         $data['title'] = "Freedy - Wallet to Bank";
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
         $this->load->view('member/tobank/bank-local');
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function inter()
     {
         $data['title'] = "Freedy - Wallet to Bank";
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
         $this->load->view('member/tobank/bank-inter');
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function banklocalconfirm()
@@ -114,11 +116,12 @@ class Bank extends CI_Controller
         $body["data"] = $temp;
 
         $data['title'] = "Freedy - Wallet to Bank Confirmation";
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $body);
         $this->load->view('member/tobank/bank-confirm');
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
     public function banknotif()

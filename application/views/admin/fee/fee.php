@@ -3,19 +3,21 @@
 
 <div id="layoutSidenav_content">
     <main>
-        <?php if (@isset($_SESSION["failed"])) { ?>
-        <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
-        <?php if (@isset($_SESSION["success"])) { ?>
-        <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
         <div class="container-fluid px-4">
+            <div class="col-12 mt-3">
+                <?php if (@isset($_SESSION["failed"])) { ?>
+                <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
+                <?php if (@isset($_SESSION["success"])) { ?>
+                <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
+            </div>
             <div class="col-12 card mb-5 mt-3">
                 <div class="card-header fw-bold">
                     FREEDY BANK Fee
@@ -26,11 +28,11 @@
                         <div class="col-sm-10">
                             <select name="currency" id="currency" class="form-select">
                                 <?php foreach ($currency as $dt) {
-                                        if ($dt->status=='active'){
+                                    if ($dt->status == 'active') {
                                 ?>
                                 <option value="<?= $dt->currency ?>"><?= $dt->name ?></option>
                                 <?php       }
-                                        }
+                                }
                                 ?>
                             </select>
                         </div>

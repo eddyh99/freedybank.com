@@ -1,4 +1,5 @@
-<form id="updatefee" action="<?= base_url() ?>admin/fee/updatefee" method="post" class="col-12" onsubmit="return validate()">
+<form id="form_submit" action="<?= base_url() ?>admin/fee/updatefee" method="post" class="col-12"
+    onsubmit="return validate()">
     <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
         value="<?php echo $this->security->get_csrf_hash(); ?>">
     <input type="hidden" name="currency" value="<?= $currency ?>">

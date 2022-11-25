@@ -114,8 +114,9 @@
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
-                        <h3 class="mb-auto f-lexend">Freedy is FREE</h3>
-                        <a href="<?= base_url(); ?>link/whychoosing?choose=5" class="f-lexend">Read more</a>
+                        <h3 class="f-lexend">Freedy is FREE</h3>
+                        <span class="f-lexend">Open a bank account is free of charge no monthly or yearly
+                            fees</span>
                     </div>
                 </div>
 
@@ -182,7 +183,7 @@
                                     services used.
                                 </p>
                                 <div class="text-center text-lg-start">
-                                    <a href="<?= base_url(); ?>auth/soon"
+                                    <a href="<?= base_url(); ?>link/lern_transparency"
                                         class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Learn more</span>
                                     </a>
@@ -426,25 +427,38 @@
 <!-- ======= Footer ======= -->
 <footer id="contact" class="footer p-0 p-r">
     <div class="footer-bg pt-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row gy-4">
                 <div class="col-12 col-lg-5 col-md-12 footer-info">
                     <a href="index.html" class="logo-footer d-flex align-items-center">
                         <img src="<?= base_url(); ?>assets/img/freedy/logo-footer.png" alt="">
                     </a>
                     <span class="f-lexend">Empowered by</span>
-                    <img src="<?= base_url(); ?>assets/img/freedy/tracklessbank.png" alt="" class="tracklessbank">
+                    <a href="https://tracklessbank.com/">
+                        <img src="<?= base_url(); ?>assets/img/freedy/tracklessbank.png" alt="" class="tracklessbank">
+                    </a>
                 </div>
 
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">Contact us</h4>
+                    <div class="list">
+                        <a href="#">eeinformationservice@gmail.com</a>
+                    </div>
                 </div>
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">About us</h4>
                 </div>
-                <div class="col-lg-2 col-12 footer-links">
+                <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">FAQ</h4>
                 </div>
+            </div>
+        </div>
+        <div class="container pt-5 pb-4" style="z-index: 99; position: relative;">
+            <div class="copyright f-lexend">
+                2EE Information Technology Network Service CO.
+            </div>
+            <div class="credits f-lexend">
+                Burj Gate, Dubai, UAE
             </div>
         </div>
     </div>

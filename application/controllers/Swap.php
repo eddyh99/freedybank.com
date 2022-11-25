@@ -105,10 +105,11 @@ class Swap extends CI_Controller
 
         $data['title']  = "Freedy - Swap";
         $body["data"] = $data;
+        $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/swap/swap-confirm', $body);
-        $this->load->view('tamplate/footer');
+        $this->load->view('tamplate/footer', $footer);
     }
 
 

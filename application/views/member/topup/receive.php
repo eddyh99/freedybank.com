@@ -55,8 +55,9 @@
                             <span class="ms-2">Add/receive funds</span>
                         </div>
                         <div class="col-12 receive-note d-flex justify-content-center text-center my-4">
-                            <span class="w-50">*You can recive in 10 currencies, each one
-                                have a connected IBAN :
+                            <span class="w-100">*To increase and improve the level of privacy, receiving and sending
+                                money will be handled by tracklessmoney, a payment gateway. For this reason, the
+                                receiving IBAN of each currency will be the same for all users.
                             </span>
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
