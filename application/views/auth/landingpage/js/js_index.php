@@ -46,4 +46,19 @@ $("#btnaccorionThree").on("click", function() {
             element.classList.remove("collapse");
     }
 })
+$("#btnaccorionFour").on("click", function() {
+    var element = document.getElementById("seemoreFour");
+    var testClass = element.className;
+
+    switch (testClass) {
+        case "small":
+            element.classList.add("collapse");
+            break;
+        case "small collapse":
+            element.classList.remove("collapse");
+            break;
+        default:
+            element.classList.remove("collapse");
+    }
+})
 </script>

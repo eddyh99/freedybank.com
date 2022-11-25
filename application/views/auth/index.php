@@ -217,14 +217,14 @@
                                     class="col-12 col-sm-8 col-md-12 col-lg-8 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-1.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Custody</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=1">Learn more</a>
                                 </div>
                                 <div
                                     class="col-12 col-sm-8 col-md-12 col-lg-8 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-2.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Essential for
                                         your trip</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=2">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                                     class="col-12 col-sm-8 col-md-12 col-lg-8 d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-3.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Capital exportation</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=3">Learn more</a>
                                 </div>
                                 <div class="col-12 my-4 d-none d-md-block">
                                     <img src="<?= base_url(); ?>assets/img/freedy/monitor.png" alt="" class="img-fluid">
@@ -245,7 +245,7 @@
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-4.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Collections &
                                         Payments</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=4">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -256,13 +256,13 @@
                                     class="col-12 col-sm-8 col-md-12 col-lg-8 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-5.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Daily use</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=5">Learn more</a>
                                 </div>
                                 <div
                                     class="col-12 col-sm-8 col-md-12 col-lg-8 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/freedy/service-6.png" alt="">
                                     <h4 class="mt-2 mt-md-3 mb-auto">Get reward</h4>
-                                    <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                                    <a class="f-lexend" href="<?= base_url(); ?>link/service?service=6">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -337,9 +337,9 @@
                             <span style="color: #005DF9;">FreedyBank</span>
                         </h2>
                         <p class="f-lexend mt-5">Do you have any question? </p>
-                        <a href="<?= base_url(); ?>auth/signup"
+                        <a href="<?= base_url(); ?>link/send_message"
                             class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
-                            <span>Sign up</span>
+                            <span>Contact us</span>
                         </a>
                     </div>
                 </div>
@@ -371,31 +371,31 @@
                             class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/freedy/features-1.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">100% Secure</h4>
-                            <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                            <a class="f-lexend" href="<?= base_url(); ?>link/features?features=1">Learn more</a>
                         </div>
                         <div
                             class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/freedy/features-2.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Technology</h4>
-                            <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                            <a class="f-lexend" href="<?= base_url(); ?>link/features?features=2">Learn more</a>
                         </div>
                         <div
                             class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/freedy/features-3.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Wallet</h4>
-                            <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                            <a class="f-lexend" href="<?= base_url(); ?>link/features?features=3">Learn more</a>
                         </div>
                         <div
                             class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/freedy/features-4.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Missions</h4>
-                            <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                            <a class="f-lexend" href="<?= base_url(); ?>link/features?features=4">Learn more</a>
                         </div>
                         <div
                             class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/freedy/features-5.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Work with us</h4>
-                            <a class="f-lexend" href="<?= base_url(); ?>auth/soon">Learn more</a>
+                            <a class="f-lexend" href="<?= base_url(); ?>link/work_with_us">Learn more</a>
                         </div>
                     </div>
                 </div>
@@ -442,14 +442,21 @@
                 <div class="col-lg col-12 pe-2 footer-links">
                     <h4 class="f-lexend">Contact us</h4>
                     <div class="list">
-                        <a href="#">eeinformationservice@gmail.com</a>
+                        <a href="#" class="d-flex align-items-center my-1">
+                            <i class="fa fa-envelope"></i>
+                            <span class="ms-1">eeinformationservice@gmail.com</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg col-12 pe-2 footer-links">
-                    <h4 class="f-lexend">About us</h4>
+                    <h4 class="f-lexend">
+                        <a href="<?= base_url(); ?>link/aboutus" style="color:#fff;">About us</a>
+                    </h4>
                 </div>
                 <div class="col-lg col-12 pe-2 footer-links">
-                    <h4 class="f-lexend">FAQ</h4>
+                    <h4 class="f-lexend">
+                        <a href="<?= base_url(); ?>link/faq" style="color:#fff;">FAQ</a>
+                    </h4>
                 </div>
             </div>
         </div>
