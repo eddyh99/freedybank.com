@@ -42,7 +42,7 @@
                             }
                         }
                         foreach ($currency as $dt) {
-                            if ($dt->currency != "EUR" && $dt->currency != "USD" && $dt->currency != "GBP") {
+                            if ($dt->currency != "EUR" && $dt->currency != "USD") {
                             ?>
                         <div class="col-auto currency-img-list m-2">
                             <a href="<?= base_url() ?>link/price_currency?currency=<?= $dt->currency ?>">

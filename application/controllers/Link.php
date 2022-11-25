@@ -44,6 +44,34 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
+    public function service()
+    {
+        $service = $_GET['service'];
+
+        $data = array(
+            "title"     => "FreedyBank - Work with us",
+            "content"   => "auth/landingpage/service",
+            "service"   => $service,
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function features()
+    {
+        $features = $_GET['features'];
+
+        $data = array(
+            "title"     => "FreedyBank - Work with us",
+            "content"   => "auth/landingpage/features",
+            "features"   => $features,
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
     public function lern_transparency()
     {
         $url = "https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency";
@@ -73,6 +101,37 @@ class Link extends CI_Controller
             "currency"   => $currency,
             "price"   => $price,
             // "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function send_message()
+    {
+        $data = array(
+            "title"     => "FreedyBank - Send Message",
+            "content"   => "auth/landingpage/message",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    public function aboutus()
+    {
+        $data = array(
+            "title"     => "FreedyBank - About Us",
+            "content"   => "auth/landingpage/aboutus",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    public function faq()
+    {
+        $data = array(
+            "title"     => "FreedyBank - FAQ",
+            "content"   => "auth/landingpage/faq",
+            "extra"     => "auth/landingpage/js/js_index",
         );
 
         $this->load->view('tamplate/wrapper', $data);
