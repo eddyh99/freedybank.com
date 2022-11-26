@@ -1,4 +1,5 @@
 <script>
+var i = 1;
 $(function() {
     $('#member').DataTable({
         "scrollX": true,
@@ -15,7 +16,14 @@ $(function() {
                 return data["member"];
             },
         },
+        order: [
+            [0, 'asc']
+        ],
         "columns": [{
+                "mRender": function(data, type, full, meta) {
+                    return i++;
+                }
+            }, {
                 "data": "email"
             },
             {

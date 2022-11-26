@@ -22,7 +22,7 @@ class Fee extends CI_Controller
 			"currency"  => apitrackless("https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency")->message,
 		);
 
-		$this->load->view('admin_template/wrapper2', $data);
+		$this->load->view('admin_template/wrapper', $data);
 	}
 
 	public function getfee()
@@ -100,7 +100,7 @@ class Fee extends CI_Controller
 			"currency"  => $currency
 		);
 
-		$this->load->view('admin_template/wrapper2', $data);
+		$this->load->view('admin_template/wrapper', $data);
 	}
 
 	public function updatefee()
