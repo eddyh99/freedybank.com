@@ -14,7 +14,7 @@
                     <h2 class="title-top-header fw-bold">Clear and transparent prices</h2>
                 </div>
                 <div class="col-12">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <?php
                         foreach ($currency as $dt) {
                             if ($dt->currency == "USD") {

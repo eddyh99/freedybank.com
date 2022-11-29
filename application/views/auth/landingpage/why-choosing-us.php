@@ -19,13 +19,16 @@
                     <div class="row">
                         <div class="col-12 col-md-6 text-center my-auto">
                             <p>
-                                As FreedyBank, being part of the tracklessbank circuit, can operate by using several
+                                As <b translate="no">FreedyBank</b>, being part of the tracklessbank circuit, can
+                                operate by using several
                                 bank licenses under different jurisdictions and providing offshore escrow accounts, is
                                 not obliged to perform the Know You Customer (KYC) procedure.</p>
                             <p>
-                                Freedy bank does not carry out Anti-money laundering (AML) compliance policy, as it
+                                <b translate="no">Freedy bank</b> does not carry out Anti-money laundering (AML)
+                                compliance policy, as it
                                 legally makes use of the AML which, mandatorily by law, is carried out by the banking
-                                institution that introduced fiat into the banking circuit</p>
+                                institution that introduced fiat into the banking circuit
+                            </p>
                         </div>
                         <div class="col-md-6 d-none d-md-grid">
                             <img src="<?= base_url() ?>assets/img/img-9.png" alt="" class="img-fluid">
@@ -42,7 +45,7 @@
                                         You
                                         can open
                                         a
-                                        Freedy
+                                        <b translate="no">Freedy</b>
                                         account in less than 15 seconds and start managing your money without limits.
                                     </h4>
                                     <div class="text-center">
@@ -72,7 +75,8 @@
                         The bank that revolutionizes and facilitates money transfers
                     </p>
                     <p>
-                        By opening a Freedy account you can activate an iban, for free, for each of the 10
+                        By opening a <b translate="no">Freedy</b> account you can activate an iban, for free, for each
+                        of the 10
                         currencies allowing you to receive a bank transfer.
                     </p>
                 </div>
@@ -102,7 +106,7 @@
             <?php if ($choose == 3) { ?>
             <div class="col-12 my-5">
                 <div class="col-12 mb-5 text-center">
-                    <h2 class="title-top-header fw-bold">Your money has no borders with FreedyBank
+                    <h2 class="title-top-header fw-bold">Your money has no borders with <b translate="no">FreedyBank</b>
                         Exchange currencies easily from your account
                     </h2>
                 </div>
@@ -128,7 +132,7 @@
                                 <div class="col-lg-12 text-center">
                                     <h4
                                         class="text-blue-freedy black link-lp fw-bold f-lexend mb-3 col-12 col-xl-6 mx-auto">
-                                        You can open a Freedy account in less than 15 seconds
+                                        You can open a <b translate="no">Freedy</b> account in less than 15 seconds
                                     </h4>
                                     <div class="text-center">
                                         <a href="<?= base_url(); ?>auth/signup"
@@ -176,7 +180,8 @@
                                 <div class="px-4">
                                     <div class="event-date bg-line-circle"></div>
                                     <p>If you need to send EURO,
-                                        you can convert your Dollars for FREE and immidiately from your FREEDY account
+                                        you can convert your Dollars for FREE and immidiately from your <b
+                                            translate="no">FREEDY</b> account
                                     </p>
                                 </div>
                             </li>

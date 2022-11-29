@@ -11,6 +11,11 @@
             </div>
             <div class="col-12 col-md-10 my-5 mx-auto">
                 <div class="px-0 px-md-3">
+                    <?php
+                    foreach ($currency as $dtcurr) {
+                        if ($dtcurr->currency == $getcurrency) {
+                            if ($dtcurr->status == 'active') {
+                    ?>
                     <h4 class="f-lexend text-start my-3 text-blue-freedy">
                         Account Service Fees:
                     </h4>
@@ -38,43 +43,73 @@
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving SEPA</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->topup ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_circuit_fxd'] + $fee['topup_circuit_fxd']) ?>
+                                +
+                                <?= ($cost['topup_circuit_pct'] + $fee['topup_circuit_pct']) ?>%
+                                <?= $dtcurr->symbol ?>
+                            </span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving International</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->topup ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_outside_fxd'] + $fee['topup_outside_fxd']) ?>
+                                +
+                                <?= ($cost['topup_outside_pct'] + $fee['topup_outside_pct']) ?>%
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Send Wallet to Wallet</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->wallet_sender ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_sender_fxd'] + $fee['wallet_sender_fxd']) ?>
+                                +
+                                <?= ($cost['wallet_sender_pct'] + $fee['wallet_sender_pct']) ?>%
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving Wallet to Wallet</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->wallet_receiver ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_receiver_fxd'] + $fee['wallet_receiver_fxd']) ?>
+                                +
+                                <?= ($cost['wallet_receiver_pct'] + $fee['wallet_receiver_pct']) ?>%
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">National Transfer</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->walletbank_circuit ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_circuit_fxd'] + $fee['walletbank_circuit_fxd']) ?>
+                                +
+                                <?= ($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct']) ?>%
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">International Transfer</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->walletbank_outside ?>
-                                <?= $currency->symbol ?></span>
+                            <span
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_outside_fxd'] + $fee['walletbank_outside_fxd']) ?>
+                                +
+                                <?= ($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct']) ?>%
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Swap Currencies</span>
-                            <span class="w-50 text-end text-blue-freedy"><?= $price->swap ?>
-                                <?= $currency->symbol ?></span>
+                            <span class="w-50 text-end text-blue-freedy">0
+                                <?= $dtcurr->symbol ?></span>
                         </li>
                     </ul>
+                    <?php
+                            } else {
+                            ?>
+
+                    <h4 class="f-lexend text-center my-3 text-blue-freedy">
+                        Coming Soon!
+                    </h4>
+                    <?php
+                            }
+                        }
+                    } ?>
                 </div>
             </div>
         </div>
