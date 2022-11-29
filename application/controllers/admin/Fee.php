@@ -34,27 +34,49 @@ class Fee extends CI_Controller
 		$mdata = array();
 		if (@$mfee->code == 200) {
 			$mdata = array(
-				"topup"                 => number_format($mfee->message->topup, 2, ".", ","),
-				"walletbank_local"      => number_format($mfee->message->walletbank_circuit, 2, ".", ","),
-				"walletbank_inter"      => number_format($mfee->message->walletbank_outside, 2, ".", ","),
-				"wallet2wallet_send"    => number_format($mfee->message->wallet_sender, 2, ".", ","),
-				"wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2, ".", ","),
-				"ref_send"              => number_format($mfee->message->referral_send, 2, ".", ","),
-				"ref_receive"           => number_format($mfee->message->referral_receive, 2, ".", ","),
-				"ref_topup"             => number_format($mfee->message->referral_topup, 2, ".", ","),
-				"swap"                  => number_format($mfee->message->swap, 2, ".", ","),
+				"topup_circuit_fxd" => number_format($mfee->message->topup_circuit_fxd, 2, ".", ","),
+				"topup_circuit_pct" => number_format($mfee->message->topup_circuit_pct * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format($mfee->message->topup_outside_fxd, 2, ".", ","),
+				"topup_outside_pct" => number_format($mfee->message->topup_outside_pct * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format($mfee->message->wallet_sender_fxd, 2, ".", ","),
+				"wallet_sender_pct" => number_format($mfee->message->wallet_sender_pct * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format($mfee->message->wallet_receiver_fxd, 2, ".", ","),
+				"wallet_receiver_pct" => number_format($mfee->message->wallet_receiver_pct * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format($mfee->message->walletbank_circuit_fxd, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format($mfee->message->walletbank_circuit_pct * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format($mfee->message->walletbank_outside_fxd, 2, ".", ","),
+				"walletbank_outside_pct" => number_format($mfee->message->walletbank_outside_pct * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format($mfee->message->referral_send_fxd, 2, ".", ","),
+				"referral_send_pct" => number_format($mfee->message->referral_send_pct * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format($mfee->message->referral_receive_fxd, 2, ".", ","),
+				"referral_receive_pct" => number_format($mfee->message->referral_receive_pct * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format($mfee->message->referral_topup_fxd, 2, ".", ","),
+				"referral_topup_pct" => number_format($mfee->message->referral_topup_pct * 100, 2, ".", ","),
+				// "referral_bank_fxd" => number_format($mfee->message->referral_bank_fxd, 2, ".", ","),
+				// "referral_bank_pct" => number_format($mfee->message->referral_bank_pct * 100, 2, ".", ","),
 			);
 		} else {
 			$mdata = array(
-				"topup"                 => number_format(0, 2, ".", ","),
-				"walletbank_local"      => number_format(0, 2, ".", ","),
-				"walletbank_inter"      => number_format(0, 2, ".", ","),
-				"wallet2wallet_send"    => number_format(0, 2, ".", ","),
-				"wallet2wallet_receive" => number_format(0, 2, ".", ","),
-				"ref_topup"             => number_format(0, 2, ".", ","),
-				"ref_send"              => number_format(0, 2, ".", ","),
-				"ref_receive"           => number_format(0, 2, ".", ","),
-				"swap"                  => number_format(0, 2, ".", ","),
+				"topup_circuit_fxd" => number_format(0, 2, ".", ","),
+				"topup_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format(0, 2, ".", ","),
+				"topup_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format(0, 2, ".", ","),
+				"wallet_sender_pct" => number_format(0 * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format(0, 2, ".", ","),
+				"wallet_receiver_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format(0 * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_outside_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format(0, 2, ".", ","),
+				"referral_send_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format(0, 2, ".", ","),
+				"referral_receive_pct" => number_format(0 * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format(0, 2, ".", ","),
+				"referral_topup_pct" => number_format(0 * 100, 2, ".", ","),
+				// "referral_bank_fxd" => number_format(0, 2, ".", ","),
+				// "referral_bank_pct" => number_format(0 * 100, 2, ".", ","),
 			);
 		}
 		echo json_encode($mdata);
@@ -67,27 +89,49 @@ class Fee extends CI_Controller
 		$mdata = array();
 		if (@$mfee->code == 200) {
 			$mdata = array(
-				"topup"             => number_format($mfee->message->topup, 2, ".", ","),
-				"walletbank_local"  => number_format($mfee->message->walletbank_circuit, 2, ".", ","),
-				"walletbank_inter"  => number_format($mfee->message->walletbank_outside, 2, ".", ","),
-				"wallet2wallet_send"    => number_format($mfee->message->wallet_sender, 2, ".", ","),
-				"wallet2wallet_receive" => number_format($mfee->message->wallet_receiver, 2, ".", ","),
-				"ref_send"          => number_format($mfee->message->referral_send, 2, ".", ","),
-				"ref_receive"       => number_format($mfee->message->referral_receive, 2, ".", ","),
-				"ref_topup"         => number_format($mfee->message->referral_topup, 2, ".", ","),
-				"swap"              => number_format($mfee->message->swap, 2, ".", ","),
+				"topup_circuit_fxd" => number_format($mfee->message->topup_circuit_fxd, 2, ".", ","),
+				"topup_circuit_pct" => number_format($mfee->message->topup_circuit_pct * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format($mfee->message->topup_outside_fxd, 2, ".", ","),
+				"topup_outside_pct" => number_format($mfee->message->topup_outside_pct * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format($mfee->message->wallet_sender_fxd, 2, ".", ","),
+				"wallet_sender_pct" => number_format($mfee->message->wallet_sender_pct * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format($mfee->message->wallet_receiver_fxd, 2, ".", ","),
+				"wallet_receiver_pct" => number_format($mfee->message->wallet_receiver_pct * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format($mfee->message->walletbank_circuit_fxd, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format($mfee->message->walletbank_circuit_pct * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format($mfee->message->walletbank_outside_fxd, 2, ".", ","),
+				"walletbank_outside_pct" => number_format($mfee->message->walletbank_outside_pct * 100, 2, ".", ","),
+				"referral_send_fxd" => number_format($mfee->message->referral_send_fxd, 2, ".", ","),
+				"referral_send_pct" => number_format($mfee->message->referral_send_pct * 100, 2, ".", ","),
+				"referral_receive_fxd" => number_format($mfee->message->referral_receive_fxd, 2, ".", ","),
+				"referral_receive_pct" => number_format($mfee->message->referral_receive_pct * 100, 2, ".", ","),
+				"referral_topup_fxd" => number_format($mfee->message->referral_topup_fxd, 2, ".", ","),
+				"referral_topup_pct" => number_format($mfee->message->referral_topup_pct * 100, 2, ".", ","),
+				// "referral_bank_fxd" => number_format($mfee->message->referral_bank_fxd, 2, ".", ","),
+				// "referral_bank_pct" => number_format($mfee->message->referral_bank_pct * 100, 2, ".", ","),
 			);
 		} else {
 			$mdata = array(
-				"topup"                 => number_format(0, 2, ".", ","),
-				"walletbank_local"      => number_format(0, 2, ".", ","),
-				"walletbank_inter"      => number_format(0, 2, ".", ","),
-				"wallet2wallet_send"    => number_format(0, 2, ".", ","),
-				"wallet2wallet_receive" => number_format(0, 2, ".", ","),
-				"ref_send"              => number_format(0, 2, ".", ","),
-				"ref_receive"           => number_format(0, 2, ".", ","),
-				"ref_topup"             => number_format(0, 2, ".", ","),
-				"swap"                  => number_format(0, 2, ".", ","),
+				"topup_circuit_fxd" => number_format(0, 2, ".", ","),
+				"topup_circuit_pct" => number_format(0, 2, ".", ","),
+				"topup_outside_fxd" => number_format(0, 2, ".", ","),
+				"topup_outside_pct" => number_format(0, 2, ".", ","),
+				"wallet_sender_fxd" => number_format(0, 2, ".", ","),
+				"wallet_sender_pct" => number_format(0, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format(0, 2, ".", ","),
+				"wallet_receiver_pct" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format(0, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_outside_pct" => number_format(0, 2, ".", ","),
+				"referral_send_fxd" => number_format(0, 2, ".", ","),
+				"referral_send_pct" => number_format(0, 2, ".", ","),
+				"referral_receive_fxd" => number_format(0, 2, ".", ","),
+				"referral_receive_pct" => number_format(0, 2, ".", ","),
+				"referral_topup_fxd" => number_format(0, 2, ".", ","),
+				"referral_topup_pct" => number_format(0, 2, ".", ","),
+				// "referral_bank_fxd" => number_format(0, 2, ".", ","),
+				// "referral_bank_pct" => number_format(0, 2, ".", ","),
 			);
 		}
 
@@ -105,16 +149,27 @@ class Fee extends CI_Controller
 
 	public function updatefee()
 	{
-		$this->form_validation->set_rules('topup', 'Topup', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('walletbank_local', 'Wallet to Bank Local', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('walletbank_inter', 'Wallet to Bank International', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('wallet2wallet_send', 'Wallet to Wallet Send', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('wallet2wallet_receive', 'Wallet to Wallet Receive', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('referral_send', 'Referral Sender', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('referral_receive', 'Referral Receiver', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('referral_topup', 'Referral Topup', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('swap', 'Swap', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('currency', 'Currency', 'trim|required|max_length[3]|min_length[3]');
+		$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('topup_outside_fxd', 'Topup Outside (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('topup_outside_pct', 'Topup Outside (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('wallet_sender_fxd', 'Wallet Sender (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('wallet_sender_pct', 'Wallet Sender (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('wallet_receiver_fxd', 'Wallet Receive (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('wallet_receiver_pct', 'Wallet Receive (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('walletbank_circuit_fxd', 'Walletbank Circuit (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('walletbank_circuit_pct', 'Walletbank Circuit (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('walletbank_outside_fxd', 'Walletbank Outside (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('walletbank_outside_pct', 'Walletbank Outside (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_send_fxd', 'Referral Wallet to Sender (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_send_pct', 'Referral Wallet to Sender (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_receive_fxd', 'Referral Wallet to Reveice (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_receive_pct', 'Referral Wallet to Reveice (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_topup_fxd', 'Referral Wallet to Topup (Fixed)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_topup_pct', 'Referral Wallet to Topup (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('referral_bank_fxd', 'Referral Wallet to Bank (Fixed)', 'trim|required|greater_than[0]');
+		// $this->form_validation->set_rules('referral_bank_pct', 'Referral Wallet to Bank (%)', 'trim|required|greater_than[0]');
+		// $this->form_validation->set_rules('currency', 'Currency', 'trim|required|max_length[3]|min_length[3]');
 
 		$input		= $this->input;
 		$currency   = $this->security->xss_clean($input->post("currency"));
@@ -125,27 +180,48 @@ class Fee extends CI_Controller
 			return;
 		}
 
-		$topup		            = $this->security->xss_clean($input->post("topup"));
-		$walletbank_local       = $this->security->xss_clean($input->post("walletbank_local"));
-		$walletbank_inter	    = $this->security->xss_clean($input->post("walletbank_inter"));
-		$wallet2wallet_send     = $this->security->xss_clean($input->post("wallet2wallet_send"));
-		$wallet2wallet_receive  = $this->security->xss_clean($input->post("wallet2wallet_receive"));
-		$referral_send		    = $this->security->xss_clean($input->post("referral_send"));
-		$referral_receive       = $this->security->xss_clean($input->post("referral_receive"));
-		$referral_topup		    = $this->security->xss_clean($input->post("referral_topup"));
-		$swap		            = $this->security->xss_clean($input->post("swap"));
+		$topup_circuit_fxd = $this->security->xss_clean($input->post("topup_circuit_fxd"));
+		$topup_circuit_pct = $this->security->xss_clean($input->post("topup_circuit_pct"));
+		$topup_outside_fxd = $this->security->xss_clean($input->post("topup_outside_fxd"));
+		$topup_outside_pct = $this->security->xss_clean($input->post("topup_outside_pct"));
+		$wallet_sender_fxd = $this->security->xss_clean($input->post("wallet_sender_fxd"));
+		$wallet_sender_pct = $this->security->xss_clean($input->post("wallet_sender_pct"));
+		$wallet_receiver_fxd = $this->security->xss_clean($input->post("wallet_receiver_fxd"));
+		$wallet_receiver_pct = $this->security->xss_clean($input->post("wallet_receiver_pct"));
+		$walletbank_circuit_fxd = $this->security->xss_clean($input->post("walletbank_circuit_fxd"));
+		$walletbank_circuit_pct = $this->security->xss_clean($input->post("walletbank_circuit_pct"));
+		$walletbank_outside_fxd = $this->security->xss_clean($input->post("walletbank_outside_fxd"));
+		$walletbank_outside_pct = $this->security->xss_clean($input->post("walletbank_outside_pct"));
+		$referral_send_fxd = $this->security->xss_clean($input->post("referral_send_fxd"));
+		$referral_send_pct = $this->security->xss_clean($input->post("referral_send_pct"));
+		$referral_receive_fxd = $this->security->xss_clean($input->post("referral_receive_fxd"));
+		$referral_receive_pct = $this->security->xss_clean($input->post("referral_receive_pct"));
+		$referral_topup_fxd = $this->security->xss_clean($input->post("referral_topup_fxd"));
+		$referral_topup_pct = $this->security->xss_clean($input->post("referral_topup_pct"));
+		// $referral_bank_fxd = $this->security->xss_clean($input->post("referral_bank_fxd"));
+		// $referral_bank_pct = $this->security->xss_clean($input->post("referral_bank_pct"));
 
 		$mdata = array(
-			"topup"                 => $topup,
-			"walletbank_circuit"    => $walletbank_local,
-			"walletbank_outside"    => $walletbank_inter,
-			"wallet_sender"         => $wallet2wallet_send,
-			"wallet_receiver"       => $wallet2wallet_receive,
-			"referral_send"         => $referral_send,
-			"referral_receive"      => $referral_receive,
-			"referral_topup"        => $referral_topup,
-			"swap"                  => $swap,
-			"currency"              => $currency,
+			"topup_circuit_fxd" => $topup_circuit_fxd,
+			"topup_circuit_pct" => $topup_circuit_pct / 100,
+			"topup_outside_fxd" => $topup_outside_fxd,
+			"topup_outside_pct" => $topup_outside_pct / 100,
+			"wallet_sender_fxd" => $wallet_sender_fxd,
+			"wallet_sender_pct" => $wallet_sender_pct / 100,
+			"wallet_receiver_fxd" => $wallet_receiver_fxd,
+			"wallet_receiver_pct" => $wallet_receiver_pct / 100,
+			"walletbank_circuit_fxd" => $walletbank_circuit_fxd,
+			"walletbank_circuit_pct" => $walletbank_circuit_pct / 100,
+			"walletbank_outside_fxd" => $walletbank_outside_fxd,
+			"walletbank_outside_pct" => $walletbank_outside_pct / 100,
+			"referral_send_fxd" => $referral_send_fxd,
+			"referral_send_pct" => $referral_send_pct / 100,
+			"referral_receive_fxd" => $referral_receive_fxd,
+			"referral_receive_pct" => $referral_receive_pct / 100,
+			"referral_topup_fxd" => $referral_topup_fxd,
+			"referral_topup_pct" => $referral_topup_pct / 100,
+			// "referral_bank_fxd" => $referral_bank_fxd,
+			// "referral_bank_pct" => $referral_bank_pct/100,
 		);
 		$result = apitrackless("https://api.tracklessbank.com/v1/admin/fee/setFee", json_encode($mdata));
 		if (@$result->code == 200) {

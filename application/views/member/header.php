@@ -2,13 +2,13 @@
     <div class="col-12 d-flex justify-content-center">
         <div class="col-12 box-code-freedy px-4 py-3">
             <div class="copy-uqcode mt-3 mb-4 d-flex flex-row">
-                <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
+                <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?> </span>
                 <img src="<?= base_url() ?>assets/img/logo-2.png" alt="">
             </div>
             <div class="mywallet d-flex flex-column mb-4">
                 <span class="balance">Balance</span>
                 <span class="saldo"><?= $_SESSION["symbol"] ?>
-                    <?= number_format(balance($_SESSION['user_id'],$_SESSION["currency"]), 2) ?></span>
+                    <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]), 2) ?></span>
             </div>
             <span class="">Copy & share your referral link to earn money</span>
             <div class="copy-refcode d-flex flex-row justify-content-start mb-4">

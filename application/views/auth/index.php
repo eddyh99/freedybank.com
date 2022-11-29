@@ -40,8 +40,9 @@
                 class="col-12 col-lg-6 col-xxl-8 d-flex flex-column justify-content-center slider-freedy text-lg-start text-center">
                 <h1 data-aos="fade-up" class="f-lexend">Anonymous Bank System</h1>
                 <p data-aos="fade-up" class="f-lexend mt-3" data-aos-delay="400">
-                    Open a <span>Freedy</span> account and start <b>receiving - sending - paying - converting &
-                        saving</b>
+                    Open a <span translate="no">Freedy</span> account and start <b>receiving - sending - paying -
+                        converting &
+                        earning</b>
                     without limits from
                     anywhere in the world, in a completely anonymous and untraceable way.<br>
 
@@ -50,7 +51,7 @@
                     together, making the management of our money simple, safe, instant and anonymous.
                 </p>
                 <h2 data-aos="fade-up" data-aos-delay="400" class="f-lexend">
-                    GET YOUR FREEDY ACCOUNT IN LESS THAN A MINUTE
+                    GET YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN A MINUTE
                 </h2>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-center text-lg-start">
@@ -95,15 +96,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-10 col-md-6 col-lg-4 my-2" data-aos="fade-up" data-aos-delay="300">
-                    <div class="box-card-freedy d-flex align-items-start flex-column">
-                        <img src="<?= base_url(); ?>assets/img/freedy/sidikjari-bot.png" alt="" class="sidikjari-card">
-                        <h3 class="mb-auto f-lexend">Convert, custody and send in 50 currencies</h3>
-                        <a href="<?= base_url(); ?>link/whychoosing?choose=3" class="f-lexend">Read more</a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-4 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
                         <h3 class="mb-auto f-lexend">Zero exchange fees</h3>
@@ -111,10 +104,20 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="box-card-freedy d-flex align-items-start flex-column">
+                        <img src="<?= base_url(); ?>assets/img/freedy/sidikjari-bot.png" alt="" class="sidikjari-card">
+                        <h3 class="mb-auto f-lexend">Convert, custody and send in 50 currencies</h3>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=3" class="f-lexend">Read more</a>
+                    </div>
+                </div>
+
+
+
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/freedy/incard.png" alt="" class="incard-card">
-                        <h3 class="f-lexend">Freedy is FREE</h3>
+                        <h3 class="f-lexend"><b translate="no">Freedy</b> is FREE</h3>
                         <span class="f-lexend">Open a bank account is free of charge no monthly or yearly
                             fees</span>
                     </div>
@@ -153,7 +156,8 @@
                         <h2 class="f-lexend">The easiest way in the world
                             to open a bank account </h2>
                         <p class="f-lexend">
-                            <span class="text-blue-freedy">Freedy Digital Bank</span> will not ask you for any
+                            <span class="text-blue-freedy"><b translate="no">Freedy</b> Digital Bank</span> will not ask
+                            you for any
                             personal or company
                             documents or proof of residence (No
                             KYC).
@@ -178,7 +182,7 @@
                                 <p class="f-lexend">
                                     Transparency is the most important ingredient since it create trust.
                                     No surprises, only fair and honest fees and no hidden costs. Opening a
-                                    FreedyBank account is free of
+                                    <b translate="no">FreedyBank</b> account is free of
                                     charge, with no monthly and annual management costs, you will only pay for the
                                     services used.
                                 </p>
@@ -306,7 +310,8 @@
                             matter their
                             preferred way to pay: NFC or Chip & PIN, Card or mobile phone and QR code.
                             <br><br>
-                            You will receive your funds in your anonymous FreedyBank account, in this way they will
+                            You will receive your funds in your anonymous <b translate="no">FreedyBank</b> account, in
+                            this way they will
                             be untraceable,
                             not taxable and unattachable by anyone.
                         </p>
@@ -334,7 +339,7 @@
                     <div class="content-freedy">
                         <h2 class="f-lexend">
                             Get in Touch with<br>
-                            <span style="color: #005DF9;">FreedyBank</span>
+                            <span style="color: #005DF9;" translate="no">FreedyBank</span>
                         </h2>
                         <p class="f-lexend mt-5">Do you have any question? </p>
                         <a href="<?= base_url(); ?>link/send_message"
@@ -361,7 +366,7 @@
             <header class="section-header">
                 <p class="f-lexend">
                     <img src="<?= base_url(); ?>assets/img/freedy/logo.png" alt="" class="logo-features">
-                    Freedy Features
+                    <b translate="no">Freedy</b> Features
                 </p>
             </header>
             <div class="row d-flex justify-content-center">
@@ -404,7 +409,8 @@
                         <div data-aos="fade-up" data-aos-delay="600">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 text-center">
-                                    <h4 class="text-blue-freedy fw-bold f-lexend">GET YOUR FREEDY ACCOUNT IN LESS
+                                    <h4 class="text-blue-freedy fw-bold f-lexend">GET YOUR <b translate="no">FREEDY</b>
+                                        ACCOUNT IN LESS
                                         THAN A MINUTE </h4>
                                     <div class="text-center">
                                         <a href="<?= base_url(); ?>auth/signup"

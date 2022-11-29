@@ -3,12 +3,14 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <h2 class="title-accordion-freedy mb-5 fw-bold">If you have a business or you are a
-                    freelancer, you can offer the Fast Freedy service.</h2>
+                    freelancer, you can offer the Fast <b translate="no">Freedy</b> service.</h2>
                 <p>
                     <b>How does it work?</b><br>
-                    Open your FreedyBank account and add funds to your account (by bank transfer, wallet to wallet or
+                    Open your <b translate="no">FreedyBank</b> account and add funds to your account (by bank transfer,
+                    wallet to wallet or
                     credit / debit card).<br>
-                    Now you can become a top up and cashout point for those who have freedy wallets, collecting a
+                    Now you can become a top up and cashout point for those who have <b translate="no">freedy</b>
+                    wallets, collecting a
                     commission for each top-up / cashout operation.
                 </p>
             </div>
@@ -54,19 +56,21 @@
                     <h2 class="title-accordion-freedy mb-3 fw-bold">What are the top-up limits?
                     </h2>
                     <p>
-                        FreedyBank has no top-up limits, but you must comply with the cash laws in force in the country
+                        <b translate="no">FreedyBank</b> has no top-up limits, but you must comply with the cash laws in
+                        force in the country
                         in which you operate.
                         For example in Italy, you are not allowed to receive more than 997 euros for a SINGLE TOP-UP and
                         you will need to give a receipt showing the recharged amount and the commission collected by
                         your company for the service. In this way you will have proof of the cash in your possession.
-                        Freedy accounts are not subject to balance and movement limits.
+                        <b translate="no">Freedy</b> accounts are not subject to balance and movement limits.
                     </p>
                 </div>
                 <div class="col-12">
                     <h2 class="title-accordion-freedy mb-3 fw-bold">What do you need to recharge?
                     </h2>
                     <p>
-                        Offering the FastFreedy service is simple and fast, you should have an active Freedy account,
+                        Offering the <b translate="no">FastFreedy</b> service is simple and fast, you should have an
+                        active <b translate="no">Freedy</b> account,
                         have an available balance for wallet-to-wallet top-ups and liquidy for wallet cashout.
                     </p>
                 </div>
@@ -79,7 +83,8 @@
                 <h2 class="title-accordion-freedy mb-3 fw-bold">Do I have to request or provide any document?
                 </h2>
                 <p>
-                    No documents are required as FreedyBank operates with international licenses and, being an offshore
+                    No documents are required as <b translate="no">FreedyBank</b> operates with international licenses
+                    and, being an offshore
                     company, it has no connection with national control institutes. This situation allows us to be
                     exempted from the restrictive procedures of most countries.
                 </p>
@@ -91,14 +96,18 @@
     </div>
     <div class="col-12 mb-5">
         <div class="col-12 text-center">
-            <h2 class="title-accordion-freedy mb-3 fw-bold">Where can I top up / cashout FreedyBank account?
+            <h2 class="title-accordion-freedy mb-3 fw-bold">Where can I top up / cashout <b
+                    translate="no">FreedyBank</b> account?
             </h2>
             <p>
                 We have signed several agreements with different businesses. To find out which merchants offer the
-                FastFreedy service, you can use the app by selecting the SEARCH option; on the next screen, select the
-                “FASTFREEDY” option. At this point, if you have enabled the location system of your smartphone,within a
+                <b translate="no">FastFreedy</b> service, you can use the app by selecting the SEARCH option; on the
+                next screen, select the
+                “<b translate="no">FASTFREEDY</b>” option. At this point, if you have enabled the location system of
+                your smartphone,within a
                 few seconds you will have a detailed map with an indicator of where you are and all the activities that
-                offers the FASTFREEDY service. If you want more information - such as exact address, opening hours and
+                offers the <b translate="no">FASTFREEDY</b> service. If you want more information - such as exact
+                address, opening hours and
                 days - you can click on the individual icons.
             </p>
         </div>
@@ -108,7 +117,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Become a Freedy fast point</h4>
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Become a <b translate="no">Freedy</b>
+                            fast point</h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"
                                 class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">

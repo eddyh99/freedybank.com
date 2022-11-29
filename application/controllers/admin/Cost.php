@@ -34,21 +34,33 @@ class Cost extends CI_Controller
 		$mdata = array();
 		if (@$mfee->code == 200) {
 			$mdata = array(
-				"topup"             => number_format($mfee->message->topup, 2, ".", ","),
-				"walletbank_local"  => number_format($mfee->message->walletbank_circuit, 2, ".", ","),
-				"walletbank_inter"  => number_format($mfee->message->walletbank_outside, 2, ".", ","),
-				"wallet_send"       => number_format($mfee->message->wallet_sender, 2, ".", ","),
-				"wallet_receive"    => number_format($mfee->message->wallet_receiver, 2, ".", ","),
-				"swap"              => number_format($mfee->message->swap, 2, ".", ","),
+				"topup_circuit_fxd" => number_format($mfee->message->topup_circuit_fxd, 2, ".", ","),
+				"topup_circuit_pct" => number_format($mfee->message->topup_circuit_pct * 100, 2, ".", ","),
+				"topup_outside_fxd" => number_format($mfee->message->topup_outside_fxd, 2, ".", ","),
+				"topup_outside_pct" => number_format($mfee->message->topup_outside_pct * 100, 2, ".", ","),
+				"wallet_sender_fxd" => number_format($mfee->message->wallet_sender_fxd, 2, ".", ","),
+				"wallet_sender_pct" => number_format($mfee->message->wallet_sender_pct * 100, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format($mfee->message->wallet_receiver_fxd, 2, ".", ","),
+				"wallet_receiver_pct" => number_format($mfee->message->wallet_receiver_pct * 100, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format($mfee->message->walletbank_circuit_fxd, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format($mfee->message->walletbank_circuit_pct * 100, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format($mfee->message->walletbank_outside_fxd, 2, ".", ","),
+				"walletbank_outside_pct" => number_format($mfee->message->walletbank_outside_pct * 100, 2, ".", ","),
 			);
 		} else {
 			$mdata = array(
-				"topup"             => number_format(0, 2, ".", ","),
-				"walletbank_local"  => number_format(0, 2, ".", ","),
-				"walletbank_inter"  => number_format(0, 2, ".", ","),
-				"wallet_send"       => number_format(0, 2, ".", ","),
-				"wallet_receive"    => number_format(0, 2, ".", ","),
-				"swap"              => number_format(0, 2, ".", ","),
+				"topup_circuit_fxd" => number_format(0, 2, ".", ","),
+				"topup_circuit_pct" => number_format(0, 2, ".", ","),
+				"topup_outside_fxd" => number_format(0, 2, ".", ","),
+				"topup_outside_pct" => number_format(0, 2, ".", ","),
+				"wallet_sender_fxd" => number_format(0, 2, ".", ","),
+				"wallet_sender_pct" => number_format(0, 2, ".", ","),
+				"wallet_receiver_fxd" => number_format(0, 2, ".", ","),
+				"wallet_receiver_pct" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_circuit_pct" => number_format(0, 2, ".", ","),
+				"walletbank_outside_fxd" => number_format(0, 2, ".", ","),
+				"walletbank_outside_pct" => number_format(0, 2, ".", ","),
 			);
 		}
 		echo json_encode($mdata);

@@ -53,7 +53,8 @@
                     <div class="card-body">
                         <img src="<?= base_url() ?>assets/img/icon-1.png" alt="" class="icon mb-3">
                         <h5 class="card-title fw-bold">Earn great commission everyday</h5>
-                        <p class="card-text">Invite businesses and people to use a Freedy account, for each transactions
+                        <p class="card-text">Invite businesses and people to use a <b translate="no">Freedy</b> account,
+                            for each transactions
                             they do, you will receive a commission every day.
                             Your potential earning has no limits, more people you invite and more commissions you will
                             receive.</p>
@@ -76,7 +77,8 @@
                         <img src="<?= base_url() ?>assets/img/icon-3.png" alt="" class="icon mb-3">
                         <h5 class="card-title fw-bold">Work with company that thinks about the future</h5>
                         <p class="card-text">The fintech sector is the fastest growing field in the world.
-                            By working with FreedyBank, you will be partner in a current job and in a job of the future.
+                            By working with <b translate="no">FreedyBank</b>, you will be partner in a current job and
+                            in a job of the future.
                         </p>
                     </div>
                 </div>
@@ -109,7 +111,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Interested in becoming a Freedy Bank
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Interested in becoming a <b
+                                translate="no">Freedy Bank</b>
                             sales
                             consultant ?</h4>
                         <div class="text-center">
