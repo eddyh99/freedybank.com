@@ -54,7 +54,7 @@ class Mwallet extends CI_Controller
         );
         $result = apitrackless("https://api.tracklessbank.com/v1/admin/wallet/gethistory_bycurrency", json_encode($mdata));
         $data["token"] = $this->security->get_csrf_hash();
-        $data["history"] = $result->message;
+        $data["history"] = $result;
         echo json_encode($data);
     }
 
@@ -72,6 +72,7 @@ class Mwallet extends CI_Controller
     {
         $data = array(
             "title"     => "FreedyBank - Withdraw Local",
+            "extra"     => "admin/js/js_btn_disabled",
             "content"   => "admin/mwallet/withdraw-local",
         );
 
@@ -82,6 +83,7 @@ class Mwallet extends CI_Controller
     {
         $data = array(
             "title"     => "FreedyBank - Withdraw International",
+            "extra"     => "admin/js/js_btn_disabled",
             "content"   => "admin/mwallet/withdraw-inter",
         );
 
@@ -160,6 +162,7 @@ class Mwallet extends CI_Controller
         $data = array(
             "title"     => "FreedyBank - Withdraw Confirm",
             "content"   => "admin/mwallet/wdconfirm",
+            "extra"     => "admin/js/js_btn_disabled",
             "data"      => $temp
         );
 

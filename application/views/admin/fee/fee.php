@@ -3,19 +3,21 @@
 
 <div id="layoutSidenav_content">
     <main>
-        <?php if (@isset($_SESSION["failed"])) { ?>
-        <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
-        <?php if (@isset($_SESSION["success"])) { ?>
-        <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
-            <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <?php } ?>
         <div class="container-fluid px-4">
+            <div class="col-12 mt-3">
+                <?php if (@isset($_SESSION["failed"])) { ?>
+                <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
+                <?php if (@isset($_SESSION["success"])) { ?>
+                <div class="col-12 alert alert-success alert-dismissible fade show" role="alert">
+                    <span class="notif-login f-poppins"><?= @$_SESSION["success"] ?></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
+            </div>
             <div class="col-12 card mb-5 mt-3">
                 <div class="card-header fw-bold">
                     FREEDY BANK Fee
@@ -25,44 +27,116 @@
                         <label for="currency" class="col-sm-2 col-form-label">Currency</label>
                         <div class="col-sm-10">
                             <select name="currency" id="currency" class="form-select">
-                                <?php foreach ($currency as $dt) { ?>
+                                <?php foreach ($currency as $dt) {
+                                    if ($dt->status == 'active') {
+                                ?>
                                 <option value="<?= $dt->currency ?>"><?= $dt->name ?></option>
-                                <?php } ?>
+                                <?php       }
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Topup</label>
-                        <input type="text" id="topup" name="topup" class="form-control" readonly>
+                        <label class="form-label">Topup Circuit (Fixed)</label>
+                        <input type="text" id="topup_circuit_fxd" name="topup_circuit_fxd" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Wallet to Bank Local</label>
-                        <input type="text" id="walletbank_local" name="walletbank_local" class="form-control" readonly>
+                        <label class="form-label">Topup Circuit (%)</label>
+                        <input type="text" id="topup_circuit_pct" name="topup_circuit_pct" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Wallet to Bank International</label>
-                        <input type="text" id="walletbank_inter" name="walletbank_inter" class="form-control" readonly>
+                        <label class="form-label">Topup Outside (Fixed)</label>
+                        <input type="text" id="topup_outside_fxd" name="topup_outside_fxd" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Wallet to Wallet Send</label>
-                        <input type="text" id="w2w_send" name="w2w_send" class="form-control" readonly>
+                        <label class="form-label">Topup Outside (%)</label>
+                        <input type="text" id="topup_outside_pct" name="topup_outside_pct" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Wallet to Wallet Receive</label>
-                        <input type="text" id="w2w_receive" name="w2w_receive" class="form-control" readonly>
+                        <label class="form-label">Wallet Sender (Fixed)</label>
+                        <input type="text" id="wallet_sender_fxd" name="wallet_sender_fxd" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Swap</label>
-                        <input type="text" id="swap" name="swap" class="form-control" readonly>
+                        <label class="form-label">Wallet Sender (%)</label>
+                        <input type="text" id="wallet_sender_pct" name="wallet_sender_pct" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Referral Send</label>
-                        <input type="text" id="referral_send" name="referral_send" class="form-control" readonly>
+                        <label class="form-label">Wallet Receive (Fixed)</label>
+                        <input type="text" id="wallet_receiver_fxd" name="wallet_receiver_fxd" class="form-control"
+                            readonly>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Referral Receive</label>
-                        <input type="text" id="referral_receive" name="referral_receive" class="form-control" readonly>
+                        <label class="form-label">Wallet Receive (%)</label>
+                        <input type="text" id="wallet_receiver_pct" name="wallet_receiver_pct" class="form-control"
+                            readonly>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Walletbank Circuit (Fixed)</label>
+                        <input type="text" id="walletbank_circuit_fxd" name="walletbank_circuit_fxd"
+                            class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Walletbank Circuit (%)</label>
+                        <input type="text" id="walletbank_circuit_pct" name="walletbank_circuit_pct"
+                            class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Walletbank Outside (Fixed)</label>
+                        <input type="text" id="walletbank_outside_fxd" name="walletbank_outside_fxd"
+                            class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Walletbank Outside (%)</label>
+                        <input type="text" id="walletbank_outside_pct" name="walletbank_outside_pct"
+                            class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Sender (Fixed)</label>
+                        <input type="text" id="referral_send_fxd" name="referral_send_fxd" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Sender (%)</label>
+                        <input type="text" id="referral_send_pct" name="referral_send_pct" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Receive (Fixed)</label>
+                        <input type="text" id="referral_receive_fxd" name="referral_receive_fxd" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Receive (%)</label>
+                        <input type="text" id="referral_receive_pct" name="referral_receive_pct" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Topup (Fixed)</label>
+                        <input type="text" id="referral_topup_fxd" name="referral_topup_fxd" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Wallet Topup (%)</label>
+                        <input type="text" id="referral_topup_pct" name="referral_topup_pct" class="form-control"
+                            readonly>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Bank (Fixed)</label>
+                        <input type="text" id="referral_bank_fxd" name="referral_bank_fxd" class="form-control"
+                            readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Referral Wallet to Bank (%)</label>
+                        <input type="text" id="referral_bank_pct" name="referral_bank_pct" class="form-control"
+                            readonly>
+                    </div> -->
                     <div class="text-start">
                         <a id="editfee" class="btn btn-primary">Edit</a>
                     </div>

@@ -1,4 +1,4 @@
-<?php $this->load->view("admin/mwallet/countries-list"); ?>
+<?php require_once("countries-list.php"); ?>
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
@@ -20,7 +20,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php } ?>
-                    <form action="<?= base_url() ?>admin/mwallet/wdconfirm" method="post">
+                    <form action="<?= base_url() ?>admin/mwallet/wdconfirm" method="post" id="form_submit"
+                        onsubmit="return validate()">
                         <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
                             value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <input type="hidden" name="transfer_type" value="outside">
@@ -35,12 +36,6 @@
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="swift" id="inter3" placeholder="BIC/swift">
-                        </div>
-                        <div class="mb-3">
-                            <select name="account_type" class="form-select">
-                                <option value="saving">Saving</option>
-                                <option value="checking">Checking</option>
-                            </select>
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="amount" id="inter4" placeholder="Amount">
@@ -97,7 +92,7 @@
                             <a href="<?= base_url() ?>admin/mwallet/withdraw"
                                 class="btn btn-freedy-white px-4 py-2 me-2 shadow-none">Cancel</a>
                             <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none"
-                                onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
+                                id="btnconfirm">Confirm</button>
                         </div>
                     </form>
                 </div>

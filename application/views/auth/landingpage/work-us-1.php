@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 mb-3">
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-md-8">
                 <p>Start today, capitalize your website userbase or social media
                     traffic.
                     We are looking for new online affiliates to help us to spread our
@@ -12,14 +12,14 @@
                     relative contents which will improve your website placement and SEO
                 </p>
             </div>
-            <div class="col-4 text-center d-none d-lg-grid">
+            <div class="col-4 text-center d-none d-md-grid">
                 <img src="<?= base_url() ?>assets/img/Finance.png" alt="" class="img-fluid" style="max-width: 200px;">
             </div>
         </div>
     </div>
     <div class="col-12 mb-5">
-        <div class="d-flex flex-column flex-lg-row">
-            <div class="col-12 col-lg-4 px-2 py-2">
+        <div class="d-flex flex-column flex-md-row flex-wrap justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 1</h5>
@@ -29,17 +29,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 px-2 py-2">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 2</h5>
                         <p class="card-text">Create textual and visual content on your
                             website / social media
-                            to advertise FreedyBank</p>
+                            to advertise <b translate="no">FreedyBank</b></p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 px-2 py-2">
+            <div class="col-12 col-md-6 col-lg-4 px-2 py-2">
                 <div class="card freedy-card text-center">
                     <div class="card-body">
                         <h5 class="card-title">Step 3</h5>

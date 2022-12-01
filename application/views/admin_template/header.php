@@ -10,13 +10,17 @@
     <title><?= $title ?></title>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="icon">
-    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="apple-touch-icon">
+    <link href="<?= base_url() ?>assets/img/logo.png" rel="icon">
+    <link href="<?= base_url() ?>assets/img/logo.png" rel="apple-touch-icon">
 
     <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="<?= base_url() ?>assets/css/adm/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 

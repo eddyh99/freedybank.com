@@ -5,12 +5,13 @@
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
                     action="<?= base_url(); ?>member">
                     <div class="col-12 mt-auto text-center my-auto">
-                        <img src="<?= base_url(); ?>assets/img/logo-app-2.png" alt="" class="succes-regis-logo">
+                        <a href="<?= base_url() ?>">
+                            <img src="<?= base_url(); ?>assets/img/logo-app-2.png" alt="" class="succes-regis-logo">
+                        </a>
                     </div>
                     <div class="col-12 d-grid gap-2">
                         <p class="text-center f-roboto">Check your email to activate your account</p>
                         <p class="text-center f-roboto text-mute">If you don't receive any email check in spam</p>
-                        <a href="<?= base_url() ?>auth/login" class="btn btn-login f-roboto">ENTER</a>
                     </div>
                 </form>
             </div>

@@ -50,7 +50,11 @@ class Receive extends CI_Controller
 
     public function interbank()
     {
-        $currency = $_SESSION["currency"];
+        if (empty($_GET['currency'])) {
+            $currency = $_SESSION["currency"];
+        } else {
+            $currency = $_GET['currency'];
+        }
         $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
@@ -63,6 +67,24 @@ class Receive extends CI_Controller
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/interbank', $body);
+        $this->load->view('tamplate/footer');
+    }
+
+    public function cash()
+    {
+        $currency = $_SESSION["currency"];
+        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $result = apitrackless($url);
+        if ($result->code != 200) {
+            $body["bank"] = NULL;
+        } else {
+            $body["bank"] = $result->message;
+        }
+
+        $data['title'] = "Freedy - Add Receve";
+
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/topup/cash', $body);
         $this->load->view('tamplate/footer');
     }
 }

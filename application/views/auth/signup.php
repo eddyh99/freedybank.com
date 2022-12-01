@@ -16,10 +16,14 @@
                 <?php } ?>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
                     action="<?= base_url(); ?>auth/register">
-                    <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                    <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
+                        value="<?php echo $this->security->get_csrf_hash(); ?>">
+                    <input type="hidden" name="time_location" id="time_location">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">SIGN UP</span>
-                        <img src="<?= base_url(); ?>assets/img/freedy/logo.png" alt="">
+                        <a href="<?= base_url() ?>">
+                            <img src="<?= base_url(); ?>assets/img/logo.png" alt="">
+                        </a>
                     </div>
                     <div class="col-12 mb-4">
                         <label for="email" class="form-label f-publicsans">Email</label>
@@ -77,10 +81,10 @@
                         </label>
                         <div class="input-group">
                             <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral"
-                                placeholder="" value="<?=@$_GET["ref"]?>">
+                                placeholder="" value="<?= @$_GET["ref"] ?>">
                         </div>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div> 
+                    <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
                     <div class="col-12 mt-5 d-grid gap-2">
                         <button type="submit" class="btn btn-login f-roboto">SIGN UP</button>
                         <a href="<?= base_url(); ?>auth/login">Do you have account ? LOG IN</a>

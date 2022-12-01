@@ -12,25 +12,43 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.39/moment-timezone.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.39/moment-timezone-with-data.min.js"></script>
 <!-- Template Main JS File -->
 <script src="<?= base_url() ?>assets/js/main.js"></script>
 
 <!-- Form JS -->
 <script src="<?= base_url() ?>assets/js/form.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TYM4CBBPQ"></script>
 <?php
-if (isset($extra)){
-    $this->load->view($extra);
+if (isset($extra)) {
+  $this->load->view($extra);
 }
 ?>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TYM4CBBPQ"></script>
 
-  gtag('config', 'G-8TYM4CBBPQ');
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'G-8TYM4CBBPQ');
+
+
+function input(ele) {
+    $(ele).change(function() {
+        var amount = ele.value;
+        if (isNaN(amount) == isNaN()) {
+            $(this).val(parseFloat(0).toFixed(2));
+        } else {
+            $(this).val(parseFloat($(this).val()).toFixed(2));
+        }
+    });
+}
 </script>
 </body>
 

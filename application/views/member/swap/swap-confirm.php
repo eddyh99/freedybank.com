@@ -10,7 +10,8 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="col-12 py-4">
-                            <form method="POST" action="<?= base_url() ?>swap/notif">
+                            <form method="POST" action="<?= base_url() ?>swap/notif" onsubmit="return validate()"
+                                id="form_submit">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
@@ -35,8 +36,8 @@
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>swap"
                                         class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
-                                    <button class="btn btn-receive-bank px-5 py-2"
-                                        onClick="this.disabled=true; this.value='Sending…';" type="submit">OK</button>
+                                    <button class="btn btn-receive-bank px-5 py-2" id="btnconfirm"
+                                        type="submit">OK</button>
                                 </div>
                             </form>
                         </div>

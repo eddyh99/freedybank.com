@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="" class="hero d-flex align-items-center p-3 pt-lg-5">
+<section id="" class="hero d-flex align-items-center p-3 pt-md-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -20,7 +20,8 @@
                     <h2 class="title-top-header fw-bold">It`s time to become your own boss with our affilate program
                         WIN-WIN
                     </h2>
-                    <p class="mt-4">With FreedyBank you can choose from our 3 partnership programs :<br> Online
+                    <p class="mt-4">With <b translate="no">FreedyBank</b> you can choose from our 3 partnership programs
+                        :<br> Online
                         affiliate partner / Consultant partner / charging point</p>
                 </div>
                 <div class="col-4 d-none d-lg-grid">
@@ -71,7 +72,7 @@
                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 <div class="box-title-accordion ms-auto text-center">
-                                    <span class="head">FAST FREEDY POINT</span>
+                                    <span class="head"><b translate="no">FREEDYBANK</b> POINT</span>
                                     <span class="small" id="seemoreThree">See more</span>
                                 </div>
                             </button>

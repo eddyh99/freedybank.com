@@ -48,14 +48,6 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-right-left"></i></div>
                         Swap
                     </a>
-                    <a class="nav-link <?= @$mn_cost ?>" href="<?= base_url() ?>admin/cost">
-                        <div class="sb-nav-link-icon"><i class="fas fa-coins"></i></div>
-                        Default Cost
-                    </a>
-                    <a class="nav-link <?= @$mn_fee ?>" href="<?= base_url() ?>admin/fee">
-                        <div class="sb-nav-link-icon"><i class="fas fa-money-bill"></i></div>
-                        Default Fee
-                    </a>
                     <!--<a class="nav-link" href="currency.html">-->
                     <!--    <div class="sb-nav-link-icon"><i class="fas fa-money-bill"></i></div>-->
                     <!--    Currency-->

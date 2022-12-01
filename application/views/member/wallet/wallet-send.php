@@ -35,7 +35,8 @@
                             </div>
                             <?php } ?>
                             <span class="b-qr">Input manual</span>
-                            <form method="POST" action="<?= base_url() ?>wallet/send_confirm" class="text-center">
+                            <form method="POST" action="<?= base_url() ?>wallet/send_confirm" class="text-center"
+                                id="form_submit" onsubmit="return validate()">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
@@ -44,18 +45,18 @@
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode"
                                     placeholder="Confirm Unique code">
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    placeholder="Amount (ex. 0.01)"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
-                                    placeholder="Confirm Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    placeholder="Confirm Amount (ex. 0.01)"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
                                         <a href="<?= base_url() ?>wallet"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-2" type="submit"
-                                            onClick="this.disabled=true; this.value='Sending…';">OK</button>
+                                            id="btnconfirm">OK</button>
                                     </div>
                                 </div>
                             </form>

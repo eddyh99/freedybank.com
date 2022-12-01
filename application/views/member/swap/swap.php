@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
                             <form method="POST" id="swapconfirm" action="<?= base_url() ?>swap/confirm"
-                                class="swap text-center">
+                                class="swap text-center" onsubmit="return validate()">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
@@ -56,7 +56,7 @@
                                     <label for=""><?= $_SESSION["symbol"] ?></label>
                                     <input type="text" class="form-control text-end" name="amount" id="amount"
                                         placeholder="0.00"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                                 </div>
 
                                 <div class="swap-selection d-flex flex-column align-items-start justify-content-start">
@@ -94,7 +94,7 @@
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
                                         <button class="btn btn-receive-bank px-3 py-2 ms-auto" type="submit"
-                                            onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
+                                            id="btnconfirm">Confirm</button>
                                     </div>
                                 </div>
                             </form>

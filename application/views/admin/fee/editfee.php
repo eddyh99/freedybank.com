@@ -1,4 +1,5 @@
-<form action="<?= base_url() ?>admin/fee/updatefee" method="post" class="col-12">
+<form id="form_submit" action="<?= base_url() ?>admin/fee/updatefee" method="post" class="col-12"
+    onsubmit="return validate()">
     <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
         value="<?php echo $this->security->get_csrf_hash(); ?>">
     <input type="hidden" name="currency" value="<?= $currency ?>">
@@ -24,48 +25,126 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label">Topup</label>
-                            <input type="text" id="topup" name="topup" class="form-control"
-                                value="<?= $fee["topup"] ?>">
+                            <label class="form-label">Topup Circuit (Fixed)</label>
+                            <input type="text" id="topup_circuit_fxd" name="topup_circuit_fxd" class="form-control"
+                                value="<?= $fee['topup_circuit_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Wallet to Bank Local</label>
-                            <input type="text" id="walletbank_local" name="walletbank_local" class="form-control"
-                                value="<?= $fee["walletbank_local"] ?>">
+                            <label class="form-label">Topup Circuit (%)</label>
+                            <input type="text" id="topup_circuit_pct" name="topup_circuit_pct" class="form-control"
+                                value="<?= $fee['topup_circuit_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Wallet to International</label>
-                            <input type="text" id="walletbank_inter" name="walletbank_inter" class="form-control"
-                                value="<?= $fee["walletbank_inter"] ?>">
+                            <label class="form-label">Topup Outside (Fixed)</label>
+                            <input type="text" id="topup_outside_fxd" name="topup_outside_fxd" class="form-control"
+                                value="<?= $fee['topup_outside_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Wallet to Wallet Send</label>
-                            <input type="text" id="wallet2wallet" name="wallet2wallet_send" class="form-control"
-                                value="<?= $fee["wallet2wallet_send"] ?>">
+                            <label class="form-label">Topup Outside (%)</label>
+                            <input type="text" id="topup_outside_pct" name="topup_outside_pct" class="form-control"
+                                value="<?= $fee['topup_outside_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Wallet to Wallet Receive</label>
-                            <input type="text" id="wallet2wallet" name="wallet2wallet_receive" class="form-control"
-                                value="<?= $fee["wallet2wallet_receive"] ?>">
+                            <label class="form-label">Wallet Sender (Fixed)</label>
+                            <input type="text" id="wallet_sender_fxd" name="wallet_sender_fxd" class="form-control"
+                                value="<?= $fee['wallet_sender_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Swap</label>
-                            <input type="text" id="swap" name="swap" class="form-control" value="<?= $fee["swap"] ?>">
+                            <label class="form-label">Wallet Sender (%)</label>
+                            <input type="text" id="wallet_sender_pct" name="wallet_sender_pct" class="form-control"
+                                value="<?= $fee['wallet_sender_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Referral Send</label>
-                            <input type="text" id="referral_send" name="referral_send" class="form-control"
-                                value="<?= $fee["ref_send"] ?>">
+                            <label class="form-label">Wallet Receive (Fixed)</label>
+                            <input type="text" id="wallet_receiver_fxd" name="wallet_receiver_fxd" class="form-control"
+                                value="<?= $fee['wallet_receiver_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Referral Receive</label>
-                            <input type="text" id="referral_receive" name="referral_receive" class="form-control"
-                                value="<?= $fee["ref_receive"] ?>">
+                            <label class="form-label">Wallet Receive (%)</label>
+                            <input type="text" id="wallet_receiver_pct" name="wallet_receiver_pct" class="form-control"
+                                value="<?= $fee['wallet_receiver_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Walletbank Circuit (Fixed)</label>
+                            <input type="text" id="walletbank_circuit_fxd" name="walletbank_circuit_fxd"
+                                class="form-control" value="<?= $fee['walletbank_circuit_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Walletbank Circuit (%)</label>
+                            <input type="text" id="walletbank_circuit_pct" name="walletbank_circuit_pct"
+                                class="form-control" value="<?= $fee['walletbank_circuit_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Walletbank Outside (Fixed)</label>
+                            <input type="text" id="walletbank_outside_fxd" name="walletbank_outside_fxd"
+                                class="form-control" value="<?= $fee['walletbank_outside_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Walletbank Outside (%)</label>
+                            <input type="text" id="walletbank_outside_pct" name="walletbank_outside_pct"
+                                class="form-control" value="<?= $fee['walletbank_outside_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Sender (Fixed)</label>
+                            <input type="text" id="referral_send_fxd" name="referral_send_fxd" class="form-control"
+                                value="<?= $fee['referral_send_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Sender (%)</label>
+                            <input type="text" id="referral_send_pct" name="referral_send_pct" class="form-control"
+                                value="<?= $fee['referral_send_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Receive (Fixed)</label>
+                            <input type="text" id="referral_receive_fxd" name="referral_receive_fxd"
+                                class="form-control" value="<?= $fee['referral_receive_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Receive (%)</label>
+                            <input type="text" id="referral_receive_pct" name="referral_receive_pct"
+                                class="form-control" value="<?= $fee['referral_receive_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Topup (Fixed)</label>
+                            <input type="text" id="referral_topup_fxd" name="referral_topup_fxd" class="form-control"
+                                value="<?= $fee['referral_topup_fxd'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Wallet Topup (%)</label>
+                            <input type="text" id="referral_topup_pct" name="referral_topup_pct" class="form-control"
+                                value="<?= $fee['referral_topup_pct'] ?>"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Bank (Fixed)</label>
+                            <input type="text" id="referral_bank_fxd" name="referral_bank_fxd" class="form-control"
+                                value="$fee['referral_bank_fxd']" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Referral Wallet to Bank (%)</label>
+                            <input type="text" id="referral_bank_pct" name="referral_bank_pct" class="form-control"
+                                value="$fee['referral_bank_pct']" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                        </div> -->
                         <div class="mb-3">
                             <a href="<?= base_url() ?>admin/fee" class="btn btn-warning">Cancel</a>
-                            <button type="submit" class="btn btn-primary"
-                                onClick="this.disabled=true; this.value='Sending…';">Confirm</button>
+                            <button id="btnconfirm" class="btn btn-primary">Confirm</button>
                         </div>
                     </div>
                 </div>

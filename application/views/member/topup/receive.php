@@ -55,9 +55,23 @@
                             <span class="ms-2">Add/receive funds</span>
                         </div>
                         <div class="col-12 receive-note d-flex justify-content-center text-center my-4">
-                            <span class="w-50">*You can recive in 10 currencies, each one
-                                have a connected IBAN :
+                            <?php
+                            if (
+                                ($_SESSION["currency"] == "USD") ||
+                                ($_SESSION["currency"] == "EUR") ||
+                                ($_SESSION["currency"] == "AUD") ||
+                                ($_SESSION["currency"] == "NZD") ||
+                                ($_SESSION["currency"] == "CAD") ||
+                                ($_SESSION["currency"] == "HUF") ||
+                                ($_SESSION["currency"] == "SGD") ||
+                                ($_SESSION["currency"] == "TRY")
+                            ) { ?>
+                            <span class="w-100">*To increase and improve the level of privacy, receiving and sending
+                                money will be handled by Tracklessmoney, a payment gateway. For this reason, the
+                                receiving banking data of each currency will be the same for all users. THE ONLY DATA
+                                THAT WILL CHANGE WILL BE THE "CAUSAL" WHICH WILL IDENTIFY THE RECEIVER USER
                             </span>
+                            <?php } ?>
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
                             <?php
@@ -73,16 +87,32 @@
                             ) { ?>
                             <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">Local bank</a>
                             <?php } else { ?>
-
                             <div class="receive-note">
-                                <span>If you want to topup <?= $_SESSION["currency"] ?>, You need to convert another
-                                    currency</span>
+                                <span>To top up this currency you have to covert from another currency in <b>SWAP</b>
+                                    section</span><br>
+                                <span>Or make an international bank transfer toward EURO or DOLLAR</span>
+                            </div>
+
+                            <a href="<?= base_url() ?>receive/interbank?currency=USD" class="col-8 py-3 my-2">USD
+                                International</a>
+                            <a href="<?= base_url() ?>receive/interbank?currency=EUR" class="col-8 py-3 my-2">EUR
+                                International</a>
+                            <div class="receive-note">
+                                <span>
+                                    <b>ATTENTION:<br>
+                                        UPON THE ARRIVAL OF THE BANK TRANSFER, THE SENT CURRENCY WILL BE CONVERTED INTO
+                                        THE
+                                        CHOSEN DESTINATION CURRENCY</b>
+                                </span>
                             </div>
 
                             <?php } ?>
                             <?php if (($_SESSION["currency"] == "USD") || ($_SESSION["currency"] == "EUR")) { ?>
                             <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International</a>
 
+                            <?php } ?>
+                            <?php if (($_SESSION["currency"] == "EUR")) { ?>
+                            <a href="<?= base_url() ?>receive/cash" class="col-8 py-3 my-2">Cash</a>
                             <?php } ?>
                         </div>
                     </div>

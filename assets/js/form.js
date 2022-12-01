@@ -122,14 +122,16 @@ $("#btn-copy-qr").click(function () {
     navigator.clipboard.writeText(copyText.value);
 });
 
-// SALDO
-var input = document.querySelector('#saldo'); // get the input element
-input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-resizeInput.call(input); // immediately call the function
+$("#time_location").val(moment.tz.guess());
 
-var input = document.querySelector('#uqcode'); // get the input element
-input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-resizeInput.call(input); // immediately call the function
+// SALDO
+var input1 = document.querySelector('#saldo'); // get the input element
+input1.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
+resizeInput.call(input1); // immediately call the function
+
+var input2 = document.querySelector('#uqcode'); // get the input element
+input2.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
+resizeInput.call(input2); // immediately call the function
 
 function resizeInput() {
     this.style.width = this.value.length + 1 + "ch";
