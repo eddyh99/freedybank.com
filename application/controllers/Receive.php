@@ -50,7 +50,11 @@ class Receive extends CI_Controller
 
     public function interbank()
     {
-        $currency = $_SESSION["currency"];
+        if (empty($_GET['currency'])) {
+            $currency = $_SESSION["currency"];
+        } else {
+            $currency = $_GET['currency'];
+        }
         $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {

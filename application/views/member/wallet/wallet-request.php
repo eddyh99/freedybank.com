@@ -14,10 +14,10 @@
                                 id="form_submit" onsubmit="return validate()">
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
                                     placeholder="Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
                                     placeholder="Confirm Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

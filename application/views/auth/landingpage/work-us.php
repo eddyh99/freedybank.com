@@ -72,7 +72,7 @@
                                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
                                 aria-expanded="false" aria-controls="collapseThree">
                                 <div class="box-title-accordion ms-auto text-center">
-                                    <span class="head">FAST <b translate="no">FREEDY</b> POINT</span>
+                                    <span class="head"><b translate="no">FREEDYBANK</b> POINT</span>
                                     <span class="small" id="seemoreThree">See more</span>
                                 </div>
                             </button>

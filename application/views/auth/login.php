@@ -22,7 +22,7 @@
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">LOGIN</span>
                         <a href="<?= base_url() ?>">
-                            <img src="<?= base_url(); ?>assets/img/freedy/logo.png" alt="">
+                            <img src="<?= base_url(); ?>assets/img/logo.png" alt="">
                         </a>
                     </div>
                     <div class="col-12 mb-4">

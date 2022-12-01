@@ -10,8 +10,8 @@
     <title><?= $title ?></title>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="icon">
-    <link href="<?= base_url() ?>assets/img/freedy/logo.png" rel="apple-touch-icon">
+    <link href="<?= base_url() ?>assets/img/logo.png" rel="icon">
+    <link href="<?= base_url() ?>assets/img/logo.png" rel="apple-touch-icon">
 
     <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="<?= base_url() ?>assets/css/adm/styles.css" rel="stylesheet" />

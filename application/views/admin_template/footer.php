@@ -13,6 +13,19 @@ if (isset($extra)) {
 }
 ?>
 
+<script>
+function input(number) {
+    $(number).change(function() {
+        var amount = number.value;
+        if (isNaN(amount) == isNaN()) {
+            $(this).val(parseFloat(0).toFixed(2));
+        } else {
+            $(this).val(parseFloat($(this).val()).toFixed(2));
+        }
+    });
+}
+</script>
+
 </body>
 
 </html>

@@ -21,7 +21,9 @@
                     <input type="hidden" name="time_location" id="time_location">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">SIGN UP</span>
-                        <img src="<?= base_url(); ?>assets/img/freedy/logo.png" alt="">
+                        <a href="<?= base_url() ?>">
+                            <img src="<?= base_url(); ?>assets/img/logo.png" alt="">
+                        </a>
                     </div>
                     <div class="col-12 mb-4">
                         <label for="email" class="form-label f-publicsans">Email</label>

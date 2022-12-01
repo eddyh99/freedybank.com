@@ -7,11 +7,10 @@
                 <p>
                     <b>How does it work?</b><br>
                     Open your <b translate="no">FreedyBank</b> account and add funds to your account (by bank transfer,
-                    wallet to wallet or
-                    credit / debit card).<br>
-                    Now you can become a top up and cashout point for those who have <b translate="no">freedy</b>
-                    wallets, collecting a
-                    commission for each top-up / cashout operation.
+                    wallet to wallet or credit / debit card). <br>
+                    Now you can become a top up and withdrawal point for
+                    those who have a <b translate="no">Freedy</b> wallet or those of any other bank of TracklessBank
+                    system, collecting a commission for each top-up / withdrawal operation.
                 </p>
             </div>
             <div class="col-6 text-center d-none d-md-grid">
@@ -19,32 +18,11 @@
             </div>
         </div>
     </div>
-    <div class="col-12 mb-5">
-        <div class="d-flex flex-column flex-md-row">
-            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column py-5">
-                <div class="col-12 icon-arrow text-center">
-                    <img class="icon" src="<?= base_url() ?>assets/img/icon-4.png" alt="">
-                    <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
-                </div>
-                <p>If you invite 100 person/companies
-                    open an account using your link</p>
-            </div>
-            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column py-5">
-                <div class="col-12 icon-arrow text-center">
-                    <img class="icon" src="<?= base_url() ?>assets/img/icon-5.png" alt="">
-                    <img class="arrow" src="<?= base_url() ?>assets/img/arrow-right.png" alt="">
-                </div>
-                <p>They do 5 operations a day
-                    (payment by card, wallet to wallet etc)</p>
-            </div>
-            <div class="col-12 col-md-4 card-arrow-freedy px-3 px-md-4 px-lg-5 flex-column pt-5 pt-md-0">
-                <div class="col-12 icon-arrow text-center">
-                    <img class="icon" src="<?= base_url() ?>assets/img/icon-6.png" alt="">
-                </div>
-                <p>You would earn 750 euros monthly,
-                    accedited directly to your wallet.</p>
-            </div>
-        </div>
+    <div class="col-12 my-3">
+        <h2 class="title-accordion-freedy"><b translate="no">FreedyBank</b> point will charge, at its discretion, a
+            fixed or percentage fee
+            for each top-up or withdrawal.
+        </h2>
     </div>
     <div class="col-12 mb-3">
         <div class="row">
@@ -57,21 +35,18 @@
                     </h2>
                     <p>
                         <b translate="no">FreedyBank</b> has no top-up limits, but you must comply with the cash laws in
-                        force in the country
-                        in which you operate.
-                        For example in Italy, you are not allowed to receive more than 997 euros for a SINGLE TOP-UP and
-                        you will need to give a receipt showing the recharged amount and the commission collected by
-                        your company for the service. In this way you will have proof of the cash in your possession.
-                        <b translate="no">Freedy</b> accounts are not subject to balance and movement limits.
+                        force in the country in which you operate and you will need to issue a receipt showing the top
+                        up ammount and the commission collcted by yuour company for the service provided.<br>
+                        In this way you will have proof of the cash in your possession.<br>
+                        <b><b translate="no">Freedy</b> accounts are not subject to balance and movement limits.</b>
                     </p>
                 </div>
                 <div class="col-12">
-                    <h2 class="title-accordion-freedy mb-3 fw-bold">What do you need to recharge?
-                    </h2>
+                    <h2 class="title-accordion-freedy mb-3 fw-bold">What do you need to recharge?</h2>
                     <p>
                         Offering the <b translate="no">FastFreedy</b> service is simple and fast, you should have an
-                        active <b translate="no">Freedy</b> account,
-                        have an available balance for wallet-to-wallet top-ups and liquidy for wallet cashout.
+                        active <b translate="no">Freedy</b> account, have an available balance for wallet-to-wallet
+                        top-up’s and liquidy for withdrawal
                     </p>
                 </div>
             </div>
@@ -80,13 +55,11 @@
     <div class="col-12 mb-3">
         <div class="row">
             <div class="col-12 col-md-6">
-                <h2 class="title-accordion-freedy mb-3 fw-bold">Do I have to request or provide any document?
-                </h2>
+                <h2 class="title-accordion-freedy mb-3 fw-bold">Do I have to request or provide any document?</h2>
                 <p>
                     No documents are required as <b translate="no">FreedyBank</b> operates with international licenses
-                    and, being an offshore
-                    company, it has no connection with national control institutes. This situation allows us to be
-                    exempted from the restrictive procedures of most countries.
+                    and, being an offshore company, it has no connection with national control institutes. This
+                    situation allows us to be exempted from the restrictive procedures of most countries.
                 </p>
             </div>
             <div class="col-6 text-center d-none d-md-grid">
@@ -97,13 +70,12 @@
     <div class="col-12 mb-5">
         <div class="col-12 text-center">
             <h2 class="title-accordion-freedy mb-3 fw-bold">Where can I top up / cashout <b
-                    translate="no">FreedyBank</b> account?
-            </h2>
+                    translate="no">FreedyBank</b> account?</h2>
             <p>
                 We have signed several agreements with different businesses. To find out which merchants offer the
                 <b translate="no">FastFreedy</b> service, you can use the app by selecting the SEARCH option; on the
                 next screen, select the
-                “<b translate="no">FASTFREEDY</b>” option. At this point, if you have enabled the location system of
+                <b translate="no">“FASTFREEDY”</b> option. At this point, if you have enabled the location system of
                 your smartphone,within a
                 few seconds you will have a detailed map with an indicator of where you are and all the activities that
                 offers the <b translate="no">FASTFREEDY</b> service. If you want more information - such as exact

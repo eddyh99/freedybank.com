@@ -45,11 +45,11 @@
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode"
                                     placeholder="Confirm Unique code">
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    placeholder="Amount (ex. 0.01)"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
-                                    placeholder="Confirm Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                    placeholder="Confirm Amount (ex. 0.01)"
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

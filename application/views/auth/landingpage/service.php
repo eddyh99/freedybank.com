@@ -13,7 +13,7 @@
             <?php if ($service == 1) { ?>
             <div class="col-12 mt-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-1.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-1.png" alt="">
                     <span class="f-lexend">Custody</span>
                 </div>
             </div>
@@ -83,7 +83,7 @@
             <?php if ($service == 2) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-2.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-2.png" alt="">
                     <span class="f-lexend">Essential for <br> your trip</span>
                 </div>
             </div>
@@ -129,7 +129,7 @@
             <?php if ($service == 3) { ?>
             <div class="col-12 mt-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-3.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-3.png" alt="">
                 </div>
             </div>
             <div class="col-12 mb-5">
@@ -202,7 +202,7 @@
             <?php if ($service == 4) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-4.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-4.png" alt="">
                     <span class="f-lexend">Collections & <br> Payments</span>
                 </div>
             </div>
@@ -308,7 +308,7 @@
             <?php if ($service == 5) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-5.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-5.png" alt="">
                     <span class="f-lexend">Daily use</span>
                 </div>
             </div>
@@ -366,7 +366,7 @@
             <?php if ($service == 6) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
-                    <img src="<?= base_url() ?>assets/img/freedy/service-6.png" alt="">
+                    <img src="<?= base_url() ?>assets/img/service-6.png" alt="">
                     <span class="f-lexend">Get Reward</span>
                 </div>
             </div>
