@@ -144,13 +144,8 @@ class Swap extends CI_Controller
 
             $result = apitrackless("https://api.tracklessbank.com/v1/admin/swap/swapProcess", json_encode($mdata));
             if (@$result->code != 200) {
-                header("HTTP/1.1 500 Internal Server Error");
-                $error = array(
-                    "token"     => $this->security->get_csrf_hash(),
-                    "message"   => $result->message
-                );
-                echo json_encode($error);
-                return;
+                $this->session->set_flashdata("failed", $result->message);
+                redirect('admin/swap');
             }
 
             $datatc = array(
