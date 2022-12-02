@@ -41,6 +41,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 
+        $body["currency"] = $currency;
         $data['title'] = "Freedy - Add Receve";
 
         $this->load->view('tamplate/header', $data);
