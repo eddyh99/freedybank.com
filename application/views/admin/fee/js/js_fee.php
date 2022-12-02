@@ -28,8 +28,8 @@ function readfee() {
             $("#referral_receive_pct").val(data.referral_receive_pct)
             $("#referral_topup_fxd").val(data.referral_topup_fxd)
             $("#referral_topup_pct").val(data.referral_topup_pct)
-            // $("#referral_bank_fxd").val(data.referral_bank_fxd)
-            // $("#referral_bank_pct").val(data.referral_bank_pct)
+            $("#referral_bank_fxd").val(data.referral_bank_fxd)
+            $("#referral_bank_pct").val(data.referral_bank_pct)
         },
         error: function(response) {
             alert(response);

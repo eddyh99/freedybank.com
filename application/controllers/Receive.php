@@ -13,27 +13,28 @@ class Receive extends CI_Controller
 
     public function index()
     {
-        $currency = $_SESSION["currency"];
+        /*$currency = $_SESSION["currency"];
         $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
+        print_r();
         if ($result->code != 200) {
             $body["bank"] = NULL;
         } else {
             $body["bank"] = $result->message;
         }
-
+*/
         $data['title'] = "Freedy - Add Receve";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
-        $this->load->view('member/topup/receive', $body);
+        $this->load->view('member/topup/receive');
         $this->load->view('tamplate/footer');
     }
 
     public function localbank()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -55,7 +56,7 @@ class Receive extends CI_Controller
         } else {
             $currency = $_GET['currency'];
         }
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
