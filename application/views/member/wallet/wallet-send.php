@@ -41,15 +41,29 @@
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="text" class="form-control my-4" name="ucode" id="ucode"
-                                    placeholder="Unique code">
+                                    placeholder="Unique code" value="<?= $ucode ?>"
+                                    <?php if ($ucode) {
+                                                                                                                                                            echo 'readonly';
+                                                                                                                                                        } ?>>
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode"
-                                    placeholder="Confirm Unique code">
+                                    placeholder="Confirm Unique code" value="<?= $ucode ?>"
+                                    <?php if ($ucode) {
+                                                                                                                                                                                    echo 'readonly';
+                                                                                                                                                                                } ?>>
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
                                     placeholder="Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                    value="<?= $amount ?>"
+                                    <?php if ($amount) {
+                                                                                                                                                                                                                                                                    echo 'readonly';
+                                                                                                                                                                                                                                                                } ?>>
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
                                     placeholder="Confirm Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                    value="<?= $amount ?>"
+                                    <?php if ($amount) {
+                                                                                                                                                                                                                                                                                            echo 'readonly';
+                                                                                                                                                                                                                                                                                        } ?>>
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

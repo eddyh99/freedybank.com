@@ -12,6 +12,9 @@
                         <div class="py-4">
                             <form method="POST" action="<?= base_url() ?>wallet/request_qrcode" class="text-center"
                                 id="form_submit" onsubmit="return validate()">
+                                <input type="hidden" id="token"
+                                    name="<?php echo $this->security->get_csrf_token_name(); ?>"
+                                    value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
                                     placeholder="Amount"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">

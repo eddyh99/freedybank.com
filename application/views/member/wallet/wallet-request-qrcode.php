@@ -10,9 +10,8 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4 w-receive text-center">
-                            <img src="<?= base_url() ?>assets/img/qrcode.png" alt="">
-                            <input type="text" class="form-control" name="" id="copy-qr"
-                                value="<?= $_SESSION['ucode'] ?>" hidden>
+                            <img src="<?= base_url() ?>qr/request/<?= $nameqr ?>.png" alt="">
+                            <input type="text" class="form-control" name="" id="copy-qr" value="<?= $linkqr ?>" hidden>
                             <div class="mt-3">
                                 <a href="#" class="mx-1">
                                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
