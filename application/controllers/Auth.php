@@ -119,7 +119,10 @@ class Auth extends CI_Controller
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate yout account<br><br>
 			";
 
+			$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
 			$this->sendmail($email, $subject, $message);
+			$this->qrcodeuser($result->message->ucode);
+			$this->qrcodereceive($urlqr, $result->message->ucode);
 
 			$this->session->set_flashdata('success', "<p style='color:black'>You have successfully register</p>");
 			redirect(base_url() . "auth/signup_notif");
@@ -216,6 +219,16 @@ class Auth extends CI_Controller
 				'ucode'     => $result->message->ucode,
 				'referral'  => $result->message->refcode
 			);
+
+			$src = base_url() . 'qr/user/' . $result->message->ucode . '.png';
+			$srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
+			if (@getimagesize($src) == FALSE) {
+				$this->qrcodeuser($result->message->ucode);
+			}
+			if (@getimagesize($srcr) == FALSE) {
+				$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
+				$this->qrcodereceive($urlqr, $result->message->ucode);
+			}
 			$this->session->set_userdata($member_session);
 			redirect("homepage");
 		} elseif ($result->message->role == 'admin') {
@@ -380,8 +393,29 @@ class Auth extends CI_Controller
 		$mail->msgHTML($message);
 		$mail->send();
 	}
+	public function qrcodereceive($url, $kodeqr)
+	{
+		if ($kodeqr) {
+			$config['cacheable']    = true; //boolean, the default is true
+			$config['cachedir']     = './qr/'; //string, the default is application/cache/
+			$config['errorlog']     = './qr/'; //string, the default is application/logs/
+			$config['imagedir']     = './qr/receive/'; //direktori penyimpanan qr code
+			$config['quality']      = true; //boolean, the default is true
+			$config['size']         = '1024'; //interger, the default is 1024
+			$config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+			$config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+			$this->ciqrcode->initialize($config);
 
-	public function qrcode($kodeqr)
+			$image_name = $kodeqr . '.png'; //buat name dari qr code sesuai dengan nim
+
+			$params['data'] = $url; //data yang akan di jadikan QR CODE
+			$params['level'] = 'H'; //H=High
+			$params['size'] = 10;
+			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+		}
+	}
+	public function qrcodeuser($kodeqr)
 	{
 		if ($kodeqr) {
 			$config['cacheable']    = true; //boolean, the default is true

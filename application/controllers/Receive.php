@@ -75,7 +75,7 @@ class Receive extends CI_Controller
     public function cash()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;

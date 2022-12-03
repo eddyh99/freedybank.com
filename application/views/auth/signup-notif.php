@@ -13,6 +13,9 @@
                         <p class="text-center f-roboto">Check your email to activate your account</p>
                         <p class="text-center f-roboto text-mute">If you don't receive any email check in spam</p>
                     </div>
+                    <div class="col-12 d-grid gap-2">
+                        <a href="<?= base_url() ?>" class="btn btn-login f-roboto">Back</a>
+                    </div>
                 </form>
             </div>
         </div>
