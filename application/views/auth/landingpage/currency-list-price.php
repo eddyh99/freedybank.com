@@ -44,52 +44,52 @@
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving SEPA</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_circuit_fxd'] + $fee['topup_circuit_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_circuit_fxd'] + $fee['topup_circuit_fxd'] + $fee['referral_topup_fxd']) ?>
                                 +
-                                <?= ($cost['topup_circuit_pct'] + $fee['topup_circuit_pct']) ?>%
+                                <?= ($cost['topup_circuit_pct'] + $fee['topup_circuit_pct'] + $fee['referral_topup_pct']) ?>%
                                 <?= $dtcurr->symbol ?>
                             </span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving International</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_outside_fxd'] + $fee['topup_outside_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_outside_fxd'] + $fee['topup_outside_fxd'] + $fee['referral_topup_fxd']) ?>
                                 +
-                                <?= ($cost['topup_outside_pct'] + $fee['topup_outside_pct']) ?>%
+                                <?= ($cost['topup_outside_pct'] + $fee['topup_outside_pct'] + $fee['referral_topup_pct']) ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Send Wallet to Wallet</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_sender_fxd'] + $fee['wallet_sender_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_sender_fxd'] + $fee['wallet_sender_fxd'] + $fee['referral_send_fxd']) ?>
                                 +
-                                <?= ($cost['wallet_sender_pct'] + $fee['wallet_sender_pct']) ?>%
+                                <?= ($cost['wallet_sender_pct'] + $fee['wallet_sender_pct'] + $fee['referral_send_pct']) ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving Wallet to Wallet</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_receiver_fxd'] + $fee['wallet_receiver_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_receiver_fxd'] + $fee['wallet_receiver_fxd'] + $fee['referral_receive_fxd']) ?>
                                 +
-                                <?= ($cost['wallet_receiver_pct'] + $fee['wallet_receiver_pct']) ?>%
+                                <?= ($cost['wallet_receiver_pct'] + $fee['wallet_receiver_pct'] + $fee['referral_receive_pct']) ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">National Transfer</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_circuit_fxd'] + $fee['walletbank_circuit_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_circuit_fxd'] + $fee['walletbank_circuit_fxd'] + $fee['referral_bank_fxd']) ?>
                                 +
-                                <?= ($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct']) ?>%
+                                <?= ($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct'] + $fee['referral_bank_pct']) ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">International Transfer</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_outside_fxd'] + $fee['walletbank_outside_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_outside_fxd'] + $fee['walletbank_outside_fxd'] + $fee['referral_bank_fxd']) ?>
                                 +
-                                <?= ($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct']) ?>%
+                                <?= ($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct'] + $fee['referral_bank_pct']) ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li

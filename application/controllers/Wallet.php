@@ -23,16 +23,20 @@ class Wallet extends CI_Controller
 
     public function send()
     {
-        $ucode = '';
-        $amount = '';
-        if ($_GET['ucode']) {
-            if (isset($_GET['amount'])) {
-                $amount = $_GET['amount'];
-            }
-            $ucode =  $_GET['ucode'];
-        } else {
-            $ucode = '';
-            $amount = 0;
+        // Get URL
+        $linkurl = $_SERVER['REQUEST_URI'];
+        $get_url = str_replace("/freedybank.com/wallet/send?", "", $linkurl);
+        $decode_url = base64_decode($get_url);
+
+        // Get UCode
+        $get_dataucode = str_replace("ucode=", "", $decode_url);
+        $ucode = strstr($get_dataucode, '&', true);
+
+        // Get Amount
+        $amount = str_replace("ucode=" . $ucode . "&amount=", "", $decode_url);
+        if (empty($ucode)) {
+            $ucode = $get_dataucode;
+            $amount = '';
         }
 
         $data['title'] = "Freedy - Wallet to Wallet";
@@ -171,15 +175,17 @@ class Wallet extends CI_Controller
 
         $input        = $this->input;
         $amount        = $this->security->xss_clean($input->post("amount"));
-        $linkqr = base_url() . 'wallet/send?ucode=' . $_SESSION["ucode"] . '&amount=' . $amount;
+        $linkqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
         $codename = substr(sha1(time()), 0, 8);
         $nameqr = $_SESSION["ucode"] . '-' . $codename;
-        $this->qrcode($linkqr, $nameqr);
-        // if ($convert == FALSE) {
-        //     redirect("wallet/request");
-        //     $this->session->set_flashdata('failed', validation_errors());
-        // }
+        $src = base_url() . 'qr/request/' . $nameqr . '.png';
 
+        if (@getimagesize($src)) {
+            $codename = substr(sha1(time()), 0, 8);
+            $nameqr = $_SESSION["ucode"] . '-' . $codename;
+        }
+
+        $this->qrcode($linkqr, $nameqr);
         $data = array(
             'title' => 'Freedy - Wallet to Wallet',
             'nameqr' => $nameqr,

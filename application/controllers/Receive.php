@@ -33,7 +33,7 @@ class Receive extends CI_Controller
     public function localbank()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -56,7 +56,7 @@ class Receive extends CI_Controller
         } else {
             $currency = $_GET['currency'];
         }
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -74,7 +74,7 @@ class Receive extends CI_Controller
     public function cash()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;

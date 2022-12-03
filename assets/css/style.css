@@ -4018,6 +4018,15 @@ section {
     color: #000000;
   }
 
+  .receive-note span.title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+  }
+
   .recive-bank a {
     background: #0078F0;
     border-radius: 10px;
@@ -4373,25 +4382,23 @@ section {
 
 
   .navbar-app>.box-navbar-freedy a {
-    margin: 0 .25rem;
+    margin: 0 2rem;
 
-    font-weight: 500;
-    font-size: 6px;
+    font-weight: 700;
+    font-size: 12px;
     line-height: 20px;
-    color: #000000;
+    color: #0078F0;
     text-align: center;
+
+
+    border: 1px solid #0078F0;
+    border-radius: 10px;
+    padding: 0 1rem;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus {
     color: #0078F0;
-    padding: .5rem;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active {
-    background: linear-gradient(115.7deg, #2400FF 2.16%, rgba(0, 240, 255, 0.88) 115.54%);
-    box-shadow: -4.74877px 13.0591px 29.6798px rgba(35, 63, 120, 0.23);
-    border-radius: 100px;
-    color: #fff;
+    padding: 1rem .25rem;
   }
 
   .navbar-app>.box-navbar-freedy a .icon-menus>svg {
@@ -4404,16 +4411,6 @@ section {
   .navbar-app>.box-navbar-freedy a .icon-menus.home-svg>svg {
     stroke: #0078F0;
     fill: #fff;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active>svg {
-    stroke: #FFFFFF;
-    fill: #fff;
-  }
-
-  .navbar-app>.box-navbar-freedy a .icon-menus.active.home-svg>svg {
-    stroke: #FFFFFF;
-    fill: none;
   }
 
 }
@@ -5949,6 +5946,15 @@ section {
   .receive-note span {
     font-weight: 400;
     font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .receive-note span.title {
+    font-weight: 400;
+    font-size: 14px;
     line-height: 15px;
     text-align: center;
 
@@ -7820,6 +7826,15 @@ section {
   .receive-note span {
     font-weight: 400;
     font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .receive-note span.title {
+    font-weight: 400;
+    font-size: 14px;
     line-height: 15px;
     text-align: center;
 
@@ -9954,6 +9969,15 @@ section {
   .receive-note span {
     font-weight: 400;
     font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .receive-note span.title {
+    font-weight: 400;
+    font-size: 16px;
     line-height: 15px;
     text-align: center;
 

@@ -10,9 +10,10 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4 w-receive text-center">
-                            <img src="<?= base_url() ?>assets/img/qrcode.png" alt="">
+                            <img src="<?= base_url() ?>qr/receive/<?= $_SESSION['ucode'] ?>.png" alt="">
                             <input type="text" class="form-control" name="" id="copy-qr"
-                                value="<?= $_SESSION['ucode'] ?>" hidden>
+                                value="<?= base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]) ?>"
+                                hidden>
                             <div class="mt-3">
                                 <a href="#" class="mx-1">
                                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none"

@@ -151,8 +151,8 @@ class Link extends CI_Controller
                 "referral_receive_pct" => number_format(0, 2, ".", ","),
                 "referral_topup_fxd" => number_format(0, 2, ".", ","),
                 "referral_topup_pct" => number_format(0, 2, ".", ","),
-                // "referral_bank_fxd" => number_format(0, 2, ".", ","),
-                // "referral_bank_pct" => number_format(0, 2, ".", ","),
+                "referral_bank_fxd" => number_format(0, 2, ".", ","),
+                "referral_bank_pct" => number_format(0, 2, ".", ","),
             );
         } else {
             $mdatafee = array(
@@ -174,8 +174,8 @@ class Link extends CI_Controller
                 "referral_receive_pct" => number_format($fee->message->referral_receive_pct * 100, 2, ".", ","),
                 "referral_topup_fxd" => number_format($fee->message->referral_topup_fxd, 2, ".", ","),
                 "referral_topup_pct" => number_format($fee->message->referral_topup_pct * 100, 2, ".", ","),
-                // "referral_bank_fxd" => number_format($fee->message->referral_bank_fxd, 2, ".", ","),
-                // "referral_bank_pct" => number_format($fee->message->referral_bank_pct * 100, 2, ".", ","),
+                "referral_bank_fxd" => number_format($fee->message->referral_bank_fxd, 2, ".", ","),
+                "referral_bank_pct" => number_format($fee->message->referral_bank_pct * 100, 2, ".", ","),
             );
         }
 

@@ -88,9 +88,14 @@
                             <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">Local bank</a>
                             <?php } else { ?>
                             <div class="receive-note">
-                                <span>To top up this currency you have to covert from another currency in <b>SWAP</b>
+                                <span class="fw-bold title">To top up this currency you have to covert from another
+                                    currency
+                                    in <b>SWAP</b>
                                     section</span><br>
-                                <span>Or make an international bank transfer toward EURO or DOLLAR</span>
+                                <hr>
+                                <span>Or make an international bank transfer toward EURO or
+                                    DOLLAR</span>
+                                <hr>
                             </div>
 
                             <a href="<?= base_url() ?>receive/interbank?currency=USD" class="col-8 py-3 my-2">USD
