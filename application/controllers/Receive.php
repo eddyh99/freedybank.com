@@ -52,7 +52,7 @@ class Receive extends CI_Controller
 
     public function interbank()
     {
-        if (empty($_GET['currency'])) {
+        if ($_GET['currency'] == '') {
             $currency = $_SESSION["currency"];
         } else {
             $currency = $_GET['currency'];

@@ -14,7 +14,7 @@
                                 <label>Registered Name</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter1"
-                                        value="<?= @$bank->oc_registered_name ?>" readonly>
+                                        value="<?= @$bank->name_outside ?>" readonly>
                                     <a class="btn btn-copy" id="btninter1">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
                                 <label>Account Number</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter2"
-                                        value="<?= @$bank->oc_iban ?>" readonly>
+                                        value="<?= @$bank->iban_outside ?>" readonly>
                                     <a class="btn btn-copy" id="btninter2">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
                                 <label>Swift Code</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter3"
-                                        value="<?= @$bank->oc_bic ?>" readonly>
+                                        value="<?= @$bank->bic_outside ?>" readonly>
                                     <a class="btn btn-copy" id="btninter3">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@
                                 <label>Company Address</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter5"
-                                        value="<?= @$bank->oc_bank_address ?>" readonly>
+                                        value="<?= @$bank->address_outside ?>" readonly>
                                     <a class="btn btn-copy" id="btninter5">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">

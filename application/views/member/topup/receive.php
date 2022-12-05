@@ -64,7 +64,9 @@
                                 ($_SESSION["currency"] == "CAD") ||
                                 ($_SESSION["currency"] == "HUF") ||
                                 ($_SESSION["currency"] == "SGD") ||
-                                ($_SESSION["currency"] == "TRY")
+                                ($_SESSION["currency"] == "TRY") ||
+                                ($_SESSION["currency"] == "GBP") ||
+                                ($_SESSION["currency"] == "RON")
                             ) { ?>
                             <span class="w-100">*To increase and improve the level of privacy, receiving and sending
                                 money will be handled by Tracklessmoney, a payment gateway. For this reason, the
@@ -83,7 +85,9 @@
                                 ($_SESSION["currency"] == "CAD") ||
                                 ($_SESSION["currency"] == "HUF") ||
                                 ($_SESSION["currency"] == "SGD") ||
-                                ($_SESSION["currency"] == "TRY")
+                                ($_SESSION["currency"] == "TRY") ||
+                                ($_SESSION["currency"] == "GBP") ||
+                                ($_SESSION["currency"] == "RON")
                             ) { ?>
                             <a href="<?= base_url() ?>receive/localbank" class="col-8 py-3 my-2">Local bank</a>
                             <?php } else { ?>
@@ -112,7 +116,11 @@
                             </div>
 
                             <?php } ?>
-                            <?php if (($_SESSION["currency"] == "USD") || ($_SESSION["currency"] == "EUR")) { ?>
+                            <?php
+                            if (($_SESSION["currency"] == "USD") ||
+                                ($_SESSION["currency"] == "EUR") ||
+                                ($_SESSION["currency"] == "GBP")
+                            ) { ?>
                             <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International</a>
 
                             <?php } ?>

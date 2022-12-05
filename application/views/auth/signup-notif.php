@@ -10,8 +10,15 @@
                         </a>
                     </div>
                     <div class="col-12 d-grid gap-2">
-                        <p class="text-center f-roboto">Check your email to activate your account</p>
-                        <p class="text-center f-roboto text-mute">If you don't receive any email check in spam</p>
+                        <p class="text-center f-roboto">To activate your FreedyBank account click the link receive in
+                            your registration email
+                            <br><br>
+                            <b>ATTENCTION:</b>
+                        </p>
+                        <ul class="f-roboto">
+                            <li>You will receive the email within 15 minutes</li>
+                            <li>If you dont see it check into the SPAM folder</li>
+                        </ul>
                     </div>
                     <div class="col-12 d-grid gap-2">
                         <a href="<?= base_url() ?>" class="btn btn-login f-roboto">Back</a>
