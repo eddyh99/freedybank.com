@@ -44,52 +44,52 @@
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving SEPA</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_circuit_fxd'] + $fee['topup_circuit_fxd'] + $fee['referral_topup_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['topup_circuit_fxd'] + $fee['topup_circuit_fxd'] + $fee['referral_topup_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['topup_circuit_pct'] + $fee['topup_circuit_pct'] + $fee['referral_topup_pct']) ?>%
+                                <?= number_format(($cost['topup_circuit_pct'] + $fee['topup_circuit_pct'] + $fee['referral_topup_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?>
                             </span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving International</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['topup_outside_fxd'] + $fee['topup_outside_fxd'] + $fee['referral_topup_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['topup_outside_fxd'] + $fee['topup_outside_fxd'] + $fee['referral_topup_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['topup_outside_pct'] + $fee['topup_outside_pct'] + $fee['referral_topup_pct']) ?>%
+                                <?= number_format(($cost['topup_outside_pct'] + $fee['topup_outside_pct'] + $fee['referral_topup_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Send Wallet to Wallet</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_sender_fxd'] + $fee['wallet_sender_fxd'] + $fee['referral_send_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['wallet_sender_fxd'] + $fee['wallet_sender_fxd'] + $fee['referral_send_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['wallet_sender_pct'] + $fee['wallet_sender_pct'] + $fee['referral_send_pct']) ?>%
+                                <?= number_format(($cost['wallet_sender_pct'] + $fee['wallet_sender_pct'] + $fee['referral_send_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Receiving Wallet to Wallet</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['wallet_receiver_fxd'] + $fee['wallet_receiver_fxd'] + $fee['referral_receive_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['wallet_receiver_fxd'] + $fee['wallet_receiver_fxd'] + $fee['referral_receive_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['wallet_receiver_pct'] + $fee['wallet_receiver_pct'] + $fee['referral_receive_pct']) ?>%
+                                <?= number_format(($cost['wallet_receiver_pct'] + $fee['wallet_receiver_pct'] + $fee['referral_receive_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">National Transfer</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_circuit_fxd'] + $fee['walletbank_circuit_fxd'] + $fee['referral_bank_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['walletbank_circuit_fxd'] + $fee['walletbank_circuit_fxd'] + $fee['referral_bank_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct'] + $fee['referral_bank_pct']) ?>%
+                                <?= number_format(($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct'] + $fee['referral_bank_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">International Transfer</span>
                             <span
-                                class="w-50 text-end text-blue-freedy"><?= ($cost['walletbank_outside_fxd'] + $fee['walletbank_outside_fxd'] + $fee['referral_bank_fxd']) ?>
+                                class="w-50 text-end text-blue-freedy"><?= number_format(($cost['walletbank_outside_fxd'] + $fee['walletbank_outside_fxd'] + $fee['referral_bank_fxd']), 2, ".", ",") ?>
                                 +
-                                <?= ($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct'] + $fee['referral_bank_pct']) ?>%
+                                <?= number_format(($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct'] + $fee['referral_bank_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
                         <li
