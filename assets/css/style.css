@@ -3002,7 +3002,14 @@ section {
   }
 
   .form-login-freedy .bg-black {
-    background: #161E25;
+    background: #161E25 !important;
+    border-radius: 10px;
+
+    color: #FFF;
+  }
+
+  .form-login-freedy .bg-black.bg-disable {
+    background: rgba(22, 30, 37, 0.45) !important;
     border-radius: 10px;
 
     color: #FFF;
@@ -4945,7 +4952,14 @@ section {
   }
 
   .form-login-freedy .bg-black {
-    background: #161E25;
+    background: #161E25 !important;
+    border-radius: 10px;
+
+    color: #FFF;
+  }
+
+  .form-login-freedy .bg-black.bg-disable {
+    background: rgba(22, 30, 37, 0.45) !important;
     border-radius: 10px;
 
     color: #FFF;
@@ -6826,7 +6840,14 @@ section {
   }
 
   .form-login-freedy .bg-black {
-    background: #161E25;
+    background: #161E25 !important;
+    border-radius: 10px;
+
+    color: #FFF;
+  }
+
+  .form-login-freedy .bg-black.bg-disable {
+    background: rgba(22, 30, 37, 0.45) !important;
     border-radius: 10px;
 
     color: #FFF;
@@ -8348,7 +8369,14 @@ section {
   }
 
   .form-login-freedy .bg-black {
-    background: #161E25;
+    background: #161E25 !important;
+    border-radius: 10px;
+
+    color: #FFF;
+  }
+
+  .form-login-freedy .bg-black.bg-disable {
+    background: rgba(22, 30, 37, 0.45) !important;
     border-radius: 10px;
 
     color: #FFF;
@@ -8968,7 +8996,14 @@ section {
   }
 
   .form-login-freedy .bg-black {
-    background: #161E25;
+    background: #161E25 !important;
+    border-radius: 10px;
+
+    color: #FFF;
+  }
+
+  .form-login-freedy .bg-black.bg-disable {
+    background: rgba(22, 30, 37, 0.45) !important;
     border-radius: 10px;
 
     color: #FFF;

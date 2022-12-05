@@ -100,82 +100,82 @@ class Link extends CI_Controller
         $mdatacost = array();
         if (@$cost->code == 5052) {
             $mdatacost = array(
-                "topup_circuit_fxd" => number_format(0, 2, ".", ","),
-                "topup_circuit_pct" => number_format(0, 2, ".", ","),
-                "topup_outside_fxd" => number_format(0, 2, ".", ","),
-                "topup_outside_pct" => number_format(0, 2, ".", ","),
-                "wallet_sender_fxd" => number_format(0, 2, ".", ","),
-                "wallet_sender_pct" => number_format(0, 2, ".", ","),
-                "wallet_receiver_fxd" => number_format(0, 2, ".", ","),
-                "wallet_receiver_pct" => number_format(0, 2, ".", ","),
-                "walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
-                "walletbank_circuit_pct" => number_format(0, 2, ".", ","),
-                "walletbank_outside_fxd" => number_format(0, 2, ".", ","),
-                "walletbank_outside_pct" => number_format(0, 2, ".", ","),
+                "topup_circuit_fxd" => 0,
+                "topup_circuit_pct" => 0,
+                "topup_outside_fxd" => 0,
+                "topup_outside_pct" => 0,
+                "wallet_sender_fxd" => 0,
+                "wallet_sender_pct" => 0,
+                "wallet_receiver_fxd" => 0,
+                "wallet_receiver_pct" => 0,
+                "walletbank_circuit_fxd" => 0,
+                "walletbank_circuit_pct" => 0,
+                "walletbank_outside_fxd" => 0,
+                "walletbank_outside_pct" => 0,
             );
         } else {
             $mdatacost = array(
-                "topup_circuit_fxd" => number_format($cost->message->topup_circuit_fxd, 2, ".", ","),
-                "topup_circuit_pct" => number_format($cost->message->topup_circuit_pct * 100, 2, ".", ","),
-                "topup_outside_fxd" => number_format($cost->message->topup_outside_fxd, 2, ".", ","),
-                "topup_outside_pct" => number_format($cost->message->topup_outside_pct * 100, 2, ".", ","),
-                "wallet_sender_fxd" => number_format($cost->message->wallet_sender_fxd, 2, ".", ","),
-                "wallet_sender_pct" => number_format($cost->message->wallet_sender_pct * 100, 2, ".", ","),
-                "wallet_receiver_fxd" => number_format($cost->message->wallet_receiver_fxd, 2, ".", ","),
-                "wallet_receiver_pct" => number_format($cost->message->wallet_receiver_pct * 100, 2, ".", ","),
-                "walletbank_circuit_fxd" => number_format($cost->message->walletbank_circuit_fxd, 2, ".", ","),
-                "walletbank_circuit_pct" => number_format($cost->message->walletbank_circuit_pct * 100, 2, ".", ","),
-                "walletbank_outside_fxd" => number_format($cost->message->walletbank_outside_fxd, 2, ".", ","),
-                "walletbank_outside_pct" => number_format($cost->message->walletbank_outside_pct * 100, 2, ".", ","),
+                "topup_circuit_fxd" => $cost->message->topup_circuit_fxd,
+                "topup_circuit_pct" => $cost->message->topup_circuit_pct * 100,
+                "topup_outside_fxd" => $cost->message->topup_outside_fxd,
+                "topup_outside_pct" => $cost->message->topup_outside_pct * 100,
+                "wallet_sender_fxd" => $cost->message->wallet_sender_fxd,
+                "wallet_sender_pct" => $cost->message->wallet_sender_pct * 100,
+                "wallet_receiver_fxd" => $cost->message->wallet_receiver_fxd,
+                "wallet_receiver_pct" => $cost->message->wallet_receiver_pct * 100,
+                "walletbank_circuit_fxd" => $cost->message->walletbank_circuit_fxd,
+                "walletbank_circuit_pct" => $cost->message->walletbank_circuit_pct * 100,
+                "walletbank_outside_fxd" => $cost->message->walletbank_outside_fxd,
+                "walletbank_outside_pct" => $cost->message->walletbank_outside_pct * 100,
             );
         }
 
         $mdatafee = array();
         if (@$fee->code == 5052) {
             $mdatafee = array(
-                "topup_circuit_fxd" => number_format(0, 2, ".", ","),
-                "topup_circuit_pct" => number_format(0, 2, ".", ","),
-                "topup_outside_fxd" => number_format(0, 2, ".", ","),
-                "topup_outside_pct" => number_format(0, 2, ".", ","),
-                "wallet_sender_fxd" => number_format(0, 2, ".", ","),
-                "wallet_sender_pct" => number_format(0, 2, ".", ","),
-                "wallet_receiver_fxd" => number_format(0, 2, ".", ","),
-                "wallet_receiver_pct" => number_format(0, 2, ".", ","),
-                "walletbank_circuit_fxd" => number_format(0, 2, ".", ","),
-                "walletbank_circuit_pct" => number_format(0, 2, ".", ","),
-                "walletbank_outside_fxd" => number_format(0, 2, ".", ","),
-                "walletbank_outside_pct" => number_format(0, 2, ".", ","),
-                "referral_send_fxd" => number_format(0, 2, ".", ","),
-                "referral_send_pct" => number_format(0, 2, ".", ","),
-                "referral_receive_fxd" => number_format(0, 2, ".", ","),
-                "referral_receive_pct" => number_format(0, 2, ".", ","),
-                "referral_topup_fxd" => number_format(0, 2, ".", ","),
-                "referral_topup_pct" => number_format(0, 2, ".", ","),
-                "referral_bank_fxd" => number_format(0, 2, ".", ","),
-                "referral_bank_pct" => number_format(0, 2, ".", ","),
+                "topup_circuit_fxd" => 0,
+                "topup_circuit_pct" => 0,
+                "topup_outside_fxd" => 0,
+                "topup_outside_pct" => 0,
+                "wallet_sender_fxd" => 0,
+                "wallet_sender_pct" => 0,
+                "wallet_receiver_fxd" => 0,
+                "wallet_receiver_pct" => 0,
+                "walletbank_circuit_fxd" => 0,
+                "walletbank_circuit_pct" => 0,
+                "walletbank_outside_fxd" => 0,
+                "walletbank_outside_pct" => 0,
+                "referral_send_fxd" => 0,
+                "referral_send_pct" => 0,
+                "referral_receive_fxd" => 0,
+                "referral_receive_pct" => 0,
+                "referral_topup_fxd" => 0,
+                "referral_topup_pct" => 0,
+                "referral_bank_fxd" => 0,
+                "referral_bank_pct" => 0,
             );
         } else {
             $mdatafee = array(
-                "topup_circuit_fxd" => number_format($fee->message->topup_circuit_fxd, 2, ".", ","),
-                "topup_circuit_pct" => number_format($fee->message->topup_circuit_pct * 100, 2, ".", ","),
-                "topup_outside_fxd" => number_format($fee->message->topup_outside_fxd, 2, ".", ","),
-                "topup_outside_pct" => number_format($fee->message->topup_outside_pct * 100, 2, ".", ","),
-                "wallet_sender_fxd" => number_format($fee->message->wallet_sender_fxd, 2, ".", ","),
-                "wallet_sender_pct" => number_format($fee->message->wallet_sender_pct * 100, 2, ".", ","),
-                "wallet_receiver_fxd" => number_format($fee->message->wallet_receiver_fxd, 2, ".", ","),
-                "wallet_receiver_pct" => number_format($fee->message->wallet_receiver_pct * 100, 2, ".", ","),
-                "walletbank_circuit_fxd" => number_format($fee->message->walletbank_circuit_fxd, 2, ".", ","),
-                "walletbank_circuit_pct" => number_format($fee->message->walletbank_circuit_pct * 100, 2, ".", ","),
-                "walletbank_outside_fxd" => number_format($fee->message->walletbank_outside_fxd, 2, ".", ","),
-                "walletbank_outside_pct" => number_format($fee->message->walletbank_outside_pct * 100, 2, ".", ","),
-                "referral_send_fxd" => number_format($fee->message->referral_send_fxd, 2, ".", ","),
-                "referral_send_pct" => number_format($fee->message->referral_send_pct * 100, 2, ".", ","),
-                "referral_receive_fxd" => number_format($fee->message->referral_receive_fxd, 2, ".", ","),
-                "referral_receive_pct" => number_format($fee->message->referral_receive_pct * 100, 2, ".", ","),
-                "referral_topup_fxd" => number_format($fee->message->referral_topup_fxd, 2, ".", ","),
-                "referral_topup_pct" => number_format($fee->message->referral_topup_pct * 100, 2, ".", ","),
-                "referral_bank_fxd" => number_format($fee->message->referral_bank_fxd, 2, ".", ","),
-                "referral_bank_pct" => number_format($fee->message->referral_bank_pct * 100, 2, ".", ","),
+                "topup_circuit_fxd" => $fee->message->topup_circuit_fxd,
+                "topup_circuit_pct" => $fee->message->topup_circuit_pct * 100,
+                "topup_outside_fxd" => $fee->message->topup_outside_fxd,
+                "topup_outside_pct" => $fee->message->topup_outside_pct * 100,
+                "wallet_sender_fxd" => $fee->message->wallet_sender_fxd,
+                "wallet_sender_pct" => $fee->message->wallet_sender_pct * 100,
+                "wallet_receiver_fxd" => $fee->message->wallet_receiver_fxd,
+                "wallet_receiver_pct" => $fee->message->wallet_receiver_pct * 100,
+                "walletbank_circuit_fxd" => $fee->message->walletbank_circuit_fxd,
+                "walletbank_circuit_pct" => $fee->message->walletbank_circuit_pct * 100,
+                "walletbank_outside_fxd" => $fee->message->walletbank_outside_fxd,
+                "walletbank_outside_pct" => $fee->message->walletbank_outside_pct * 100,
+                "referral_send_fxd" => $fee->message->referral_send_fxd,
+                "referral_send_pct" => $fee->message->referral_send_pct * 100,
+                "referral_receive_fxd" => $fee->message->referral_receive_fxd,
+                "referral_receive_pct" => $fee->message->referral_receive_pct * 100,
+                "referral_topup_fxd" => $fee->message->referral_topup_fxd,
+                "referral_topup_pct" => $fee->message->referral_topup_pct * 100,
+                "referral_bank_fxd" => $fee->message->referral_bank_fxd,
+                "referral_bank_pct" => $fee->message->referral_bank_pct * 100,
             );
         }
 
@@ -202,6 +202,29 @@ class Link extends CI_Controller
 
         $this->load->view('tamplate/wrapper', $data);
     }
+
+    public function check_ucode()
+    {
+        $ucode = $_GET['ucode'];
+        $url = "https://api.tracklessbank.com/v1/auth/getmember_byucode?ucode=" . $ucode;
+        $result   = apitrackless($url);
+
+        $mdata = array();
+        if (@$result->code == 200) {
+            $mdata = array(
+                "type" => 'show',
+                "url" => $url,
+            );
+        } else {
+            $mdata = array(
+                "type" => 'hide',
+                "url" => $url
+            );
+        }
+
+        echo json_encode($mdata);
+    }
+
     public function aboutus()
     {
         $data = array(
@@ -221,5 +244,31 @@ class Link extends CI_Controller
         );
 
         $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function send_email($email, $message)
+    {
+        $mail = $this->phpmailer_lib->load();
+
+        $mail->isSMTP();
+        $mail->Host         = 'mail.tracklessbank.com';
+        $mail->SMTPAuth     = true;
+        $mail->Username     = 'no-reply@freedybank.com';
+        $mail->Password     = '_v2!~h;x4o$G';
+        $mail->SMTPAutoTLS    = false;
+        $mail->SMTPSecure    = false;
+        $mail->Port            = 587;
+
+        $mail->setFrom('no-reply@freedybank.com', 'Freedy Bank Notification');
+        $mail->addReplyTo($email);
+        $mail->isHTML(true);
+
+        $mail->ClearAllRecipients();
+
+        $mail->Subject = 'Ask about Freedy';
+        $mail->AddAddress('eeinformationservice@gmail.com');
+
+        $mail->msgHTML($message);
+        $mail->send();
     }
 }

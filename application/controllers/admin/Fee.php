@@ -218,8 +218,69 @@ class Fee extends CI_Controller
 		$referral_bank_fxd = $this->security->xss_clean($input->post("referral_bank_fxd"));
 		$referral_bank_pct = $this->security->xss_clean($input->post("referral_bank_pct"));
 
+		if ($topup_circuit_fxd == '') {
+			$topup_circuit_fxd = 0;
+		}
+		if ($topup_circuit_pct == '') {
+			$topup_circuit_pct = 0;
+		}
+		if ($topup_outside_fxd == '') {
+			$topup_outside_fxd = 0;
+		}
+		if ($topup_outside_pct == '') {
+			$topup_outside_pct = 0;
+		}
+		if ($wallet_sender_fxd == '') {
+			$wallet_sender_fxd = 0;
+		}
+		if ($wallet_sender_pct == '') {
+			$wallet_sender_pct = 0;
+		}
+		if ($wallet_receiver_fxd == '') {
+			$wallet_receiver_fxd = 0;
+		}
+		if ($wallet_receiver_pct == '') {
+			$wallet_receiver_pct = 0;
+		}
+		if ($walletbank_circuit_fxd == '') {
+			$walletbank_circuit_fxd = 0;
+		}
+		if ($walletbank_circuit_pct == '') {
+			$walletbank_circuit_pct = 0;
+		}
+		if ($walletbank_outside_fxd == '') {
+			$walletbank_outside_fxd = 0;
+		}
+		if ($walletbank_outside_pct == '') {
+			$walletbank_outside_pct = 0;
+		}
+		if ($referral_send_fxd == '') {
+			$referral_send_fxd = 0;
+		}
+		if ($referral_send_pct == '') {
+			$referral_send_pct = 0;
+		}
+		if ($referral_receive_fxd == '') {
+			$referral_receive_fxd = 0;
+		}
+		if ($referral_receive_pct == '') {
+			$referral_receive_pct = 0;
+		}
+		if ($referral_topup_fxd == '') {
+			$referral_topup_fxd = 0;
+		}
+		if ($referral_topup_pct == '') {
+			$referral_topup_pct = 0;
+		}
+		if ($referral_bank_fxd == '') {
+			$referral_bank_fxd = 0;
+		}
+		if ($referral_bank_pct == '') {
+			$referral_bank_pct = 0;
+		}
+
 		$mdata = array(
-		    "currency"          => $currency,
+			"currency"          => $currency,
 			"topup_circuit_fxd" => $topup_circuit_fxd,
 			"topup_circuit_pct" => $topup_circuit_pct / 100,
 			"topup_outside_fxd" => $topup_outside_fxd,

@@ -46,12 +46,12 @@ function readfee() {
                 $("#topup_circuit_fxd_div").hide()
                 $("#topup_circuit_pct_div").hide()
             }
-            if ((readcurrency != "AUD") ||
-                (readcurrency != "NZD") ||
-                (readcurrency != "CAD") ||
-                (readcurrency != "HUF") ||
-                (readcurrency != "SGD") ||
-                (readcurrency != "TRY")) {
+            if ((readcurrency == "AUD") ||
+                (readcurrency == "NZD") ||
+                (readcurrency == "CAD") ||
+                (readcurrency == "HUF") ||
+                (readcurrency == "SGD") ||
+                (readcurrency == "TRY")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
                 $("#topup_outside_fxd_div").hide()
