@@ -119,7 +119,7 @@ class Auth extends CI_Controller
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate yout account<br><br>
 			";
 
-			$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
+			$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $result->message->ucode);
 			$this->sendmail($email, $subject, $message);
 			$this->qrcodeuser($result->message->ucode);
 			$this->qrcodereceive($urlqr, $result->message->ucode);
@@ -219,6 +219,7 @@ class Auth extends CI_Controller
 				'ucode'     => $result->message->ucode,
 				'referral'  => $result->message->refcode
 			);
+			$this->session->set_userdata($member_session);
 
 			$src = base_url() . 'qr/user/' . $result->message->ucode . '.png';
 			$srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
@@ -229,7 +230,6 @@ class Auth extends CI_Controller
 				$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
 				$this->qrcodereceive($urlqr, $result->message->ucode);
 			}
-			$this->session->set_userdata($member_session);
 			redirect("homepage");
 		} elseif ($result->message->role == 'admin') {
 			$_SESSION["mwallet"] = apitrackless("https://api.tracklessbank.com/v1/admin/user/getMasterwallet")->message->ucode_mwallet;

@@ -155,12 +155,12 @@ class Fee extends CI_Controller
 		if (($currency == "USD") ||
 			($currency == "EUR")
 		) {
-			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('topup_outside_fxd', 'Topup Outside (Fixed)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('topup_outside_pct', 'Topup Outside (%)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('walletbank_outside_fxd', 'Walletbank Outside (Fixed)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('walletbank_outside_pct', 'Walletbank Outside (%)', 'trim|required|greater_than[0]');
+			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('topup_outside_fxd', 'Topup Outside (Fixed)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('topup_outside_pct', 'Topup Outside (%)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('walletbank_outside_fxd', 'Walletbank Outside (Fixed)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('walletbank_outside_pct', 'Walletbank Outside (%)', 'trim|required|greater_than_equal_to[0]');
 		}
 
 		if (($currency == "AUD") ||
@@ -170,24 +170,24 @@ class Fee extends CI_Controller
 			($currency == "SGD") ||
 			($currency == "TRY")
 		) {
-			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than[0]');
-			$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than[0]');
+			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than_equal_to[0]');
+			$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than_equal_to[0]');
 		}
 
-		$this->form_validation->set_rules('wallet_sender_fxd', 'Wallet Sender (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('wallet_sender_pct', 'Wallet Sender (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('wallet_receiver_fxd', 'Wallet Receive (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('wallet_receiver_pct', 'Wallet Receive (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('walletbank_circuit_fxd', 'Walletbank Circuit (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('walletbank_circuit_pct', 'Walletbank Circuit (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_send_fxd', 'Referral Wallet to Sender (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_send_pct', 'Referral Wallet to Sender (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_receive_fxd', 'Referral Wallet to Reveice (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_receive_pct', 'Referral Wallet to Reveice (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_topup_fxd', 'Referral Wallet to Topup (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_topup_pct', 'Referral Wallet to Topup (%)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_bank_fxd', 'Referral Wallet to Bank (Fixed)', 'trim|required|greater_than[0]');
-		$this->form_validation->set_rules('referral_bank_pct', 'Referral Wallet to Bank (%)', 'trim|required|greater_than[0]');
+		$this->form_validation->set_rules('wallet_sender_fxd', 'Wallet Sender (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('wallet_sender_pct', 'Wallet Sender (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('wallet_receiver_fxd', 'Wallet Receive (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('wallet_receiver_pct', 'Wallet Receive (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('walletbank_circuit_fxd', 'Walletbank Circuit (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('walletbank_circuit_pct', 'Walletbank Circuit (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_send_fxd', 'Referral Wallet to Sender (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_send_pct', 'Referral Wallet to Sender (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_receive_fxd', 'Referral Wallet to Reveice (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_receive_pct', 'Referral Wallet to Reveice (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_topup_fxd', 'Referral Wallet to Topup (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_topup_pct', 'Referral Wallet to Topup (%)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_bank_fxd', 'Referral Wallet to Bank (Fixed)', 'trim|required|greater_than_equal_to[0]');
+		$this->form_validation->set_rules('referral_bank_pct', 'Referral Wallet to Bank (%)', 'trim|required|greater_than_equal_to[0]');
 		$this->form_validation->set_rules('currency', 'Currency', 'trim|required|max_length[3]|min_length[3]');
 
 
@@ -218,7 +218,69 @@ class Fee extends CI_Controller
 		$referral_bank_fxd = $this->security->xss_clean($input->post("referral_bank_fxd"));
 		$referral_bank_pct = $this->security->xss_clean($input->post("referral_bank_pct"));
 
+		if ($topup_circuit_fxd == '') {
+			$topup_circuit_fxd = 0;
+		}
+		if ($topup_circuit_pct == '') {
+			$topup_circuit_pct = 0;
+		}
+		if ($topup_outside_fxd == '') {
+			$topup_outside_fxd = 0;
+		}
+		if ($topup_outside_pct == '') {
+			$topup_outside_pct = 0;
+		}
+		if ($wallet_sender_fxd == '') {
+			$wallet_sender_fxd = 0;
+		}
+		if ($wallet_sender_pct == '') {
+			$wallet_sender_pct = 0;
+		}
+		if ($wallet_receiver_fxd == '') {
+			$wallet_receiver_fxd = 0;
+		}
+		if ($wallet_receiver_pct == '') {
+			$wallet_receiver_pct = 0;
+		}
+		if ($walletbank_circuit_fxd == '') {
+			$walletbank_circuit_fxd = 0;
+		}
+		if ($walletbank_circuit_pct == '') {
+			$walletbank_circuit_pct = 0;
+		}
+		if ($walletbank_outside_fxd == '') {
+			$walletbank_outside_fxd = 0;
+		}
+		if ($walletbank_outside_pct == '') {
+			$walletbank_outside_pct = 0;
+		}
+		if ($referral_send_fxd == '') {
+			$referral_send_fxd = 0;
+		}
+		if ($referral_send_pct == '') {
+			$referral_send_pct = 0;
+		}
+		if ($referral_receive_fxd == '') {
+			$referral_receive_fxd = 0;
+		}
+		if ($referral_receive_pct == '') {
+			$referral_receive_pct = 0;
+		}
+		if ($referral_topup_fxd == '') {
+			$referral_topup_fxd = 0;
+		}
+		if ($referral_topup_pct == '') {
+			$referral_topup_pct = 0;
+		}
+		if ($referral_bank_fxd == '') {
+			$referral_bank_fxd = 0;
+		}
+		if ($referral_bank_pct == '') {
+			$referral_bank_pct = 0;
+		}
+
 		$mdata = array(
+			"currency"          => $currency,
 			"topup_circuit_fxd" => $topup_circuit_fxd,
 			"topup_circuit_pct" => $topup_circuit_pct / 100,
 			"topup_outside_fxd" => $topup_outside_fxd,
@@ -241,6 +303,7 @@ class Fee extends CI_Controller
 			"referral_bank_pct" => $referral_bank_pct / 100,
 		);
 		$result = apitrackless("https://api.tracklessbank.com/v1/admin/fee/setFee", json_encode($mdata));
+
 		if (@$result->code == 200) {
 			$this->session->set_flashdata("success", "Default Fee is successfully updated");
 			redirect('admin/fee');

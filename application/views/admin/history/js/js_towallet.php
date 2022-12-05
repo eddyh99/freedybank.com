@@ -44,20 +44,32 @@ var tblhistory =
                 return data["history"];
             },
         },
+        "aoColumnDefs": [{
+    	    "aTargets" :[6],
+    	    "mRender" : function (data, type, row) {
+                return parseFloat(row.referral_sender_fee)+parseFloat(row.referral_receiver_fee)+parseFloat(row.sender_fee)+parseFloat(row.receiver_fee)
+    	    }
+    	}],        
         "columns": [{
                 "data": "ket"
-            },
-            {
-                "data": "amount"
             },
             {
                 "data": "cost"
             },
             {
-                "data": "referral"
+                "data": "referral_sender_fee"
             },
             {
-                "data": "fee"
+                "data": "referral_receiver_fee"
+            },
+            {
+                "data": "sender_fee"
+            },
+            {
+                "data": "receiver_fee"
+            },
+            {
+                "data": "date_created"
             },
             {
                 "data": "date_created"

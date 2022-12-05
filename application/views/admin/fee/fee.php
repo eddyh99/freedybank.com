@@ -118,12 +118,12 @@
                             readonly>
                     </div>
                     <div class="mb-3" id="referral_topup_fxd_div">
-                        <label class="form-label">Referral Wallet to Wallet Topup (Fixed)</label>
+                        <label class="form-label">Referral Topup (Fixed)</label>
                         <input type="text" id="referral_topup_fxd" name="referral_topup_fxd" class="form-control"
                             readonly>
                     </div>
                     <div class="mb-3" id="referral_topup_pct_div">
-                        <label class="form-label">Referral Wallet to Wallet Topup (%)</label>
+                        <label class="form-label">Referral Topup (%)</label>
                         <input type="text" id="referral_topup_pct" name="referral_topup_pct" class="form-control"
                             readonly>
                     </div>

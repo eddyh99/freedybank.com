@@ -16,10 +16,12 @@
                         <thead class="table-primary">
                             <tr>
                                 <th>Description</th>
-                                <th>Amount</th>
                                 <th>Cost</th>
-                                <th>Comission</th>
-                                <th>Fee (Net)</th>
+                                <th>Referral Sender</th>
+                                <th>Referral Receiver</th>
+                                <th>Freedy Sender Cost</th>
+                                <th>Freedy Receive Cost</th>
+                                <th>Income</th>
                                 <th>Date</th>
                             </tr>
                         </thead>
