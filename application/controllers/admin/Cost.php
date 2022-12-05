@@ -106,13 +106,13 @@ class Cost extends CI_Controller
 
 	public function updatefee()
 	{
-		$this->form_validation->set_rules('topup', 'Topup', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('walletbank_local', 'Wallet to Bank Local', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('walletbank_inter', 'Wallet to Bank International', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('wallet2wallet', 'Wallet to Wallet', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('referral_send', 'Referral Sender', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('referral_receive', 'Referral Receiver', 'trim|required|greater_than[0]|decimal');
-		$this->form_validation->set_rules('swap', 'Swap', 'trim|required|greater_than[0]|decimal');
+		$this->form_validation->set_rules('topup', 'Topup', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('walletbank_local', 'Wallet to Bank Local', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('walletbank_inter', 'Wallet to Bank International', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('wallet2wallet', 'Wallet to Wallet', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('referral_send', 'Referral Sender', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('referral_receive', 'Referral Receiver', 'trim|required|greater_than_equal_to[0]|decimal');
+		$this->form_validation->set_rules('swap', 'Swap', 'trim|required|greater_than_equal_to[0]|decimal');
 		$this->form_validation->set_rules('currency', 'Currency', 'trim|required|max_length[3]|min_length[3]');
 
 		$input		= $this->input;

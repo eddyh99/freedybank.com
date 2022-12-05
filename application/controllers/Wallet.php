@@ -25,18 +25,22 @@ class Wallet extends CI_Controller
     {
         // Get URL
         $linkurl = $_SERVER['REQUEST_URI'];
-        $get_url = str_replace("/freedybank.com/wallet/send?", "", $linkurl);
-        $decode_url = base64_decode($get_url);
+        $ucode="";
+        $amount="";
+        if (strpos($linkurl,"send?")){
+            $get_url = str_replace("/wallet/send?", "", $linkurl);
+            $decode_url = base64_decode($get_url);
+    
+            // Get UCode
+            $get_dataucode = str_replace("ucode=", "", $decode_url);
+            $ucode = strstr($get_dataucode, '&', true);
 
-        // Get UCode
-        $get_dataucode = str_replace("ucode=", "", $decode_url);
-        $ucode = strstr($get_dataucode, '&', true);
-
-        // Get Amount
-        $amount = str_replace("ucode=" . $ucode . "&amount=", "", $decode_url);
-        if (empty($ucode)) {
-            $ucode = $get_dataucode;
-            $amount = '';
+            // Get Amount
+            $amount = str_replace("ucode=" . $ucode . "&amount=", "", $decode_url);
+            if (empty($ucode)) {
+                $ucode = $get_dataucode;
+                $amount = '';
+            }
         }
 
         $data['title'] = "Freedy - Wallet to Wallet";
@@ -44,8 +48,8 @@ class Wallet extends CI_Controller
 
         $data = array(
             'title' => 'Freedy - Wallet to Wallet',
-            'ucode' => $ucode,
-            'amount' => $amount
+            'ucode' => @$ucode,
+            'amount' => @$amount
         );
 
         $this->load->view('tamplate/header', $data);

@@ -161,13 +161,13 @@
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3" id="referral_topup_fxd">
-                            <label class="form-label">Referral Wallet to Wallet Topup (Fixed)</label>
+                            <label class="form-label">Referral Topup (Fixed)</label>
                             <input type="text" id="referral_topup_fxd" name="referral_topup_fxd" class="form-control"
                                 value="<?= $fee['referral_topup_fxd'] ?>"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3" id="referral_topup_pct">
-                            <label class="form-label">Referral Wallet to Wallet Topup (%)</label>
+                            <label class="form-label">Referral  Topup (%)</label>
                             <input type="text" id="referral_topup_pct" name="referral_topup_pct" class="form-control"
                                 value="<?= $fee['referral_topup_pct'] ?>"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
@@ -175,13 +175,13 @@
                         <div class="mb-3" id="referral_bank_fxd">
                             <label class="form-label">Referral Wallet to Bank (Fixed)</label>
                             <input type="text" id="referral_bank_fxd" name="referral_bank_fxd" class="form-control"
-                                value="$fee['referral_bank_fxd']"
+                                value="<?=$fee['referral_bank_fxd']?>"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3" id="referral_bank_pct">
                             <label class="form-label">Referral Wallet to Bank (%)</label>
                             <input type="text" id="referral_bank_pct" name="referral_bank_pct" class="form-control"
-                                value="$fee['referral_bank_pct']"
+                                value="<?=$fee['referral_bank_pct']?>"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
                         </div>
                         <div class="mb-3">
