@@ -225,6 +225,32 @@ class Link extends CI_Controller
         echo json_encode($mdata);
     }
 
+    public function mailproses()
+    {
+        $this->form_validation->set_rules('ucode', 'Ucode', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required');
+        $this->form_validation->set_rules('message', 'Message', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url("link/send_message"));
+            return;
+        }
+
+        $input        = $this->input;
+        $ucode   = $this->security->xss_clean($input->post("ucode"));
+        $email   = $this->security->xss_clean($input->post("email"));
+        $message   = $this->security->xss_clean($input->post("message"));
+
+        $result = $this->send_email($email, $message);
+        if ($result) {
+            $this->session->set_flashdata("success", "Message successfully sent!");
+            redirect('link/send_message');
+        } else {
+            $this->session->set_flashdata("failed", 'Message failed to send!');
+        }
+    }
+
     public function aboutus()
     {
         $data = array(
@@ -255,9 +281,9 @@ class Link extends CI_Controller
         $mail->SMTPAuth     = true;
         $mail->Username     = 'no-reply@freedybank.com';
         $mail->Password     = '_v2!~h;x4o$G';
-        $mail->SMTPAutoTLS    = false;
-        $mail->SMTPSecure    = false;
-        $mail->Port            = 587;
+        $mail->SMTPAutoTLS  = false;
+        $mail->SMTPSecure   = false;
+        $mail->Port         = 587;
 
         $mail->setFrom('no-reply@freedybank.com', 'Freedy Bank Notification');
         $mail->addReplyTo($email);

@@ -3032,7 +3032,7 @@ section {
     color: #000000;
   }
 
-  .form-login-freedy p {
+  .form-login-freedy ul li {
     font-weight: 400;
     font-size: 13px;
     line-height: 116.69%;
@@ -4982,6 +4982,15 @@ section {
     color: #000000;
   }
 
+  .form-login-freedy ul li {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
   .form-login-freedy a {
     font-weight: 600;
     font-size: 14px;
@@ -6870,6 +6879,15 @@ section {
     color: #000000;
   }
 
+  .form-login-freedy ul li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
   .form-login-freedy a {
     font-weight: 600;
     font-size: 14px;
@@ -8399,6 +8417,15 @@ section {
     color: #000000;
   }
 
+  .form-login-freedy ul li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
   .form-login-freedy a {
     font-weight: 600;
     font-size: 14px;
@@ -9018,6 +9045,15 @@ section {
   }
 
   .form-login-freedy p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 116.69%;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+  }
+
+  .form-login-freedy ul li {
     font-weight: 400;
     font-size: 13px;
     line-height: 116.69%;
