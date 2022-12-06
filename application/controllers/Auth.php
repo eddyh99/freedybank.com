@@ -376,7 +376,7 @@ class Auth extends CI_Controller
 		$mail->Host         = 'mail.freedybank.com';
 		$mail->SMTPAuth     = true;
 		$mail->Username     = 'no-reply@freedybank.com';
-		$mail->Password     = '_v2!~h;x4o$G';
+		$mail->Password     = 'GIvn[f58&YMb';
 		$mail->SMTPAutoTLS	= false;
 		$mail->SMTPSecure	= false;
 		$mail->Port			= 587;

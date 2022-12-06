@@ -84,6 +84,10 @@
                                 <?= number_format(($cost['walletbank_circuit_pct'] + $fee['walletbank_circuit_pct'] + $fee['referral_bank_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
+                        <?php 
+                            $currency=$_GET["currency"];
+                            if (($currency=="USD")||($currency=="EUR")){
+                        ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">International Transfer</span>
                             <span
@@ -92,6 +96,7 @@
                                 <?= number_format(($cost['walletbank_outside_pct'] + $fee['walletbank_outside_pct'] + $fee['referral_bank_pct']), 2, ".", ",") ?>%
                                 <?= $dtcurr->symbol ?></span>
                         </li>
+                        <?php } ?>
                         <li
                             class="list-group-item list-group-item-grey-freedy text-dark d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">Swap Currencies</span>
