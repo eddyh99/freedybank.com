@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller
             "title"     => "FreedyBank - Admin Dashboard",
             "content"   => "admin/dashboard",
             "mn_dashboard"    => "active",
-            "currency"  => apitrackless("https://api.tracklessbank.com/v1/admin/wallet/getAll_Balance")->message,
+            "currency"  => apitrackless(URLAPI . "/v1/admin/wallet/getAll_Balance")->message,
         );
 
         $this->load->view('admin_template/wrapper', $data);
@@ -47,7 +47,7 @@ class Dashboard extends CI_Controller
             "date_end"  => $akhir,
             "timezone"  => $_SESSION["time_location"]
         );
-        $result = apitrackless("https://api.tracklessbank.com/v1/admin/wallet/gethistory_bycurrency", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/admin/wallet/gethistory_bycurrency", json_encode($mdata));
         echo json_encode($result);
     }
 }

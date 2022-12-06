@@ -116,11 +116,11 @@
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
                             <div class="row">
-                                <label>Registered Name</label>
+                                <label>Account Holder</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="us1"
-                                        placeholder="Registered Name" value="<?= @$bank->c_registered_name ?>" readonly>
-                                    <a class="btn btn-copy" id="btnus1">
+                                    <input class="form-control me-2" type="text" name="" id="inter1"
+                                        value="<?= @$bank->name_circuit ?>" readonly>
+                                    <a class="btn btn-copy" id="btninter1">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -132,11 +132,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label>Account Number</label>
+                                <label>IBAN</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="us2"
-                                        placeholder="Routing Number" value="<?= @$bank->c_account_number ?>" readonly>
-                                    <a class="btn btn-copy" id="btnus2">
+                                    <input class="form-control me-2" type="text" name="" id="inter2"
+                                        value="<?= @$bank->number_circuit ?>" readonly>
+                                    <a class="btn btn-copy" id="btninter2">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -148,11 +148,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label>Routing Number</label>
+                                <label>Swift</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="us3"
-                                        placeholder="Account Number" value="<?= @$bank->c_routing_number ?>" readonly>
-                                    <a class="btn btn-copy" id="btnus3">
+                                    <input class="form-control me-2" type="text" name="routing_circuit" id="inter3"
+                                        value="<?= @$bank->routing_circuit ?>" readonly>
+                                    <a class="btn btn-copy" id="btninter3">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -166,9 +166,9 @@
                             <div class="row">
                                 <label>Causal</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="us4" placeholder="Causal"
+                                    <input class="form-control me-2" type="text" name="" id="inter4"
                                         value="Topup <?= $_SESSION["ucode"] ?>" readonly>
-                                    <a class="btn btn-copy" id="btnus4">
+                                    <a class="btn btn-copy" id="btninter4">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -182,9 +182,9 @@
                             <div class="row">
                                 <label>Company Address</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="us5"
-                                        placeholder="Company Address" value="<?= @$bank->c_bank_address ?>" readonly>
-                                    <a class="btn btn-copy" id="btnus5">
+                                    <input class="form-control me-2" type="text" name="" id="inter6"
+                                        value="<?= @$bank->address_circuit ?>" readonly>
+                                    <a class="btn btn-copy" id="btninter6">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path

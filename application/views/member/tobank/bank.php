@@ -59,25 +59,16 @@
                                     aria-label="Close"></button>
                             </div>
                             <?php } ?>
-                            <?php
-                            if (
+
+                            <a href="<?= base_url() ?>bank/local" class="col-8 py-3 my-2">Local bank</a>
+                            <?php if (
                                 ($_SESSION["currency"] == "USD") ||
                                 ($_SESSION["currency"] == "EUR") ||
-                                ($_SESSION["currency"] == "AED")
+                                ($_SESSION["currency"] == "GBP")
                             ) { ?>
-                            <a href="<?= base_url() ?>bank/local" class="col-8 py-3 my-2">Local bank</a>
-                            <?php } else { ?>
-
-                            <div class="receive-note">
-                                <span>If you want to topup <?= $_SESSION["currency"] ?>, You need to convert another
-                                    currency</span>
-                            </div>
-
-                            <?php } ?>
-                            <?php if (($_SESSION["currency"] == "USD") || ($_SESSION["currency"] == "EUR")) { ?>
                             <a href="<?= base_url() ?>bank/inter" class="col-8 py-3 my-2">Outside Circuit</a>
-
                             <?php } ?>
+
                         </div>
                     </div>
                 </div>

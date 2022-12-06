@@ -44,7 +44,7 @@ class Search extends CI_Controller
             "date_end"  => $akhir,
             "timezone"  => $_SESSION["time_location"]
         );
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/history/getAll", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/history/getAll", json_encode($mdata));
         $data['history'] = $result->message;
         $response = array(
             "token"     => $this->security->get_csrf_hash(),

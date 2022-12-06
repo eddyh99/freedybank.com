@@ -14,7 +14,7 @@ class Receive extends CI_Controller
     public function index()
     {
         /*$currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/bank/getBank?currency=" . $currency;
+        $url = URLAPI. "/v1/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         print_r();
         if ($result->code != 200) {
@@ -23,7 +23,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 */
-        $data['title'] = "Freedy - Add Receve";
+        $data['title'] = "Freedy - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -34,7 +34,7 @@ class Receive extends CI_Controller
     public function localbank()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
+        $url = URLAPI . "/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -43,7 +43,7 @@ class Receive extends CI_Controller
         }
 
         $body["currency"] = $currency;
-        $data['title'] = "Freedy - Add Receve";
+        $data['title'] = "Freedy - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/localbank', $body);
@@ -52,12 +52,12 @@ class Receive extends CI_Controller
 
     public function interbank()
     {
-        if ($_GET['currency'] == '') {
+        if (@$_GET['currency'] == '') {
             $currency = $_SESSION["currency"];
         } else {
             $currency = $_GET['currency'];
         }
-        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
+        $url = URLAPI . "/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -65,7 +65,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 
-        $data['title'] = "Freedy - Add Receve";
+        $data['title'] = "Freedy - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/interbank', $body);
@@ -75,7 +75,7 @@ class Receive extends CI_Controller
     public function cash()
     {
         $currency = $_SESSION["currency"];
-        $url = "https://api.tracklessbank.com/v1/trackless/bank/getBank?currency=" . $currency;
+        $url = URLAPI . "/v1/trackless/bank/getBank?currency=" . $currency;
         $result = apitrackless($url);
         if ($result->code != 200) {
             $body["bank"] = NULL;
@@ -83,7 +83,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 
-        $data['title'] = "Freedy - Add Receve";
+        $data['title'] = "Freedy - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/cash', $body);

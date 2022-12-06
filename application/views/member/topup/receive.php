@@ -54,7 +54,7 @@
                             </svg>
                             <span class="ms-2">Add/receive funds</span>
                         </div>
-                        <div class="col-12 receive-note d-flex justify-content-center text-center my-4">
+                        <div class="col-12 receive-note d-flex justify-content-center text-start my-4">
                             <?php
                             if (
                                 ($_SESSION["currency"] == "USD") ||
@@ -68,11 +68,18 @@
                                 ($_SESSION["currency"] == "GBP") ||
                                 ($_SESSION["currency"] == "RON")
                             ) { ?>
-                            <span class="w-100">*To increase and improve the level of privacy, receiving and sending
-                                money will be handled by Tracklessmoney, a payment gateway. For this reason, the
-                                receiving banking data of each currency will be the same for all users. THE ONLY DATA
-                                THAT WILL CHANGE WILL BE THE "CAUSAL" WHICH WILL IDENTIFY THE RECEIVER USER
-                            </span>
+                            <div>
+                                <span class="fw-bold">ATTENTION!</span>
+                                <ul>
+                                    <li>In order to topup your own wallet or receive money through bank transfer, copy
+                                        and share the data as below</li>
+                                    <li>The receiving banking data of each currency will be the same for all users</li>
+                                    <li>The only data that will change will be the "CAUSAL" which will identify the
+                                        receiver user</li>
+                                    <li>To increase and improve the privacy level, receiving and sending money will be
+                                        handled by TracklessMoney payment gateway</li>
+                                </ul>
+                            </div>
                             <?php } ?>
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">

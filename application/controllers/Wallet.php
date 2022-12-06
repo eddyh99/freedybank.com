@@ -25,12 +25,12 @@ class Wallet extends CI_Controller
     {
         // Get URL
         $linkurl = $_SERVER['REQUEST_URI'];
-        $ucode="";
-        $amount="";
-        if (strpos($linkurl,"send?")){
+        $ucode = "";
+        $amount = "";
+        if (strpos($linkurl, "send?")) {
             $get_url = str_replace("/wallet/send?", "", $linkurl);
             $decode_url = base64_decode($get_url);
-    
+
             // Get UCode
             $get_dataucode = str_replace("ucode=", "", $decode_url);
             $ucode = strstr($get_dataucode, '&', true);
@@ -82,7 +82,7 @@ class Wallet extends CI_Controller
             "amount"    => number_format($amount, 2)
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getSummary", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/wallet/getSummary", json_encode($mdata));
 
         if (@$result->code != "200") {
             $this->session->set_flashdata('failed', $result->message);
@@ -130,7 +130,7 @@ class Wallet extends CI_Controller
             "amount"    => $amount
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/walletTransfer", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/wallet/walletTransfer", json_encode($mdata));
         if (@$result->code != "200") {
             $this->session->set_flashdata('failed', $result->message);
             redirect("wallet/send");

@@ -107,7 +107,7 @@ class Auth extends CI_Controller
 			'timezone'  => $time_location
 		);
 
-		$url = "https://api.tracklessbank.com/v1/auth/register";
+		$url = URLAPI . "/v1/auth/register";
 		$result = apitrackless($url, json_encode($mdata));
 		if ($result->code == 200) {
 			//kirim email registrasi
@@ -163,7 +163,7 @@ class Auth extends CI_Controller
 		}
 
 		$token = $this->security->xss_clean($this->input->get('token'));
-		$url = "https://api.tracklessbank.com/v1/auth/activate?token=" . $token;
+		$url = URLAPI . "/v1/auth/activate?token=" . $token;
 		$result = apitrackless($url);
 
 		if (!empty(@$result->code == 200)) {
@@ -196,7 +196,7 @@ class Auth extends CI_Controller
 			'password' => sha1($pass)
 		);
 
-		$url = "https://api.tracklessbank.com/v1/auth/signin";
+		$url = URLAPI . "/v1/auth/signin";
 		$result = apitrackless($url, json_encode($mdata));
 		if (@$result->code != 200) {
 			$this->session->set_flashdata('failed', $result->message);
@@ -232,7 +232,7 @@ class Auth extends CI_Controller
 			}
 			redirect("homepage");
 		} elseif ($result->message->role == 'admin') {
-			$_SESSION["mwallet"] = apitrackless("https://api.tracklessbank.com/v1/admin/user/getMasterwallet")->message->ucode_mwallet;
+			$_SESSION["mwallet"] = apitrackless(URLAPI . "/v1/admin/user/getMasterwallet")->message->ucode_mwallet;
 			redirect("/admin/dashboard");
 		}
 	}
@@ -300,7 +300,7 @@ class Auth extends CI_Controller
 		}
 
 		$email = $this->security->xss_clean($this->input->post('email'));
-		$url = "https://api.tracklessbank.com/v1/auth/resetpassword?email=" . $email;
+		$url = URLAPI . "/v1/auth/resetpassword?email=" . $email;
 		$result = apitrackless($url);
 		if (!empty(@$result->code == 200)) {
 
@@ -349,7 +349,7 @@ class Auth extends CI_Controller
 			'token'     => $token
 		);
 
-		$url = "https://api.tracklessbank.com/v1/auth/updatepassword";
+		$url = URLAPI . "/v1/auth/updatepassword";
 		$result = apitrackless($url, json_encode($mdata));
 		if ($result->code == 200) {
 			$this->session->set_flashdata("success", "Your password is successfully changed");
@@ -376,7 +376,7 @@ class Auth extends CI_Controller
 		$mail->Host         = 'mail.freedybank.com';
 		$mail->SMTPAuth     = true;
 		$mail->Username     = 'no-reply@freedybank.com';
-		$mail->Password     = '_v2!~h;x4o$G';
+		$mail->Password     = 'GIvn[f58&YMb';
 		$mail->SMTPAutoTLS	= false;
 		$mail->SMTPSecure	= false;
 		$mail->Port			= 587;

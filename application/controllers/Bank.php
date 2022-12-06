@@ -80,7 +80,7 @@ class Bank extends CI_Controller
             "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/bankSummary", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
 
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", "Insuffisient Fund");
@@ -201,7 +201,7 @@ class Bank extends CI_Controller
             )
         );
 
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/wallet/bankTransfer", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
 
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", $result->message);
