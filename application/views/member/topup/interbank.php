@@ -11,7 +11,7 @@
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
                             <div class="row">
-                                <label>Registered Name</label>
+                                <label>Account Holder</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter1"
                                         value="<?= @$bank->name_outside ?>" readonly>
@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label>Account Number</label>
+                                <label class="form-label">IBAN</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter2"
                                         value="<?= @$bank->iban_outside ?>" readonly>
@@ -43,7 +43,13 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label>Swift Code</label>
+                                <?php if (($_SESSION["currency"] == "GBP")) { ?>
+                                <label class="form-label">SWIFT/BIC</label>
+
+                                <?php } else { ?>
+                                <label class="form-label">Swift</label>
+                                <?php } ?>
+
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter3"
                                         value="<?= @$bank->bic_outside ?>" readonly>

@@ -19,7 +19,7 @@ class Fee extends CI_Controller
 			"content"   => "admin/fee/fee",
 			"mn_fee"    => "active",
 			"extra"     => "admin/fee/js/js_fee",
-			"currency"  => apitrackless("https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency")->message,
+			"currency"  => apitrackless(URLAPI . "/v1/trackless/currency/getAllCurrency")->message,
 		);
 
 		$this->load->view('admin_template/wrapper', $data);
@@ -29,7 +29,7 @@ class Fee extends CI_Controller
 	{
 		$currency		= $this->security->xss_clean($_GET["currency"]);
 
-		$mfee = apitrackless("https://api.tracklessbank.com/v1/admin/fee/getFee?currency=" . $currency);
+		$mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
 
 		$mdata = array();
 		if (@$mfee->code == 200) {
@@ -84,7 +84,7 @@ class Fee extends CI_Controller
 
 	public function editfee($currency)
 	{
-		$mfee = apitrackless("https://api.tracklessbank.com/v1/admin/fee/getFee?currency=" . $currency);
+		$mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
 
 		$mdata = array();
 		if (@$mfee->code == 200) {
@@ -302,7 +302,7 @@ class Fee extends CI_Controller
 			"referral_bank_fxd" => $referral_bank_fxd,
 			"referral_bank_pct" => $referral_bank_pct / 100,
 		);
-		$result = apitrackless("https://api.tracklessbank.com/v1/admin/fee/setFee", json_encode($mdata));
+		$result = apitrackless(URLAPI . "/v1/admin/fee/setFee", json_encode($mdata));
 
 		if (@$result->code == 200) {
 			$this->session->set_flashdata("success", "Default Fee is successfully updated");

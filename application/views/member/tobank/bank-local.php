@@ -32,7 +32,8 @@
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" name="transfer_type" value="circuit">
                                 <div class="tab-pane box-tab-bank" id="us">
-                                    <?php if (($_SESSION["currency"] == "AED") || ($_SESSION["currency"] == "EUR")) { ?>
+
+                                    <?php if (($_SESSION["currency"] == "AUD") || ($_SESSION["currency"] == "EUR")) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="recipient" id="us1"
                                             placeholder="Recipient's Name">
@@ -49,6 +50,7 @@
                                         <input class="form-control me-2" type="text" name="causal" id="us4"
                                             placeholder="Causal">
                                     </div>
+
                                     <?php } elseif ($_SESSION["currency"] == "USD") { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="recipient" id="inter1"
@@ -93,6 +95,7 @@
                                             placeholder="Recipient Postalcode">
                                     </div>
                                     <?php } ?>
+
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>

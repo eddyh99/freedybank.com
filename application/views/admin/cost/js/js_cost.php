@@ -21,14 +21,16 @@ function readfee() {
             $("#topup_outside_fxd").val(data.topup_outside_fxd)
             $("#topup_outside_pct").val(data.topup_outside_pct)
 
-            if ((readcurrency != "USD") ||
-                (readcurrency != "EUR") ||
-                (readcurrency != "AUD") ||
-                (readcurrency != "NZD") ||
-                (readcurrency != "CAD") ||
-                (readcurrency != "HUF") ||
-                (readcurrency != "SGD") ||
-                (readcurrency != "TRY")) {
+            if ((readcurrency != "USD") &&
+                (readcurrency != "EUR") &&
+                (readcurrency != "AUD") &&
+                (readcurrency != "NZD") &&
+                (readcurrency != "CAD") &&
+                (readcurrency != "HUF") &&
+                (readcurrency != "SGD") &&
+                (readcurrency != "TRY") &&
+                (readcurrency != "GBP") &&
+                (readcurrency != "RON")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
                 $("#topup_outside_fxd_div").hide()
@@ -41,11 +43,18 @@ function readfee() {
                 (readcurrency == "CAD") ||
                 (readcurrency == "HUF") ||
                 (readcurrency == "SGD") ||
-                (readcurrency == "TRY")) {
+                (readcurrency == "TRY") ||
+                (readcurrency == "GBP") ||
+                (readcurrency == "RON")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
-                $("#topup_outside_fxd_div").hide()
-                $("#topup_outside_pct_div").hide()
+                if ((readcurrency == "GBP")) {
+                    $("#topup_outside_fxd_div").show()
+                    $("#topup_outside_pct_div").show()
+                } else {
+                    $("#topup_outside_fxd_div").hide()
+                    $("#topup_outside_pct_div").hide()
+                }
                 $("#topup_circuit_fxd_div").show()
                 $("#topup_circuit_pct_div").show()
             }

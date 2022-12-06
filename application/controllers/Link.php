@@ -74,7 +74,7 @@ class Link extends CI_Controller
 
     public function lern_transparency()
     {
-        $url = "https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency";
+        $url = URLAPI . "/v1/trackless/currency/getAllCurrency";
         $currency   = apitrackless($url)->message;
 
         $data = array(
@@ -90,9 +90,9 @@ class Link extends CI_Controller
     public function price_currency()
     {
         $curr = $_GET['currency'];
-        $url_cost = "https://api.tracklessbank.com/v1/admin/cost/getCost?currency=" . $curr;
-        $url_fee = "https://api.tracklessbank.com/v1/admin/fee/getFee?currency=" . $curr;
-        $url_curr = "https://api.tracklessbank.com/v1/trackless/currency/getAllCurrency";
+        $url_cost = URLAPI . "/v1/admin/cost/getCost?currency=" . $curr;
+        $url_fee = URLAPI . "/v1/admin/fee/getFee?currency=" . $curr;
+        $url_curr = URLAPI . "/v1/trackless/currency/getAllCurrency";
         $cost   = apitrackless($url_cost);
         $fee   = apitrackless($url_fee);
         $currency   = apitrackless($url_curr)->message;
@@ -206,7 +206,7 @@ class Link extends CI_Controller
     public function check_ucode()
     {
         $ucode = $_GET['ucode'];
-        $url = "https://api.tracklessbank.com/v1/auth/getmember_byucode?ucode=" . $ucode;
+        $url = URLAPI . "/v1/auth/getmember_byucode?ucode=" . $ucode;
         $result   = apitrackless($url);
 
         $mdata = array();

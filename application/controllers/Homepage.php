@@ -17,7 +17,7 @@ class Homepage extends CI_Controller
             "userid" => $_SESSION["user_id"]
         );
 
-        $url = "https://api.tracklessbank.com/v1/member/currency/getActiveCurrency";
+        $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $currency   = apitrackless($url, json_encode($mdata))->message;
 
         $data = array();
@@ -26,7 +26,7 @@ class Homepage extends CI_Controller
                 $temp["currency"] = $dt->currency;
                 $temp["symbol"] = $dt->symbol;
                 $temp["status"] = $dt->status;
-                $temp["balance"] = apitrackless("https://api.tracklessbank.com/v1/member/wallet/getBalance?currency=" . $dt->currency . "&userid=" . $_SESSION["user_id"])->message->balance;
+                $temp["balance"] = apitrackless(URLAPI . "/v1/member/wallet/getBalance?currency=" . $dt->currency . "&userid=" . $_SESSION["user_id"])->message->balance;
                 array_push($data, (object) $temp);
             }
         }
@@ -50,7 +50,7 @@ class Homepage extends CI_Controller
             "userid" => $_SESSION["user_id"]
         );
 
-        $url = "https://api.tracklessbank.com/v1/member/currency/getActiveCurrency";
+        $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
         $footer["extra"]    = "member/js/js_currency";
@@ -64,7 +64,7 @@ class Homepage extends CI_Controller
     public function wallet()
     {
         if (!empty($_GET["cur"])) {
-            $url = "https://api.tracklessbank.com/v1/member/currency/getByCurrency?currency=" . $_GET["cur"] . "&userid=" . $_SESSION["user_id"];
+            $url = URLAPI . "/v1/member/currency/getByCurrency?currency=" . $_GET["cur"] . "&userid=" . $_SESSION["user_id"];
             $result = apitrackless($url);
             if ($result->code == 200) {
                 $_SESSION["currency"] = @$_GET["cur"];
@@ -78,7 +78,7 @@ class Homepage extends CI_Controller
         $mdata = array(
             "userid" => $_SESSION["user_id"]
         );
-        $url = "https://api.tracklessbank.com/v1/member/currency/getActiveCurrency";
+        $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
         $data['title'] = "Freedy - Homepage";
         $footer["extra"]    = "member/js/js_index";
@@ -93,7 +93,7 @@ class Homepage extends CI_Controller
     {
         $currency = $_GET["currency"];
         $status = $_GET["status"];
-        $url = "https://api.tracklessbank.com/v1/member/currency/setCurrency?status=" . $status . "&userid=" . $_SESSION["user_id"] . "&currency=" . $currency;
+        $url = URLAPI . "/v1/member/currency/setCurrency?status=" . $status . "&userid=" . $_SESSION["user_id"] . "&currency=" . $currency;
         $result = apitrackless($url);
         echo json_encode($result);
     }
@@ -123,7 +123,7 @@ class Homepage extends CI_Controller
             "date_end"  => $akhir,
             "timezone"  => $_SESSION["time_location"]
         );
-        $result = apitrackless("https://api.tracklessbank.com/v1/member/history/getAll", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/member/history/getAll", json_encode($mdata));
         $data["history"] = $result->message;
         $response = array(
             "token"     => $this->security->get_csrf_hash(),

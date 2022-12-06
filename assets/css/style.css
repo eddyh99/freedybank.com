@@ -4025,6 +4025,14 @@ section {
     color: #000000;
   }
 
+  .receive-note ul li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #000000;
+  }
+
   .receive-note span.title {
     font-weight: 400;
     font-size: 14px;
@@ -5975,6 +5983,14 @@ section {
     color: #000000;
   }
 
+  .receive-note ul li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #000000;
+  }
+
   .receive-note span.title {
     font-weight: 400;
     font-size: 14px;
@@ -7867,6 +7883,14 @@ section {
     font-size: 12px;
     line-height: 15px;
     text-align: center;
+
+    color: #000000;
+  }
+
+  .receive-note ul li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
 
     color: #000000;
   }
@@ -10042,6 +10066,14 @@ section {
     font-size: 14px;
     line-height: 15px;
     text-align: center;
+
+    color: #000000;
+  }
+
+  .receive-note ul li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
 
     color: #000000;
   }
