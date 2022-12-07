@@ -10,6 +10,7 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4 w-receive text-center">
+                            <?php $this->load->view('member/alert-notif'); ?>
                             <img src="<?= base_url() ?>qr/request/<?= $nameqr ?>.png" alt="">
                             <input type="text" class="form-control" name="" id="copy-qr" value="<?= $linkqr ?>" hidden>
                             <div class="mt-3">

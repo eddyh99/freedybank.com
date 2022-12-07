@@ -33,69 +33,318 @@
                                 <input type="hidden" name="transfer_type" value="circuit">
                                 <div class="tab-pane box-tab-bank" id="us">
 
-                                    <?php if (($_SESSION["currency"] == "AUD") || ($_SESSION["currency"] == "EUR")) { ?>
+                                    <?php
+                                    if (
+                                        ($_SESSION["currency"] == 'AED') ||
+                                        ($_SESSION["currency"] == 'ARS') ||
+                                        ($_SESSION["currency"] == 'AUD') ||
+                                        ($_SESSION["currency"] == 'BDT') ||
+                                        ($_SESSION["currency"] == 'BGN') ||
+                                        ($_SESSION["currency"] == 'BRL') ||
+                                        ($_SESSION["currency"] == 'CAD') ||
+                                        ($_SESSION["currency"] == 'CHF') ||
+                                        ($_SESSION["currency"] == 'CLP') ||
+                                        ($_SESSION["currency"] == 'CNY') ||
+                                        ($_SESSION["currency"] == 'CZK') ||
+                                        ($_SESSION["currency"] == 'DKK') ||
+                                        ($_SESSION["currency"] == 'EGP') ||
+                                        ($_SESSION["currency"] == 'EUR') ||
+                                        ($_SESSION["currency"] == 'GBP') ||
+                                        ($_SESSION["currency"] == 'GEL') ||
+                                        ($_SESSION["currency"] == 'GHS') ||
+                                        ($_SESSION["currency"] == 'HKD') ||
+                                        ($_SESSION["currency"] == 'HRK') ||
+                                        ($_SESSION["currency"] == 'HUF') ||
+                                        ($_SESSION["currency"] == 'IDR') ||
+                                        ($_SESSION["currency"] == 'ILS') ||
+                                        ($_SESSION["currency"] == 'INR') ||
+                                        ($_SESSION["currency"] == 'JPY') ||
+                                        ($_SESSION["currency"] == 'KES') ||
+                                        ($_SESSION["currency"] == 'KRW') ||
+                                        ($_SESSION["currency"] == 'LKR') ||
+                                        ($_SESSION["currency"] == 'MAD') ||
+                                        ($_SESSION["currency"] == 'MXN') ||
+                                        ($_SESSION["currency"] == 'MYR') ||
+                                        ($_SESSION["currency"] == 'NGN') ||
+                                        ($_SESSION["currency"] == 'NOK') ||
+                                        ($_SESSION["currency"] == 'NPR') ||
+                                        ($_SESSION["currency"] == 'NZD') ||
+                                        ($_SESSION["currency"] == 'PHP') ||
+                                        ($_SESSION["currency"] == 'PKR') ||
+                                        ($_SESSION["currency"] == 'PLN') ||
+                                        ($_SESSION["currency"] == 'RON') ||
+                                        ($_SESSION["currency"] == 'SEK') ||
+                                        ($_SESSION["currency"] == 'SGD') ||
+                                        ($_SESSION["currency"] == 'THB') ||
+                                        ($_SESSION["currency"] == 'TRY') ||
+                                        ($_SESSION["currency"] == 'UAH') ||
+                                        ($_SESSION["currency"] == 'USD') ||
+                                        ($_SESSION["currency"] == 'VND') ||
+                                        ($_SESSION["currency"] == 'ZAR')
+                                    ) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="us1"
-                                            placeholder="Recipient's Name">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="us2"
-                                            placeholder="IBAN">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="us3"
-                                            placeholder="Amount">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="us4"
-                                            placeholder="Causal">
+                                        <input class="form-control me-2" type="text" name="accountHolderName"
+                                            placeholder="accountHolderName">
                                     </div>
 
-                                    <?php } elseif ($_SESSION["currency"] == "USD") { ?>
+                                    <?php
+                                        // IBAN
+                                        if (($_SESSION["currency"] == 'AED') ||
+                                            ($_SESSION["currency"] == 'BGN') ||
+                                            ($_SESSION["currency"] == 'CHF') ||
+                                            ($_SESSION["currency"] == 'DKK') ||
+                                            ($_SESSION["currency"] == 'EGP') ||
+                                            ($_SESSION["currency"] == 'EUR') ||
+                                            ($_SESSION["currency"] == 'GEL') ||
+                                            ($_SESSION["currency"] == 'HKD') ||
+                                            ($_SESSION["currency"] == 'HRK') ||
+                                            ($_SESSION["currency"] == 'ILS') ||
+                                            ($_SESSION["currency"] == 'NOK') ||
+                                            ($_SESSION["currency"] == 'PKR') ||
+                                            ($_SESSION["currency"] == 'PLN') ||
+                                            ($_SESSION["currency"] == 'RON') ||
+                                            ($_SESSION["currency"] == 'SEK') ||
+                                            ($_SESSION["currency"] == 'TRY')
+                                        ) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="inter1"
-                                            placeholder="Recipient">
+                                        <input class="form-control me-2" type="text" name="IBAN" placeholder="IBAN">
                                     </div>
+
+                                    <?php }
+                                        // TAXID
+                                        if (($_SESSION["currency"] == 'ARS')) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="inter2"
-                                            placeholder="Account Number">
+                                        <input class="form-control me-2" type="text" name="taxId" placeholder="taxId">
                                     </div>
+
+                                    <?php }
+                                        // accountNumber
+                                        if (($_SESSION["currency"] == 'ARS') ||
+                                            ($_SESSION["currency"] == 'AUD') ||
+                                            ($_SESSION["currency"] == 'BDT') ||
+                                            ($_SESSION["currency"] == 'BGN') ||
+                                            ($_SESSION["currency"] == 'BRL') ||
+                                            ($_SESSION["currency"] == 'CAD') ||
+                                            ($_SESSION["currency"] == 'CHF') ||
+                                            ($_SESSION["currency"] == 'CLP') ||
+                                            ($_SESSION["currency"] == 'CNY') ||
+                                            ($_SESSION["currency"] == 'CZK') ||
+                                            ($_SESSION["currency"] == 'DKK') ||
+                                            ($_SESSION["currency"] == 'EGP') ||
+                                            ($_SESSION["currency"] == 'EUR') ||
+                                            ($_SESSION["currency"] == 'GBP') ||
+                                            ($_SESSION["currency"] == 'GEL') ||
+                                            ($_SESSION["currency"] == 'GHS') ||
+                                            ($_SESSION["currency"] == 'HKD') ||
+                                            ($_SESSION["currency"] == 'HRK') ||
+                                            ($_SESSION["currency"] == 'HUF') ||
+                                            ($_SESSION["currency"] == 'IDR') ||
+                                            ($_SESSION["currency"] == 'ILS') ||
+                                            ($_SESSION["currency"] == 'INR') ||
+                                            ($_SESSION["currency"] == 'JPY') ||
+                                            ($_SESSION["currency"] == 'KES') ||
+                                            ($_SESSION["currency"] == 'KRW') ||
+                                            ($_SESSION["currency"] == 'LKR') ||
+                                            ($_SESSION["currency"] == 'MAD') ||
+                                            ($_SESSION["currency"] == 'MXN') ||
+                                            ($_SESSION["currency"] == 'MYR') ||
+                                            ($_SESSION["currency"] == 'NGN') ||
+                                            ($_SESSION["currency"] == 'NOK') ||
+                                            ($_SESSION["currency"] == 'NPR') ||
+                                            ($_SESSION["currency"] == 'NZD') ||
+                                            ($_SESSION["currency"] == 'PHP') ||
+                                            ($_SESSION["currency"] == 'PKR') ||
+                                            ($_SESSION["currency"] == 'PLN') ||
+                                            ($_SESSION["currency"] == 'RON') ||
+                                            ($_SESSION["currency"] == 'SEK') ||
+                                            ($_SESSION["currency"] == 'SGD') ||
+                                            ($_SESSION["currency"] == 'THB') ||
+                                            ($_SESSION["currency"] == 'TRY') ||
+                                            ($_SESSION["currency"] == 'UAH') ||
+                                            ($_SESSION["currency"] == 'USD') ||
+                                            ($_SESSION["currency"] == 'VND') ||
+                                            ($_SESSION["currency"] == 'ZAR')
+                                        ) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="swift" id="inter3"
-                                            placeholder="Routing Number">
+                                        <input class="form-control me-2" type="text" name="accountNumber"
+                                            placeholder="accountNumber">
                                     </div>
+
+                                    <?php }
+                                        // Address
+                                        if (
+                                            ($_SESSION["currency"] == 'AUD') ||
+                                            ($_SESSION["currency"] == 'PHP') ||
+                                            ($_SESSION["currency"] == 'THB') ||
+                                            ($_SESSION["currency"] == 'UAH') ||
+                                            ($_SESSION["currency"] == 'USD')
+                                        ) {
+                                            if (($_SESSION["currency"] == 'AUD')) { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <select name="account_type" class="form-control me-2">
-                                            <option value="savings">Saving</option>
-                                            <option value="checking">Checking</option>
-                                        </select>
+                                        <input class="form-control me-2" type="text" name="countryCode"
+                                            placeholder="countryCode">
                                     </div>
+
+                                    <?php } else { ?>
                                     <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="inter4"
-                                            placeholder="Amount">
+                                        <input class="form-control me-2" type="text" name="country"
+                                            placeholder="country">
                                     </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="inter5"
-                                            placeholder="Causal">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="address" id="inter6"
-                                            placeholder="Recipient Address">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="city" id="inter7"
-                                            placeholder="Recipient City">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="state" id="inter8"
-                                            placeholder="Recipient State">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="postalcode" id="inter9"
-                                            placeholder="Recipient Postalcode">
-                                    </div>
+
                                     <?php } ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="postCode"
+                                            placeholder="postCode">
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="city" placeholder="city">
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="firstLine"
+                                            placeholder="firstLine">
+                                    </div>
 
+                                    <?php }
+                                        // accountType
+                                        if (
+                                            ($_SESSION["currency"] == 'BRL') ||
+                                            ($_SESSION["currency"] == 'CAD') ||
+                                            ($_SESSION["currency"] == 'CLP') ||
+                                            ($_SESSION["currency"] == 'JPY') ||
+                                            ($_SESSION["currency"] == 'USD')
+                                        ) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="accountType"
+                                            placeholder="accountType">
+                                    </div>
+
+                                    <?php }
+                                        // bsbCode
+                                        if (($_SESSION["currency"] == 'AUD')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="bsbCode"
+                                            placeholder="bsbCode">
+                                    </div>
+
+                                    <?php }
+                                        // bankCode
+                                        if (
+                                            ($_SESSION["currency"] == 'BDT') ||
+                                            ($_SESSION["currency"] == 'BRL') ||
+                                            ($_SESSION["currency"] == 'CLP') ||
+                                            ($_SESSION["currency"] == 'CZK') ||
+                                            ($_SESSION["currency"] == 'GHS') ||
+                                            ($_SESSION["currency"] == 'IDR') ||
+                                            ($_SESSION["currency"] == 'JPY') ||
+                                            ($_SESSION["currency"] == 'KES') ||
+                                            ($_SESSION["currency"] == 'KRW') ||
+                                            ($_SESSION["currency"] == 'LKR') ||
+                                            ($_SESSION["currency"] == 'MAD') ||
+                                            ($_SESSION["currency"] == 'NGN') ||
+                                            ($_SESSION["currency"] == 'NPR') ||
+                                            ($_SESSION["currency"] == 'PHP') ||
+                                            ($_SESSION["currency"] == 'SGD') ||
+                                            ($_SESSION["currency"] == 'THB')
+                                        ) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="bankCode"
+                                            placeholder="bankCode">
+                                    </div>
+
+                                    <?php }
+                                        // branchCode
+                                        if (
+                                            ($_SESSION["currency"] == 'BDT') ||
+                                            ($_SESSION["currency"] == 'BRL') ||
+                                            ($_SESSION["currency"] == 'JPY') ||
+                                            ($_SESSION["currency"] == 'LKR') ||
+                                            ($_SESSION["currency"] == 'VND')
+                                        ) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="branchCode"
+                                            placeholder="branchCode">
+                                    </div>
+
+                                    <?php }
+                                        // cpf
+                                        if (($_SESSION["currency"] == 'BRL')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="cpf" placeholder="cpf">
+                                    </div>
+
+                                    <?php }
+                                        // rut
+                                        if (($_SESSION["currency"] == 'CLP')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="rut" placeholder="rut">
+                                    </div>
+
+                                    <?php }
+                                        // sortCode
+                                        if (($_SESSION["currency"] == 'GBP')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="sortCode"
+                                            placeholder="sortCode">
+                                    </div>
+
+                                    <?php }
+                                        // ifscCode
+                                        if (($_SESSION["currency"] == 'INR')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="ifscCode"
+                                            placeholder="ifscCode">
+                                    </div>
+
+                                    <?php }
+                                        // clabe
+                                        if (($_SESSION["currency"] == 'MXN')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="clabe" placeholder="clabe">
+                                    </div>
+
+                                    <?php }
+                                        // clabe
+                                        if (($_SESSION["currency"] == 'MYR') ||
+                                            ($_SESSION["currency"] == 'VND') ||
+                                            ($_SESSION["currency"] == 'ZAR')
+                                        ) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="swiftCode"
+                                            placeholder="swiftCode">
+                                    </div>
+
+                                    <?php }
+                                        // dateOfBirth & email
+                                        if (($_SESSION["currency"] == 'KRW')) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="dateOfBirth"
+                                            placeholder="dateOfBirth">
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="email" placeholder="email">
+                                    </div>
+
+                                    <?php }
+                                        // phoneNumber
+                                        if (
+                                            ($_SESSION["currency"] == 'BRL') ||
+                                            ($_SESSION["currency"] == 'CLP') ||
+                                            ($_SESSION["currency"] == 'UAH')
+                                        ) { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="phoneNumber"
+                                            placeholder="phoneNumber">
+                                    </div>
+
+                                    <?php }
+                                        // abartn
+                                        if ($_SESSION["currency"] == 'USD') { ?>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="abartn" placeholder="abartn">
+                                    </div>
+                                    <?php }
+                                    }
+                                    ?>
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
