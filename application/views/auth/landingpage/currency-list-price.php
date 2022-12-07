@@ -86,7 +86,7 @@
                         </li>
                         <?php
                                     $currency = $_GET["currency"];
-                                    if (($currency == "USD") || ($currency == "EUR")) {
+                                    if (($currency == "USD") || ($currency == "EUR") || ($currency == "GBP")) {
                                     ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <span class="w-50 me-auto text-start">International Transfer</span>

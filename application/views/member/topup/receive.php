@@ -68,18 +68,12 @@
                                 ($_SESSION["currency"] == "GBP") ||
                                 ($_SESSION["currency"] == "RON")
                             ) { ?>
-                            <div>
-                                <span class="fw-bold">ATTENTION!</span>
-                                <ul>
-                                    <li>In order to topup your own wallet or receive money through bank transfer, copy
-                                        and share the data as below</li>
-                                    <li>The receiving banking data of each currency will be the same for all users</li>
-                                    <li>The only data that will change will be the "CAUSAL" which will identify the
-                                        receiver user</li>
-                                    <li>To increase and improve the privacy level, receiving and sending money will be
-                                        handled by TracklessMoney payment gateway</li>
-                                </ul>
-                            </div>
+                            <button type="button" class="receive-attention d-flex flex-column text-center col-12 p-3"
+                                data-bs-toggle="modal" data-bs-target="#attention">
+                                <span class="mb-2 fw-bold title">ATTENTION!</span>
+                                <span class="mb-2 middle">Before make any topup</span>
+                                <span class="bottom">read carefully how does it work</span>
+                            </button>
                             <?php } ?>
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
@@ -137,6 +131,41 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal attantion -->
+<div class="modal fade" id="attention" tabindex="-1" aria-labelledby="attention" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content attention-modal p-2">
+            <div class="modal-header border-0">
+                <h1 class="modal-title fw-bold">How to topup</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>In order to topup your own wallet or receive money through bank transfer, <br>
+                        copy or share the bank details written in ''add/receive funds'' by bank transfer section (local
+                        bank, international or cash) and as a causal IS MANDATORY TO WRITE :<br>
+                        <br>
+                        TOP UP + YOUR UNIQUE CODE NUMBER<br>
+                        (THE UNIQUE CODE IDENTIFY THE RECEIVER USER)<br>
+                        <br>
+                        EXAMPLE: ''causal : topup xxxxxxxx''<br>
+                        <img src="<?= base_url() ?>assets/img/attantion-1.png" alt="">
+                    </li>
+
+                    <li>The receiving banking data of each currency will be the same for all users, THE ONLY DATA THAT
+                        WILL CHANGE WILL BE THE "CAUSAL" WHICH WILL IDENTIFY THE RECEIVER USER, SO IF YOU WANT TO TOP UP
+                        YOUR FRIEND WALLET YOU HAVE TO WRITE IN THE CAUSAL:<br>
+                        <br>
+                        topup + THE UNIQUE CODE OF HIS OWN WALLET
+                    </li>
+                    <li>To increase and improve the privacy level, receiving and sending money
+                        will be handled by TracklessMoney payment gateway</li>
+                </ul>
             </div>
         </div>
     </div>

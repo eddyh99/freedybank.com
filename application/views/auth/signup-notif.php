@@ -13,7 +13,7 @@
                         <p class="text-center f-roboto">To activate your FreedyBank account click the link receive in
                             your registration email
                             <br><br>
-                            <b>ATTENCTION:</b>
+                            <b>ATTENTION:</b>
                         </p>
                         <ul class="f-roboto">
                             <li>You will receive the email within 15 minutes</li>

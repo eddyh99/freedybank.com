@@ -19,7 +19,7 @@ class Swap extends CI_Controller
         $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
-        $data['title'] = "Freedy - Swap";
+        $data['title'] = "Freedy - Swap" . $_SESSION["user_id"];
         $footer['extra'] = "member/swap/js/js_swap";
 
         $this->load->view('tamplate/header', $data);
@@ -145,8 +145,8 @@ class Swap extends CI_Controller
                     "token"     => $this->security->get_csrf_hash(),
                     "message"   => $result->message
                 );
-                echo json_encode($error);
-                return;
+                $this->session->set_flashdata("failed", $result->message);
+                redirect('swap');
             }
 
 

@@ -10,6 +10,7 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4 w-receive text-center">
+                            <?php $this->load->view('member/alert-notif'); ?>
                             <img src="<?= base_url() ?>qr/receive/<?= $_SESSION['ucode'] ?>.png" alt="">
                             <input type="text" class="form-control" name="" id="copy-qr"
                                 value="<?= base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]) ?>"
@@ -34,7 +35,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="mt-5">
+                            <div class="mt-3">
                                 <a href="<?= base_url() ?>wallet" class="btn btn-receive-bank py-2 px-4">Close</a>
                             </div>
                         </div>

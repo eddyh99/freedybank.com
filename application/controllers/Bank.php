@@ -220,4 +220,249 @@ class Bank extends CI_Controller
         $this->load->view('member/tobank/bank-notif', $body);
         $this->load->view('tamplate/footer');
     }
+
+    public function exemple($curr)
+    {
+        if (
+            ($curr == 'AED') ||
+            ($curr == 'ARS') ||
+            ($curr == 'AUD') ||
+            ($curr == 'BDT') ||
+            ($curr == 'BGN') ||
+            ($curr == 'BRL') ||
+            ($curr == 'CAD') ||
+            ($curr == 'CHF') ||
+            ($curr == 'CLP') ||
+            ($curr == 'CNY') ||
+            ($curr == 'CZK') ||
+            ($curr == 'DKK') ||
+            ($curr == 'EGP') ||
+            ($curr == 'EUR') ||
+            ($curr == 'GBP') ||
+            ($curr == 'GEL') ||
+            ($curr == 'GHS') ||
+            ($curr == 'HKD') ||
+            ($curr == 'HRK') ||
+            ($curr == 'HUF') ||
+            ($curr == 'IDR') ||
+            ($curr == 'ILS') ||
+            ($curr == 'INR') ||
+            ($curr == 'JPY') ||
+            ($curr == 'KES') ||
+            ($curr == 'KRW') ||
+            ($curr == 'LKR') ||
+            ($curr == 'MAD') ||
+            ($curr == 'MXN') ||
+            ($curr == 'MYR') ||
+            ($curr == 'NGN') ||
+            ($curr == 'NOK') ||
+            ($curr == 'NPR') ||
+            ($curr == 'NZD') ||
+            ($curr == 'PHP') ||
+            ($curr == 'PKR') ||
+            ($curr == 'PLN') ||
+            ($curr == 'RON') ||
+            ($curr == 'SEK') ||
+            ($curr == 'SGD') ||
+            ($curr == 'THB') ||
+            ($curr == 'TRY') ||
+            ($curr == 'UAH') ||
+            ($curr == 'USD') ||
+            ($curr == 'VND') ||
+            ($curr == 'ZAR')
+        ) {
+            $this->form_validation->set_rules('accountHolderName', 'accountHolderName', 'trim|required');
+            // IBAN
+            if (($curr == 'AED') ||
+                ($curr == 'BGN') ||
+                ($curr == 'CHF') ||
+                ($curr == 'DKK') ||
+                ($curr == 'EGP') ||
+                ($curr == 'EUR') ||
+                ($curr == 'GEL') ||
+                ($curr == 'HKD') ||
+                ($curr == 'HRK') ||
+                ($curr == 'ILS') ||
+                ($curr == 'NOK') ||
+                ($curr == 'PKR') ||
+                ($curr == 'PLN') ||
+                ($curr == 'RON') ||
+                ($curr == 'SEK') ||
+                ($curr == 'TRY')
+            ) {
+                $this->form_validation->set_rules('IBAN', 'IBAN', 'trim|required');
+            }
+            // TAXID
+            if (($curr == 'ARS')) {
+                $this->form_validation->set_rules('taxId', 'taxId', 'trim|required');
+            }
+            // accountNumber
+            if (($curr == 'ARS') ||
+                ($curr == 'AUD') ||
+                ($curr == 'BDT') ||
+                ($curr == 'BGN') ||
+                ($curr == 'BRL') ||
+                ($curr == 'CAD') ||
+                ($curr == 'CHF') ||
+                ($curr == 'CLP') ||
+                ($curr == 'CNY') ||
+                ($curr == 'CZK') ||
+                ($curr == 'DKK') ||
+                ($curr == 'EGP') ||
+                ($curr == 'EUR') ||
+                ($curr == 'GBP') ||
+                ($curr == 'GEL') ||
+                ($curr == 'GHS') ||
+                ($curr == 'HKD') ||
+                ($curr == 'HRK') ||
+                ($curr == 'HUF') ||
+                ($curr == 'IDR') ||
+                ($curr == 'ILS') ||
+                ($curr == 'INR') ||
+                ($curr == 'JPY') ||
+                ($curr == 'KES') ||
+                ($curr == 'KRW') ||
+                ($curr == 'LKR') ||
+                ($curr == 'MAD') ||
+                ($curr == 'MXN') ||
+                ($curr == 'MYR') ||
+                ($curr == 'NGN') ||
+                ($curr == 'NOK') ||
+                ($curr == 'NPR') ||
+                ($curr == 'NZD') ||
+                ($curr == 'PHP') ||
+                ($curr == 'PKR') ||
+                ($curr == 'PLN') ||
+                ($curr == 'RON') ||
+                ($curr == 'SEK') ||
+                ($curr == 'SGD') ||
+                ($curr == 'THB') ||
+                ($curr == 'TRY') ||
+                ($curr == 'UAH') ||
+                ($curr == 'USD') ||
+                ($curr == 'VND') ||
+                ($curr == 'ZAR')
+            ) {
+                $this->form_validation->set_rules('accountNumber', 'accountNumber', 'trim|required');
+            }
+
+            // Address
+            if (
+                ($curr == 'AUD') ||
+                ($curr == 'PHP') ||
+                ($curr == 'THB') ||
+                ($curr == 'UAH') ||
+                ($curr == 'USD')
+            ) {
+                if (($curr == 'AUD')) {
+                    $this->form_validation->set_rules('countryCode', 'countryCode', 'trim|required');
+                } else {
+                    $this->form_validation->set_rules('country', 'country', 'trim|required');
+                }
+
+                $this->form_validation->set_rules('postCode', 'postCode', 'trim|required');
+                $this->form_validation->set_rules('city', 'city', 'trim|required');
+                $this->form_validation->set_rules('firstLine', 'firstLine', 'trim|required');
+            }
+            // accountType
+            if (
+                ($curr == 'BRL') ||
+                ($curr == 'CAD') ||
+                ($curr == 'CLP') ||
+                ($curr == 'JPY') ||
+                ($curr == 'USD')
+            ) {
+                $this->form_validation->set_rules('accountType', 'accountType', 'trim|required');
+            }
+
+            // bsbCode
+            if (($curr == 'AUD')) {
+                $this->form_validation->set_rules('bsbCode', 'bsbCode', 'trim|required');
+            }
+            // bankCode
+            if (
+                ($curr == 'BDT') ||
+                ($curr == 'BRL') ||
+                ($curr == 'CLP') ||
+                ($curr == 'CZK') ||
+                ($curr == 'GHS') ||
+                ($curr == 'IDR') ||
+                ($curr == 'JPY') ||
+                ($curr == 'KES') ||
+                ($curr == 'KRW') ||
+                ($curr == 'LKR') ||
+                ($curr == 'MAD') ||
+                ($curr == 'NGN') ||
+                ($curr == 'NPR') ||
+                ($curr == 'PHP') ||
+                ($curr == 'SGD') ||
+                ($curr == 'THB')
+            ) {
+                $this->form_validation->set_rules('bankCode', 'bankCode', 'trim|required');
+            }
+            // branchCode
+            if (
+                ($curr == 'BDT') ||
+                ($curr == 'BRL') ||
+                ($curr == 'JPY') ||
+                ($curr == 'LKR') ||
+                ($curr == 'VND')
+            ) {
+                $this->form_validation->set_rules('branchCode', 'branchCode', 'trim|required');
+            }
+
+            // cpf
+            if (($curr == 'BRL')) {
+                $this->form_validation->set_rules('cpf', 'cpf', 'trim|required');
+            }
+
+            // rut
+            if (($curr == 'CLP')) {
+                $this->form_validation->set_rules('rut', 'rut', 'trim|required');
+            }
+
+            // sortCode
+            if (($curr == 'GBP')) {
+                $this->form_validation->set_rules('sortCode', 'sortCode', 'trim|required');
+            }
+
+            // ifscCode
+            if (($curr == 'INR')) {
+                $this->form_validation->set_rules('ifscCode', 'ifscCode', 'trim|required');
+            }
+
+            // clabe
+            if (($curr == 'MXN')) {
+                $this->form_validation->set_rules('clabe', 'clabe', 'trim|required');
+            }
+
+            // clabe
+            if (($curr == 'MYR') ||
+                ($curr == 'VND') ||
+                ($curr == 'ZAR')
+            ) {
+                $this->form_validation->set_rules('swiftCode', 'swiftCode', 'trim|required');
+            }
+
+            // dateOfBirth & email
+            if (($curr == 'KRW')) {
+                $this->form_validation->set_rules('dateOfBirth', 'dateOfBirth', 'trim|required');
+                $this->form_validation->set_rules('email', 'email', 'trim|required');
+            }
+
+            // phoneNumber
+            if (
+                ($curr == 'BRL') ||
+                ($curr == 'CLP') ||
+                ($curr == 'UAH')
+            ) {
+                $this->form_validation->set_rules('phoneNumber', 'phoneNumber', 'trim|required');
+            }
+
+            // abartn
+            if ($curr == 'USD') {
+                $this->form_validation->set_rules('abartn', 'abartn', 'trim|required');
+            }
+        }
+    }
 }
