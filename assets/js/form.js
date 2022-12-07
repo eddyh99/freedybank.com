@@ -120,6 +120,10 @@ $("#btn-copy-qr").click(function () {
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
+
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+        $("#success-alert").slideUp(500);
+    });
 });
 
 $("#time_location").val(moment.tz.guess());

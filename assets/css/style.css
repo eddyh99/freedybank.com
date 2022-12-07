@@ -4384,6 +4384,73 @@ section {
   }
 
   /* Link Landingpage */
+
+  /* Member Receive Attention */
+  .receive-attention,
+  .receive-attention:hover {
+    border: 3px solid #0078F0;
+    background-color: transparent;
+  }
+
+  .receive-attention span.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.middle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.bottom {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #0078F0;
+  }
+
+  .attention-modal {
+    background: #FFFFFF;
+    border: 5px solid #0078F0;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+
+  .attention-modal .modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul {
+    margin-top: 1rem;
+    list-style-image: none;
+  }
+
+  .attention-modal .modal-body ul li {
+    background: url(../img/list-circle-blue.png) no-repeat left top;
+    padding: 0px 0px 0.5rem 2rem;
+    list-style: none;
+
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: .5rem;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul li img {
+    height: 125px;
+    margin: .5rem 0;
+  }
 }
 
 @media (min-width: 375px) {
@@ -6342,6 +6409,73 @@ section {
 
   /* Link Landingpage */
 
+  /* Member Receive Attention */
+  .receive-attention,
+  .receive-attention:hover {
+    border: 3px solid #0078F0;
+    background-color: transparent;
+  }
+
+  .receive-attention span.title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.middle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.bottom {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #0078F0;
+  }
+
+  .attention-modal {
+    background: #FFFFFF;
+    border: 5px solid #0078F0;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+
+  .attention-modal .modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul {
+    margin-top: 1rem;
+    list-style-image: none;
+  }
+
+  .attention-modal .modal-body ul li {
+    background: url(../img/list-circle-blue.png) no-repeat left top;
+    padding: 0px 0px 0.5rem 2rem;
+    list-style: none;
+
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: .5rem;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul li img {
+    height: 125px;
+    margin: .5rem 0;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -8247,6 +8381,73 @@ section {
   }
 
   /* Link Landingpage */
+
+  /* Member Receive Attention */
+  .receive-attention,
+  .receive-attention:hover {
+    border: 3px solid #0078F0;
+    background-color: transparent;
+  }
+
+  .receive-attention span.title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.middle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.bottom {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #0078F0;
+  }
+
+  .attention-modal {
+    background: #FFFFFF;
+    border: 5px solid #0078F0;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+
+  .attention-modal .modal-title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul {
+    margin-top: 1rem;
+    list-style-image: none;
+  }
+
+  .attention-modal .modal-body ul li {
+    background: url(../img/list-circle-blue.png) no-repeat left top;
+    padding: 0px 0px 0.5rem 2rem;
+    list-style: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    margin-bottom: .5rem;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul li img {
+    height: 150px;
+    margin: .5rem 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -10420,6 +10621,73 @@ section {
 
 
   /* Link Landingpage */
+
+  /* Member Receive Attention */
+  .receive-attention,
+  .receive-attention:hover {
+    border: 3px solid #0078F0;
+    background-color: transparent;
+  }
+
+  .receive-attention span.title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.middle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .receive-attention span.bottom {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #0078F0;
+  }
+
+  .attention-modal {
+    background: #FFFFFF;
+    border: 5px solid #0078F0;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+
+  .attention-modal .modal-title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul {
+    margin-top: 1rem;
+    list-style-image: none;
+  }
+
+  .attention-modal .modal-body ul li {
+    background: url(../img/list-circle-blue.png) no-repeat left top;
+    padding: 0px 0px 0.5rem 2rem;
+    list-style: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    margin-bottom: .5rem;
+
+    color: #000000;
+  }
+
+  .attention-modal .modal-body ul li img {
+    height: 150px;
+    margin: .5rem 0;
+  }
 }
 
 @media (min-width: 1400px) {
