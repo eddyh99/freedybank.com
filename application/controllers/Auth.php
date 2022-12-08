@@ -83,9 +83,13 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('confirmemail', 'Confirm Email', 'trim|required|valid_email|matches[email]');
 		$this->form_validation->set_rules('pass', 'Password', 'trim|required|min_length[9]|max_length[15]');
 		$this->form_validation->set_rules('confirmpass', 'Confirm Password', 'trim|required|matches[pass]');
+		$this->form_validation->set_rules('referral', 'Refferal', 'trim');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
+			$this->session->set_flashdata('email', set_value('email'));
+			$this->session->set_flashdata('confirmemail', set_value('confirmemail'));
+			$this->session->set_flashdata('referral', set_value('referral'));
 			redirect(base_url() . "auth/signup");
 			return;
 		}
@@ -119,7 +123,7 @@ class Auth extends CI_Controller
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate yout account<br><br>
 			";
 
-			$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $result->message->ucode);
+			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $result->message->ucode);
 			$this->sendmail($email, $subject, $message);
 			$this->qrcodeuser($result->message->ucode);
 			$this->qrcodereceive($urlqr, $result->message->ucode);
@@ -230,7 +234,33 @@ class Auth extends CI_Controller
 				$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
 				$this->qrcodereceive($urlqr, $result->message->ucode);
 			}
-			redirect("homepage");
+			if (empty($this->session->userdata('wallet_req'))) {
+				redirect("homepage");
+			} else {
+				// Local
+				$get_url = str_replace(base_url("wallet/send?"), "", $_SESSION['wallet_req']);
+
+				// Live
+				// $get_url = str_replace("/wallet/send?", "", $_SESSION['wallet_req']);
+				$decode_url = base64_decode($get_url);
+
+				// Get currency
+				$get_datacurr = str_replace("cur=", "", $decode_url);
+				$curr = strstr($get_datacurr, '&', true);
+
+				$url = URLAPI . "/v1/member/currency/getByCurrency?currency=" . $curr . "&userid=" . $_SESSION["user_id"];
+				$result = apitrackless($url);
+
+				if ($result->code == 200) {
+					$_SESSION["currency"] = @$curr;
+					$_SESSION["symbol"] = $result->message->symbol;
+				} else {
+					$_SESSION["currency"] = "USD";
+					$_SESSION["symbol"] = "&dollar;";
+				}
+
+				redirect($_SESSION['wallet_req']);
+			}
 		} elseif ($result->message->role == 'admin') {
 			$_SESSION["mwallet"] = apitrackless(URLAPI . "/v1/admin/user/getMasterwallet")->message->ucode_mwallet;
 			redirect("/admin/dashboard");
@@ -294,7 +324,7 @@ class Auth extends CI_Controller
 	{
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		if ($this->form_validation->run() == FALSE) {
-			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
+			$this->session->set_flashdata('failed', validation_errors());
 			redirect(base_url() . "auth/login");
 			return;
 		}
@@ -318,7 +348,7 @@ class Auth extends CI_Controller
 
 			$this->sendmail($email, $subject, $message);
 
-			$this->session->set_flashdata('failed', "<p style='color:black'>Your password has been reset, please check your email to complete the process</p>");
+			$this->session->set_flashdata('success', "<p style='color:black'>Your password has been reset, please check your email to complete the process</p>");
 			redirect(base_url() . "auth/login");
 			return;
 		} else {

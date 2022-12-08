@@ -13,8 +13,11 @@
                             <?php $this->load->view('member/alert-notif'); ?>
                             <img src="<?= base_url() ?>qr/receive/<?= $_SESSION['ucode'] ?>.png" alt="">
                             <input type="text" class="form-control" name="" id="copy-qr"
-                                value="<?= base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]) ?>"
+                                value="<?= base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"]) ?>"
                                 hidden>
+                            <div class="mt-3">
+                                <span class="fw-bold">UNIQUE CODE :<br> <?= $_SESSION["ucode"] ?></span>
+                            </div>
                             <div class="mt-3">
                                 <a href="#" class="mx-1">
                                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none"

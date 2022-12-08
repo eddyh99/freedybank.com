@@ -7,6 +7,8 @@
                 </a>
                 <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;" method="POST"
                     action="<?= base_url(); ?>auth/changepass">
+                    <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
+                        value="<?php echo $this->security->get_csrf_hash(); ?>">
                     <input type="hidden" name="token" value="<?= $_SESSION["token"] ?>">
                     <div class="col-12 mb-4 text-center">
                         <span class="my-3 title f-poppins">Forgot Password</span>
