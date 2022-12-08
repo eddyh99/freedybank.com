@@ -19,7 +19,7 @@
                         foreach ($currency as $dt) {
                             if ($dt->currency == "USD") {
                         ?>
-                        <div class="col-auto currency-img-list m-2">
+                        <div class="col-auto currency-img-list mx-1 my-2 mx-sm-2">
                             <a href="<?= base_url() ?>link/price_currency?currency=<?= $dt->currency ?>">
                                 <img src="<?= base_url() ?>assets/img/currency/<?= $dt->currency ?>.png"
                                     alt="<?= $dt->currency ?>">
@@ -32,7 +32,7 @@
                             if ($dt->currency == "EUR") {
                             ?>
 
-                        <div class="col-auto currency-img-list m-2">
+                        <div class="col-auto currency-img-list mx-1 my-2 mx-sm-2">
                             <a href="<?= base_url() ?>link/price_currency?currency=<?= $dt->currency ?>">
                                 <img src="<?= base_url() ?>assets/img/currency/<?= $dt->currency ?>.png"
                                     alt="<?= $dt->currency ?>">
@@ -44,7 +44,7 @@
                         foreach ($currency as $dt) {
                             if ($dt->currency != "EUR" && $dt->currency != "USD") {
                             ?>
-                        <div class="col-auto currency-img-list m-2">
+                        <div class="col-auto currency-img-list mx-1 my-2 mx-sm-2">
                             <a href="<?= base_url() ?>link/price_currency?currency=<?= $dt->currency ?>">
                                 <img src="<?= base_url() ?>assets/img/currency/<?= $dt->currency ?>.png"
                                     alt="<?= $dt->currency ?>">

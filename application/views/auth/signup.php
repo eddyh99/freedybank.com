@@ -28,8 +28,10 @@
                     <div class="col-12 mb-4">
                         <label for="email" class="form-label f-publicsans">Email</label>
                         <div class="input-group">
-                            <input type="email" class="form-control f-publicsans" id="email" name='email' placeholder=""
-                                required>
+                            <input type="email" class="form-control f-publicsans" id="email" name="email"
+                                value="<?php if (@isset($_SESSION['email'])) {
+                                                                                                                        echo $_SESSION['email'];
+                                                                                                                    } ?>" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-user"></i>
@@ -41,7 +43,9 @@
                         <label for="email" class="form-label f-publicsans">Confirm Email</label>
                         <div class="input-group">
                             <input type="email" class="form-control f-publicsans" id="email" name="confirmemail"
-                                placeholder="" required>
+                                value="<?php if (@isset($_SESSION['confirmemail'])) {
+                                                                                                                            echo $_SESSION['confirmemail'];
+                                                                                                                        } ?>" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-user"></i>
@@ -52,8 +56,8 @@
                     <div class="col-12 mb-4">
                         <label for="password1" class="form-label f-publicsans">Password</label>
                         <div class="input-group">
-                            <input type="password" class="form-control f-publicsans" name="pass" id="password1"
-                                placeholder="" required>
+                            <input type="password" class="form-control f-publicsans" name="pass" id="password1" value=""
+                                required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-eye" id="togglePassword1" style="cursor: pointer"
@@ -66,7 +70,7 @@
                         <label for="password2" class="form-label f-publicsans">Confirm Password</label>
                         <div class="input-group">
                             <input type="password" class="form-control f-publicsans" name="confirmpass" id="password2"
-                                placeholder="" required>
+                                value="" required>
                             <div class="input-group-text">
                                 <span>
                                     <i class="fa fa-eye" id="togglePassword2" style="cursor: pointer"
@@ -81,7 +85,14 @@
                         </label>
                         <div class="input-group">
                             <input type="text" class="form-control f-publicsans py-2" id="referral" name="referral"
-                                placeholder="" value="<?= @$_GET["ref"] ?>">
+                                value="<?php
+                                                                                                                            if (@$_GET['ref'] == '') {
+                                                                                                                                if (@isset($_SESSION['referral'])) {
+                                                                                                                                    echo $_SESSION['referral'];
+                                                                                                                                }
+                                                                                                                            } else {
+                                                                                                                                echo @$_GET['ref'];
+                                                                                                                            } ?>">
                         </div>
                     </div>
                     <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>

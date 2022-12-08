@@ -6,8 +6,31 @@ class Wallet extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (empty($this->session->userdata('user_id'))) {
-            redirect(base_url());
+
+        // Get 
+
+        // Local
+        $get_url = str_replace("/freedybank.com/wallet/send", "", $_SERVER['REQUEST_URI']);
+
+        // Live
+        // $get_url = str_replace("/wallet/send", "", $_SERVER['REQUEST_URI']);
+
+        $linkurl = base_url(uri_string()) . $get_url;
+        $ucode = "";
+        $amount = "";
+        if (strpos($linkurl, "send?")) {
+            $session_data = array(
+                'wallet_req'   => $linkurl
+            );
+            $this->session->set_userdata($session_data);
+            if (empty($this->session->userdata('user_id'))) {
+                $this->session->set_flashdata('failed', "You must login first to make a transaction");
+                redirect(base_url('auth/login'));
+            }
+        } else {
+            if (empty($this->session->userdata('user_id'))) {
+                redirect(base_url('auth/login'));
+            }
         }
     }
 
@@ -24,19 +47,39 @@ class Wallet extends CI_Controller
     public function send()
     {
         // Get URL
+        $this->session->unset_userdata('wallet_req');
         $linkurl = $_SERVER['REQUEST_URI'];
         $ucode = "";
         $amount = "";
         if (strpos($linkurl, "send?")) {
-            $get_url = str_replace("/wallet/send?", "", $linkurl);
+            // Local
+            $get_url = str_replace("/freedybank.com/wallet/send?", "", $linkurl);
+
+            // Live
+            // $get_url = str_replace("/wallet/send?", "", $linkurl);
             $decode_url = base64_decode($get_url);
 
+            // Get currency
+            $get_datacurr = str_replace("cur=", "", $decode_url);
+            $curr = strstr($get_datacurr, '&', true);
+
+            $url = URLAPI . "/v1/member/currency/getByCurrency?currency=" . $curr . "&userid=" . $_SESSION["user_id"];
+            $result = apitrackless($url);
+
+            if ($result->code == 200) {
+                $_SESSION["currency"] = @$curr;
+                $_SESSION["symbol"] = $result->message->symbol;
+            } else {
+                $_SESSION["currency"] = "USD";
+                $_SESSION["symbol"] = "&dollar;";
+            }
+
             // Get UCode
-            $get_dataucode = str_replace("ucode=", "", $decode_url);
+            $get_dataucode = str_replace("cur=" . $_SESSION["currency"] . "&ucode=", "", $decode_url);
             $ucode = strstr($get_dataucode, '&', true);
 
             // Get Amount
-            $amount = str_replace("ucode=" . $ucode . "&amount=", "", $decode_url);
+            $amount = str_replace("cur=" . $_SESSION["currency"] . "&ucode=" . $ucode . "&amount=", "", $decode_url);
             if (empty($ucode)) {
                 $ucode = $get_dataucode;
                 $amount = '';
@@ -179,7 +222,7 @@ class Wallet extends CI_Controller
 
         $input        = $this->input;
         $amount        = $this->security->xss_clean($input->post("amount"));
-        $linkqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
+        $linkqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
         $codename = substr(sha1(time()), 0, 8);
         $nameqr = $_SESSION["ucode"] . '-' . $codename;
         $src = base_url() . 'qr/request/' . $nameqr . '.png';

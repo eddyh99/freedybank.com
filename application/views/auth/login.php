@@ -56,7 +56,7 @@
                             <a href="<?= base_url(); ?>auth/forget_pass" class="f-publicsans">Forgot password?</a>
                         </div>
                     </div>
-                    <div class="col-12 d-grid gap-2">
+                    <div class="col-12 d-grid gap-2 mt-3">
                         <button type="submit" class="btn btn-login f-roboto">Log in</button>
                     </div>
                 </form>

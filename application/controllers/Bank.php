@@ -43,7 +43,7 @@ class Bank extends CI_Controller
         $this->load->view('tamplate/footer', $footer);
     }
 
-    public function banklocalconfirm()
+    public function banklocalconfirm_belumfix()
     {
         $this->form_validation->set_rules('account_number', 'Account Number/IBAN', 'trim|required|min_length[3]');
         $this->form_validation->set_rules('recipient', 'Recipient', 'trim|required');
@@ -124,7 +124,7 @@ class Bank extends CI_Controller
         $this->load->view('tamplate/footer', $footer);
     }
 
-    public function banknotif()
+    public function banknotif_belumfix()
     {
         $input          = $this->input;
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
@@ -221,248 +221,636 @@ class Bank extends CI_Controller
         $this->load->view('tamplate/footer');
     }
 
-    public function exemple($curr)
+    public function banklocalconfirm()
     {
         if (
-            ($curr == 'AED') ||
-            ($curr == 'ARS') ||
-            ($curr == 'AUD') ||
-            ($curr == 'BDT') ||
-            ($curr == 'BGN') ||
-            ($curr == 'BRL') ||
-            ($curr == 'CAD') ||
-            ($curr == 'CHF') ||
-            ($curr == 'CLP') ||
-            ($curr == 'CNY') ||
-            ($curr == 'CZK') ||
-            ($curr == 'DKK') ||
-            ($curr == 'EGP') ||
-            ($curr == 'EUR') ||
-            ($curr == 'GBP') ||
-            ($curr == 'GEL') ||
-            ($curr == 'GHS') ||
-            ($curr == 'HKD') ||
-            ($curr == 'HRK') ||
-            ($curr == 'HUF') ||
-            ($curr == 'IDR') ||
-            ($curr == 'ILS') ||
-            ($curr == 'INR') ||
-            ($curr == 'JPY') ||
-            ($curr == 'KES') ||
-            ($curr == 'KRW') ||
-            ($curr == 'LKR') ||
-            ($curr == 'MAD') ||
-            ($curr == 'MXN') ||
-            ($curr == 'MYR') ||
-            ($curr == 'NGN') ||
-            ($curr == 'NOK') ||
-            ($curr == 'NPR') ||
-            ($curr == 'NZD') ||
-            ($curr == 'PHP') ||
-            ($curr == 'PKR') ||
-            ($curr == 'PLN') ||
-            ($curr == 'RON') ||
-            ($curr == 'SEK') ||
-            ($curr == 'SGD') ||
-            ($curr == 'THB') ||
-            ($curr == 'TRY') ||
-            ($curr == 'UAH') ||
-            ($curr == 'USD') ||
-            ($curr == 'VND') ||
-            ($curr == 'ZAR')
+            ($_SESSION['currency'] == 'AED') ||
+            ($_SESSION['currency'] == 'ARS') ||
+            ($_SESSION['currency'] == 'AUD') ||
+            ($_SESSION['currency'] == 'BDT') ||
+            ($_SESSION['currency'] == 'BGN') ||
+            ($_SESSION['currency'] == 'BRL') ||
+            ($_SESSION['currency'] == 'CAD') ||
+            ($_SESSION['currency'] == 'CHF') ||
+            ($_SESSION['currency'] == 'CLP') ||
+            ($_SESSION['currency'] == 'CNY') ||
+            ($_SESSION['currency'] == 'CZK') ||
+            ($_SESSION['currency'] == 'DKK') ||
+            ($_SESSION['currency'] == 'EGP') ||
+            ($_SESSION['currency'] == 'EUR') ||
+            ($_SESSION['currency'] == 'GBP') ||
+            ($_SESSION['currency'] == 'GEL') ||
+            ($_SESSION['currency'] == 'GHS') ||
+            ($_SESSION['currency'] == 'HKD') ||
+            ($_SESSION['currency'] == 'HRK') ||
+            ($_SESSION['currency'] == 'HUF') ||
+            ($_SESSION['currency'] == 'IDR') ||
+            ($_SESSION['currency'] == 'ILS') ||
+            ($_SESSION['currency'] == 'INR') ||
+            ($_SESSION['currency'] == 'JPY') ||
+            ($_SESSION['currency'] == 'KES') ||
+            ($_SESSION['currency'] == 'KRW') ||
+            ($_SESSION['currency'] == 'LKR') ||
+            ($_SESSION['currency'] == 'MAD') ||
+            ($_SESSION['currency'] == 'MXN') ||
+            ($_SESSION['currency'] == 'MYR') ||
+            ($_SESSION['currency'] == 'NGN') ||
+            ($_SESSION['currency'] == 'NOK') ||
+            ($_SESSION['currency'] == 'NPR') ||
+            ($_SESSION['currency'] == 'NZD') ||
+            ($_SESSION['currency'] == 'PHP') ||
+            ($_SESSION['currency'] == 'PKR') ||
+            ($_SESSION['currency'] == 'PLN') ||
+            ($_SESSION['currency'] == 'RON') ||
+            ($_SESSION['currency'] == 'SEK') ||
+            ($_SESSION['currency'] == 'SGD') ||
+            ($_SESSION['currency'] == 'THB') ||
+            ($_SESSION['currency'] == 'TRY') ||
+            ($_SESSION['currency'] == 'UAH') ||
+            ($_SESSION['currency'] == 'USD') ||
+            ($_SESSION['currency'] == 'VND') ||
+            ($_SESSION['currency'] == 'ZAR')
         ) {
-            $this->form_validation->set_rules('accountHolderName', 'accountHolderName', 'trim|required');
+            $this->form_validation->set_rules('accountHolderName', 'accountHolderName', 'trim');
             // IBAN
-            if (($curr == 'AED') ||
-                ($curr == 'BGN') ||
-                ($curr == 'CHF') ||
-                ($curr == 'DKK') ||
-                ($curr == 'EGP') ||
-                ($curr == 'EUR') ||
-                ($curr == 'GEL') ||
-                ($curr == 'HKD') ||
-                ($curr == 'HRK') ||
-                ($curr == 'ILS') ||
-                ($curr == 'NOK') ||
-                ($curr == 'PKR') ||
-                ($curr == 'PLN') ||
-                ($curr == 'RON') ||
-                ($curr == 'SEK') ||
-                ($curr == 'TRY')
+            if (($_SESSION['currency'] == 'AED') ||
+                ($_SESSION['currency'] == 'BGN') ||
+                ($_SESSION['currency'] == 'CHF') ||
+                ($_SESSION['currency'] == 'DKK') ||
+                ($_SESSION['currency'] == 'EGP') ||
+                ($_SESSION['currency'] == 'EUR') ||
+                ($_SESSION['currency'] == 'GEL') ||
+                ($_SESSION['currency'] == 'HKD') ||
+                ($_SESSION['currency'] == 'HRK') ||
+                ($_SESSION['currency'] == 'ILS') ||
+                ($_SESSION['currency'] == 'NOK') ||
+                ($_SESSION['currency'] == 'PKR') ||
+                ($_SESSION['currency'] == 'PLN') ||
+                ($_SESSION['currency'] == 'RON') ||
+                ($_SESSION['currency'] == 'SEK') ||
+                ($_SESSION['currency'] == 'TRY')
             ) {
-                $this->form_validation->set_rules('IBAN', 'IBAN', 'trim|required');
+                $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
             }
             // TAXID
-            if (($curr == 'ARS')) {
-                $this->form_validation->set_rules('taxId', 'taxId', 'trim|required');
+            if (($_SESSION['currency'] == 'ARS')) {
+                $this->form_validation->set_rules('taxId', 'taxId', 'trim');
             }
             // accountNumber
-            if (($curr == 'ARS') ||
-                ($curr == 'AUD') ||
-                ($curr == 'BDT') ||
-                ($curr == 'BGN') ||
-                ($curr == 'BRL') ||
-                ($curr == 'CAD') ||
-                ($curr == 'CHF') ||
-                ($curr == 'CLP') ||
-                ($curr == 'CNY') ||
-                ($curr == 'CZK') ||
-                ($curr == 'DKK') ||
-                ($curr == 'EGP') ||
-                ($curr == 'EUR') ||
-                ($curr == 'GBP') ||
-                ($curr == 'GEL') ||
-                ($curr == 'GHS') ||
-                ($curr == 'HKD') ||
-                ($curr == 'HRK') ||
-                ($curr == 'HUF') ||
-                ($curr == 'IDR') ||
-                ($curr == 'ILS') ||
-                ($curr == 'INR') ||
-                ($curr == 'JPY') ||
-                ($curr == 'KES') ||
-                ($curr == 'KRW') ||
-                ($curr == 'LKR') ||
-                ($curr == 'MAD') ||
-                ($curr == 'MXN') ||
-                ($curr == 'MYR') ||
-                ($curr == 'NGN') ||
-                ($curr == 'NOK') ||
-                ($curr == 'NPR') ||
-                ($curr == 'NZD') ||
-                ($curr == 'PHP') ||
-                ($curr == 'PKR') ||
-                ($curr == 'PLN') ||
-                ($curr == 'RON') ||
-                ($curr == 'SEK') ||
-                ($curr == 'SGD') ||
-                ($curr == 'THB') ||
-                ($curr == 'TRY') ||
-                ($curr == 'UAH') ||
-                ($curr == 'USD') ||
-                ($curr == 'VND') ||
-                ($curr == 'ZAR')
+            if (($_SESSION['currency'] == 'ARS') ||
+                ($_SESSION['currency'] == 'AUD') ||
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BGN') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CAD') ||
+                ($_SESSION['currency'] == 'CHF') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'CNY') ||
+                ($_SESSION['currency'] == 'CZK') ||
+                ($_SESSION['currency'] == 'DKK') ||
+                ($_SESSION['currency'] == 'EGP') ||
+                ($_SESSION['currency'] == 'EUR') ||
+                ($_SESSION['currency'] == 'GBP') ||
+                ($_SESSION['currency'] == 'GEL') ||
+                ($_SESSION['currency'] == 'GHS') ||
+                ($_SESSION['currency'] == 'HKD') ||
+                ($_SESSION['currency'] == 'HRK') ||
+                ($_SESSION['currency'] == 'HUF') ||
+                ($_SESSION['currency'] == 'IDR') ||
+                ($_SESSION['currency'] == 'ILS') ||
+                ($_SESSION['currency'] == 'INR') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'KES') ||
+                ($_SESSION['currency'] == 'KRW') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'MAD') ||
+                ($_SESSION['currency'] == 'MXN') ||
+                ($_SESSION['currency'] == 'MYR') ||
+                ($_SESSION['currency'] == 'NGN') ||
+                ($_SESSION['currency'] == 'NOK') ||
+                ($_SESSION['currency'] == 'NPR') ||
+                ($_SESSION['currency'] == 'NZD') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'PKR') ||
+                ($_SESSION['currency'] == 'PLN') ||
+                ($_SESSION['currency'] == 'RON') ||
+                ($_SESSION['currency'] == 'SEK') ||
+                ($_SESSION['currency'] == 'SGD') ||
+                ($_SESSION['currency'] == 'THB') ||
+                ($_SESSION['currency'] == 'TRY') ||
+                ($_SESSION['currency'] == 'UAH') ||
+                ($_SESSION['currency'] == 'USD') ||
+                ($_SESSION['currency'] == 'VND') ||
+                ($_SESSION['currency'] == 'ZAR')
             ) {
-                $this->form_validation->set_rules('accountNumber', 'accountNumber', 'trim|required');
+                $this->form_validation->set_rules('accountNumber', 'accountNumber', 'trim');
             }
 
             // Address
             if (
-                ($curr == 'AUD') ||
-                ($curr == 'PHP') ||
-                ($curr == 'THB') ||
-                ($curr == 'UAH') ||
-                ($curr == 'USD')
+                ($_SESSION['currency'] == 'AUD') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'THB') ||
+                ($_SESSION['currency'] == 'UAH') ||
+                ($_SESSION['currency'] == 'USD')
             ) {
-                if (($curr == 'AUD')) {
-                    $this->form_validation->set_rules('countryCode', 'countryCode', 'trim|required');
+                if (($_SESSION['currency'] == 'AUD')) {
+                    $this->form_validation->set_rules('countryCode', 'countryCode', 'trim');
                 } else {
-                    $this->form_validation->set_rules('country', 'country', 'trim|required');
+                    $this->form_validation->set_rules('country', 'country', 'trim');
                 }
 
-                $this->form_validation->set_rules('postCode', 'postCode', 'trim|required');
-                $this->form_validation->set_rules('city', 'city', 'trim|required');
-                $this->form_validation->set_rules('firstLine', 'firstLine', 'trim|required');
+                $this->form_validation->set_rules('postCode', 'postCode', 'trim');
+                $this->form_validation->set_rules('city', 'city', 'trim');
+                $this->form_validation->set_rules('firstLine', 'firstLine', 'trim');
             }
             // accountType
             if (
-                ($curr == 'BRL') ||
-                ($curr == 'CAD') ||
-                ($curr == 'CLP') ||
-                ($curr == 'JPY') ||
-                ($curr == 'USD')
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CAD') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'USD')
             ) {
-                $this->form_validation->set_rules('accountType', 'accountType', 'trim|required');
+                $this->form_validation->set_rules('accountType', 'accountType', 'trim');
             }
 
             // bsbCode
-            if (($curr == 'AUD')) {
-                $this->form_validation->set_rules('bsbCode', 'bsbCode', 'trim|required');
+            if (($_SESSION['currency'] == 'AUD')) {
+                $this->form_validation->set_rules('bsbCode', 'bsbCode', 'trim');
             }
             // bankCode
             if (
-                ($curr == 'BDT') ||
-                ($curr == 'BRL') ||
-                ($curr == 'CLP') ||
-                ($curr == 'CZK') ||
-                ($curr == 'GHS') ||
-                ($curr == 'IDR') ||
-                ($curr == 'JPY') ||
-                ($curr == 'KES') ||
-                ($curr == 'KRW') ||
-                ($curr == 'LKR') ||
-                ($curr == 'MAD') ||
-                ($curr == 'NGN') ||
-                ($curr == 'NPR') ||
-                ($curr == 'PHP') ||
-                ($curr == 'SGD') ||
-                ($curr == 'THB')
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'CZK') ||
+                ($_SESSION['currency'] == 'GHS') ||
+                ($_SESSION['currency'] == 'IDR') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'KES') ||
+                ($_SESSION['currency'] == 'KRW') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'MAD') ||
+                ($_SESSION['currency'] == 'NGN') ||
+                ($_SESSION['currency'] == 'NPR') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'SGD') ||
+                ($_SESSION['currency'] == 'THB')
             ) {
-                $this->form_validation->set_rules('bankCode', 'bankCode', 'trim|required');
+                $this->form_validation->set_rules('bankCode', 'bankCode', 'trim');
             }
             // branchCode
             if (
-                ($curr == 'BDT') ||
-                ($curr == 'BRL') ||
-                ($curr == 'JPY') ||
-                ($curr == 'LKR') ||
-                ($curr == 'VND')
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'VND')
             ) {
-                $this->form_validation->set_rules('branchCode', 'branchCode', 'trim|required');
+                $this->form_validation->set_rules('branchCode', 'branchCode', 'trim');
             }
 
             // cpf
-            if (($curr == 'BRL')) {
-                $this->form_validation->set_rules('cpf', 'cpf', 'trim|required');
+            if (($_SESSION['currency'] == 'BRL')) {
+                $this->form_validation->set_rules('cpf', 'cpf', 'trim');
             }
 
             // rut
-            if (($curr == 'CLP')) {
-                $this->form_validation->set_rules('rut', 'rut', 'trim|required');
+            if (($_SESSION['currency'] == 'CLP')) {
+                $this->form_validation->set_rules('rut', 'rut', 'trim');
             }
 
             // sortCode
-            if (($curr == 'GBP')) {
-                $this->form_validation->set_rules('sortCode', 'sortCode', 'trim|required');
+            if (($_SESSION['currency'] == 'GBP')) {
+                $this->form_validation->set_rules('sortCode', 'sortCode', 'trim');
             }
 
             // ifscCode
-            if (($curr == 'INR')) {
-                $this->form_validation->set_rules('ifscCode', 'ifscCode', 'trim|required');
+            if (($_SESSION['currency'] == 'INR')) {
+                $this->form_validation->set_rules('ifscCode', 'ifscCode', 'trim');
             }
 
             // clabe
-            if (($curr == 'MXN')) {
-                $this->form_validation->set_rules('clabe', 'clabe', 'trim|required');
+            if (($_SESSION['currency'] == 'MXN')) {
+                $this->form_validation->set_rules('clabe', 'clabe', 'trim');
             }
 
             // clabe
-            if (($curr == 'MYR') ||
-                ($curr == 'VND') ||
-                ($curr == 'ZAR')
+            if (($_SESSION['currency'] == 'MYR') ||
+                ($_SESSION['currency'] == 'VND') ||
+                ($_SESSION['currency'] == 'ZAR')
             ) {
-                $this->form_validation->set_rules('swiftCode', 'swiftCode', 'trim|required');
+                $this->form_validation->set_rules('swiftCode', 'swiftCode', 'trim');
             }
 
             // dateOfBirth & email
-            if (($curr == 'KRW')) {
-                $this->form_validation->set_rules('dateOfBirth', 'dateOfBirth', 'trim|required');
-                $this->form_validation->set_rules('email', 'email', 'trim|required');
+            if (($_SESSION['currency'] == 'KRW')) {
+                $this->form_validation->set_rules('dateOfBirth', 'dateOfBirth', 'trim');
+                $this->form_validation->set_rules('email', 'email', 'trim');
             }
 
             // phoneNumber
             if (
-                ($curr == 'BRL') ||
-                ($curr == 'CLP') ||
-                ($curr == 'UAH')
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'UAH')
             ) {
-                $this->form_validation->set_rules('phoneNumber', 'phoneNumber', 'trim|required');
+                $this->form_validation->set_rules('phoneNumber', 'phoneNumber', 'trim');
             }
 
             // abartn
-            if ($curr == 'USD') {
-                $this->form_validation->set_rules('abartn', 'abartn', 'trim|required');
+            if ($_SESSION['currency'] == 'USD') {
+                $this->form_validation->set_rules('abartn', 'abartn', 'trim');
             }
         }
+        $input    = $this->input;
+        $accountHolderName = $this->security->xss_clean($input->post("accountHolderName"));
+        $IBAN = $this->security->xss_clean($input->post("IBAN"));
+        $taxId = $this->security->xss_clean($input->post("taxId"));
+        $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+        $countryCode = $this->security->xss_clean($input->post("countryCode"));
+        $country = $this->security->xss_clean($input->post("country"));
+        $postCode = $this->security->xss_clean($input->post("postCode"));
+        $city = $this->security->xss_clean($input->post("city"));
+        $firstLine = $this->security->xss_clean($input->post("firstLine"));
+        $accountType = $this->security->xss_clean($input->post("accountType"));
+        $bsbCode = $this->security->xss_clean($input->post("bsbCode"));
+        $bankCode = $this->security->xss_clean($input->post("bankCode"));
+        $branchCode = $this->security->xss_clean($input->post("branchCode"));
+        $cpf = $this->security->xss_clean($input->post("cpf"));
+        $rut = $this->security->xss_clean($input->post("rut"));
+        $sortCode = $this->security->xss_clean($input->post("sortCode"));
+        $ifscCode = $this->security->xss_clean($input->post("ifscCode"));
+        $clabe = $this->security->xss_clean($input->post("clabe"));
+        $swiftCode = $this->security->xss_clean($input->post("swiftCode"));
+        $dateOfBirth = $this->security->xss_clean($input->post("dateOfBirth"));
+        $email = $this->security->xss_clean($input->post("email"));
+        $phoneNumber = $this->security->xss_clean($input->post("phoneNumber"));
+        $abartn = $this->security->xss_clean($input->post("abartn"));
+
+
+        $mdata = array(
+            "userid"            => $_SESSION["user_id"],
+            "currency"          => $_SESSION["currency"],
+            "amount"            => $this->security->xss_clean($input->post("amount")),
+            "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
+        );
+
+
+        $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata("failed", "Insuffisient Fund");
+            redirect(base_url() . "bank/local");
+        }
+
+        $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
+        $temp["fee"]               = $result->message->fee;
+        $temp["deduct"]            = $result->message->deduct;
+
+        $temp["accountHolderName"] = $accountHolderName;
+        $temp["IBAN"] = $IBAN;
+        $temp["taxId"] = $taxId;
+        $temp["accountNumber"] = $accountNumber;
+        $temp["countryCode"] = $countryCode;
+        $temp["country"] = $country;
+        $temp["postCode"] = $postCode;
+        $temp["city"] = $city;
+        $temp["firstLine"] = $firstLine;
+        $temp["accountType"] = $accountType;
+        $temp["bsbCode"] = $bsbCode;
+        $temp["bankCode"] = $bankCode;
+        $temp["branchCode"] = $branchCode;
+        $temp["cpf"] = $cpf;
+        $temp["rut"] = $rut;
+        $temp["sortCode"] = $sortCode;
+        $temp["ifscCode"] = $ifscCode;
+        $temp["clabe"] = $clabe;
+        $temp["swiftCode"] = $swiftCode;
+        $temp["dateOfBirth"] = $dateOfBirth;
+        $temp["email"] = $email;
+        $temp["phoneNumber"] = $phoneNumber;
+        $temp["abartn"] = $abartn;
+
+        $body["data"] = $temp;
+
+        $data['title'] = "Freedy - Wallet to Bank Confirmation";
+        $footer['extra'] = "admin/js/js_btn_disabled";
+
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('tamplate/navbar-bottom', $body);
+        $this->load->view('member/tobank/bank-confirm');
+        $this->load->view('tamplate/footer', $footer);
+    }
+    public function banknotif()
+    {
+        $input          = $this->input;
+
+        $amount         = $this->security->xss_clean($input->post("amount"));
+        $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
+        if (
+            ($_SESSION['currency'] == 'AED') ||
+            ($_SESSION['currency'] == 'ARS') ||
+            ($_SESSION['currency'] == 'AUD') ||
+            ($_SESSION['currency'] == 'BDT') ||
+            ($_SESSION['currency'] == 'BGN') ||
+            ($_SESSION['currency'] == 'BRL') ||
+            ($_SESSION['currency'] == 'CAD') ||
+            ($_SESSION['currency'] == 'CHF') ||
+            ($_SESSION['currency'] == 'CLP') ||
+            ($_SESSION['currency'] == 'CNY') ||
+            ($_SESSION['currency'] == 'CZK') ||
+            ($_SESSION['currency'] == 'DKK') ||
+            ($_SESSION['currency'] == 'EGP') ||
+            ($_SESSION['currency'] == 'EUR') ||
+            ($_SESSION['currency'] == 'GBP') ||
+            ($_SESSION['currency'] == 'GEL') ||
+            ($_SESSION['currency'] == 'GHS') ||
+            ($_SESSION['currency'] == 'HKD') ||
+            ($_SESSION['currency'] == 'HRK') ||
+            ($_SESSION['currency'] == 'HUF') ||
+            ($_SESSION['currency'] == 'IDR') ||
+            ($_SESSION['currency'] == 'ILS') ||
+            ($_SESSION['currency'] == 'INR') ||
+            ($_SESSION['currency'] == 'JPY') ||
+            ($_SESSION['currency'] == 'KES') ||
+            ($_SESSION['currency'] == 'KRW') ||
+            ($_SESSION['currency'] == 'LKR') ||
+            ($_SESSION['currency'] == 'MAD') ||
+            ($_SESSION['currency'] == 'MXN') ||
+            ($_SESSION['currency'] == 'MYR') ||
+            ($_SESSION['currency'] == 'NGN') ||
+            ($_SESSION['currency'] == 'NOK') ||
+            ($_SESSION['currency'] == 'NPR') ||
+            ($_SESSION['currency'] == 'NZD') ||
+            ($_SESSION['currency'] == 'PHP') ||
+            ($_SESSION['currency'] == 'PKR') ||
+            ($_SESSION['currency'] == 'PLN') ||
+            ($_SESSION['currency'] == 'RON') ||
+            ($_SESSION['currency'] == 'SEK') ||
+            ($_SESSION['currency'] == 'SGD') ||
+            ($_SESSION['currency'] == 'THB') ||
+            ($_SESSION['currency'] == 'TRY') ||
+            ($_SESSION['currency'] == 'UAH') ||
+            ($_SESSION['currency'] == 'USD') ||
+            ($_SESSION['currency'] == 'VND') ||
+            ($_SESSION['currency'] == 'ZAR')
+        ) {
+            $accountHolderName = $this->security->xss_clean($input->post("accountHolderName"));
+            // IBAN
+            if (($_SESSION['currency'] == 'AED') ||
+                ($_SESSION['currency'] == 'BGN') ||
+                ($_SESSION['currency'] == 'CHF') ||
+                ($_SESSION['currency'] == 'DKK') ||
+                ($_SESSION['currency'] == 'EGP') ||
+                ($_SESSION['currency'] == 'EUR') ||
+                ($_SESSION['currency'] == 'GEL') ||
+                ($_SESSION['currency'] == 'HKD') ||
+                ($_SESSION['currency'] == 'HRK') ||
+                ($_SESSION['currency'] == 'ILS') ||
+                ($_SESSION['currency'] == 'NOK') ||
+                ($_SESSION['currency'] == 'PKR') ||
+                ($_SESSION['currency'] == 'PLN') ||
+                ($_SESSION['currency'] == 'RON') ||
+                ($_SESSION['currency'] == 'SEK') ||
+                ($_SESSION['currency'] == 'TRY')
+            ) {
+                $IBAN = $this->security->xss_clean($input->post("IBAN"));
+            }
+            // TAXID
+            if (($_SESSION['currency'] == 'ARS')) {
+                $taxId = $this->security->xss_clean($input->post("taxId"));
+            }
+            // accountNumber
+            if (($_SESSION['currency'] == 'ARS') ||
+                ($_SESSION['currency'] == 'AUD') ||
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BGN') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CAD') ||
+                ($_SESSION['currency'] == 'CHF') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'CNY') ||
+                ($_SESSION['currency'] == 'CZK') ||
+                ($_SESSION['currency'] == 'DKK') ||
+                ($_SESSION['currency'] == 'EGP') ||
+                ($_SESSION['currency'] == 'EUR') ||
+                ($_SESSION['currency'] == 'GBP') ||
+                ($_SESSION['currency'] == 'GEL') ||
+                ($_SESSION['currency'] == 'GHS') ||
+                ($_SESSION['currency'] == 'HKD') ||
+                ($_SESSION['currency'] == 'HRK') ||
+                ($_SESSION['currency'] == 'HUF') ||
+                ($_SESSION['currency'] == 'IDR') ||
+                ($_SESSION['currency'] == 'ILS') ||
+                ($_SESSION['currency'] == 'INR') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'KES') ||
+                ($_SESSION['currency'] == 'KRW') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'MAD') ||
+                ($_SESSION['currency'] == 'MXN') ||
+                ($_SESSION['currency'] == 'MYR') ||
+                ($_SESSION['currency'] == 'NGN') ||
+                ($_SESSION['currency'] == 'NOK') ||
+                ($_SESSION['currency'] == 'NPR') ||
+                ($_SESSION['currency'] == 'NZD') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'PKR') ||
+                ($_SESSION['currency'] == 'PLN') ||
+                ($_SESSION['currency'] == 'RON') ||
+                ($_SESSION['currency'] == 'SEK') ||
+                ($_SESSION['currency'] == 'SGD') ||
+                ($_SESSION['currency'] == 'THB') ||
+                ($_SESSION['currency'] == 'TRY') ||
+                ($_SESSION['currency'] == 'UAH') ||
+                ($_SESSION['currency'] == 'USD') ||
+                ($_SESSION['currency'] == 'VND') ||
+                ($_SESSION['currency'] == 'ZAR')
+            ) {
+                $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            }
+
+            // Address
+            if (
+                ($_SESSION['currency'] == 'AUD') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'THB') ||
+                ($_SESSION['currency'] == 'UAH') ||
+                ($_SESSION['currency'] == 'USD')
+            ) {
+                if (($_SESSION['currency'] == 'AUD')) {
+                    $countryCode = $this->security->xss_clean($input->post("countryCode"));
+                } else {
+                    $country = $this->security->xss_clean($input->post("country"));
+                }
+
+                $postCode = $this->security->xss_clean($input->post("postCode"));
+                $city = $this->security->xss_clean($input->post("city"));
+                $firstLine = $this->security->xss_clean($input->post("firstLine"));
+            }
+            // accountType
+            if (
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CAD') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'USD')
+            ) {
+                $accountType = $this->security->xss_clean($input->post("accountType"));
+            }
+
+            // bsbCode
+            if (($_SESSION['currency'] == 'AUD')) {
+                $bsbCode = $this->security->xss_clean($input->post("bsbCode"));
+            }
+            // bankCode
+            if (
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'CZK') ||
+                ($_SESSION['currency'] == 'GHS') ||
+                ($_SESSION['currency'] == 'IDR') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'KES') ||
+                ($_SESSION['currency'] == 'KRW') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'MAD') ||
+                ($_SESSION['currency'] == 'NGN') ||
+                ($_SESSION['currency'] == 'NPR') ||
+                ($_SESSION['currency'] == 'PHP') ||
+                ($_SESSION['currency'] == 'SGD') ||
+                ($_SESSION['currency'] == 'THB')
+            ) {
+                $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            }
+            // branchCode
+            if (
+                ($_SESSION['currency'] == 'BDT') ||
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'JPY') ||
+                ($_SESSION['currency'] == 'LKR') ||
+                ($_SESSION['currency'] == 'VND')
+            ) {
+                $branchCode = $this->security->xss_clean($input->post("branchCode"));
+            }
+
+            // cpf
+            if (($_SESSION['currency'] == 'BRL')) {
+                $cpf = $this->security->xss_clean($input->post("cpf"));
+            }
+
+            // rut
+            if (($_SESSION['currency'] == 'CLP')) {
+                $rut = $this->security->xss_clean($input->post("rut"));
+            }
+
+            // sortCode
+            if (($_SESSION['currency'] == 'GBP')) {
+                $sortCode = $this->security->xss_clean($input->post("sortCode"));
+            }
+
+            // ifscCode
+            if (($_SESSION['currency'] == 'INR')) {
+                $ifscCode = $this->security->xss_clean($input->post("ifscCode"));
+            }
+
+            // clabe
+            if (($_SESSION['currency'] == 'MXN')) {
+                $clabe = $this->security->xss_clean($input->post("clabe"));
+            }
+
+            // clabe
+            if (($_SESSION['currency'] == 'MYR') ||
+                ($_SESSION['currency'] == 'VND') ||
+                ($_SESSION['currency'] == 'ZAR')
+            ) {
+                $swiftCode = $this->security->xss_clean($input->post("swiftCode"));
+            }
+
+            // dateOfBirth & email
+            if (($_SESSION['currency'] == 'KRW')) {
+                $dateOfBirth = $this->security->xss_clean($input->post("dateOfBirth"));
+                $email = $this->security->xss_clean($input->post("email"));
+            }
+
+            // phoneNumber
+            if (
+                ($_SESSION['currency'] == 'BRL') ||
+                ($_SESSION['currency'] == 'CLP') ||
+                ($_SESSION['currency'] == 'UAH')
+            ) {
+                $phoneNumber = $this->security->xss_clean($input->post("phoneNumber"));
+            }
+
+            // abartn
+            if ($_SESSION['currency'] == 'USD') {
+                $abartn = $this->security->xss_clean($input->post("abartn"));
+            }
+        }
+
+        if ($_SESSION["currency"] == "USD") {
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "legalType" =>  "PRIVATE",
+                    "abartn" =>  $abartn,
+                    "accountNumber" =>  $accountNumber,
+                    "accountType" =>  "CHECKING",
+                    "address"  =>  array(
+                        "country" =>  $country,
+                        "city" =>  $city,
+                        "postCode" =>  $postCode,
+                        "firstLine" =>  $firstLine
+                    )
+                )
+            );
+        }
+        if ($_SESSION["currency"] == "EUR") {
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "legalType" => "PRIVATE",
+                    "IBAN" => $IBAN
+                )
+            );
+        }
+        if ($_SESSION["currency"] == "AED") {
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "legalType" => "PRIVATE",
+                    "IBAN"         => $IBAN,
+                )
+            );
+        }
+        $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata("failed", $result->message);
+            redirect(base_url() . "bank");
+        }
+
+        $data['title'] = "Freedy - Wallet to Bank Completed";
+
+        $body["data"] = array(
+            "amount"    => $amount
+        );
+
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('tamplate/navbar-bottom');
+        $this->load->view('member/tobank/bank-notif', $body);
+        $this->load->view('tamplate/footer');
     }
 }

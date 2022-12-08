@@ -20,10 +20,10 @@
                         <thead class="table-primary">
                             <tr>
                                 <th>Description</th>
-                                <th>Amount</th>
                                 <th>Cost</th>
-                                <th>Comission</th>
-                                <th>Fee (Net)</th>
+                                <th>Referral Comission</th>
+                                <th>Freedy Cost</th>
+                                <th>Income</th>
                                 <th>Date</th>
                             </tr>
                         </thead>

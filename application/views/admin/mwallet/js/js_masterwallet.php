@@ -44,17 +44,23 @@ var tblhistory =
                 return data["history"];
             },
         },
+        "aoColumnDefs": [{
+    	    "aTargets" :[4],
+    	    "mRender" : function (data, type, row) {
+                return (parseFloat(row.fee)+parseFloat(row.referral)).toLocaleString('en')
+    	    }
+    	}],        
         "columns": [{
                 "data": "ket"
-            },
-            {
-                "data": "amount"
             },
             {
                 "data": "cost"
             },
             {
                 "data": "referral"
+            },
+            {
+                "data": "fee"
             },
             {
                 "data": "fee"

@@ -11,7 +11,7 @@
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
                             <?php
-                            if ($currency == "EUR") {
+                                if ($currency == "EUR") {
                             ?>
                             <div class="row">
                                 <label>Account Holder</label>
