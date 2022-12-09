@@ -4,6 +4,7 @@
         <div class="container" style="margin-bottom: 8rem;">
             <div class="app-container py-5">
                 <div class="row d-flex justify-content-center">
+                    <?php if (file_exists(APPPATH . 'views/member/tobank/currency/' . $_SESSION['currency'] . '.php')) { ?>
                     <div class="col-12">
                         <div class="text-start">
                             <span class="me-auto f-monserat title-top-navbar">Wallet to bank - International</span>
@@ -25,94 +26,38 @@
                                     aria-label="Close"></button>
                             </div>
                             <?php } ?>
-                            <form action="<?= base_url() ?>bank/banklocalconfirm" method="post" id="form_submit"
+                            <form action="<?= base_url() ?>bank/bankconfirm" method="post" id="form_submit"
                                 onsubmit="return validate()">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" name="transfer_type" value="outside">
-                                <div class="tab-pane box-tab-bank" id="inter">
-                                    <?php if ($_SESSION["currency"] == "USD") { ?>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="inter1"
-                                            placeholder="Recipient">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="inter2"
-                                            placeholder="Account Number">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="swift" id="inter3"
-                                            placeholder="BIC/swift">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="inter4"
-                                            placeholder="Amount">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="inter5"
-                                            placeholder="Causal">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="address" id="inter6"
-                                            placeholder="Recipient Address">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="city" id="inter7"
-                                            placeholder="Recipient City">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="state" id="inter8"
-                                            placeholder="Recipient State">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="postalcode" id="inter9"
-                                            placeholder="Recipient Postalcode">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <select name="country" class="form-control me-2" id="country">
-                                            <?php
-                                                foreach ($countries_list as $dt) {
-                                                    if ($dt["code"] != "US") {
-                                                ?>
-                                            <option value="<?= $dt["code"] ?>"><?= $dt["name"] ?></option>
-                                            <?php }
-                                                }
-                                                ?>
-                                        </select>
-                                    </div>
-                                    <?php } elseif ($_SESSION["currency"] == "EUR") { ?>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="recipient" id="us1"
-                                            placeholder="Recipient's Name">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="account_number" id="us2"
-                                            placeholder="IBAN">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="swift" id="us2"
-                                            placeholder="BIC/SWIFT">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" id="us3"
-                                            placeholder="Amount">
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="causal" id="us4"
-                                            placeholder="Causal">
-                                    </div>
-                                    <?php } ?>
+                                <div class="tab-pane box-tab-bank" id="us">
+                                    <?php
+                                        $data['type'] = "inter";
+                                        $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data)
+                                        ?>
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-1" type="submit"
-                                            id="bntconfirm">Confirm</button>
+                                            id="btnconfirm">Confirm</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <?php } else { ?>
+                    <div class="col-12 my-4">
+                        <div class="col-12 py-4">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <img src="<?= base_url() ?>assets/img/logo-2.png" alt="" style="width: 100px;"
+                                    class="mt-5">
+                                <span class="b-qr">Coming Soon!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
