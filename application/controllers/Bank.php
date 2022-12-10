@@ -137,6 +137,114 @@ class Bank extends CI_Controller
             $this->form_validation->set_rules('type', 'Type', 'trim');
         }
 
+        if ($_SESSION["currency"] == "CZK") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "DKK") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "EGP") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GBP") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+            $this->form_validation->set_rules('sortCode', 'Sort Code', 'trim');
+            $this->form_validation->set_rules('bsbCode', 'BSB Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GEL") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GHS") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HKD") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('state', 'State', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HRK") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HUF") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "IDR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "ILS") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('postCode', 'Post Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "INR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('ifscCode', 'ifsc Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "JPY") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('accountType', 'Account Type', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "KES") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "KRW") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('dateOfBirth', 'Date of Birth', 'trim');
+            $this->form_validation->set_rules('email', 'Email', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "LKR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MAD") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('postCode', 'Post Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MXN") {
+            $this->form_validation->set_rules('clabe', 'Clabe', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MYR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('swiftCode', 'Swift Code', 'trim');
+        }
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());
@@ -232,6 +340,115 @@ class Bank extends CI_Controller
             $temp["postCode"] = $this->security->xss_clean($input->post("postCode"));
             $temp["legalType"] = $this->security->xss_clean($input->post("legalType"));
             $temp["type"] = $this->security->xss_clean($input->post("type"));
+        }
+
+        if ($_SESSION["currency"] == "CZK") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+        }
+
+        if ($_SESSION["currency"] == "DKK") {
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+        }
+
+        if ($_SESSION["currency"] == "EGP") {
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+        }
+
+        if ($_SESSION["currency"] == "GBP") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+            $temp["sortCode"] = $this->security->xss_clean($input->post("sortCode"));
+            $temp["bsbCode"] = $this->security->xss_clean($input->post("bsbCode"));
+        }
+
+        if ($_SESSION["currency"] == "GEL") {
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+        }
+
+        if ($_SESSION["currency"] == "GHS") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["branchCode"] = $this->security->xss_clean($input->post("branchCode"));
+        }
+
+        if ($_SESSION["currency"] == "HKD") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["branchCode"] = $this->security->xss_clean($input->post("branchCode"));
+            $temp["countryCode"] = $this->security->xss_clean($input->post("countryCode"));
+            $temp["firstLine"] = $this->security->xss_clean($input->post("firstLine"));
+            $temp["city"] = $this->security->xss_clean($input->post("city"));
+            $temp["state"] = $this->security->xss_clean($input->post("state"));
+        }
+
+        if ($_SESSION["currency"] == "HRK") {
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+        }
+
+        if ($_SESSION["currency"] == "HUF") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+        }
+
+        if ($_SESSION["currency"] == "IDR") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+        }
+
+        if ($_SESSION["currency"] == "ILS") {
+            $temp["IBAN"] = $this->security->xss_clean($input->post("IBAN"));
+            $temp["countryCode"] = $this->security->xss_clean($input->post("countryCode"));
+            $temp["city"] = $this->security->xss_clean($input->post("city"));
+            $temp["firstLine"] = $this->security->xss_clean($input->post("firstLine"));
+            $temp["postCode"] = $this->security->xss_clean($input->post("postCode"));
+        }
+
+        if ($_SESSION["currency"] == "INR") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["ifscCode"] = $this->security->xss_clean($input->post("ifscCode"));
+        }
+
+        if ($_SESSION["currency"] == "JPY") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["accountType"] = $this->security->xss_clean($input->post("accountType"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["branchCode"] = $this->security->xss_clean($input->post("branchCode"));
+        }
+
+        if ($_SESSION["currency"] == "KES") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+        }
+
+        if ($_SESSION["currency"] == "KRW") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["dateOfBirth"] = $this->security->xss_clean($input->post("dateOfBirth"));
+            $temp["email"] = $this->security->xss_clean($input->post("email"));
+        }
+
+        if ($_SESSION["currency"] == "LKR") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["branchCode"] = $this->security->xss_clean($input->post("branchCode"));
+        }
+
+        if ($_SESSION["currency"] == "MAD") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["bankCode"] = $this->security->xss_clean($input->post("bankCode"));
+            $temp["countryCode"] = $this->security->xss_clean($input->post("countryCode"));
+            $temp["city"] = $this->security->xss_clean($input->post("city"));
+            $temp["firstLine"] = $this->security->xss_clean($input->post("firstLine"));
+            $temp["postCode"] = $this->security->xss_clean($input->post("postCode"));
+        }
+
+        if ($_SESSION["currency"] == "MXN") {
+            $temp["clabe"] = $this->security->xss_clean($input->post("clabe"));
+        }
+
+        if ($_SESSION["currency"] == "MYR") {
+            $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
+            $temp["swiftCode"] = $this->security->xss_clean($input->post("swiftCode"));
         }
 
         $body["data"] = $temp;
@@ -334,6 +551,116 @@ class Bank extends CI_Controller
             $this->form_validation->set_rules('legalType', 'Legal Type', 'trim');
             $this->form_validation->set_rules('type', 'Type', 'trim');
         }
+
+        if ($_SESSION["currency"] == "CZK") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "DKK") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "EGP") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GBP") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+            $this->form_validation->set_rules('sortCode', 'Sort Code', 'trim');
+            $this->form_validation->set_rules('bsbCode', 'BSB Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GEL") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "GHS") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HKD") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('state', 'State', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HRK") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "HRK") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "IDR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "ILS") {
+            $this->form_validation->set_rules('IBAN', 'IBAN', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('postCode', 'Post Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "INR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('ifscCode', 'ifsc Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "JPY") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('accountType', 'Account Type', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "KES") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "KRW") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('dateOfBirth', 'Date of Birth', 'trim');
+            $this->form_validation->set_rules('email', 'Email', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "LKR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MAD") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('bankCode', 'Bank Code', 'trim');
+            $this->form_validation->set_rules('countryCode', 'Country Code', 'trim');
+            $this->form_validation->set_rules('city', 'City', 'trim');
+            $this->form_validation->set_rules('firstLine', 'FirstLine', 'trim');
+            $this->form_validation->set_rules('postCode', 'Post Code', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MXN") {
+            $this->form_validation->set_rules('clabe', 'Clabe', 'trim');
+        }
+
+        if ($_SESSION["currency"] == "MYR") {
+            $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
+            $this->form_validation->set_rules('swiftCode', 'Swift Code', 'trim');
+        }
+
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());
@@ -557,7 +884,380 @@ class Bank extends CI_Controller
             );
         }
 
+        if ($_SESSION["currency"] == "CZK") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "DKK") {
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "IBAN"              => $IBAN,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "EGP") {
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "IBAN"              => $IBAN,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "GBP") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+            $sortCode = $this->security->xss_clean($input->post("sortCode"));
+            $bsbCode = $this->security->xss_clean($input->post("bsbCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "IBAN"              => $IBAN,
+                    "sortCode"          => $sortCode,
+                    "bsbCode"           => $bsbCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "GEL") {
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "IBAN"              => $IBAN,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "GHS") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $branchCode = $this->security->xss_clean($input->post("branchCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "branchCode"        => $branchCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "HKD") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $branchCode  = $this->security->xss_clean($input->post("branchCode"));
+            $countryCode = $this->security->xss_clean($input->post("countryCode"));
+            $firstLine = $this->security->xss_clean($input->post("firstLine"));
+            $city = $this->security->xss_clean($input->post("city"));
+            $state = $this->security->xss_clean($input->post("state"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "branchCode"        => $branchCode,
+                    "countryCode"       => $countryCode,
+                    "firstLine"         => $firstLine,
+                    "city"              => $city,
+                    "state"             => $state,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "HRK") {
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "IBAN"              => $IBAN,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "HUF") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "IDR") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "ILS") {
+            $IBAN = $this->security->xss_clean($input->post("IBAN"));
+            $countryCode = $this->security->xss_clean($input->post("countryCode"));
+            $city = $this->security->xss_clean($input->post("city"));
+            $firstLine = $this->security->xss_clean($input->post("firstLine"));
+            $postCode = $this->security->xss_clean($input->post("postCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "IBAN"              => $IBAN,
+                    "countryCode"       => $countryCode,
+                    "city"              => $city,
+                    "firstLine"         => $firstLine,
+                    "postCode"          => $postCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "INR") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $ifscCode = $this->security->xss_clean($input->post("ifscCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "ifscCode"          => $ifscCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "JPY") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $accountType = $this->security->xss_clean($input->post("accountType"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $branchCode = $this->security->xss_clean($input->post("branchCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "accountType"       => $accountType,
+                    "bankCode"          => $bankCode,
+                    "branchCode"        => $branchCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "KES") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "KRW") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $dateOfBirth = $this->security->xss_clean($input->post("dateOfBirth"));
+            $email = $this->security->xss_clean($input->post("email"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "dateOfBirth"       => $dateOfBirth,
+                    "email"             => $email,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "LKR") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $branchCode = $this->security->xss_clean($input->post("branchCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "branchCode"        => $branchCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "MAD") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $bankCode = $this->security->xss_clean($input->post("bankCode"));
+            $countryCode = $this->security->xss_clean($input->post("countryCode"));
+            $city = $this->security->xss_clean($input->post("city"));
+            $firstLine = $this->security->xss_clean($input->post("firstLine"));
+            $postCode = $this->security->xss_clean($input->post("postCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "bankCode"          => $bankCode,
+                    "countryCode"       => $countryCode,
+                    "city"              => $city,
+                    "firstLine"         => $firstLine,
+                    "postCode"          => $postCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "MXN") {
+            $clabe = $this->security->xss_clean($input->post("clabe"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "clabe"             => $clabe,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
+        if ($_SESSION["currency"] == "MYR") {
+            $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
+            $swiftCode = $this->security->xss_clean($input->post("swiftCode"));
+
+            $mdata = array(
+                "userid"            => $_SESSION["user_id"],
+                "currency"          => $_SESSION["currency"],
+                "amount"            => $amount,
+                "transfer_type"     => $transfer_type,
+                "bank_detail"   => array(
+                    "accountHolderName" => $accountHolderName,
+                    "accountNumber"     => $accountNumber,
+                    "swiftCode"          => $swiftCode,
+                    "causal"            => @$causal,
+                )
+            );
+        }
+
         $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
+        print_r($result);
+        die;
 
         if (@$result->code != 200) {
             if (@$result->code == 5055) {
