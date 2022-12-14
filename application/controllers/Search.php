@@ -10,7 +10,7 @@ class Search extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Freedy - Search";
+        $data['title'] = NAMETITLE . " - Search";
         $footer["extra"]    = "member/js/js_index";
 
         $this->load->view('tamplate/header', $data);

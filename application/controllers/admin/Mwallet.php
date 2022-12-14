@@ -30,7 +30,7 @@ class Mwallet extends CI_Controller
         }
 
         $data = array(
-            "title"     => "FreedyBank - Master Wallet",
+            "title"     => NAMETITLE . " - Master Wallet",
             "content"   => "admin/mwallet/master-wallet",
             "mn_mwallet" => "active",
             "extra"     => "admin/mwallet/js/js_masterwallet",
@@ -61,7 +61,7 @@ class Mwallet extends CI_Controller
     public function withdraw()
     {
         $data = array(
-            "title"     => "FreedyBank - Withdraw Master Wallet",
+            "title"     => NAMETITLE . " - Withdraw Master Wallet",
             "content"   => "admin/mwallet/withdraw-mwallet",
         );
 
@@ -102,7 +102,7 @@ class Mwallet extends CI_Controller
         }
 
         $data = array(
-            "title"     => "FreedyBank - Withdraw Local",
+            "title"     => NAMETITLE . " - Withdraw Local",
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-local",
             "codecur"   => $codecur,
@@ -145,7 +145,7 @@ class Mwallet extends CI_Controller
             $codecur   = apitrackless($url)->message->values;
         }
         $data = array(
-            "title"     => "FreedyBank - Withdraw International",
+            "title"     => NAMETITLE . " - Withdraw International",
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-inter",
             "codecur"   => $codecur,
@@ -726,7 +726,7 @@ class Mwallet extends CI_Controller
         }
 
         $data = array(
-            "title"     => "FreedyBank - Withdraw Confirm",
+            "title"     => NAMETITLE . " - Withdraw Confirm",
             "content"   => "admin/mwallet/wdconfirm",
             "extra"     => "admin/js/js_btn_disabled",
             "data"      => $temp
@@ -1904,7 +1904,7 @@ class Mwallet extends CI_Controller
         }
 
         $data = array(
-            "title"     => "FreedyBank - Withdraw Success",
+            "title"     => NAMETITLE . " - Withdraw Success",
             "content"   => "admin/mwallet/wdnotif",
         );
 

@@ -23,7 +23,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 */
-        $data['title'] = "Freedy - Add Receive";
+        $data['title'] = NAMETITLE . " - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -43,7 +43,7 @@ class Receive extends CI_Controller
         }
 
         $body["currency"] = $currency;
-        $data['title'] = "Freedy - Add Receive";
+        $data['title'] = NAMETITLE . " - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/localbank', $body);
@@ -65,7 +65,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 
-        $data['title'] = "Freedy - Add Receive";
+        $data['title'] = NAMETITLE . " - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/interbank', $body);
@@ -83,7 +83,7 @@ class Receive extends CI_Controller
             $body["bank"] = $result->message;
         }
 
-        $data['title'] = "Freedy - Add Receive";
+        $data['title'] = NAMETITLE . " - Add Receive";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/topup/cash', $body);

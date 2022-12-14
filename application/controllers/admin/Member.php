@@ -14,7 +14,7 @@ class Member extends CI_Controller
     public function index()
     {
         $data = array(
-            "title"     => "FreedyBank - Member",
+            "title"     => NAMETITLE . " - Member",
             "content"   => "admin/member/member",
             "mn_member" => "active",
             "extra"     => "admin/member/js/js_member"
@@ -133,7 +133,7 @@ class Member extends CI_Controller
             $member = NULL;
         }
         $data = array(
-            "title"     => "TracklessBank - Send Email",
+            "title"     => NAMETITLE . " - Send Email",
             "content"   => "admin/member/sendmail",
             "member"   => $member,
             "mn_member" => "active",

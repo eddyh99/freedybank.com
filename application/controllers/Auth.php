@@ -10,7 +10,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Freedy - Digital Bank";
+		$data['title'] = NAMETITLE . " - Digital Bank";
 
 		$this->load->view('tamplate/header', $data);
 		$this->load->view('auth/index');
@@ -19,7 +19,7 @@ class Auth extends CI_Controller
 
 	public function login()
 	{
-		$data['title'] = "Freedy - Login";
+		$data['title'] = NAMETITLE . " - Login";
 
 		if ($this->session->userdata('user_id')) {
 			if ($this->session->userdata('role') == 'member') {
@@ -36,7 +36,7 @@ class Auth extends CI_Controller
 
 	public function signup()
 	{
-		$data['title'] = "Freedy - Signup";
+		$data['title'] = NAMETITLE . " - Signup";
 
 		if ($this->session->userdata('user_id')) {
 			if ($this->session->userdata('role') == 'member') {
@@ -149,7 +149,7 @@ class Auth extends CI_Controller
 			}
 		}
 
-		$data['title'] = "Freedy - Succes Signup";
+		$data['title'] = NAMETITLE . " - Succes Signup";
 
 		$this->load->view('tamplate/header', $data);
 		$this->load->view('auth/signup-notif');
@@ -277,7 +277,7 @@ class Auth extends CI_Controller
 			}
 		}
 
-		$data['title'] = "Freedy - Forgot Password";
+		$data['title'] = NAMETITLE . " - Forgot Password";
 
 		$this->load->view('tamplate/header', $data);
 		$this->load->view('auth/forget-pass');
@@ -313,7 +313,7 @@ class Auth extends CI_Controller
 		}
 
 
-		$data['title'] = "Freedy - Forgot Password";
+		$data['title'] = NAMETITLE . " - Forgot Password";
 
 		$this->load->view('tamplate/header', $data);
 		$this->load->view('auth/forget-pass-2');

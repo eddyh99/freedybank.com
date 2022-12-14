@@ -469,6 +469,10 @@
             <div class="credits f-lexend">
                 Burj Gate, Dubai, UAE
             </div>
+            <div class="credits f-lexend">
+                FreedyBank is a service offered by EE Information Technology Network Service CO., Subject to partnership
+                with licensee PBS Online.
+            </div>
         </div>
     </div>
     <img src="<?= base_url(); ?>assets/img/book-footer.png" alt="" class="book-footer">

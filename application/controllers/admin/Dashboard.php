@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data = array(
-            "title"     => "FreedyBank - Admin Dashboard",
+            "title"     => NAMETITLE . " - Admin Dashboard",
             "content"   => "admin/dashboard",
             "mn_dashboard"    => "active",
             "currency"  => apitrackless(URLAPI . "/v1/admin/wallet/getAll_Balance")->message,

@@ -94,3 +94,6 @@ sandbox server
     "https://sandbox.tracklessbank.com"
 */
 define('URLAPI', "https://sandbox.tracklessbank.com");
+
+
+define('NAMETITLE', "Freedybank");

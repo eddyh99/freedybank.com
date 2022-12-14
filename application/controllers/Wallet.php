@@ -36,7 +36,7 @@ class Wallet extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -86,7 +86,7 @@ class Wallet extends CI_Controller
             }
         }
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $data = array(
@@ -142,7 +142,7 @@ class Wallet extends CI_Controller
             "amount"    => number_format($amount, 2)
         );
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $body["data"] = $infolist;
         $footer['extra'] = "admin/js/js_btn_disabled";
 
@@ -180,7 +180,7 @@ class Wallet extends CI_Controller
             return;
         }
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $body["data"] = $mdata;
 
         $this->load->view('tamplate/header', $data);
@@ -190,7 +190,7 @@ class Wallet extends CI_Controller
 
     public function receive()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -200,7 +200,7 @@ class Wallet extends CI_Controller
 
     public function request()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
@@ -246,7 +246,7 @@ class Wallet extends CI_Controller
 
     public function request_notif()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/wallet/wallet-request-notif');

@@ -15,7 +15,7 @@ class Cost extends CI_Controller
 	{
 
 		$data = array(
-			"title"     => "FreedyBank - Default Cost",
+			"title"     => NAMETITLE . " - Default Cost",
 			"content"   => "admin/cost/cost",
 			"mn_cost"    => "active",
 			"extra"     => "admin/cost/js/js_cost",
@@ -94,7 +94,7 @@ class Cost extends CI_Controller
 		}
 
 		$data = array(
-			"title"     => "FreedyBank - Edit Default Fee",
+			"title"     => NAMETITLE . " - Edit Default Fee",
 			"content"   => "admin/fee/editfee",
 			"mn_fee"    => "active",
 			"fee"       => $mdata,

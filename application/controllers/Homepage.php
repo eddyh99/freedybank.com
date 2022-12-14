@@ -33,7 +33,7 @@ class Homepage extends CI_Controller
 
         $dataobj = (object)$data;
 
-        $data['title'] = "Freedy - Homepage";
+        $data['title'] = NAMETITLE . " - Homepage";
         $footer["extra"]    = "member/js/js_index";
         $body["currency"] = $dataobj;
 
@@ -54,7 +54,7 @@ class Homepage extends CI_Controller
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
         $footer["extra"]    = "member/js/js_currency";
-        $data['title']      = "Freedy - Currency Setting";
+        $data['title']      = NAMETITLE . " - Currency Setting";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/setting-currency', $body);
@@ -80,7 +80,7 @@ class Homepage extends CI_Controller
         );
         $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
-        $data['title'] = "Freedy - Homepage";
+        $data['title'] = NAMETITLE . " - Homepage";
         $footer["extra"]    = "member/js/js_index";
 
 
