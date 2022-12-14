@@ -237,11 +237,7 @@ class Auth extends CI_Controller
 			if (empty($this->session->userdata('wallet_req'))) {
 				redirect("homepage");
 			} else {
-				// Local
-				$get_url = str_replace(base_url("wallet/send?"), "", $_SESSION['wallet_req']);
-
-				// Live
-				// $get_url = str_replace("/wallet/send?", "", $_SESSION['wallet_req']);
+				$get_url = str_replace(base_url(LINKQRCODE . "?"), "", $_SESSION['wallet_req']);
 				$decode_url = base64_decode($get_url);
 
 				// Get currency

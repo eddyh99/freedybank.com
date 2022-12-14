@@ -95,5 +95,15 @@ sandbox server
 */
 define('URLAPI', "https://sandbox.tracklessbank.com");
 
+/*
+custom link qrcode
+
+live server:
+    "/wallet/send"
+
+local server
+    "/freedybank.com/wallet/send"
+*/
+define('LINKQRCODE', "/freedybank.com/wallet/send");
 
 define('NAMETITLE', "Freedybank");

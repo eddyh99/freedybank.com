@@ -8,12 +8,7 @@ class Wallet extends CI_Controller
         parent::__construct();
 
         // Get 
-
-        // Local
-        $get_url = str_replace("/freedybank.com/wallet/send", "", $_SERVER['REQUEST_URI']);
-
-        // Live
-        // $get_url = str_replace("/wallet/send", "", $_SERVER['REQUEST_URI']);
+        $get_url = str_replace(LINKQRCODE, "", $_SERVER['REQUEST_URI']);
 
         $linkurl = base_url(uri_string()) . $get_url;
         $ucode = "";
@@ -52,11 +47,7 @@ class Wallet extends CI_Controller
         $ucode = "";
         $amount = "";
         if (strpos($linkurl, "send?")) {
-            // Local
-            $get_url = str_replace("/freedybank.com/wallet/send?", "", $linkurl);
-
-            // Live
-            // $get_url = str_replace("/wallet/send?", "", $linkurl);
+            $get_url = str_replace(LINKQRCODE . "?", "", $linkurl);
             $decode_url = base64_decode($get_url);
 
             // Get currency
