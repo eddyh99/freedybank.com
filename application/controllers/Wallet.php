@@ -8,12 +8,7 @@ class Wallet extends CI_Controller
         parent::__construct();
 
         // Get 
-
-        // Local
-        $get_url = str_replace("/freedybank.com/wallet/send", "", $_SERVER['REQUEST_URI']);
-
-        // Live
-        // $get_url = str_replace("/wallet/send", "", $_SERVER['REQUEST_URI']);
+        $get_url = str_replace(LINKQRCODE, "", $_SERVER['REQUEST_URI']);
 
         $linkurl = base_url(uri_string()) . $get_url;
         $ucode = "";
@@ -36,7 +31,7 @@ class Wallet extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -52,11 +47,7 @@ class Wallet extends CI_Controller
         $ucode = "";
         $amount = "";
         if (strpos($linkurl, "send?")) {
-            // Local
-            $get_url = str_replace("/freedybank.com/wallet/send?", "", $linkurl);
-
-            // Live
-            // $get_url = str_replace("/wallet/send?", "", $linkurl);
+            $get_url = str_replace(LINKQRCODE . "?", "", $linkurl);
             $decode_url = base64_decode($get_url);
 
             // Get currency
@@ -86,7 +77,7 @@ class Wallet extends CI_Controller
             }
         }
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $data = array(
@@ -142,7 +133,7 @@ class Wallet extends CI_Controller
             "amount"    => number_format($amount, 2)
         );
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $body["data"] = $infolist;
         $footer['extra'] = "admin/js/js_btn_disabled";
 
@@ -180,7 +171,7 @@ class Wallet extends CI_Controller
             return;
         }
 
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $body["data"] = $mdata;
 
         $this->load->view('tamplate/header', $data);
@@ -190,7 +181,7 @@ class Wallet extends CI_Controller
 
     public function receive()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -200,7 +191,7 @@ class Wallet extends CI_Controller
 
     public function request()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
@@ -246,7 +237,7 @@ class Wallet extends CI_Controller
 
     public function request_notif()
     {
-        $data['title'] = "Freedy - Wallet to Wallet";
+        $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('member/wallet/wallet-request-notif');

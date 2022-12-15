@@ -13,7 +13,7 @@ class Bank extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Freedy - Wallet to Bank";
+        $data['title'] = NAMETITLE . " - Wallet to Bank";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -54,7 +54,7 @@ class Bank extends CI_Controller
             $data["codecur"]   = apitrackless($url)->message->values;
         }
 
-        $data['title'] = "Freedy - Wallet to Bank";
+        $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "member/tobank/currency/js/js_form_currency";
         $data['currencycode'] = $currencyCode[$_SESSION['currency']];
 
@@ -66,7 +66,7 @@ class Bank extends CI_Controller
 
     public function inter()
     {
-        $data['title'] = "Freedy - Wallet to Bank";
+        $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
@@ -676,7 +676,7 @@ class Bank extends CI_Controller
 
         $body["data"] = $temp;
 
-        $data['title'] = "Freedy - Wallet to Bank Confirmation";
+        $data['title'] = NAMETITLE . " - Wallet to Bank Confirmation";
         $footer['extra'] = "admin/js/js_btn_disabled";
 
         $this->load->view('tamplate/header', $data);
@@ -1853,7 +1853,7 @@ class Bank extends CI_Controller
             redirect(base_url() . "bank");
         }
 
-        $data['title'] = "Freedy - Wallet to Bank Completed";
+        $data['title'] = NAMETITLE . " - Wallet to Bank Completed";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom');

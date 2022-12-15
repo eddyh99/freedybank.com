@@ -11,7 +11,7 @@ class Link extends CI_Controller
     public function work_with_us()
     {
         $data = array(
-            "title"     => "FreedyBank - Work with us",
+            "title"     => NAMETITLE . " - Work with us",
             "content"   => "auth/landingpage/work-us",
             "extra"     => "auth/landingpage/js/js_index",
         );
@@ -22,7 +22,7 @@ class Link extends CI_Controller
     public function translate()
     {
         $data = array(
-            "title"     => "FreedyBank - Work with us",
+            "title"     => NAMETITLE . " - Work with us",
             "content"   => "auth/landingpage/translate",
             // "extra"     => "auth/landingpage/js/js_index",
         );
@@ -35,7 +35,7 @@ class Link extends CI_Controller
         $choose = $_GET['choose'];
 
         $data = array(
-            "title"     => "FreedyBank - Work with us",
+            "title"     => NAMETITLE . " - Work with us",
             "content"   => "auth/landingpage/why-choosing-us",
             "choose"   => $choose,
             // "extra"     => "auth/landingpage/js/js_index",
@@ -49,7 +49,7 @@ class Link extends CI_Controller
         $service = $_GET['service'];
 
         $data = array(
-            "title"     => "FreedyBank - Work with us",
+            "title"     => NAMETITLE . " - Work with us",
             "content"   => "auth/landingpage/service",
             "service"   => $service,
             "extra"     => "auth/landingpage/js/js_index",
@@ -63,7 +63,7 @@ class Link extends CI_Controller
         $features = $_GET['features'];
 
         $data = array(
-            "title"     => "FreedyBank - Work with us",
+            "title"     => NAMETITLE . " - Work with us",
             "content"   => "auth/landingpage/features",
             "features"   => $features,
             "extra"     => "auth/landingpage/js/js_index",
@@ -78,7 +78,7 @@ class Link extends CI_Controller
         $currency   = apitrackless($url)->message;
 
         $data = array(
-            "title"     => "FreedyBank",
+            "title"     => NAMETITLE . "",
             "content"   => "auth/landingpage/lern-transparency",
             "currency"   => $currency,
             // "extra"     => "auth/landingpage/js/js_index",
@@ -180,7 +180,7 @@ class Link extends CI_Controller
         }
 
         $data = array(
-            "title"     => "FreedyBank",
+            "title"     => NAMETITLE . "",
             "content"   => "auth/landingpage/currency-list-price",
             "getcurrency"   => $curr,
             "currency"   => $currency,
@@ -195,7 +195,7 @@ class Link extends CI_Controller
     public function send_message()
     {
         $data = array(
-            "title"     => "FreedyBank - Send Message",
+            "title"     => NAMETITLE . " - Send Message",
             "content"   => "auth/landingpage/message",
             "extra"     => "auth/landingpage/js/js_index",
         );
@@ -254,7 +254,7 @@ class Link extends CI_Controller
     public function aboutus()
     {
         $data = array(
-            "title"     => "FreedyBank - About Us",
+            "title"     => NAMETITLE . " - About Us",
             "content"   => "auth/landingpage/aboutus",
             "extra"     => "auth/landingpage/js/js_index",
         );
@@ -264,7 +264,7 @@ class Link extends CI_Controller
     public function faq()
     {
         $data = array(
-            "title"     => "FreedyBank - FAQ",
+            "title"     => NAMETITLE . " - FAQ",
             "content"   => "auth/landingpage/faq",
             "extra"     => "auth/landingpage/js/js_index",
         );

@@ -20,7 +20,7 @@ class Swap extends CI_Controller
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
         $data = array(
-            "title"     => "FreedyBank - Swap",
+            "title"     => NAMETITLE . " - Swap",
             "content"   => "admin/swap/swap",
             "mn_swap"    => "active",
             "extra"     => "admin/swap/js/js_swap",
@@ -107,7 +107,7 @@ class Swap extends CI_Controller
 
 
         $data = array(
-            "title"     => "FreedyBank - Swap",
+            "title"     => NAMETITLE . " - Swap",
             "content"   => "admin/swap/swap-confirm",
             "mn_swap"    => "active",
             "extra"     => "admin/swap/js/js_swap",
@@ -155,7 +155,7 @@ class Swap extends CI_Controller
             );
 
             $data = array(
-                "title"     => "FreedyBank - Swap",
+                "title"     => NAMETITLE . " - Swap",
                 "content"   => "admin/swap/swap-notif",
                 "mn_swap"    => "active",
                 "extra"     => "admin/swap/js/js_swap",

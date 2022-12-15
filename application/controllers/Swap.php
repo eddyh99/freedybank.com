@@ -19,7 +19,7 @@ class Swap extends CI_Controller
         $url = URLAPI . "/v1/member/currency/getActiveCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
-        $data['title'] = "Freedy - Swap";
+        $data['title'] = NAMETITLE . " - Swap";
         $footer['extra'] = "member/swap/js/js_swap";
 
         $this->load->view('tamplate/header', $data);
@@ -103,7 +103,7 @@ class Swap extends CI_Controller
             "symbol"    => apitrackless(URLAPI . "/v1/member/currency/getByCurrency?currency=" . $target . "&userid=" . $_SESSION["user_id"])->message->symbol
         );
 
-        $data['title']  = "Freedy - Swap";
+        $data['title']  = NAMETITLE . " - Swap";
         $body["data"] = $data;
         $footer['extra'] = "admin/js/js_btn_disabled";
 
@@ -150,7 +150,7 @@ class Swap extends CI_Controller
             }
 
 
-            $data['title'] = "Freedy - Swap";
+            $data['title'] = NAMETITLE . " - Swap";
             $body["data"] = array(
                 "amount"    => $amount,
                 "amountget" => $result->message->receive,

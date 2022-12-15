@@ -14,7 +14,7 @@ class Transactions extends CI_Controller
     public function topup()
     {
         $data = array(
-            "title"     => "FreedyBank - History Transactions Topup",
+            "title"     => NAMETITLE . " - History Transactions Topup",
             "content"   => "admin/history/topup",
             "extra"     => "admin/history/js/js_topup",
         );
@@ -44,7 +44,7 @@ class Transactions extends CI_Controller
     public function towallet()
     {
         $data = array(
-            "title"     => "FreedyBank - History Transactions Wallet",
+            "title"     => NAMETITLE . " - History Transactions Wallet",
             "content"   => "admin/history/towallet",
             "extra"     => "admin/history/js/js_towallet",
         );
@@ -74,7 +74,7 @@ class Transactions extends CI_Controller
     public function tobank()
     {
         $data = array(
-            "title"     => "FreedyBank - History Transactions Withdraw",
+            "title"     => NAMETITLE . " - History Transactions Withdraw",
             "content"   => "admin/history/tobank",
             "extra"     => "admin/history/js/js_tobank",
         );

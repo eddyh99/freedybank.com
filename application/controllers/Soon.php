@@ -10,7 +10,7 @@ class Soon extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Freedy - Search";
+        $data['title'] = NAMETITLE . " - Search";
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
