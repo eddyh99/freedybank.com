@@ -5,7 +5,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-12">
                         <div class="text-start">
-                            <span class="me-auto f-monserat title-top-navbar">Wallet Recieve</span>
+                            <span class="me-auto f-monserat title-top-navbar">Wallet Receive</span>
                         </div>
                     </div>
                     <div class="col-12 infobank-list-app my-4">
