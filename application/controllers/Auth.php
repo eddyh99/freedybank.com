@@ -120,7 +120,7 @@ class Auth extends CI_Controller
 			$message = "Thank you for registering on freedybank<br><br>
 			username : " . $email . "<br>
 			password : (your chosen password)<br><br>
-			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate yout account<br><br>
+			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate your account<br><br>
 			";
 
 			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $result->message->ucode);
