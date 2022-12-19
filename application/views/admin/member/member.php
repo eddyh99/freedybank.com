@@ -33,7 +33,6 @@
                                 <th>Email</th>
                                 <th>Unique Code</th>
                                 <th>Referral Code</th>
-                                <th>Status</th>
                                 <th>Last Login</th>
                             </tr>
                         </thead>
