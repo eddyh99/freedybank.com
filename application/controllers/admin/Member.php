@@ -20,7 +20,7 @@ class Member extends CI_Controller
             "extra"     => "admin/member/js/js_member"
         );
 
-        $this->load->view('admin_template/wrapper2', $data);
+        $this->load->view('admin_template/wrapper', $data);
     }
 
     public function get_all()
@@ -29,13 +29,21 @@ class Member extends CI_Controller
             "bank_id"  => 2,
             "timezone"  => $_SESSION["time_location"]
         );
+
         $result = apitrackless(URLAPI . "/v1/trackless/user/getAll", json_encode($mdata));
-        $data["token"] = $this->security->get_csrf_hash();
         if (@$result->code == 200) {
-            $data["member"] = $result->message;
+            $dt_active_filter = array();
+            foreach ($result->message as $key) {
+                if ($key->status == 'active' || $key->status == 'new') {
+                    $dt_active_filter[] = $key;
+                }
+            }
+            $data["member"] = $dt_active_filter;
         } else {
             $data["member"] = NULL;
         }
+
+        $data["token"] = $this->security->get_csrf_hash();
         echo json_encode($data);
     }
 
@@ -141,7 +149,7 @@ class Member extends CI_Controller
         );
 
 
-        $this->load->view('admin_template/wrapper2', $data);
+        $this->load->view('admin_template/wrapper', $data);
     }
 
     public function sendmail_proses()

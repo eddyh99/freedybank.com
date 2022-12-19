@@ -33,9 +33,6 @@ $(function() {
                 "data": "referral"
             },
             {
-                "data": "status"
-            },
-            {
                 "data": "last_login"
             },
         ]

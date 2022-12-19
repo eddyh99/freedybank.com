@@ -7,6 +7,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                        <a class="nav-link <?= @$mn_member ?>" href="<?= base_url() ?>admin/member">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                            Member
+                        </a>
                         <a class="nav-link <?= @$mn_cost ?>" href="<?= base_url() ?>admin/cost">
                             <div class="sb-nav-link-icon"><i class="fas fa-coins"></i></div>
                             Default Cost
