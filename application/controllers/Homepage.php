@@ -44,6 +44,18 @@ class Homepage extends CI_Controller
         $this->load->view('tamplate/footer', $footer);
     }
 
+    public function crypto()
+    {
+
+        $data['title'] = NAMETITLE . " - Crypto";
+        $footer["extra"]    = "member/js/js_index";
+
+
+        $this->load->view('tamplate/header', $data);
+        $this->load->view('member/crypto');
+        $this->load->view('tamplate/footer', $footer);
+    }
+
     public function setting_currency()
     {
         $mdata = array(
