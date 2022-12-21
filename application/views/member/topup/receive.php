@@ -125,9 +125,6 @@
                             <a href="<?= base_url() ?>receive/interbank" class="col-8 py-3 my-2">International</a>
 
                             <?php } ?>
-                            <?php if (($_SESSION["currency"] == "EUR")) { ?>
-                            <a href="<?= base_url() ?>receive/cash" class="col-8 py-3 my-2">Cash</a>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>

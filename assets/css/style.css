@@ -10701,3 +10701,31 @@ section {
 .list-group-item-grey-freedy {
   background-color: rgba(217, 217, 217, 0.25) !important;
 }
+
+
+.btn-head-crypto {
+  border: 1px solid #0078F0;
+  border-radius: 8px;
+}
+
+.btn-head-crypto .crypto {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 113%;
+
+  display: inline-block;
+  background: transparent;
+  border-radius: 8px;
+  color: #0078F0;
+}
+
+.btn-head-crypto .crypto.active {
+  background: #0078F0;
+  border-radius: 8px;
+  color: #FFFFFF;
+}
+
+.btn-head-crypto .crypto:hover,
+.btn-head-crypto .crypto.active:hover {
+  color: #000000;
+}

@@ -20,7 +20,7 @@
             </div>
             <div class="col-12 card mb-5 mt-3">
                 <div class="card-header fw-bold">
-                    FREEDY BANK Fee
+                    TRACKLESS BANK Fee
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">

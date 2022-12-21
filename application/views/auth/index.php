@@ -436,8 +436,8 @@
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
                     <span class="f-lexend">Empowered by</span>
-                    <a href="https://tracklessbank.com/">
-                        <img src="<?= base_url(); ?>assets/img/tracklessbank.png" alt="" class="tracklessbank">
+                    <a href="https://tracklessproject.com/">
+                        <img src="<?= base_url(); ?>assets/img/tracklessproject.png" alt="" class="tracklessbank">
                     </a>
                 </div>
 
