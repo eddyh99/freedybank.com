@@ -18,7 +18,7 @@
         <div class="container-fluid px-4">
             <div class="col-12 card mb-5 mt-3">
                 <div class="card-header fw-bold">
-                    FREEDY BANK Cost
+                    TRACKLESS BANK Cost
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
