@@ -432,7 +432,7 @@
         <div class="container py-5">
             <div class="row gy-4">
                 <div class="col-12 col-lg-5 col-md-12 footer-info">
-                    <a href="index.html" class="logo-footer d-flex align-items-center">
+                    <a href="<?= base_url() ?>" class="logo-footer d-flex align-items-center">
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
                     <span class="f-lexend">Empowered by</span>
