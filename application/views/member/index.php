@@ -77,7 +77,7 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 4, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
                             </a>
                             <?php }
                                 }
@@ -90,7 +90,7 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 4, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
                             </a>
                             <?php }
                                 }
