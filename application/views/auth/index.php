@@ -470,8 +470,7 @@
                 Burj Gate, Dubai, UAE
             </div>
             <div class="credits f-lexend">
-                FreedyBank is a service offered by EE Information Technology Network Service CO., Subject to partnership
-                with licensee PBS Online.
+                FreedyBank (UAE) is a service subject to partnership with licensee PBS On line LLC.
             </div>
         </div>
     </div>

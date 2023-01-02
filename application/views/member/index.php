@@ -98,6 +98,10 @@
                             ?>
                         </div>
                     </div>
+                    <div class="col-12 text-center">
+                                <span class="com-currency-bimg"><strong>If your Topup hasn't arrived, contact the following email address:
+                           support-topup@tracklessmail.com</strong></span>
+                            </div>                      
                 </div>
             </div>
         </div>
