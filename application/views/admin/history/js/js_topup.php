@@ -29,6 +29,7 @@ $('#tgl').daterangepicker({
 
 var tblhistory =
     $('#tbl_history').DataTable({
+        "order": [[5, 'desc']],
         "scrollX": true,
         "responsive": true,
         "ajax": {
@@ -47,7 +48,7 @@ var tblhistory =
         "aoColumnDefs": [{
     	    "aTargets" :[4],
     	    "mRender" : function (data, type, row) {
-                return parseFloat(row.fee)+parseFloat(row.referral)
+                return (parseFloat(row.fee)+parseFloat(row.referral)).toLocaleString('en')
     	    }
     	}],        
         "columns": [{

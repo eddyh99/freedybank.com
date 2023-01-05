@@ -20,7 +20,7 @@
                         <thead class="table-primary">
                             <tr>
                                 <th>Description</th>
-                                <th>Cost</th>
+                                <th>Trackless Cost</th>
                                 <th>Referral Comission</th>
                                 <th>Freedy Cost</th>
                                 <th>Income</th>
@@ -29,6 +29,12 @@
                         </thead>
                         <tbody style="border-top: 0;">
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="4" style="text-align:right">Total:</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>

@@ -63,6 +63,10 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-12 mb-4 text-center">
+                                <span class="com-currency-bimg"><strong>If your Topup hasn't arrived, contact the following email address:
+                           support-topup@tracklessmail.com</strong></span>
+                    </div>                         
                     <div class="col-12 curencies-list-app">
                         <div
                             class="col-12 d-flex flex-row justify-content-center align-items-center title-curencies-list">
@@ -77,7 +81,7 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?> <?= number_format(rounddown(number_format($dt->balance, 2, ".", ",")),2) ?></span>
                             </a>
                             <?php }
                                 }
@@ -90,7 +94,7 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?> <?= number_format(rounddown(number_format($dt->balance, 2, ".", ",")),2) ?></span>
                             </a>
                             <?php }
                                 }
@@ -98,10 +102,6 @@
                             ?>
                         </div>
                     </div>
-                    <div class="col-12 text-center">
-                                <span class="com-currency-bimg"><strong>If your Topup hasn't arrived, contact the following email address:
-                           support-topup@tracklessmail.com</strong></span>
-                            </div>                      
                 </div>
             </div>
         </div>
