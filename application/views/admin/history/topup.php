@@ -16,7 +16,7 @@
                         <thead class="table-primary">
                             <tr>
                                 <th>Description</th>
-                                <th>Cost</th>
+                                <th>Trackless Cost</th>
                                 <th>Referral Comission</th>
                                 <th>Freedy Cost</th>
                                 <th>Income</th>

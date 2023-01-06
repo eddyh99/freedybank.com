@@ -429,49 +429,51 @@
 <!-- ======= Footer ======= -->
 <footer id="contact" class="footer p-0 p-r">
     <div class="footer-bg pt-5">
-        <div class="container py-5">
+        <div class="container py-2">
             <div class="row gy-4">
-                <div class="col-12 col-lg-5 col-md-12 footer-info">
-                    <a href="<?= base_url() ?>" class="logo-footer d-flex align-items-center">
+                <div
+                    class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start">
+                    <a href="<?= base_url() ?>" class="logo-footer d-flex align-items-center w-100">
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
-                    <span class="f-lexend">Empowered by</span>
-                    <a href="https://tracklessproject.com/">
-                        <img src="<?= base_url(); ?>assets/img/tracklessproject.png" alt="" class="tracklessbank">
-                    </a>
-                </div>
-
-                <div class="col-lg col-12 pe-2 footer-links">
-                    <h4 class="f-lexend">Contact us</h4>
-                    <div class="list">
-                        <a href="#" class="d-flex align-items-center my-1">
-                            <i class="fa fa-envelope"></i>
-                            <span class="ms-1">eeinformationservice@gmail.com</span>
+                    <div class="d-flex flex-row w-100">
+                        <span class="f-lexend me-2">Empowered by</span>
+                        <a href="https://tracklessproject.com/">
+                            <img src="<?= base_url(); ?>assets/img/tracklessproject.png" alt="" class="tracklessbank">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg col-12 pe-2 footer-links">
-                    <h4 class="f-lexend">
-                        <a href="<?= base_url(); ?>link/aboutus" style="color:#fff;">About us</a>
-                    </h4>
+                <div class="col-12 col-md-12 col-lg-6 mx-auto">
+                    <div class="row">
+                        <div class="col-lg col-12 pe-2 pb-2 footer-links">
+                            <h4 class="f-lexend">Contact us</h4>
+                            <div class="list">
+                                <a href="#" class="d-flex align-items-center my-1">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="ms-1">freedybank@tracklessmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg col-12 pe-2 pb-2 footer-links">
+                            <h4 class="f-lexend">
+                                <a href="<?= base_url(); ?>link/aboutus" style="color:#fff;">About us</a>
+                            </h4>
+                        </div>
+                        <div class="col-12 pt-5 pb-4" style="z-index: 99; position: relative;">
+                            <div class="copyright f-lexend">
+                                2EE Information Technology Network Service CO.
+                            </div>
+                            <div class="credits f-lexend">
+                                Burj Gate, Dubai, UAE
+                            </div>
+                            <!-- <div class="credits f-lexend">
+                                FreedyBank (UAE) is a service subject to partnership with licensee PBS On line LLC.
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg col-12 pe-2 footer-links">
-                    <h4 class="f-lexend">
-                        <a href="<?= base_url(); ?>link/faq" style="color:#fff;">FAQ</a>
-                    </h4>
+                <div class="col-lg-3">
                 </div>
-            </div>
-        </div>
-        <div class="container pt-5 pb-4" style="z-index: 99; position: relative;">
-            <div class="copyright f-lexend">
-                2EE Information Technology Network Service CO.
-            </div>
-            <div class="credits f-lexend">
-                Burj Gate, Dubai, UAE
-            </div>
-            <div class="credits f-lexend">
-                FreedyBank is a service offered by EE Information Technology Network Service CO., Subject to partnership
-                with licensee PBS Online.
             </div>
         </div>
     </div>

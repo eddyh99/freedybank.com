@@ -63,6 +63,13 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-12 text-center my-3">
+                        <span class="text-blue-alert">
+                            <strong>If your Topup hasn't arrived, contact the following
+                                email address:
+                                support-topup@tracklessmail.com</strong>
+                        </span>
+                    </div>
                     <div class="col-12 curencies-list-app">
                         <div
                             class="col-12 d-flex flex-row justify-content-center align-items-center title-curencies-list">
@@ -77,7 +84,8 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?>
+                                    <?= substr(number_format($dt->balance,4),0,-2) ?></span>
                             </a>
                             <?php }
                                 }
@@ -90,7 +98,8 @@
                             <a href="<?= base_url() ?>homepage/wallet?cur=<?= $dt->currency ?>"
                                 class="d-flex flex-row justify-content-center align-items-center curencies-list py-4 px-3 my-2">
                                 <span class="me-auto"><?= $dt->currency ?></span>
-                                <span><?= $dt->symbol; ?> <?= number_format($dt->balance, 2, ".", ",") ?></span>
+                                <span><?= $dt->symbol; ?>
+                                    <?= substr(number_format($dt->balance,4),0,-2) ?></span>
                             </a>
                             <?php }
                                 }
