@@ -34,3 +34,7 @@ function balanceadmin($currency)
     )->message->balance;
     return $balance;
 }
+
+function rounddown($balance){
+    return floor($balance*100)/100;
+}

@@ -10,6 +10,7 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
+                            <img src="<?=base_url()?>assets/img/notif-receive-1.png" alt="" class="img-fluid mb-2">
                             <?php
                             if ($currency == "EUR") {
                             ?>
@@ -190,7 +191,7 @@
                                     </a>
                                 </div>
                             </div>
-                            
+
                             <?php } else {
                             ?>
                             <div class="row">

@@ -143,25 +143,21 @@
             </div>
             <div class="modal-body">
                 <ul>
-                    <li>In order to topup your own wallet or receive money through bank transfer, <br>
-                        copy or share the bank details written in ''add/receive funds'' by bank transfer section (local
-                        bank, international or cash) and as a causal IS MANDATORY TO WRITE :<br>
-                        <br>
-                        TOP UP + YOUR UNIQUE CODE NUMBER<br>
-                        (THE UNIQUE CODE IDENTIFY THE RECEIVER USER)<br>
-                        <br>
-                        EXAMPLE: ''causal : topup xxxxxxxx''<br>
+                    <li>
+                        In order to topup your own wallet or receive money through bank transfer, <br>
+                        copy or share the bank details written in ''add/receive funds'' in National or International and
+                        as a <b>Causal</b> is <b>Mandatory</b> copy as example bellow :<br>
                         <img src="<?= base_url() ?>assets/img/attantion-1.png" alt="">
                     </li>
 
-                    <li>The receiving banking data of each currency will be the same for all users, THE ONLY DATA THAT
-                        WILL CHANGE WILL BE THE "CAUSAL" WHICH WILL IDENTIFY THE RECEIVER USER, SO IF YOU WANT TO TOP UP
-                        YOUR FRIEND WALLET YOU HAVE TO WRITE IN THE CAUSAL:<br>
-                        <br>
-                        topup + THE UNIQUE CODE OF HIS OWN WALLET
+                    <li>
+                        To increase and improve the privacy level, receiving and sending money<br>
+                        will be handled by TracklessMoney payment gateway<br>
+                        The receiving banking data of each currency will be the same for all users, <b
+                            class="text-lowercase">THE ONLY DATA THAT
+                            WILL CHANGE WILL BE THE</b> "CAUSAL" <b class="text-lowercase">WHICH WILL IDENTIFY THE
+                            RECEIVER USER</b>
                     </li>
-                    <li>To increase and improve the privacy level, receiving and sending money
-                        will be handled by TracklessMoney payment gateway</li>
                 </ul>
             </div>
         </div>

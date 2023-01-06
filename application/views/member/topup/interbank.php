@@ -10,6 +10,7 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
+                            <img src="<?=base_url()?>assets/img/notif-receive-1.png" alt="" class="img-fluid mb-2">
                             <div class="row">
                                 <label>Account Holder</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
@@ -66,8 +67,8 @@
                             <div class="row">
                                 <label class="form-label">Routing Number</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
-                                    <input class="form-control me-2" type="text" name="" id="inter6"
-                                        value="026073008" readonly>
+                                    <input class="form-control me-2" type="text" name="" id="inter6" value="026073008"
+                                        readonly>
                                     <a class="btn btn-copy" id="btninter6">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
