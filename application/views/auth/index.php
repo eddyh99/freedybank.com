@@ -450,7 +450,11 @@
                             <div class="list">
                                 <a href="#" class="d-flex align-items-center my-1">
                                     <i class="fa fa-envelope"></i>
-                                    <span class="ms-1">freedybank@tracklessmail.com</span>
+                                    <span class="ms-1">
+                                        <a href="mailto:freedybank@tracklessmail.com" class="text-decoration-none">
+                                            freedybank@tracklessmail.com
+                                        </a>
+                                    </span>
                                 </a>
                             </div>
                         </div>
