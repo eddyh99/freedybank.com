@@ -448,14 +448,10 @@
                         <div class="col-lg col-12 pe-2 pb-2 footer-links">
                             <h4 class="f-lexend">Contact us</h4>
                             <div class="list">
-                                <a href="#" class="d-flex align-items-center my-1">
-                                    <i class="fa fa-envelope"></i>
-                                    <span class="ms-1">
-                                        <a href="mailto:freedybank@tracklessmail.com" class="text-decoration-none">
-                                            freedybank@tracklessmail.com
-                                        </a>
-                                    </span>
-                                </a>
+                                    <a href="mailto:freedybank@tracklessmail.com" class="text-decoration-none">
+                                        <i class="fa fa-envelope" style="color:white"></i>
+                                        freedybank@tracklessmail.com
+                                    </a>
                             </div>
                         </div>
                         <div class="col-lg col-12 pe-2 pb-2 footer-links">
