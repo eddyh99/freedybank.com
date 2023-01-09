@@ -153,7 +153,8 @@ class Fee extends CI_Controller
 		$currency   = $this->security->xss_clean($input->post("currency"));
 
 		if (($currency == "USD") ||
-			($currency == "EUR")
+			($currency == "EUR") ||
+			($currency == "GBP")
 		) {
 			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than_equal_to[0]');
 			$this->form_validation->set_rules('topup_circuit_pct', 'Topup Circuit (%)', 'trim|required|greater_than_equal_to[0]');
