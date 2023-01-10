@@ -13,6 +13,12 @@
                 <div class="col-12 mb-5 text-center">
                     <h2 class="title-top-header fw-bold">Contact us</h2>
                 </div>
+                <div class="col-12 col-md-8 col-lg-6 mx-auto mb-5 text-center text-blue-freedy">
+                    <p> Our support service is exclusively reserved to our clients. Register for free on the platform,
+                        in few seconds, to request assistance or further information</p>
+                    <p>After registration you will get your unique code,
+                        fill out the form below using your “unique code“ to get assistance</p>
+                </div>
                 <div class="login">
                     <div class="col-12 col-md-8 col-lg-6 box-form mx-auto shadow-none px-0">
                         <form class="form-login-freedy d-flex align-items-start flex-column" style="height: 100%;"
