@@ -381,17 +381,76 @@
                         <h2 class="title-top-header fw-bold" style="color: #000 !important;">How does it work:</h2>
                     </div>
                     <div class="row my-5">
-                        <div class="col-12 col-md-6 p-3">
-                            <img src="<?= base_url() ?>assets/img/img-list-1.png" alt="" class="img-fluid">
+                        <div class="col-12 col-md-12 col-lg-6 p-3">
+                            <div class="box-service-list d-flex flex-row">
+                                <div class="text-content d-flex flex-column">
+                                    <div class="top d-flex flex-row">
+                                        <span class="number">01.</span>
+                                        <span class="title">Open your account</span>
+                                    </div>
+                                    <div class="bot">
+                                        <p>You can easly open your account in only 15 seconds</p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <img src="<?=base_url()?>assets/img/icon-service-1.png" alt="icon">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-6 p-3">
-                            <img src="<?= base_url() ?>assets/img/img-list-2.png" alt="" class="img-fluid">
+                        <div class="col-12 col-md-12 col-lg-6 p-3">
+                            <div class="box-service-list d-flex flex-row">
+                                <div class="text-content d-flex flex-column">
+                                    <div class="top d-flex flex-row">
+                                        <span class="number">02.</span>
+                                        <span class="title">Get your personal
+                                            link</span>
+                                    </div>
+                                    <div class="bot">
+                                        <p>You will have your personal link after create an account</p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <img src="<?=base_url()?>assets/img/icon-service-2.png" alt="icon">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-6 p-3">
-                            <img src="<?= base_url() ?>assets/img/img-list-3.png" alt="" class="img-fluid">
+                        <div class="col-12 col-md-12 col-lg-6 p-3">
+                            <div class="box-service-list d-flex flex-row">
+                                <div class="text-content d-flex flex-column">
+                                    <div class="top d-flex flex-row">
+                                        <span class="number">03.</span>
+                                        <span class="title">Invite people</span>
+                                    </div>
+                                    <div class="bot">
+                                        <p>
+                                            Invite people/companies to register on <b translate="no">FreedyBank</b>
+                                            using your link
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <img src="<?=base_url()?>assets/img/icon-service-3.png" alt="icon">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-6 p-3">
-                            <img src="<?= base_url() ?>assets/img/img-list-4.png" alt="" class="img-fluid">
+                        <div class="col-12 col-md-12 col-lg-6 p-3">
+                            <div class="box-service-list d-flex flex-row">
+                                <div class="text-content d-flex flex-column">
+                                    <div class="top d-flex flex-row">
+                                        <span class="number">04.</span>
+                                        <span class="title">Congratulation!</span>
+                                    </div>
+                                    <div class="bot">
+                                        <p>
+                                            From now you will start receiving a commission on every transaction that the
+                                            person/company will make.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <img src="<?=base_url()?>assets/img/icon-service-4.png" alt="icon">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

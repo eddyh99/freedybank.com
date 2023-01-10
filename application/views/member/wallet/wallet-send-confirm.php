@@ -40,13 +40,19 @@
                                     <span><?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["deduct"], 2) ?></span>
                                 </div>
 
-                                <img src="<?=base_url()?>assets/img/notif-sender-1.png" alt="" class="img-fluid mb-3">
+                                <div class="attention-box p-3 text-center">
+                                    <span class="title mb-3 d-inline-block">Attention</span>
+                                    <p>Are you sure that the data are correct? Are you sure of the sending reason?</p>
+                                    <p>The transaction is irrevesible and can not be cancelled after the confirmation.
+                                    </p>
+                                    <p>If you are sure to make this transaction click confirm</p>
+                                </div>
 
                                 <div class="col-12 d-flex flex-row mt-5">
                                     <a href="<?= base_url() ?>wallet"
                                         class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                     <button class="btn btn-receive-bank px-5 py-2" type="submit"
-                                        id="btnconfirm">OK</button>
+                                        id="btnconfirm">ConfirmK</button>
                                 </div>
                             </form>
                         </div>

@@ -10,7 +10,26 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
-                            <img src="<?=base_url()?>assets/img/notif-receive-1.png" alt="" class="img-fluid mb-2">
+                            <div class="tutorial-box p-3">
+                                <span class="title mb-3 d-inline-block">Top up procedure :</span>
+                                <ol class="m-0">
+                                    <li>Copy all the fields below</li>
+                                    <li>Paste on your online bank form
+                                        (Make sure to copy exactly the Causal*,
+                                        as it identifies the destination wallet)</li>
+                                    <li>Send the amount chosen</li>
+                                </ol>
+                            </div>
+                            <div class="noted-tutor px-3">
+                                <p class="my-3">
+                                    *In case you’ve written wrong Causal it is possible to manually recover the funds by
+                                    contacting the following email :<br>
+                                    <a href="mailto:support-topup@tracklessmail.com">support-topup@tracklessmail.com</a>
+                                    <br>
+                                    <br>
+                                    (the manual recovery operation will cost 25 $)
+                                </p>
+                            </div>
                             <div class="row">
                                 <label>Account Holder</label>
                                 <div class="d-flex flex-row align-items-center mb-3">
@@ -48,7 +67,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="form-label">SWIFT</label>
+                                <?php if (($_SESSION["currency"] == "EUR")) { ?>
+                                <label class="form-label">Swift/BIC</label>
+                                <?php } else { ?>
+                                <label class="form-label">Swift</label>
+                                <?php }?>
                                 <div class="d-flex flex-row align-items-center mb-3">
                                     <input class="form-control me-2" type="text" name="" id="inter3"
                                         value="<?= @$bank->bic_outside ?>" readonly>
