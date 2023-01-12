@@ -5,7 +5,8 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-12">
                         <div class="text-start">
-                            <span class="me-auto f-monserat title-top-navbar">Wallet Send</span>
+                            <span class="me-auto f-monserat title-top-navbar"><?= $_SESSION["currency"] ?> - Wallet
+                                Send</span>
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <svg width="62" height="59" viewBox="0 0 62 59" fill="none"
@@ -34,25 +35,28 @@
                                     aria-label="Close"></button>
                             </div>
                             <?php } ?>
-                            <span class="b-qr">Input manual</span>
+                            <span class="b-qr">Input manual ( max amount :
+                                <?= max_sendtowallet(balance($_SESSION['user_id'], $_SESSION["currency"]),$_SESSION["currency"]); ?>
+                                )</span>
                             <form method="POST" action="<?= base_url() ?>wallet/send_confirm" class="text-center"
                                 id="form_submit" onsubmit="return validate()">
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="text" class="form-control my-4" name="ucode" id="ucode"
-                                    placeholder="Unique code" value="<?= @$ucode ?>" <?php echo (empty($ucode)? "" : "readonly")?>>
+                                    placeholder="Unique code" value="<?= @$ucode ?>"
+                                    <?php echo (empty($ucode)? "" : "readonly")?>>
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode"
-                                    placeholder="Confirm Unique code" value="<?= $ucode ?>" <?php echo (empty($ucode)? "" : "readonly")?>>
+                                    placeholder="Confirm Unique code" value="<?= $ucode ?>"
+                                    <?php echo (empty($ucode)? "" : "readonly")?>>
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
                                     placeholder="Amount (ex. 0.01)"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
-                                    value="<?= $amount ?>"
-                                    <?php echo (empty($amount)? "" : "readonly")?>>
+                                    value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
                                     placeholder="Confirm Amount (ex. 0.01)"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
-                                    value="<?= $amount ?>"<?php echo (empty($amount)? "" : "readonly")?>>
+                                    value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

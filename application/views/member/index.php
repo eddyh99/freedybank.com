@@ -63,13 +63,6 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-12 text-center my-3">
-                        <span class="text-blue-alert">
-                            <strong>If your Topup hasn't arrived, contact the following
-                                email address:
-                                support-topup@tracklessmail.com</strong>
-                        </span>
-                    </div>
                     <div class="col-12 curencies-list-app">
                         <div
                             class="col-12 d-flex flex-row justify-content-center align-items-center title-curencies-list">

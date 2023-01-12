@@ -8,7 +8,7 @@
             <div class="mywallet d-flex flex-column mb-4">
                 <span class="balance">Balance</span>
                 <span class="saldo"><?= $_SESSION["symbol"] ?>
-                    <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]), 2) ?></span>
+                    <?= substr(number_format(balance($_SESSION['user_id'], $_SESSION["currency"]),4),0,-2) ?></span>
             </div>
             <span class="">Copy & share your referral link to earn money</span>
             <div class="copy-refcode d-flex flex-row justify-content-start mb-4">

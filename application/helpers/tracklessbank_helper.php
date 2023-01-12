@@ -38,3 +38,18 @@ function balanceadmin($currency)
 function rounddown($balance){
     return floor($balance*100)/100;
 }
+
+function max_sendtowallet($balance,$currency){
+    $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
+    $fxd = $mfee->message->wallet_sender_fxd;
+    $pct = $mfee->message->wallet_sender_pct;
+    
+    $return = $balance - (($balance * $pct) + $fxd);
+
+    if ($return <= 0) {
+        $return = 0;
+    }
+
+    return substr(number_format($return,4),0,-2);
+    // return $return;
+}
