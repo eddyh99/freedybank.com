@@ -41,10 +41,19 @@ function rounddown($balance){
 
 function max_sendtowallet($balance,$currency){
     $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
-    $fxd = $mfee->message->wallet_sender_fxd;
-    $pct = $mfee->message->wallet_sender_pct;
+    $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $currency);
     
-    $return = $balance - (($balance * $pct) + $fxd);
+    $feefxd = $mfee->message->wallet_sender_fxd;
+    $feepct = $mfee->message->wallet_sender_pct;
+    $refpct = $mfee->message->referral_send_pct;
+    $reffxd = $mfee->message->referral_send_fxd;
+    $costfxd = $mcost->message->wallet_sender_fxd;
+    $costpct = $mcost->message->wallet_sender_pct;
+
+    $fee  = ($balance*$feepct)+$feefxd;
+    $ref  = ($balance*$refpct)+$reffxd;
+    $cost = ($balance*$costpct)+$costfxd;
+    $return = $balance - $fee-$ref-$cost;
 
     if ($return <= 0) {
         $return = 0;

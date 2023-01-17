@@ -432,7 +432,7 @@
         <div class="container py-2">
             <div class="row gy-4">
                 <div
-                    class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start">
+                    class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start my-auto">
                     <a href="<?= base_url() ?>" class="logo-footer d-flex align-items-center w-100">
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
@@ -443,7 +443,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-12 col-md-12 col-lg-6 mx-auto">
+                <div class="col-12 col-md-12 col-lg-9 mx-auto">
                     <div class="row">
                         <div class="col-lg col-12 pe-2 pb-2 footer-links">
                             <h4 class="f-lexend">Contact us</h4>
@@ -462,16 +462,22 @@
                                 <a href="<?= base_url(); ?>link/aboutus" style="color:#fff;">About us</a>
                             </h4>
                         </div>
-                        <div class="col-12 pt-5 pb-4" style="z-index: 99; position: relative;">
-                            <div class="copyright f-lexend">
+                        <div class="col-lg col-12 pe-2 pb-2 footer-links">
+                            <h4 class="f-lexend">
+                                <a href="<?= base_url(); ?>" style="color:#fff;">The guide</a>
+                            </h4>
+                        </div>
+                        <div class="col-12 col-lg-8 pt-5 pb-3" style="z-index: 99; position: relative;">
+                            <div class="copyright f-lexend pt-2">
                                 2EE Information Technology Network Service CO.
                             </div>
-                            <div class="credits f-lexend">
+                            <div class="credits f-lexend pt-2">
                                 Burj Gate, Dubai, UAE
                             </div>
-                            <!-- <div class="credits f-lexend">
-                                FreedyBank (UAE) is a service subject to partnership with licensee PBS On line LLC.
-                            </div> -->
+                            <div class="credits f-lexend pt-2">
+                                FreedyBankService (UAE) is a service subject to partnership with licensee PBS Online
+                                LLC.
+                            </div>
                         </div>
                     </div>
                 </div>
