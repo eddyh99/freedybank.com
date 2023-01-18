@@ -16,7 +16,7 @@
                                 <ol class="m-0">
                                     <li>Copy all the fields below</li>
                                     <li>Paste on your online bank form
-                                        (Make sure to copy exactly the Causal*,
+                                        (make sure to copy exactly the Causal*,
                                         as it identifies the destination wallet)</li>
                                     <li>Send the amount chosen</li>
                                 </ol>
