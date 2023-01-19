@@ -27,23 +27,23 @@
                             encrypted escrow accounts at the main credit institutions with which our payment gateway
                             works in the various countries.<br>
                             To give total security to our customers, only the account holder will have access to the
-                            operations and even for <b translate="no">FreedyBank</b> it will be impossible to bypass
+                            operations and even for <b translate="no"> FreedyBank </b> it will be impossible to bypass
                             this security system.
 
                         </p>
                         <p>
-                            <b translate="no">Freedybank</b>, being part of the TraclessBank circuit, offers to
+                            <b translate="no"> Freedybank </b>, being part of the TraclessBank circuit, offers to
                             customers a great guarantee, as any problem that may arise, the funds will always be
                             accessible at another institution of the TraklessBank circuit.
                         </p>
                         <p>
                             None of the tracklessbank institutions have the ability to make any type of investment or
                             money handling using clients’ funds, leaving the capital available to the customers in the
-                            fiat corresponding to the balance of the <b translate="no">freedybank</b> wallet
+                            fiat corresponding to the balance of the <b translate="no"> freedybank </b> wallet
                         </p>
                         <div class="col-12 mt-5 d-grid d-md-none d-lg-grid text-center">
                             <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3 col-12">
-                                OPEN YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN 15 SECONDS
+                                OPEN YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN 15 SECONDS
                             </h4>
                             <div class="text-center">
                                 <a href="<?= base_url(); ?>auth/signup"
@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-12 mt-5 d-none d-md-grid d-lg-none text-center">
                         <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3 col-12">
-                            OPEN YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN 15 SECONDS
+                            OPEN YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN 15 SECONDS
                         </h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"
@@ -82,7 +82,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 text-start my-auto">
                         <p>
-                            <b translate="no">Freedy</b> is a DApp that running on NP, considered the evolution of the
+                            <b translate="no"> Freedy </b> is a DApp that running on NP, considered the evolution of the
                             blockchain and it uses SECC (SMART ELECTRONIC CREDIT CERTIFICATE), developed by MONEY
                             INDUSTRIAL FACTORY on NP and issued by PBS Online which converts FIAT by capitalizing the
                             SECC 1: 1 with the currency on which it is pegged to offer a cheaper and faster alternative
@@ -143,9 +143,9 @@
                             and decentralized distributed system.<br>
                             NP solves the scalability problem by transforming each user into a validating node every
                             time he performs an operation, thus giving double the necessary computing power.<br>
-                            all the users of <b translate="no">FreedyBank</b> will be repaid with part of the
+                            all the users of <b translate="no"> FreedyBank </b> will be repaid with part of the
                             commissions in a clear, transparent and fair manner, as described in the section earn with
-                            <b translate="no">Freedy</b>.
+                            <b translate="no"> Freedy </b>.
                         </p>
                     </div>
                 </div>
@@ -172,12 +172,13 @@
                             all incoming transfers.
                         </p>
                         <p>
-                            The <b translate="no">Freedy</b> Wallet, which uses the innovative tracklessbank technology,
+                            The <b translate="no"> Freedy </b> Wallet, which uses the innovative tracklessbank
+                            technology,
                             offers its customers
                             the possibility of regaining total control over their capital and managing it easily,
                             without limits and in total anonymity.</p>
                         <p>
-                            The <b translate="no">freedy</b> wallet is the only one in the world that offers you,
+                            The <b translate="no"> freedy </b> wallet is the only one in the world that offers you,
                             through the Bank to wallet -
                             Wallet to bank functions, the possibility of sending or receiving funds by bank transfer,
                             even from an IBAN not in your name, without limitations, without any documentation required
@@ -236,7 +237,7 @@
                                 capital exportation works</a>).<br>
                             Using the SWAP, to convert into the currency you want to send, makes the money transfer a
                             national transfer;<br>
-                            <b translate="no">FreedyBank</b> is the only one in the world to
+                            <b translate="no"> FreedyBank </b> is the only one in the world to
                             offer you this service.
 
                         </p>
@@ -244,7 +245,8 @@
                     <div class="col-12 col-md-6 text-start my-auto">
                         <h2 class="fw-bold mb-3 f-lexend">Top up EURO by cash into SEPA circuit</h2>
                         <p>
-                            Those who want to top up his own <b translate="no">Freedybank</b> wallet or any other wallet
+                            Those who want to top up his own <b translate="no"> Freedybank </b> wallet or any other
+                            wallet
                             belonging to
                             TracklessBank system without having a current account, can easly go to the bank or even go
                             to a postal office and ask to make a transfer by paying the necessary money directly at the
@@ -275,7 +277,7 @@
                     </div>
                     <div class="col-12 mt-5 text-center">
                         <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3 col-12">
-                            OPEN YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN A MINUTE
+                            OPEN YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN A MINUTE
                         </h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"
@@ -311,7 +313,7 @@
                                 Managing one's money and moving one's capital anywhere in the world, through normal
                                 banks, has become increasingly complex, with multiple checks or requests for
                                 documentation due to increasingly stringent controls by states, creditors and fiscal
-                                controls. In <b translate="no">FreedyBank</b>, thanks to the use of TracklessBank
+                                controls. In <b translate="no"> FreedyBank </b>, thanks to the use of TracklessBank
                                 technology, all these
                                 procedures can be eliminated, guaranteeing an anonymous service.
                             </p>
@@ -325,13 +327,14 @@
                             Managing one's money and moving one's capital anywhere in the world, through normal banks,
                             has become increasingly complex, with multiple checks or requests for documentation due to
                             increasingly stringent controls by states, creditors and fiscal controls. In <b
-                                translate="no">FreedyBank</b>, thanks to the use of TracklessBank technology, all these
+                                translate="no"> FreedyBank </b>, thanks to the use of TracklessBank technology, all
+                            these
                             procedures can be eliminated, guaranteeing an anonymous service.
                         </p>
                     </div>
                     <div class="col-12 mb-5">
                         <div class="col-12 d-flex flex-column justify-content-center">
-                            <h2 class="fw-bold mb-5 f-lexend text-start">Why <b translate="no">FreedyBank</b>?</h2>
+                            <h2 class="fw-bold mb-5 f-lexend text-start">Why <b translate="no"> FreedyBank </b>?</h2>
                             <div class="row">
                                 <div class="col-12 col-md-6 py-3">
                                     <div class="card p-3 shadow-sm" style="

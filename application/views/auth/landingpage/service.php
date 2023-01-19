@@ -20,7 +20,7 @@
             <div class="col-12 mb-5">
                 <div class="col-12 col-md-8 mb-5 text-center mx-auto">
                     <h2 class="title-top-header fw-bold">Keep your money anonymously and untouchable with <b
-                            translate="no">Freedy</b></h2>
+                            translate="no"> Freedy </b></h2>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 d-none d-md-grid m-auto">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-12 col-md-6 text-center my-auto">
                         <p>
-                            <b translate="no">Freedybank</b> wants to be your virtual safe, it allows you to custody
+                            <b translate="no"> Freedybank </b> wants to be your virtual safe, it allows you to custody
                             your funds anonymously
                             and
                             free of charge.
@@ -39,7 +39,8 @@
                             (KYC).
                         </p>
                         <p>
-                            No oneother than you will know of the existence of your <b translate="no">Freedy</b> account
+                            No oneother than you will know of the existence of your <b translate="no"> Freedy </b>
+                            account
                             or the movements made
                             on
                             it.
@@ -60,11 +61,12 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 text-center">
                                     <h4 class="text-blue-freedy black link-lp fw-bold f-lexend mb-5 col-12 mx-auto">
-                                        This makes <b translate="no">FreedyBank</b> the safest place in the world where
+                                        This makes <b translate="no"> FreedyBank </b> the safest place in the world
+                                        where
                                         to custody your money.
                                     </h4>
                                     <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3 col-12 mx-auto">
-                                        GET YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN A MINUTE
+                                        GET YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN A MINUTE
                                     </h4>
                                     <div class="text-center">
                                         <a href="<?= base_url(); ?>auth/signup"
@@ -90,7 +92,8 @@
             <div class="col-12 mb-5">
                 <div class="row">
                     <div class="col-12 col-md-6 text-center">
-                        <h2 class="title-top-header fw-bold mb-3 f-lexend">With <b translate="no">Freedy</b> your money
+                        <h2 class="title-top-header fw-bold mb-3 f-lexend">With <b translate="no"> Freedy </b> your
+                            money
                             travels with you.</h2>
                         <p>
                             Thanks to the best exchange rates you can find on the market, without fees, you can, from
@@ -144,7 +147,8 @@
                     </div>
                     <div class="col-12 col-md-8 text-center mx-auto  mb-3">
                         <p>
-                            Top up your <b translate="no">Freedy</b> wallet with a domestic transfer (the top up is not
+                            Top up your <b translate="no"> Freedy </b> wallet with a domestic transfer (the top up is
+                            not
                             a credit transfer and
                             therefore is not fiscally relevant as it is not comparable to a payment).
                         </p>
@@ -177,7 +181,7 @@
                                         How we make this service possible?
                                     </h2>
                                     <p>
-                                        <b translate="no">Freedy</b>, thanks to the use of the TracklessMoney gateway,
+                                        <b translate="no"> Freedy </b>, thanks to the use of the TracklessMoney gateway,
                                         which makes use of the
                                         huge capital and multiple offices of PBS online, in order to respect the laws in
                                         force on the matter, will not make an international transfer but will send a
@@ -225,8 +229,8 @@
                 </div>
             </div>
             <div class="col-12">
-                <h4 class="text-blue-freedy black link-lp fw-bold f-lexend text-center my-4">What <b
-                        translate="no">Freedy</b> offers to you :
+                <h4 class="text-blue-freedy black link-lp fw-bold f-lexend text-center my-4">What <b translate="no">
+                        Freedy </b> offers to you :
                 </h4>
                 <div class="accordion" id="accordionFreedy">
                     <div class="accordion-item freedy-accordion-item mb-5">
@@ -320,7 +324,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6 text-start my-auto content-freedy">
                             <p>
-                                The <b translate="no">Freedy</b> System is suitable for all daily payments, even for
+                                The <b translate="no"> Freedy </b> System is suitable for all daily payments, even for
                                 small amounts.
                             </p>
                             <div class="col-12 d-flex flex-column justify-content-center">
@@ -372,7 +376,8 @@
             </div>
             <div class="col-12 mb-5">
                 <div class="col-12 col-md-8 mb-5 text-center mx-auto">
-                    <h2 class="title-top-header fw-bold">Tell everyone about <b translate="no">Freedy bank</b> and earn
+                    <h2 class="title-top-header fw-bold">Tell everyone about <b translate="no"> Freedy bank </b> and
+                        earn
                         every time they use
                         it.</h2>
                 </div>
@@ -423,7 +428,7 @@
                                     </div>
                                     <div class="bot">
                                         <p>
-                                            Invite people/companies to register on <b translate="no">FreedyBank</b>
+                                            Invite people/companies to register on <b translate="no"> FreedyBank </b>
                                             using your link
                                         </p>
                                     </div>
@@ -477,7 +482,8 @@
                 </div>
                 <div class="col-12 my-5">
                     <div class="col-12 text-center content-freedy">
-                        <p>We at <b translate="no">Freedybank</b> strongly believe that a banking system must be a win -
+                        <p>We at <b translate="no"> Freedybank </b> strongly believe that a banking system must be a win
+                            -
                             win ecosystem, so
                             unlike traditional banks, we have created a system that rewards our users.</p>
                     </div>
@@ -488,7 +494,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 text-center">
                                     <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3 col-12 mx-auto">
-                                        GET YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN 15 SECONDS
+                                        GET YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN 15 SECONDS
                                         START YO EARNING NOW
                                     </h4>
                                     <div class="text-center">

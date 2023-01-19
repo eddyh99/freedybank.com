@@ -4,7 +4,7 @@
             <div class="col-12 col-md-7">
                 <div class="col-12 mt-auto">
                     <p>Easy and immediate to activate, without any request for corporate and personal documents.<br>
-                        <b translate="no">Freedy</b> offers to your company, without any monthly fee, unlike a POS and
+                        <b translate="no"> Freedy </b> offers to your company, without any monthly fee, unlike a POS and
                         regardless of
                         the
                         country
@@ -71,8 +71,8 @@
                     <span>1</span>
                     <div class="px-4">
                         <div class="event-date bg-line-circle"></div>
-                        <h4 class="text-blue-freedy black link-lp fw-bold f-lexend my-4">Open your <b
-                                translate="no">Freedy</b> account
+                        <h4 class="text-blue-freedy black link-lp fw-bold f-lexend my-4">Open your <b translate="no">
+                                Freedy </b> account
                         </h4>
                         <p class="text-mute">You just need to register with an email and password and your anonymous and
                             unlimited account is activated immediately
@@ -109,8 +109,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b
-                                translate="no">FREEDY</b> ACCOUNT IN LESS THAN
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b translate="no"> FREEDY
+                            </b> ACCOUNT IN LESS THAN
                             15 SECONDS</h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"

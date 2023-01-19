@@ -35,7 +35,7 @@
                         <h5 class="card-title">Step 2</h5>
                         <p class="card-text">Create textual and visual content on your
                             website / social media
-                            to advertise <b translate="no">FreedyBank</b></p>
+                            to advertise <b translate="no"> FreedyBank </b></p>
                     </div>
                 </div>
             </div>

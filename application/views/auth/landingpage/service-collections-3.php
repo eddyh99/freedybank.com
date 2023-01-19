@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-12">
                     <p>Get paid in person hassle-free. No need to invest in point of sale hardware, all you need is a
-                        smartphone and the <b translate="no">FreedyBank</b> app to start generating QR codes
+                        smartphone and the <b translate="no"> FreedyBank </b> app to start generating QR codes
                     </p>
                 </div>
             </div>
@@ -22,8 +22,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b
-                                translate="no">FREEDY</b> ACCOUNT IN LESS THAN
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b translate="no"> FREEDY
+                            </b> ACCOUNT IN LESS THAN
                             15 SECONDS</h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"

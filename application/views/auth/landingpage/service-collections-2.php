@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 col-md-8 my-auto">
                 <div class="col-12 mb-3">
-                    <h2 class="title-accordion-freedy lg fw-bold">Smart Payments with <b translate="no">Freedy bank
+                    <h2 class="title-accordion-freedy lg fw-bold">Smart Payments with <b translate="no"> Freedy bank
                         </b></h2>
                 </div>
                 <div class="col-12">
@@ -25,8 +25,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b
-                                translate="no">FREEDY</b> ACCOUNT IN LESS THAN
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b translate="no"> FREEDY
+                            </b> ACCOUNT IN LESS THAN
                             15 SECONDS</h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"

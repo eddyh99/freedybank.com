@@ -13,7 +13,8 @@
                     <p>This is the best solution for any size business to accept POS payments from clients, no matter
                         their preferred way to pay: NFC or Chip & PIN, Card or mobile phone and QR code</p>
                     <p>
-                        You will receive your funds in your anonymous <b translate="no">FreedyBank</b> account, in this
+                        You will receive your funds in your anonymous <b translate="no"> FreedyBank </b> account, in
+                        this
                         way they will be
                         untraceable, not taxable and untouchable by anyone.
                     </p>
@@ -26,8 +27,8 @@
             <div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b
-                                translate="no">FREEDY</b> ACCOUNT IN LESS THAN
+                        <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">OPEN YOUR <b translate="no"> FREEDY
+                            </b> ACCOUNT IN LESS THAN
                             A MINUTE </h4>
                         <div class="text-center">
                             <a href="<?= base_url(); ?>auth/signup"

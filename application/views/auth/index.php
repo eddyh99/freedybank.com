@@ -1,7 +1,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-        <a href="<?= base_url(); ?>auth" class="logo d-flex align-items-center">
+        <a class="logo d-flex align-items-center">
             <img src="<?= base_url() ?>assets/img/logo-freedy-text.png" alt="">
         </a>
 
@@ -40,7 +40,7 @@
                 class="col-12 col-lg-6 col-xxl-8 d-flex flex-column justify-content-center slider-freedy text-lg-start text-center">
                 <h1 data-aos="fade-up" class="f-lexend">Anonymous Bank System</h1>
                 <p data-aos="fade-up" class="f-lexend mt-3" data-aos-delay="400">
-                    Open a <span translate="no">Freedy</span> account and start <b>receiving - sending - paying -
+                    Open a <span translate="no"> Freedy </span> account and start <b>receiving - sending - paying -
                         converting &
                         earning</b>
                     without limits from
@@ -51,7 +51,7 @@
                     together, making the management of our money simple, safe, instant and anonymous.
                 </p>
                 <h2 data-aos="fade-up" data-aos-delay="400" class="f-lexend">
-                    GET YOUR <b translate="no">FREEDY</b> ACCOUNT IN LESS THAN A MINUTE
+                    GET YOUR <b translate="no"> FREEDY </b> ACCOUNT IN LESS THAN A MINUTE
                 </h2>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-center text-lg-start">
@@ -117,7 +117,7 @@
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
-                        <h3 class="f-lexend"><b translate="no">Freedy</b> is FREE</h3>
+                        <h3 class="f-lexend"><b translate="no"> Freedy </b> is FREE</h3>
                         <span class="f-lexend">Open a bank account is free of charge no monthly or yearly
                             fees</span>
                     </div>
@@ -155,7 +155,8 @@
                         <h2 class="f-lexend">The easiest way in the world
                             to open a bank account </h2>
                         <p class="f-lexend">
-                            <span class="text-blue-freedy"><b translate="no">Freedy</b> Digital Bank</span> will not ask
+                            <span class="text-blue-freedy"><b translate="no"> Freedy </b> Digital Bank</span> will not
+                            ask
                             you for any
                             personal or company
                             documents or proof of residence (No
@@ -180,7 +181,7 @@
                                 <p class="f-lexend">
                                     Transparency is the most important ingredient since it create trust.
                                     No surprises, only fair and honest fees and no hidden costs. Opening a
-                                    <b translate="no">FreedyBank</b> account is free of
+                                    <b translate="no"> FreedyBank </b> account is free of
                                     charge, with no monthly and annual management costs, you will only pay for the
                                     services used.
                                 </p>
@@ -308,7 +309,7 @@
                             matter their
                             preferred way to pay: NFC or Chip & PIN, Card or mobile phone and QR code.
                             <br><br>
-                            You will receive your funds in your anonymous <b translate="no">FreedyBank</b> account, in
+                            You will receive your funds in your anonymous <b translate="no"> FreedyBank </b> account, in
                             this way they will
                             be untraceable,
                             not taxable and unattachable by anyone.
@@ -362,7 +363,7 @@
             <header class="section-header">
                 <p class="f-lexend">
                     <img src="<?= base_url(); ?>assets/img/logo.png" alt="" class="logo-features">
-                    <b translate="no">Freedy</b> Features
+                    <b translate="no"> Freedy </b> Features
                 </p>
             </header>
             <div class="row d-flex justify-content-center">
@@ -405,7 +406,8 @@
                         <div data-aos="fade-up" data-aos-delay="600">
                             <div class="row justify-content-center">
                                 <div class="col-lg-12 text-center">
-                                    <h4 class="text-blue-freedy fw-bold f-lexend">GET YOUR <b translate="no">FREEDY</b>
+                                    <h4 class="text-blue-freedy fw-bold f-lexend">GET YOUR <b translate="no"> FREEDY
+                                        </b>
                                         ACCOUNT IN LESS
                                         THAN A MINUTE </h4>
                                     <div class="text-center">
@@ -433,7 +435,7 @@
             <div class="row gy-4">
                 <div
                     class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start my-auto">
-                    <a href="<?= base_url() ?>" class="logo-footer d-flex align-items-center w-100">
+                    <a class="logo-footer d-flex align-items-center w-100">
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
                     <div class="d-flex flex-row w-100">

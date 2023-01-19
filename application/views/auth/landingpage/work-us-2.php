@@ -51,7 +51,8 @@
                     <div class="card-body">
                         <img src="<?= base_url() ?>assets/img/icon-1.png" alt="" class="icon mb-3">
                         <h5 class="card-title fw-bold">Earn big commission everyday</h5>
-                        <p class="card-text">Invite companies and people to use a <b translate="no">Freedy</b> account,
+                        <p class="card-text">Invite companies and people to use a <b translate="no"> Freedy </b>
+                            account,
                             for every transactions they make, you will receive an instant commission.
                             Your potential earning has no limits, the more people you invite and the more commissions
                             you will receive.
@@ -74,7 +75,7 @@
                         <img src="<?= base_url() ?>assets/img/icon-3.png" alt="" class="icon mb-3">
                         <h5 class="card-title fw-bold">Work with company that thinks about the future</h5>
                         <p class="card-text">The fintech sector is the fastest growing field in the world.
-                            Working with <b translate="no">FreedyBank</b>, you will be partner in a current work and
+                            Working with <b translate="no"> FreedyBank </b>, you will be partner in a current work and
                             future work
                         </p>
                     </div>
@@ -109,7 +110,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
                         <h4 class="text-blue-freedy link-lp fw-bold f-lexend mb-3">Interested in becoming a <b
-                                translate="no">Freedy Bank</b> sales consultant ?
+                                translate="no"> Freedy Bank </b> sales consultant ?
                             <div class="text-center">
                                 <a href="<?= base_url(); ?>auth/signup"
                                     class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">
