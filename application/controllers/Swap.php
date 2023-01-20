@@ -97,7 +97,7 @@ class Swap extends CI_Controller
         $target = $this->security->xss_clean($input->post("toswap"));
         $data = array(
             "target"    => $target,
-            "amount"    => $this->security->xss_clean(number_format($input->post("amount"), 2)),
+            "amount"    => $this->security->xss_clean($input->post("amount")),
             "quoteid"   => $this->security->xss_clean($input->post("quoteid")),
             "amountget" => $this->security->xss_clean($input->post("amountget")),
             "symbol"    => apitrackless(URLAPI . "/v1/member/currency/getByCurrency?currency=" . $target . "&userid=" . $_SESSION["user_id"])->message->symbol

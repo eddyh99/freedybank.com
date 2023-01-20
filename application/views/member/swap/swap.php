@@ -47,6 +47,13 @@
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
                             <form method="POST" id="swapconfirm" action="<?= base_url() ?>swap/confirm"
                                 class="swap text-center" onsubmit="return validate()">
+                                <?php if (@isset($_SESSION["failed"])) { ?>
+                                <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                    <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                                <?php } ?>
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">

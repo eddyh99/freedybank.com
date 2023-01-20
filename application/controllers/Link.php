@@ -242,7 +242,7 @@ class Link extends CI_Controller
         $email   = $this->security->xss_clean($input->post("email"));
         $message   = $this->security->xss_clean($input->post("message"));
 
-        $result = $this->send_email($email, $message);
+        $result = send_email($email, $message, $this->phpmailer_lib->load());
         if ($result) {
             $this->session->set_flashdata("success", "Message successfully sent!");
             redirect('link/send_message');
@@ -270,31 +270,5 @@ class Link extends CI_Controller
         );
 
         $this->load->view('tamplate/wrapper', $data);
-    }
-
-    public function send_email($email, $message)
-    {
-        $mail = $this->phpmailer_lib->load();
-
-        $mail->isSMTP();
-        $mail->Host         = 'mail.tracklessbank.com';
-        $mail->SMTPAuth     = true;
-        $mail->Username     = 'no-reply@freedybank.com';
-        $mail->Password     = '_v2!~h;x4o$G';
-        $mail->SMTPAutoTLS  = false;
-        $mail->SMTPSecure   = false;
-        $mail->Port         = 587;
-
-        $mail->setFrom('no-reply@freedybank.com', 'Freedy Bank Notification');
-        $mail->addReplyTo($email);
-        $mail->isHTML(true);
-
-        $mail->ClearAllRecipients();
-
-        $mail->Subject = 'Ask about Freedy';
-        $mail->AddAddress('eeinformationservice@gmail.com');
-
-        $mail->msgHTML($message);
-        $mail->send();
     }
 }
