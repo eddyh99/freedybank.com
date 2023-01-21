@@ -16,7 +16,7 @@ class Swap extends CI_Controller
         $mdata = array(
             "userid" => $_SESSION["user_id"]
         );
-        $url = URLAPI . "/v1/admin/currency/getAllCurrency";
+        $url = URLAPI . "/v1/trackless/currency/getAllCurrency";
         $body["currency"]   = apitrackless($url, json_encode($mdata))->message;
 
         $data = array(
@@ -32,6 +32,11 @@ class Swap extends CI_Controller
 
     public function swapcalculate()
     {
+        $amount        = $this->security->xss_clean($this->input->post("amount"));
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
 
@@ -85,6 +90,11 @@ class Swap extends CI_Controller
 
     public function confirm()
     {
+        $amount        = $this->security->xss_clean($this->input->post("amount"));
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');
@@ -99,10 +109,10 @@ class Swap extends CI_Controller
         $target = $this->security->xss_clean($input->post("toswap"));
         $data = array(
             "target"    => $target,
-            "amount"    => $this->security->xss_clean(number_format($input->post("amount"), 2)),
+            "amount"    => $this->security->xss_clean($input->post("amount")),
             "quoteid"   => $this->security->xss_clean($input->post("quoteid")),
             "amountget" => $this->security->xss_clean($input->post("amountget")),
-            "symbol"    => apitrackless(URLAPI . "/v1/admin/currency/getsymbol?currency=" . $target)->message
+            "symbol"    => apitrackless(URLAPI . "/v1/trackless/currency/getsymbol?currency=" . $target)->message
         );
 
 

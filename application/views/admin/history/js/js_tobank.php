@@ -45,22 +45,28 @@ var tblhistory =
             },
         },
         "aoColumnDefs": [{
-    	    "aTargets" :[4],
-    	    "mRender" : function (data, type, row) {
-                return parseFloat(row.fee)+parseFloat(row.referral)
-    	    }
-    	}],        
+            "aTargets": [4],
+            "mRender": function(data, type, row) {
+                return "<?= $_SESSION['symbol']?> " + (parseFloat(row.fee) + parseFloat(row.referral))
+                    .toLocaleString('en', {
+                        minimumFractionDigits: 2
+                    })
+            }
+        }],
         "columns": [{
                 "data": "ket"
             },
             {
-                "data": "cost"
+                "data": "cost",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
-                "data": "referral"
+                "data": "referral",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
-                "data": "fee"
+                "data": "fee",
+                render: $.fn.dataTable.render.number(',', '.', 2, '<?= $_SESSION['symbol']?> ')
             },
             {
                 "data": "fee"

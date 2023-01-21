@@ -40,12 +40,17 @@ gtag('config', 'G-8TYM4CBBPQ');
 
 
 function input(ele) {
+    var amount = parseFloat(ele.value);
     $(ele).change(function() {
-        var amount = ele.value;
         if (isNaN(amount) == isNaN()) {
             $(this).val(parseFloat(0).toFixed(2));
         } else {
-            $(this).val(parseFloat($(this).val()).toFixed(2));
+            var news = amount.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            $(this).val(news);
         }
     });
 }

@@ -51,11 +51,11 @@
                                     <?php echo (empty($ucode)? "" : "readonly")?>>
                                 <input type="text" class="form-control my-4" name="amount" id="amount"
                                     placeholder="Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                    oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
                                     value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
                                 <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
                                     placeholder="Confirm Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);"
+                                    oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
                                     value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
 
                                 <div class="row">

@@ -16,28 +16,29 @@
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Recipients uniqeu code</span>
+                                    <span>Recipients unique code</span>
                                     <span><?= $data["ucode"] ?></span>
                                     <input type="text" class="form-control mb-4" name="ucode" id="ucode"
                                         placeholder="Unique code" value="<?= $data["ucode"] ?>" hidden>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Amount</span>
-                                    <span><?= number_format($data["amount"], 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?> <?= number_format($data["amount"], 2) ?></span>
                                     <input type="text" class="form-control mb-4" name="amount" id="amount"
                                         placeholder="Amount" value="<?= $data["amount"] ?>" hidden>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Transaction fee</span>
-                                    <span><?= number_format($data["fee"], 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?> <?= number_format($data["fee"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Total Deducted</span>
-                                    <span><?= number_format($data["deduct"], 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?> <?= number_format($data["deduct"], 2) ?></span>
                                 </div>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>New Balance</span>
-                                    <span><?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["deduct"], 2) ?></span>
+                                    <span><?= $_SESSION['symbol'] ?>
+                                        <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $data["deduct"], 2) ?></span>
                                 </div>
 
                                 <div class="attention-box p-3 text-center">
@@ -52,7 +53,7 @@
                                     <a href="<?= base_url() ?>wallet"
                                         class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                     <button class="btn btn-receive-bank px-5 py-2" type="submit"
-                                        id="btnconfirm">ConfirmK</button>
+                                        id="btnconfirm">Confirm</button>
                                 </div>
                             </form>
                         </div>

@@ -17,7 +17,7 @@
                                 <a href="<?=base_url()?>admin/mwallet?cur=USD">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">USD</span>
-                                        <span>&dollar; <?=$dt->amount?></span>
+                                        <span>&dollar; <?=number_format($dt->amount,2)?></span>
                                     </div>
                                 </a>
                             </div>
@@ -31,7 +31,7 @@
                                 <a href="<?=base_url()?>admin/mwallet?cur=EUR">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">EUR</span>
-                                        <span>&euro; <?=$dt->amount?></span>
+                                        <span>&euro; <?=number_format($dt->amount,2)?></span>
                                     </div>
                                 </a>
                             </div>
@@ -41,14 +41,14 @@
                                 foreach ($currency as $dt){
                                     if (($dt->currency!='USD') && ($dt->currency!='EUR')){
                             ?>
-                                <div class="my-3">
-                                    <a href="<?=base_url()?>admin/mwallet?cur=<?=$dt->currency?>">
-                                        <div class="box-list fw-bold d-flex flex-row py-4 px-4">
-                                            <span class="me-auto"><?=$dt->currency?></span>
-                                            <span><?=$dt->symbol?> <?=$dt->amount?></span>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="my-3">
+                                <a href="<?=base_url()?>admin/mwallet?cur=<?=$dt->currency?>">
+                                    <div class="box-list fw-bold d-flex flex-row py-4 px-4">
+                                        <span class="me-auto"><?=$dt->currency?></span>
+                                        <span><?=$dt->symbol?> <?= number_format($dt->amount,2)?></span>
+                                    </div>
+                                </a>
+                            </div>
                             <?php 
                                     }
                                   }

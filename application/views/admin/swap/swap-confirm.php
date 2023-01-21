@@ -15,13 +15,14 @@
                         <input type="hidden" name="toswap" value="<?= $data["target"] ?>">
                         <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                             <span>Amount</span>
-                            <span><?= $data["amount"] ?></span>
+                            <span><?= $_SESSION['symbol'] ?> <?= number_format($data["amount"],2) ?></span>
                             <input type="text" class="form-control mb-4" name="amount" id="amount" placeholder="Amount"
                                 value="<?= $data["amount"] ?>" hidden>
                         </div>
                         <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                             <span>New Balance</span>
-                            <span><?= $_SESSION['balance'] - $data["amount"] ?></span>
+                            <span><?= $_SESSION['symbol'] ?>
+                                <?=  number_format((balanceadmin($_SESSION["currency"]) - $data["amount"]),2) ?></span>
                         </div>
                         <div class="row">
                             <div class="d-flex flex-row mt-4">

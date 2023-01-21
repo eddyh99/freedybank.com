@@ -16,11 +16,14 @@ foreach ($history as $dt) { ?>
         <?php if (($dt->ket == "Topup") || ($dt->ket == "topup") || ($dt->ket == "Receive") || ($dt->ket == "Referral")) { ?>
         <font color="green"><?= $_SESSION["symbol"] ?> <?= number_format($dt->amount, 2) ?></font>
         <?php }elseif (($dt->ket == "Swap Receive")) { ?>
-        <font color="green"><?= $_SESSION["symbol"] ?> <?= number_format($dt->target_cur, 2) ?></font>
+        <font color="green"><?= $_SESSION["symbol"] ?> <?= number_format($dt->amount, 2) ?></font>
         <?php } else { ?>
         <font color="red"><?= $_SESSION["symbol"] ?> <?= number_format($dt->amount, 2) ?></font>
         <?php } ?>
+
+        <?php if (($dt->ket != "Swap Receive") && ($dt->ket != "Swap")) { ?>
         <small style="color:red;">Fee <?= number_format($dt->fee, 2) ?></small>
+        <?php } ?>
     </div>
 </div>
 <?php } ?>

@@ -30,6 +30,12 @@ class Swap extends CI_Controller
 
     public function swapcalculate()
     {
+        $amount        = $this->security->xss_clean($this->input->post("amount"));
+        
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
 
@@ -83,6 +89,12 @@ class Swap extends CI_Controller
     }
     public function confirm()
     {
+        $amount        = $this->security->xss_clean($this->input->post("amount"));
+        
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');

@@ -94,6 +94,16 @@ class Wallet extends CI_Controller
 
     public function send_confirm()
     {
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+
+        $a = $this->input->post("confirm_amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["confirm_amount"]=$b;
+
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('confirm_ucode', 'Confirm Unique Code', 'trim|required|matches[ucode]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
@@ -113,7 +123,7 @@ class Wallet extends CI_Controller
             "userid"    => $_SESSION["user_id"],
             "currency"  => $_SESSION["currency"],
             "ucode"     => $ucode,
-            "amount"    => number_format($amount, 2)
+            "amount"    => $amount
         );
 
         $result = apitrackless(URLAPI . "/v1/member/wallet/getSummary", json_encode($mdata));
@@ -130,7 +140,7 @@ class Wallet extends CI_Controller
             "ucode"     => $ucode,
             "fee"     => $result->message->fee,
             "deduct"     => $result->message->deduct,
-            "amount"    => number_format($amount, 2)
+            "amount"    => $amount
         );
 
         $data['title'] = NAMETITLE . " - Wallet to Wallet";
@@ -144,6 +154,16 @@ class Wallet extends CI_Controller
 
     public function send_notif()
     {
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+
+        $a = $this->input->post("confirm_amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["confirm_amount"]=$b;
+        
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|decimal|greater_than[0]');
 
