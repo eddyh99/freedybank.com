@@ -35,10 +35,6 @@ function balanceadmin($currency)
     return $balance;
 }
 
-function rounddown($balance){
-    return floor($balance*100)/100;
-}
-
 function max_sendtowallet($balance,$currency){
     $mfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $currency);
     $mcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $currency);
@@ -69,15 +65,15 @@ function send_email($email, $message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.tracklessbank.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = 'no-reply@freedybank.com';
-    $mail->Password     = '_v2!~h;x4o$G';
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
     $mail->SMTPAutoTLS  = false;
     $mail->SMTPSecure   = false;
     $mail->Port         = 587;
 
-    $mail->setFrom('no-reply@freedybank.com', 'Freedy Bank Notification');
+    $mail->setFrom(USERNAME_EMAIL, 'Freedy Bank Notification');
     $mail->addReplyTo($email);
     $mail->isHTML(true);
 
@@ -96,15 +92,15 @@ function sendmail($email, $subject, $message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.freedybank.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = 'no-reply@freedybank.com';
-    $mail->Password     = 'GIvn[f58&YMb';
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
     $mail->SMTPAutoTLS	= false;
     $mail->SMTPSecure	= false;
     $mail->Port			= 587;
 
-    $mail->setFrom('no-reply@freedybank.com', 'FreedyBank');
+    $mail->setFrom(USERNAME_EMAIL, 'FreedyBank');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();
@@ -121,15 +117,15 @@ function send_email_admin($email, $subject, $message, $phpmailer)
     $mail = $phpmailer;
 
     $mail->isSMTP();
-    $mail->Host         = 'mail.tracklessbank.com';
+    $mail->Host         = HOST_EMAIL;
     $mail->SMTPAuth     = true;
-    $mail->Username     = 'eeinformationservice@gmail.com';
-    $mail->Password     = 'NaBbrvu[*Tn^';
-    $mail->SMTPAutoTLS    = false;
-    $mail->SMTPSecure    = false;
-    $mail->Port            = 587;
+    $mail->Username     = USERNAME_EMAIL;
+    $mail->Password     = PASS_EMAIL;
+    $mail->SMTPAutoTLS  = false;
+    $mail->SMTPSecure   = false;
+    $mail->Port         = 587;
 
-    $mail->setFrom('eeinformationservice@gmail.com', 'FreedyBank');
+    $mail->setFrom(USERNAME_EMAIL, 'FreedyBank');
     $mail->isHTML(true);
 
     $mail->ClearAllRecipients();

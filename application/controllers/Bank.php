@@ -47,7 +47,7 @@ class Bank extends CI_Controller
             "VND" => "VN",
             "ZAR" => "ZA"
         );
-        if ($currencyCode[$_SESSION['currency']] == '') {
+        if (@$currencyCode[$_SESSION['currency']] == '') {
             $data["codecur"] = '';
         } else {
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
@@ -56,7 +56,7 @@ class Bank extends CI_Controller
 
         $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "member/tobank/currency/js/js_form_currency";
-        $data['currencycode'] = $currencyCode[$_SESSION['currency']];
+        $data['currencycode'] = @$currencyCode[$_SESSION['currency']];
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -66,8 +66,39 @@ class Bank extends CI_Controller
 
     public function inter()
     {
+        $currencyCode = array(
+            "BDT" => "BD",
+            "CZK" => "CZ",
+            "CLP" => "CL",
+            "EGP" => "EG",
+            "GHS" => "GH",
+            "HKD" => "HK",
+            "IDR" => "ID",
+            "ILS" => "IL",
+            "INR" => "IN",
+            "JPY" => "JP",
+            "KES" => "KE",
+            "LKR" => "LK",
+            "MAD" => "MA",
+            "NGN" => "NG",
+            "NPR" => "NP",
+            "PEN" => "PE",
+            "PHP" => "PH",
+            "RUB" => "RU",
+            "SGD" => "SG",
+            "THB" => "TH",
+            "VND" => "VN",
+            "ZAR" => "ZA"
+        );
+        if (@$currencyCode[$_SESSION['currency']] == '') {
+            $data["codecur"] = '';
+        } else {
+            $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
+            $data["codecur"]   = apitrackless($url)->message->values;
+        }
         $data['title'] = NAMETITLE . " - Wallet to Bank";
         $footer['extra'] = "admin/js/js_btn_disabled";
+        $data['currencycode'] = @$currencyCode[$_SESSION['currency']];
 
         $this->load->view('tamplate/header', $data);
         $this->load->view('tamplate/navbar-bottom', $data);
@@ -106,6 +137,12 @@ class Bank extends CI_Controller
 
     public function bankconfirm()
     {
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $input    = $this->input;
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('causal', 'Causal', 'trim|required');

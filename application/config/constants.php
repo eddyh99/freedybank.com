@@ -107,3 +107,10 @@ local server
 define('LINKQRCODE', "/freedybank.com/wallet/send");
 
 define('NAMETITLE', "Freedybank");
+
+define('BANK_ID', "2");
+
+/*email config*/
+define('HOST_EMAIL', "mail.tracklessbank.com");
+define('USERNAME_EMAIL', "no-reply@tracklessbank.com");
+define('PASS_EMAIL', 'DLgV4o?L1B]m');

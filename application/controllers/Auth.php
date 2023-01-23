@@ -123,7 +123,7 @@ class Auth extends CI_Controller
 			click this <a href='" . base_url("auth/activate?token=") . $result->message->token . "'>link</a> to activate your account<br><br>
 			";
 
-			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $result->message->ucode);
+			$urlqr = base_url() . 'wallet/send?' . base64_encode('cur=' . @$_SESSION["currency"] . '&ucode=' . $result->message->ucode);
 			sendmail($email, $subject, $message, $this->phpmailer_lib->load());
 			$this->qrcodeuser($result->message->ucode);
 			$this->qrcodereceive($urlqr, $result->message->ucode);

@@ -11,6 +11,13 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4">
+                            <?php if (@isset($_SESSION["failed"])) { ?>
+                            <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <?php } ?>
                             <form method="POST" action="<?= base_url() ?>wallet/request_qrcode" class="text-center"
                                 id="form_submit" onsubmit="return validate()">
                                 <input type="hidden" id="token"

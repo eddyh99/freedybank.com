@@ -94,7 +94,7 @@ class Mwallet extends CI_Controller
             "VND" => "VN",
             "ZAR" => "ZA"
         );
-        if ($currencyCode[$_SESSION['currency']] == '') {
+        if (@$currencyCode[$_SESSION['currency']] == '') {
             $codecur = '';
         } else {
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
@@ -106,7 +106,7 @@ class Mwallet extends CI_Controller
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-local",
             "codecur"   => $codecur,
-            'currencycode' => $currencyCode[$_SESSION['currency']],
+            'currencycode' => @$currencyCode[$_SESSION['currency']],
         );
 
         $this->load->view('admin_template/wrapper2', $data);
@@ -138,7 +138,7 @@ class Mwallet extends CI_Controller
             "VND" => "VN",
             "ZAR" => "ZA"
         );
-        if ($currencyCode[$_SESSION['currency']] == '') {
+        if (@$currencyCode[$_SESSION['currency']] == '') {
             $codecur = '';
         } else {
             $url = URLAPI . "/v1/member/wallet/getBankCode?country=" . $currencyCode[$_SESSION['currency']];
@@ -149,7 +149,7 @@ class Mwallet extends CI_Controller
             "extra"     => "admin/mwallet/currency/js/js_form_currency",
             "content"   => "admin/mwallet/withdraw-inter",
             "codecur"   => $codecur,
-            'currencycode' => $currencyCode[$_SESSION['currency']],
+            'currencycode' => @$currencyCode[$_SESSION['currency']],
         );
 
         $this->load->view('admin_template/wrapper2', $data);
@@ -157,6 +157,12 @@ class Mwallet extends CI_Controller
 
     public function wdconfirm()
     {
+        $amount = $this->security->xss_clean($this->input->post("amount"));
+
+        $a = $this->input->post("amount");
+        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
+        $_POST["amount"]=$b;
+        
         $input    = $this->input;
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('causal', 'Causal', 'trim|required');

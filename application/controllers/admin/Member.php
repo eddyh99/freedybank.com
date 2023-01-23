@@ -26,7 +26,7 @@ class Member extends CI_Controller
     public function get_all()
     {
         $mdata = array(
-            "bank_id"  => 2,
+            "bank_id"  => BANK_ID,
             "timezone"  => $_SESSION["time_location"]
         );
 
@@ -131,7 +131,7 @@ class Member extends CI_Controller
     public function sendmail()
     {
         $mdata = array(
-            "bank_id"  => 2,
+            "bank_id"  => BANK_ID,
             "timezone"  => $_SESSION["time_location"]
         );
         $result = apitrackless(URLAPI . "/v1/trackless/user/getAll", json_encode($mdata));

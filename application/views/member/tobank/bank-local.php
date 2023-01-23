@@ -33,12 +33,28 @@
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" name="transfer_type" value="circuit">
+                                <input type="hidden" name="url" value="local">
                                 <input type="hidden" name="currencycode" id="currencycode" value="<?= $currencycode ?>">
                                 <div class="tab-pane box-tab-bank" id="us">
+
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="amount" placeholder="Amount"
+                                            oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="accountHolderName"
+                                            placeholder="Recipient Name">
+                                    </div>
+
                                     <?php
                                         $data['type'] = "local";
                                         $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data);
                                         ?>
+
+                                    <div class="d-flex flex-row align-items-center my-3">
+                                        <input class="form-control me-2" type="text" name="causal" placeholder="Causal">
+                                    </div>
+
                                     <div class="col-12 d-flex flex-row mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
