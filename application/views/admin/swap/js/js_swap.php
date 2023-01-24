@@ -20,7 +20,7 @@ function calculate() {
                 var data = JSON.parse(xhr.responseText);
                 $("#amountget").val("0.00");
                 $("#token").val(data.token);
-                alert(data.message);
+                console.log(data.message);
             }
         });
     }

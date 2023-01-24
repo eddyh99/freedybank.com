@@ -203,10 +203,10 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function check_ucode()
+    public function check_email()
     {
-        $ucode = $_GET['ucode'];
-        $url = URLAPI . "/v1/auth/getmember_byucode?ucode=" . $ucode;
+        $email = $_GET['email'];
+        $url = URLAPI . "/v1/auth/getmember_byemail?email=" . $email;
         $result   = apitrackless($url);
 
         $mdata = array();
@@ -227,7 +227,6 @@ class Link extends CI_Controller
 
     public function mailproses()
     {
-        $this->form_validation->set_rules('ucode', 'Ucode', 'trim|required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('message', 'Message', 'trim|required');
 
@@ -237,8 +236,7 @@ class Link extends CI_Controller
             return;
         }
 
-        $input        = $this->input;
-        $ucode   = $this->security->xss_clean($input->post("ucode"));
+        $input  = $this->input;
         $email   = $this->security->xss_clean($input->post("email"));
         $message   = $this->security->xss_clean($input->post("message"));
 
