@@ -44,21 +44,16 @@ function readfee() {
                 (readcurrency == "HUF") ||
                 (readcurrency == "SGD") ||
                 (readcurrency == "TRY") ||
-                (readcurrency == "GBP") ||
                 (readcurrency == "RON")) {
                 $("#walletbank_outside_fxd_div").hide()
                 $("#walletbank_outside_pct_div").hide()
-                if ((readcurrency == "GBP")) {
-                    $("#topup_outside_fxd_div").show()
-                    $("#topup_outside_pct_div").show()
-                } else {
-                    $("#topup_outside_fxd_div").hide()
-                    $("#topup_outside_pct_div").hide()
-                }
+                $("#topup_outside_fxd_div").hide()
+                $("#topup_outside_pct_div").hide()
                 $("#topup_circuit_fxd_div").show()
                 $("#topup_circuit_pct_div").show()
             }
             if ((readcurrency == "USD") ||
+                (readcurrency == "GBP") ||
                 (readcurrency == "EUR")) {
                 $("#walletbank_outside_fxd_div").show()
                 $("#walletbank_outside_pct_div").show()

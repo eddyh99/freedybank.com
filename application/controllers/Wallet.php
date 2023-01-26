@@ -139,7 +139,7 @@ class Wallet extends CI_Controller
             "currency"  => $_SESSION["currency"],
             "ucode"     => $ucode,
             "fee"     => $result->message->fee,
-            "deduct"     => $result->message->deduct,
+            "deduct"     => preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct),
             "amount"    => $amount
         );
 

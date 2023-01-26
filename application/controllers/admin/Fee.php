@@ -151,6 +151,47 @@ class Fee extends CI_Controller
 	{
 		$input		= $this->input;
 		$currency   = $this->security->xss_clean($input->post("currency"));
+		
+		$new_topup_circuit_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("topup_circuit_fxd"));
+        $_POST["topup_circuit_fxd"]=$new_topup_circuit_fxd;
+		$new_topup_circuit_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("topup_circuit_pct"));
+        $_POST["topup_circuit_pct"]=$new_topup_circuit_pct;
+		$new_topup_outside_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("topup_outside_fxd"));
+        $_POST["topup_outside_fxd"]=$new_topup_outside_fxd;
+		$new_topup_outside_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("topup_outside_pct"));
+        $_POST["topup_outside_pct"]=$new_topup_outside_pct;
+		$new_wallet_sender_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("wallet_sender_fxd"));
+        $_POST["wallet_sender_fxd"]=$new_wallet_sender_fxd;
+		$new_wallet_sender_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("wallet_sender_pct"));
+        $_POST["wallet_sender_pct"]=$new_wallet_sender_pct;
+		$new_wallet_receiver_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("wallet_receiver_fxd"));
+        $_POST["wallet_receiver_fxd"]=$new_wallet_receiver_fxd;
+		$new_wallet_receiver_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("wallet_receiver_pct"));
+        $_POST["wallet_receiver_pct"]=$new_wallet_receiver_pct;
+		$new_walletbank_circuit_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_circuit_fxd"));
+        $_POST["walletbank_circuit_fxd"]=$new_walletbank_circuit_fxd;
+		$new_walletbank_circuit_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_circuit_pct"));
+        $_POST["walletbank_circuit_pct"]=$new_walletbank_circuit_pct;
+		$new_walletbank_outside_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_outside_fxd"));
+        $_POST["walletbank_outside_fxd"]=$new_walletbank_outside_fxd;
+		$new_walletbank_outside_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_outside_pct"));
+        $_POST["walletbank_outside_pct"]=$new_walletbank_outside_pct;
+		$new_referral_send_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_send_fxd"));
+        $_POST["referral_send_fxd"]=$new_referral_send_fxd;
+		$new_referral_send_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_send_pct"));
+        $_POST["referral_send_pct"]=$new_referral_send_pct;
+		$new_referral_receive_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_receive_fxd"));
+        $_POST["referral_receive_fxd"]=$new_referral_receive_fxd;
+		$new_referral_receive_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_receive_pct"));
+        $_POST["referral_receive_pct"]=$new_referral_receive_pct;
+		$new_referral_topup_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_topup_fxd"));
+        $_POST["referral_topup_fxd"]=$new_referral_topup_fxd;
+		$new_referral_topup_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_topup_pct"));
+        $_POST["referral_topup_pct"]=$new_referral_topup_pct;
+		$new_referral_bank_fxd = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_bank_fxd"));
+        $_POST["referral_bank_fxd"]=$new_referral_bank_fxd;
+		$new_referral_bank_pct = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_bank_pct"));
+        $_POST["referral_bank_pct"]=$new_referral_bank_pct;
 
 		if (($currency == "USD") ||
 			($currency == "EUR") ||
@@ -169,6 +210,7 @@ class Fee extends CI_Controller
 			($currency == "CAD") ||
 			($currency == "HUF") ||
 			($currency == "SGD") ||
+			($currency == "RON") ||
 			($currency == "TRY")
 		) {
 			$this->form_validation->set_rules('topup_circuit_fxd', 'Topup Circuit (Fixed)', 'trim|required|greater_than_equal_to[0]');

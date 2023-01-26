@@ -457,16 +457,16 @@ class Mwallet extends CI_Controller
             "transfer_type"     => $this->security->xss_clean($input->post("transfer_type")),
         );
 
-        $result = apitrackless(URLAPI . "/v1/member/wallet/bankSummary", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/admin/withdraw/withdrawSummary", json_encode($mdata));
 
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", "Insuffisient Fund");
             redirect(base_url() . "admin/mwallet/withdraw");
         }
-
+        
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $temp["fee"]               = $result->message->fee;
-        $temp["deduct"]            = $result->message->deduct;
+        $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
         $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName"));
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
         $temp["causal"]            = $this->security->xss_clean($input->post("causal"));
@@ -1898,7 +1898,7 @@ class Mwallet extends CI_Controller
             );
         }
 
-        $result = apitrackless(URLAPI . "/v1/member/wallet/bankTransfer", json_encode($mdata));
+        $result = apitrackless(URLAPI . "/v1/admin/withdraw/withdrawTransfer", json_encode($mdata));
 
         if (@$result->code != 200) {
             if (@$result->code == 5055) {

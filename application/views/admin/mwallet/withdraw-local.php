@@ -39,7 +39,7 @@
                         </div>
 
                         <?php
-                        $data['type'] = "wdlocal";
+                        $data['type'] = "local";
                         $this->load->view('admin/mwallet/currency/' . @$_SESSION['currency'], $data);
                         ?>
 

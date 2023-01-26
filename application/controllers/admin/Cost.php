@@ -106,6 +106,21 @@ class Cost extends CI_Controller
 
 	public function updatefee()
 	{
+		$new_topup = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("topup"));
+        $_POST["topup"]=$new_topup;
+		$new_walletbank_local = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_local"));
+        $_POST["walletbank_local"]=$new_walletbank_local;
+		$new_walletbank_inter = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("walletbank_inter"));
+        $_POST["walletbank_inter"]=$new_walletbank_inter;
+		$new_wallet2wallet = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("wallet2wallet"));
+        $_POST["wallet2wallet"]=$new_wallet2wallet;
+		$new_referral_send = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_send"));
+        $_POST["referral_send"]=$new_referral_send;
+		$new_referral_receive = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("referral_receive"));
+        $_POST["referral_receive"]=$new_referral_receive;
+		$new_swap = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $this->input->post("swap"));
+        $_POST["swap"]=$new_swap;
+		
 		$this->form_validation->set_rules('topup', 'Topup', 'trim|required|greater_than_equal_to[0]|decimal');
 		$this->form_validation->set_rules('walletbank_local', 'Wallet to Bank Local', 'trim|required|greater_than_equal_to[0]|decimal');
 		$this->form_validation->set_rules('walletbank_inter', 'Wallet to Bank International', 'trim|required|greater_than_equal_to[0]|decimal');

@@ -98,7 +98,7 @@ class Swap extends CI_Controller
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');
-        $this->form_validation->set_rules('amountget', 'Amount Get', 'trim|required');
+        $this->form_validation->set_rules('amountget', 'Amount Get', 'trim|required|greater_than[0]');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());

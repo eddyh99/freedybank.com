@@ -50,7 +50,7 @@ var tblhistory =
         "aoColumnDefs": [{
             "aTargets": [4],
             "mRender": function(data, type, row) {
-                eturn "<?= $_SESSION['symbol']?> " + (parseFloat(row.fee) + parseFloat(row.referral))
+                return "<?= $_SESSION['symbol']?> " + (parseFloat(row.fee) + parseFloat(row.referral))
                     .toLocaleString(
                         'en', {
                             minimumFractionDigits: 2
