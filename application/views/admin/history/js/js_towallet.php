@@ -55,6 +55,7 @@ var tblhistory =
                     })
             }
         }],
+        "pageLength": 100,
         "columns": [{
                 "data": "ket"
             },

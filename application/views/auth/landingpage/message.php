@@ -16,6 +16,8 @@
                 <div class="col-12 col-md-8 col-lg-6 mx-auto mb-5 text-center text-blue-freedy">
                     <p> Our support service is exclusively reserved to our clients. Register for free on the platform,
                         in few seconds, to request assistance or further information</p>
+                    <p>After registration you will get your unique code,
+                        fill out the form below using your “unique code“ to get assistance</p>
                 </div>
                 <div class="login">
                     <div class="col-12 col-md-8 col-lg-6 box-form mx-auto shadow-none px-0">
@@ -38,14 +40,25 @@
                             <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                 value="<?php echo $this->security->get_csrf_hash(); ?>">
                             <div class="col-12 mb-5">
-                                <div class="input-group bg-black py-2" id="email_div">
+                                <div class="input-group bg-black py-2">
+                                    <div class="input-group-text border-0 px-4">
+                                        <span>
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control f-publicsans border-0" name="ucode"
+                                        id="ucode" placeholder="Unique code" required>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-5">
+                                <div class="input-group bg-black bg-disable py-2" id="email_div">
                                     <div class="input-group-text border-0 px-4">
                                         <span>
                                             <i class="fa fa-envelope"></i>
                                         </span>
                                     </div>
                                     <input type="text" class="form-control f-publicsans border-0" name="email"
-                                        id="email" placeholder="Email" required>
+                                        id="email" placeholder="Email" required disabled>
                                 </div>
                             </div>
                             <div class="col-12 mb-5">

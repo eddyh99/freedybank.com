@@ -21,7 +21,7 @@
                             <tr>
                                 <th>Description</th>
                                 <th>Trackless Cost</th>
-                                <th>Referral Comission</th>
+                                <th>Referral Commission</th>
                                 <th>Freedy Cost</th>
                                 <th>Income</th>
                                 <th>Date</th>

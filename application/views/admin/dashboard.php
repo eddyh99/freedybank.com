@@ -3,7 +3,7 @@
                 <div class="container-fluid px-4">
                     <div class="col-12 box-dashboard-freedy-top px-3 py-5 mt-3 mb-4 d-flex flex-row align-items-center">
                         <h3 class="me-auto fw-bold text-blue-freedy">MASTER WALLET <?=$_SESSION["mwallet"]?></h3>
-                        <img src="assets/img/logo.png" alt="" style="height: 75px;" class="me-5">
+                        <img src="<?=base_url()?>assets/img/logo.png" alt="" style="height: 75px;" class="me-5">
                     </div>
                     <div class="col-12">
                         <div class="title d-flex flex-row">
@@ -17,7 +17,7 @@
                                 <a href="<?=base_url()?>admin/mwallet?cur=USD">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">USD</span>
-                                        <span>&dollar; <?=number_format($dt->amount,2)?></span>
+                                        <span>&dollar; <?= substr(number_format($dt->amount,4),0,-2) ?></span>
                                     </div>
                                 </a>
                             </div>
@@ -31,7 +31,7 @@
                                 <a href="<?=base_url()?>admin/mwallet?cur=EUR">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto">EUR</span>
-                                        <span>&euro; <?=number_format($dt->amount,2)?></span>
+                                        <span>&euro; <?= substr(number_format($dt->amount,4),0,-2) ?></span>
                                     </div>
                                 </a>
                             </div>
@@ -45,7 +45,7 @@
                                 <a href="<?=base_url()?>admin/mwallet?cur=<?=$dt->currency?>">
                                     <div class="box-list fw-bold d-flex flex-row py-4 px-4">
                                         <span class="me-auto"><?=$dt->currency?></span>
-                                        <span><?=$dt->symbol?> <?= number_format($dt->amount,2)?></span>
+                                        <span><?=$dt->symbol?> <?= substr(number_format($dt->amount,4),0,-2) ?></span>
                                     </div>
                                 </a>
                             </div>

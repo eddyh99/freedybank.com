@@ -222,6 +222,14 @@ class Wallet extends CI_Controller
 
     public function request_qrcode()
     {
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
+
+        $confirm_amount = $this->input->post("confirm_amount");
+        $new_confirm_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $confirm_amount);
+        $_POST["confirm_amount"]=$new_confirm_amount;
+
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('confirm_amount', 'Confirm Amount', 'trim|required|greater_than[0]|matches[amount]');
 
@@ -233,6 +241,12 @@ class Wallet extends CI_Controller
 
         $input        = $this->input;
         $amount        = $this->security->xss_clean($input->post("amount"));
+        if (($amount*100) < 2) {
+            $this->session->set_flashdata('failed', 'Minimum amount is 0.02');
+            redirect("wallet/request");
+            return;
+        }
+
         $linkqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
         $codename = substr(sha1(time()), 0, 8);
         $nameqr = $_SESSION["ucode"] . '-' . $codename;

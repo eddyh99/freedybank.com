@@ -37,11 +37,14 @@
                                 <input type="hidden" name="currencycode" id="currencycode" value="<?= $currencycode ?>">
                                 <div class="tab-pane box-tab-bank" id="us">
 
-                                    <div class="d-flex flex-row align-items-center my-3">
-                                        <input class="form-control me-2" type="text" name="amount" placeholder="Amount"
-                                            oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                    <div class="align-items-center my-3">
+                                        <small class="text-danger">MAX
+                                            : <?= $_SESSION["symbol"] ?>
+                                            <?= number_format(balance($_SESSION['user_id'], $_SESSION["currency"]) - $fee,2) ?></small>
+                                        <input class="form-control money-input me-2" type="text" name="amount"
+                                            placeholder="Amount">
                                     </div>
-                                    <div class="d-flex flex-row align-items-center my-3">
+                                    <div class="align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="accountHolderName"
                                             placeholder="Recipient Name">
                                     </div>
@@ -51,11 +54,11 @@
                                         $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data);
                                         ?>
 
-                                    <div class="d-flex flex-row align-items-center my-3">
+                                    <div class="align-items-center my-3">
                                         <input class="form-control me-2" type="text" name="causal" placeholder="Causal">
                                     </div>
 
-                                    <div class="col-12 d-flex flex-row mt-5">
+                                    <div class="d-flex flex-row col-12 mt-5">
                                         <a href="<?= base_url() ?>bank"
                                             class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
                                         <button class="btn btn-receive-bank px-5 py-1" type="submit"

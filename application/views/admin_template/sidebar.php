@@ -13,11 +13,11 @@
                         </a>
                         <a class="nav-link <?= @$mn_cost ?>" href="<?= base_url() ?>admin/cost">
                             <div class="sb-nav-link-icon"><i class="fas fa-coins"></i></div>
-                            Default Cost
+                            TracklessBank Cost
                         </a>
                         <a class="nav-link <?= @$mn_fee ?>" href="<?= base_url() ?>admin/fee">
                             <div class="sb-nav-link-icon"><i class="fas fa-money-bill"></i></div>
-                            Default Fee
+                            <?=NAMETITLE?> Fee
                         </a>
                         <a class="nav-link" href="<?= base_url() ?>auth/logout">
                             <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>

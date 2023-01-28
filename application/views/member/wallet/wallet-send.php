@@ -49,14 +49,12 @@
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode"
                                     placeholder="Confirm Unique code" value="<?= $ucode ?>"
                                     <?php echo (empty($ucode)? "" : "readonly")?>>
-                                <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
-                                    value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
-                                <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
-                                    placeholder="Confirm Amount (ex. 0.01)"
-                                    oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*)\./g, '$1');input(this);"
-                                    value="<?= $amount ?>" <?php echo (empty($amount)? "" : "readonly")?>>
+                                <input type="text" class="form-control money-input my-4" name="amount" id="amount"
+                                    placeholder="Amount (ex. 0.01)" value="<?= $amount ?>"
+                                    <?php echo (empty($amount)? "" : "readonly")?>>
+                                <input type="text" class="form-control money-input my-4" name="confirm_amount"
+                                    id="confirm_amount" placeholder="Confirm Amount (ex. 0.01)" value="<?= $amount ?>"
+                                    <?php echo (empty($amount)? "" : "readonly")?>>
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

@@ -61,19 +61,23 @@ $("#btnaccorionFour").on("click", function() {
 });
 
 
-$("#email").on("change", function() {
-    var email = $("#email").val();
+$("#ucode").on("change", function() {
+    var ucode = $("#ucode").val();
     $.ajax({
-        url: "<?= base_url() ?>link/check_email?email=" + email,
+        url: "<?= base_url() ?>link/check_ucode?ucode=" + ucode,
         success: function(response) {
             console.log(response);
             var data = JSON.parse(response);
             if (data.type == 'show') {
+                $('#email_div').removeClass("bg-disable");
                 $('#question_div').removeClass("bg-disable");
+                $("#email").removeAttr("disabled");
                 $("#question").removeAttr("disabled");
             }
             if (data.type == 'hide') {
+                $('#email_div').addClass("bg-disable");
                 $('#question_div').addClass("bg-disable");
+                $("#email").attr("disabled", "disabled");
                 $("#question").attr("disabled", "disabled");
             }
         },

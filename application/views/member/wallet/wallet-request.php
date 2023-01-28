@@ -23,12 +23,10 @@
                                 <input type="hidden" id="token"
                                     name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                     value="<?php echo $this->security->get_csrf_hash(); ?>">
-                                <input type="text" class="form-control my-4" name="amount" id="amount"
-                                    placeholder="Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
-                                <input type="text" class="form-control my-4" name="confirm_amount" id="confirm_amount"
-                                    placeholder="Confirm Amount"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');input(this);">
+                                <input type="text" class="form-control money-input my-4" name="amount" id="amount"
+                                    placeholder="Amount">
+                                <input type="text" class="form-control money-input my-4" name="confirm_amount"
+                                    id="confirm_amount" placeholder="Confirm Amount">
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

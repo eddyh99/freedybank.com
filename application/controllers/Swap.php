@@ -89,15 +89,20 @@ class Swap extends CI_Controller
     }
     public function confirm()
     {
-        $amount        = $this->security->xss_clean($this->input->post("amount"));
-        
-        $a = $this->input->post("amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["amount"]=$b;
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
+
+        $amountget = $this->input->post("amountget");
+        $new_amountget = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amountget);
+        $_POST["amountget"]=$new_amountget;
         
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
-        $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');
+        $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required', [
+            'required' => 'Please wait until correct calculation'
+        ]);
+        
         $this->form_validation->set_rules('amountget', 'Amount Get', 'trim|required|greater_than[0]');
 
         if ($this->form_validation->run() == FALSE) {
@@ -107,6 +112,24 @@ class Swap extends CI_Controller
 
         $input    = $this->input;
         $target = $this->security->xss_clean($input->post("toswap"));
+        $amount = $this->security->xss_clean($input->post("amount"));
+        
+        $mdata  = array(
+            "source"    => $_SESSION["currency"],
+            "target"    => $target,
+            "amount"    => $amount,
+            "userid"    => $_SESSION["user_id"]
+        );
+
+        $result = apitrackless(URLAPI . "/v1/member/swap/getSummary", json_encode($mdata));
+        
+        if (@$result->code != 200) {
+            header("HTTP/1.1 500 Internal Server Error");
+            
+            $this->session->set_flashdata("failed", $result->message);
+            redirect('swap');
+        }
+
         $data = array(
             "target"    => $target,
             "amount"    => $this->security->xss_clean($input->post("amount")),
@@ -129,7 +152,9 @@ class Swap extends CI_Controller
     {
         $this->form_validation->set_rules('toswap', 'Currency Target', 'trim|required|max_length[3]|min_length[3]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
-        $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required');
+        $this->form_validation->set_rules('quoteid', 'quoteid', 'trim|required', [
+            'required' => 'Please wait until correct calculation'
+        ]);
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata("failed", validation_errors());
@@ -141,7 +166,7 @@ class Swap extends CI_Controller
         $amount = $this->security->xss_clean($input->post("amount"));
         $quoteid = $this->security->xss_clean($input->post("quoteid"));
 
-        if ($amount > 0) {
+        if (@$amount > 0) {
             $mdata = array(
                 "userid"    => $_SESSION["user_id"],
                 "source"    => $_SESSION["currency"],
@@ -155,9 +180,9 @@ class Swap extends CI_Controller
                 header("HTTP/1.1 500 Internal Server Error");
                 $error = array(
                     "token"     => $this->security->get_csrf_hash(),
-                    "message"   => $result->message
+                    "message"   => @$result->message
                 );
-                $this->session->set_flashdata("failed", $result->message);
+                $this->session->set_flashdata("failed", @$result->message);
                 redirect('swap');
             }
 
@@ -165,7 +190,7 @@ class Swap extends CI_Controller
             $data['title'] = NAMETITLE . " - Swap";
             $body["data"] = array(
                 "amount"    => $amount,
-                "amountget" => $result->message->receive,
+                "amountget" => @$result->message->receive,
                 "symbol"    => apitrackless(URLAPI . "/v1/member/currency/getByCurrency?currency=" . $target . "&userid=" . $_SESSION["user_id"])->message->symbol
             );
 
