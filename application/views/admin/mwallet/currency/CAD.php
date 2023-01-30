@@ -3,6 +3,7 @@
 </div>
 <div class="mb-3">
     <select name="accountType" class="form-select" id="accountType">
+        <option value="">--Account Type--</option>
         <option value="saving">Saving</option>
         <option value="checking">Checking</option>
     </select>

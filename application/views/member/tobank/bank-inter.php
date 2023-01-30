@@ -51,6 +51,7 @@
 
                                     <?php
                                         $data['type'] = "inter";
+                                        $data['countries_list'] = $countries_list;
                                         $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data)
                                         ?>
 

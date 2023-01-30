@@ -468,7 +468,7 @@ class Bank extends CI_Controller
 
         if (@$result->code != 200) {
             $this->session->set_flashdata("failed", $result->message);
-            redirect(base_url() . "bank");
+            redirect(base_url() . "bank/" . $this->security->xss_clean($input->post("url")));
         }
 
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
