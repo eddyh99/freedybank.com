@@ -161,7 +161,7 @@ class Swap extends CI_Controller
             $datatc = array(
                 "amount"    => $amount,
                 "amountget" => $result->message->receive,
-                "symbol"    => apitrackless(URLAPI . "/v1/admin/currency/getsymbol?currency=" . $target)->message
+                // "symbol"    => apitrackless(URLAPI . "/v1/admin/currency/getsymbol?currency=" . $target)->message
             );
 
             $data = array(

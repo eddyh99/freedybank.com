@@ -3,6 +3,7 @@
 </div>
 <div class="mb-3">
     <select name="accountType" class="form-select" id="accountType">
+        <option value="">--Account Type--</option>
         <option value="CURRENT">Current</option>
         <option value="SAVINGS">Saving</option>
         <option value="CHECKING">Checking</option>
@@ -11,6 +12,7 @@
 
 <div class="mb-3">
     <select name="bankCode" class="form-select" id="bankCode">
+        <option value="">--Bank Code--</option>
         <?php foreach ($codecur as $dt) { ?>
         <option value="<?= $dt->code ?>"><?= $dt->title ?></option>
         <?php } ?>

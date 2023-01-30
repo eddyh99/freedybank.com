@@ -11,7 +11,13 @@
     <input class="form-control" type="text" name="firstLine" placeholder="FirstLine">
 </div>
 <div class="mb-3">
-    <input class="form-control" type="text" name="countryCode" placeholder="Country initial">
+    <select name="countryCode" class="form-select me-2" id="countryCode">
+        <option value="">--Country Initial--</option>
+        <?php foreach ($countries_list as $cur) { ?>
+        <option value="<?= $cur['code'] ?>"><?= $cur['code'] . ' - ' . $cur['name'] ?></option>
+        <?php } ?>
+    </select>
+    <!-- <input class="form-control" type="text" name="countryCode" placeholder="Country initial"> -->
 </div>
 <div class="mb-3">
     <input class="form-control" type="text" name="state" placeholder="State">

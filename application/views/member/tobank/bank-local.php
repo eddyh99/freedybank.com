@@ -1,4 +1,4 @@
-<?php $this->load->view("member/tobank/countries-list"); ?>
+<?php require_once("countries-list.php"); ?>
 <div class="d-flex justify-content-center">
     <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
         <div class="container" style="margin-bottom: 8rem;">
@@ -51,6 +51,7 @@
 
                                     <?php
                                         $data['type'] = "local";
+                                        $data['countries_list'] = $countries_list;
                                         $this->load->view('member/tobank/currency/' . @$_SESSION['currency'], $data);
                                         ?>
 

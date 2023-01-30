@@ -94,15 +94,14 @@ class Wallet extends CI_Controller
 
     public function send_confirm()
     {
-        $amount = $this->security->xss_clean($this->input->post("amount"));
 
-        $a = $this->input->post("amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["amount"]=$b;
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
 
-        $a = $this->input->post("confirm_amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["confirm_amount"]=$b;
+        $confirm_amount = $this->input->post("confirm_amount");
+        $new_confirm_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $confirm_amount);
+        $_POST["confirm_amount"]=$new_confirm_amount;
 
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('confirm_ucode', 'Confirm Unique Code', 'trim|required|matches[ucode]');
@@ -154,15 +153,9 @@ class Wallet extends CI_Controller
 
     public function send_notif()
     {
-        $amount = $this->security->xss_clean($this->input->post("amount"));
-
-        $a = $this->input->post("amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["amount"]=$b;
-
-        $a = $this->input->post("confirm_amount");
-        $b = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $a);
-        $_POST["confirm_amount"]=$b;
+        $amount = $this->input->post("amount");
+        $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
+        $_POST["amount"]=$new_amount;
         
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|decimal|greater_than[0]');
