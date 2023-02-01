@@ -1062,7 +1062,7 @@ class Mwallet extends CI_Controller
         
         if ($this->security->xss_clean($input->post("amount"))*100 < 2) {
             $this->session->set_flashdata("failed", "Minimal amount 0.02");
-            redirect(base_url() . "admin/mwallet/" . $this->security->xss_clean($input->post("url")));
+            redirect(base_url() . "admin/mwallet/withdraw");
         }
         
         $transfer_type = $this->security->xss_clean($input->post("transfer_type"));
@@ -1940,7 +1940,7 @@ class Mwallet extends CI_Controller
 
         if (@$result->code != 200) {
             if (@$result->code == 5055) {
-                $this->session->set_flashdata("failed", "Something wrong, please try again later!");
+                $this->session->set_flashdata("failed", $result->message);
                 redirect(base_url() . "admin/mwallet/withdraw");
             }
             $this->session->set_flashdata("failed", $result->message);

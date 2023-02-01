@@ -12,9 +12,10 @@
                     <div class="col-12 infobank-list-app my-4">
                         <div class="py-4 w-receive text-center">
                             <?php $this->load->view('member/alert-notif'); ?>
-                            <img src="<?= base_url() ?>qr/receive/<?= $_SESSION['ucode'] ?>.png" alt="">
+                            <img src="<?= base_url() ?>qr/receive/<?= $_SESSION['ucode'].$_SESSION["currency"] ?>.png"
+                                alt="">
                             <input type="text" class="form-control" name="" id="copy-qr"
-                                value="<?= base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"]) ?>"
+                                value="<?= base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]). '/' . base64_encode($_SESSION["ucode"]) ?>"
                                 hidden>
                             <div class="mt-3">
                                 <span class="fw-bold">UNIQUE CODE :<br> <?= $_SESSION["ucode"] ?></span>
