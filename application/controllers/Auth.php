@@ -449,7 +449,7 @@ class Auth extends CI_Controller
 		$symbol = URLAPI . "/v1/trackless/currency/getsymbol?currency=".base64_decode($curr);
 
 		if ($amount) {
-			$data['urlamount'] = "&amount=".$amount;
+			$data['urlamount'] = "&amount=".base64_decode(@$amount);
 		}
 		$data['banks'] = apitrackless($banks)->message;
 		$data['symbol'] = apitrackless($symbol)->message;
