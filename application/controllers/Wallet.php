@@ -194,6 +194,12 @@ class Wallet extends CI_Controller
 
     public function receive()
     {
+		$srcr = base_url() . 'qr/receive/' . $_SESSION["ucode"] . $_SESSION["currency"]. '.png';
+        if (@getimagesize($srcr) == FALSE) {
+            $urlqr = base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]). '/' . base64_encode($_SESSION["ucode"]);
+            $this->qrcodereceive($urlqr, $_SESSION["ucode"].$_SESSION["currency"]);
+        }
+        
         $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
@@ -240,7 +246,7 @@ class Wallet extends CI_Controller
             return;
         }
 
-        $linkqr = base_url() . 'wallet/send?' . base64_encode('cur=' . $_SESSION["currency"] . '&ucode=' . $_SESSION["ucode"] . '&amount=' . $amount);
+        $linkqr = base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]) . '/' . base64_encode($_SESSION["ucode"]) . '/' . base64_encode($amount);
         $codename = substr(sha1(time()), 0, 8);
         $nameqr = $_SESSION["ucode"] . '-' . $codename;
         $src = base_url() . 'qr/request/' . $nameqr . '.png';
@@ -293,4 +299,27 @@ class Wallet extends CI_Controller
             return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
         }
     }
+    
+    public function qrcodereceive($url, $kodeqr)
+	{
+		if ($kodeqr) {
+			$config['cacheable']    = true; //boolean, the default is true
+			$config['cachedir']     = './qr/'; //string, the default is application/cache/
+			$config['errorlog']     = './qr/'; //string, the default is application/logs/
+			$config['imagedir']     = './qr/receive/'; //direktori penyimpanan qr code
+			$config['quality']      = true; //boolean, the default is true
+			$config['size']         = '1024'; //interger, the default is 1024
+			$config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+			$config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+			$this->ciqrcode->initialize($config);
+
+			$image_name = $kodeqr . '.png'; //buat name dari qr code sesuai dengan nim
+
+			$params['data'] = $url; //data yang akan di jadikan QR CODE
+			$params['level'] = 'H'; //H=High
+			$params['size'] = 10;
+			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+		}
+	}
 }

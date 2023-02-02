@@ -10906,3 +10906,15 @@ section {
 .btn-head-crypto .crypto.active:hover {
   color: #000000;
 }
+
+.payment-bank {
+  border: 1px solid #0078f0;
+  /* background: #000; */
+  padding: 1rem 1rem;
+}
+
+.payment-bank img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
