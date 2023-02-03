@@ -9,7 +9,7 @@
                     <?php } ?>
                 </div>
                 <div class="col-12">
-                    <span class="d-block my-3">Payment : </span>
+                    <span class="d-block my-3">Choose your wallet to pay : </span>
                 </div>
                 <div class="row">
                     <?php foreach ($banks as $data) {
