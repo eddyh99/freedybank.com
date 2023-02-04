@@ -477,7 +477,8 @@
                                 Burj Gate, Dubai, UAE
                             </div>
                             <div class="credits f-lexend pt-2">
-                                FreedyBankService (UAE) is a service subject to partnership with licensee PBS Online
+                                <br translate="no">FreedyBankService</b> (UAE) is a service subject to partnership with
+                                licensee PBS Online
                                 LLC.
                             </div>
                         </div>

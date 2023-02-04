@@ -95,10 +95,13 @@ sandbox server
 */
 if (stripos($_SERVER['HTTP_HOST'],'sandbox') === 0){
     define('URLAPI', "https://api.sandbox.tracklessbank.com");
+    define('LINKQRCODE', "/wallet/send");
 }elseif(stripos($_SERVER['HTTP_HOST'],'localhost') === 0){
     define('URLAPI', "https://api.sandbox.tracklessbank.com");
+    define('LINKQRCODE', "/freedybank.com/wallet/send");
 }else{
     define('URLAPI', "https://api.tracklessbank.com");
+    define('LINKQRCODE', "/wallet/send");
 }
 
 /*

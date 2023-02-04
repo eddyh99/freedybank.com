@@ -371,7 +371,7 @@
                                                     auhtorities
                                                 </li>
                                                 <li class="pb-2">No documents request or limits on your <b
-                                                        translate="no">Freedy</b> account
+                                                        translate="no"> Freedy </b> account
                                                 </li>
                                             </ul>
                                         </div>
