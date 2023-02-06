@@ -9,6 +9,15 @@
                     </a>
                 </div>
             </div>
+            <?php if ($service == 99) { ?>
+            <div class="col-12 mt-5">
+                <div class="logo-text text-center">
+                    <!-- <img src="<?= base_url() ?>assets/img/service-1.png" alt=""> -->
+                    <span class="f-lexend">Coming Soon!</span>
+                </div>
+            </div>
+            <?php } ?>
+
 
             <?php if ($service == 1) { ?>
             <div class="col-12 mt-5">

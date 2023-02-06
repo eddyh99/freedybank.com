@@ -113,7 +113,7 @@ live server:
 local server
     "/freedybank.com/wallet/send"
 */
-define('LINKQRCODE', "/freedybank.com/wallet/send");
+// define('LINKQRCODE', "/freedybank.com/wallet/send");
 
 define('NAMETITLE', "Freedybank");
 
