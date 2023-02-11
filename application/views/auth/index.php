@@ -527,6 +527,11 @@
                                 <a href="<?= base_url(); ?>" style="color:#fff;">The guide</a>
                             </h4>
                         </div>
+                        <div class="col-lg col-12 pe-2 pb-2 footer-links">
+                            <h4 class="f-lexend">
+                                <a href="<?= base_url(); ?>link/privacy_policy" style="color:#fff;">Privacy policy</a>
+                            </h4>
+                        </div>
                         <div class="col-12 col-lg-8 pt-5 pb-3" style="z-index: 99; position: relative;">
                             <div class="copyright f-lexend pt-2">
                                 2EE Information Technology Network Service CO.
