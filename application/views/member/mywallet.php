@@ -91,7 +91,7 @@
                                         stroke="" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
 
-                                <span class="ms-2">Withdraw</span>
+                                <span class="ms-2">Wallet to Bank</span>
                             </a>
                             <a href="<?= base_url() ?>soon"
                                 class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue special">

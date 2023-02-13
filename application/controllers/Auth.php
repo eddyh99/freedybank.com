@@ -19,6 +19,7 @@ class Auth extends CI_Controller
 	
 	public function page404()
 	{
+		$this->output->set_status_header('404');
 		$data['title'] = NAMETITLE . " - 404 Page Not Found";
 		$data['extra'] = "auth/landingpage/js/js_index";
 

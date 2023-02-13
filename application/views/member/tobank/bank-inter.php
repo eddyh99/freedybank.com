@@ -7,7 +7,8 @@
                     <?php if (file_exists(APPPATH . 'views/member/tobank/currency/' . $_SESSION['currency'] . '.php')) { ?>
                     <div class="col-12">
                         <div class="text-start">
-                            <span class="me-auto f-monserat title-top-navbar"><?= $_SESSION["currency"] ?> - Withdraw -
+                            <span class="me-auto f-monserat title-top-navbar"><?= $_SESSION["currency"] ?> - Wallet to
+                                Bank -
                                 International</span>
                         </div>
                     </div>
