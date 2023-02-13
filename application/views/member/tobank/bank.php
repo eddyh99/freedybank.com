@@ -42,7 +42,7 @@
                             </svg>
 
 
-                            <span class="ms-2">Withdraw</span>
+                            <span class="ms-2">Wallet to Bank</span>
                         </div>
                         <div class="col-12 recive-bank  d-flex align-items-center flex-column text-center">
                             <?php if (@isset($_SESSION["failed"])) { ?>
