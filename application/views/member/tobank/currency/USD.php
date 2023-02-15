@@ -1,10 +1,6 @@
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="accountNumber" placeholder="Account Number">
-</div>
-
 <?php if ($type == "local") { ?>
 <div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="abartn" placeholder="Abartn">
+    <input class="form-control me-2" type="text" name="abartn" placeholder="Routing Number">
 </div>
 <?php } ?>
 
@@ -13,40 +9,53 @@
     <input class="form-control me-2" type="text" name="swiftCode" placeholder="Swift Code">
 </div>
 
+<div class="d-flex flex-row align-items-center my-3">
+    <input class="form-control me-2" type="text" name="accountNumber" placeholder="Account Number">
+</div>
+
 <input type="hidden" name="abartn" value="">
 <input type="hidden" name="accountType" value="">
 <?php } ?>
 
 <?php if ($type == "local") { ?>
 <div class="d-flex flex-row align-items-center my-3">
-    <select name="accountType" class="form-control me-2" id="accountType">
+    <select name="accountType" class="form-select me-2" id="accountType">
         <option value="">--Account Type--</option>
-        <option value="saving">Saving</option>
+        <option value="savings">Saving</option>
         <option value="checking">Checking</option>
     </select>
 </div>
 <?php } ?>
 
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="city" placeholder="City">
+<div class="d-flex flex-row align-items-center my-3 <?php if ($type == 'local') echo 'd-none'; ?>">
+    <input class="form-control me-2" type="text" name="city" placeholder="City"
+        <?php if ($type == 'local') echo 'value="Delaware"'; ?>>
 </div>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="postCode" placeholder="Postcode">
+<div class="d-flex flex-row align-items-center my-3 <?php if ($type == 'local') echo 'd-none'; ?>">
+    <input class="form-control me-2" type="text" name="postCode" placeholder="Postcode"
+        <?php if ($type == 'local') echo 'value="19958"'; ?>>
 </div>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="firstLine" placeholder="FirstLine">
+<div class="d-flex flex-row align-items-center my-3 <?php if ($type == 'local') echo 'd-none'; ?>">
+    <input class="form-control me-2" type="text" name="firstLine" placeholder="FirstLine"
+        <?php if ($type == 'local') echo 'value="16192 Coastal Highway"'; ?>>
 </div>
+
 <?php if ($type == "local") { ?>
-<div class="d-flex flex-row align-items-center my-3">
-    <input class="form-control me-2" type="text" name="state" placeholder="State initial" maxlength="2">
+<div class="d-flex flex-row align-items-center my-3 <?php if ($type == 'local') echo 'd-none'; ?>">
+    <input class="form-control me-2" type="text" name="state" placeholder="State initial" maxlength="2"
+        <?php if ($type == 'local') echo 'value="DE"'; ?>>
 </div>
+
+<div class="d-flex flex-row align-items-center my-3 <?php if ($type == 'local') echo 'd-none'; ?>">
+    <input class="form-control me-2" type="text" name="countryCode" <?php if ($type == 'local') echo 'value="US"'; ?>>
+</div>
+
 <?php } ?>
 
 <?php if ($type == "inter") { ?>
 <div class="d-flex flex-row align-items-center my-3">
     <input class="form-control me-2" type="text" name="state" placeholder="State">
 </div>
-<?php } ?>
 
 <div class="d-flex flex-row align-items-center my-3">
     <select name="countryCode" class="form-select me-2" id="countryCode">
@@ -55,5 +64,5 @@
         <option value="<?= $cur['code'] ?>"><?= $cur['code'] . ' - ' . $cur['name'] ?></option>
         <?php } ?>
     </select>
-    <!-- <input class="form-control me-2" type="text" name="countryCode" placeholder="Country initial" maxlength="2"> -->
 </div>
+<?php } ?>

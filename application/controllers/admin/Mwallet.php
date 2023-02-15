@@ -463,7 +463,6 @@ class Mwallet extends CI_Controller
 
         if ($_SESSION["currency"] == "VND") {
             $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
-            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
             $this->form_validation->set_rules('swiftCode', 'Swift Code', 'trim');
         }
 
@@ -754,7 +753,6 @@ class Mwallet extends CI_Controller
 
         if ($_SESSION["currency"] == "VND") {
             $temp["accountNumber"] = $this->security->xss_clean($input->post("accountNumber"));
-            $temp["branchCode"] = $this->security->xss_clean($input->post("branchCode"));
             $temp["swiftCode"] = $this->security->xss_clean($input->post("swiftCode"));
         }
 
@@ -1044,7 +1042,6 @@ class Mwallet extends CI_Controller
 
         if ($_SESSION["currency"] == "VND") {
             $this->form_validation->set_rules('accountNumber', 'Account Number', 'trim');
-            $this->form_validation->set_rules('branchCode', 'Branch Code', 'trim');
             $this->form_validation->set_rules('swiftCode', 'Swift Code', 'trim');
         }
 
@@ -1900,7 +1897,6 @@ class Mwallet extends CI_Controller
 
         if ($_SESSION["currency"] == "VND") {
             $accountNumber = $this->security->xss_clean($input->post("accountNumber"));
-            $branchCode = $this->security->xss_clean($input->post("branchCode"));
             $swiftCode = $this->security->xss_clean($input->post("swiftCode"));
 
             $mdata = array(
@@ -1911,7 +1907,6 @@ class Mwallet extends CI_Controller
                 "bank_detail"   => array(
                     "accountHolderName" => $accountHolderName,
                     "accountNumber"     => $accountNumber,
-                    "branchCode"        => $branchCode,
                     "swiftCode"         => $swiftCode,
                     "causal"            => @$causal,
                 )
