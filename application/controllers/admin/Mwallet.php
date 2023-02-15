@@ -498,7 +498,7 @@ class Mwallet extends CI_Controller
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $temp["fee"]               = $result->message->fee;
         $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
-        $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName"));
+        $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName")) . ' xxx';
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
         $temp["causal"]            = $this->security->xss_clean($input->post("causal"));
         $temp["transfer_type"]     = $transfer_type;
