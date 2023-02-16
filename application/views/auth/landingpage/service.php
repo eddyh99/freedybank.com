@@ -519,6 +519,87 @@
                 </div>
             </div>
             <?php } ?>
+
+            <?php if ($service == 7) { ?>
+            <div class="col-12 my-5">
+                <div class="logo-text text-center">
+                    <img src="<?= base_url() ?>assets/img/service-7.png" alt="">
+                    <span class="f-lexend">Crypto trading</span>
+                </div>
+            </div>
+            <div class="col-12 mb-5">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <h2 class="title-top-header fw-bold text-center">
+                            Boost your crypto exchange experience
+                        </h2>
+                    </div>
+                    <div class="col-12 text-center">
+                        <p>
+                            FreedyBank, being a trade-off platform, the ‘’Buy’’ and ‘’Sell’’ orders are just LIMIT
+                            orders.<br>
+                            A buy limit order will be executed only at the limit price or a lower price; and a sell
+                            limit order will be executed only at the limit price or a higher one.<br>
+                            The price is guaranteed, but the filling of the order is not. Limit orders will be executed
+                            only if the price meets the order qualifications.
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-1.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Open your account</span>
+
+                                    <p class="mb-3">Simple and fast opening without documents and KYC request
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-2.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Top up your wallet</span>
+
+                                    <p class="mb-3">Topup, through a bank transfer, your <b translate="no"> Freedybank
+                                        </b> wallet with your
+                                        favorite FIAT currency and than convert any amount into USDX to start to trading
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-3.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Start buying and selling</span>
+
+                                    <p class="mb-3">You are ready to buy and sell Crypto Currencies, placing limit
+                                        orders, in an anonymous way
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-4.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Withdraw your earning</span>
+
+                                    <p class="mb-3">You will be able to withdraw, anonymously, your FIAT earnings to any
+                                        bank account
+                                        <b class="text-uppercase"> even if are not registered under you name</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
         </div>
     </div>
 </section><!-- End Hero -->

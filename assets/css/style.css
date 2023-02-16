@@ -4579,6 +4579,29 @@ section {
     height: 125px;
     margin: 0.5rem 0;
   }
+
+  .crypto-list-page {
+    min-height: auto;
+    background: #ffffff;
+    border: 3px solid #8A01D7;
+    text-align: center;
+  }
+
+  .crypto-list-page img {
+    display: inline-block;
+    height: 50px;
+  }
+
+  .crypto-list-page span {
+    font-weight: 700;
+    font-size: 20px;
+    color: #0078F0;
+  }
+
+  .crypto-list-page p {
+    font-weight: 600;
+    color: #000000;
+  }
 }
 
 @media (min-width: 375px) {
@@ -6614,6 +6637,29 @@ section {
     height: 125px;
     margin: 0.5rem 0;
   }
+
+  .crypto-list-page {
+    min-height: auto;
+    background: #ffffff;
+    border: 3px solid #8A01D7;
+    text-align: center;
+  }
+
+  .crypto-list-page img {
+    display: inline-block;
+    height: 50px;
+  }
+
+  .crypto-list-page span {
+    font-weight: 700;
+    font-size: 20px;
+    color: #0078F0;
+  }
+
+  .crypto-list-page p {
+    font-weight: 600;
+    color: #000000;
+  }
 }
 
 @media (min-width: 768px) {
@@ -8600,6 +8646,29 @@ section {
   .attention-modal .modal-body ul li img {
     height: 150px;
     margin: 0.5rem 0;
+  }
+
+  .crypto-list-page {
+    min-height: 375px;
+    background: #ffffff;
+    border: 3px solid #8A01D7;
+    text-align: center;
+  }
+
+  .crypto-list-page img {
+    display: inline-block;
+    height: 50px;
+  }
+
+  .crypto-list-page span {
+    font-weight: 700;
+    font-size: 24px;
+    color: #0078F0;
+  }
+
+  .crypto-list-page p {
+    font-weight: 600;
+    color: #000000;
   }
 }
 
@@ -10866,11 +10935,35 @@ section {
     height: 150px;
     margin: 0.5rem 0;
   }
+
+  .crypto-list-page {
+    min-height: 450px;
+    background: #ffffff;
+    border: 3px solid #8A01D7;
+    text-align: center;
+  }
+
+  .crypto-list-page img {
+    display: inline-block;
+    height: 50px;
+  }
+
+  .crypto-list-page span {
+    font-weight: 700;
+    font-size: 28px;
+
+    color: #0078F0;
+  }
+
+  .crypto-list-page p {
+    font-weight: 600;
+    color: #000000;
+  }
 }
 
 @media (min-width: 1400px) {
   .hero {
-    padding: 10rem 0;
+    padding: 2rem 0;
   }
 }
 
