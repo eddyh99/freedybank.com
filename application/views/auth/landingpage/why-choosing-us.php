@@ -22,7 +22,7 @@
                                 As <b translate="no"> FreedyBank </b>, being part of the tracklessbank circuit, can
                                 operate by using several
                                 bank licenses under different jurisdictions and providing offshore escrow accounts, is
-                                not obliged to perform the Know You Customer (KYC) procedure.</p>
+                                not obliged to perform the Know Your Customer (KYC) procedure.</p>
                             <p>
                                 <b translate="no"> Freedy bank </b> does not carry out Anti-money laundering (AML)
                                 compliance policy, as it
@@ -208,6 +208,63 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
+
+            <?php if ($choose == 5) { ?>
+            <div class="col-12 my-5">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-auto ms-auto">
+                        <h2 class="title-top-header fw-bold"><b translate="no">FreedyBank </b> provides you <br>
+                            ''Non-Custodial Wallet''</h2>
+                        <p>
+                            With a non-custodial wallet, you have sole control of your private keys, which in turn
+                            control your currencies and prove the funds are yours.
+                        </p>
+                    </div>
+                    <div class="col-md-4 my-auto me-auto d-none d-md-grid">
+                        <img src="<?= base_url() ?>assets/img/img-35.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+            <?php if ($choose == 6) { ?>
+            <div class="col-12 text-center">
+                <h3>Coming Soon!</h3>
+            </div>
+            <div class="col-12 my-5 text-center">
+                <h2 class="title-top-header fw-bold">
+                    Buy and sell crypto using FIAT currencies<br>
+                    ‘’<b translate="no">Trade-Off </b> Platform’’</h2>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-auto ms-auto">
+                        <p>
+                            <b translate="no"> FreedyBank </b> offers the possibility to buy and sell cryptocurrencies
+                            using FIAT,
+                            directly from any FIAT balance of your Freedy wallet.<br>
+                            <b translate="no"> FreedyBank </b> also give the possibility to withdraw
+                            your funds by converting them INTO ANY FIAT CURRENCY; after conversion you can send your
+                            funds to any bank account, even if it is not under your name,
+                            thanks to the integrated <b translate="no"> trade-off </b> platform.
+                        </p>
+                        <p class="fw-bold text-center"><b translate="no"> FreedyBank </b>, being a <b translate="no">
+                                trade-off </b> platform, the ‘’Buy’’ and ‘’Sell’’
+                            orders are
+                            just ‘’LIMIT’’ orders.</p>
+                    </div>
+                    <div class="col-md-4 d-none d-md-grid my-auto me-auto">
+                        <img src="<?= base_url() ?>assets/img/img-36.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <h3>Coming Soon!</h3>
+            </div>
+            <?php } ?>
+            <?php if ($choose == 7) { ?>
+            <?php } ?>
+            <?php if ($choose == 8) { ?>
             <?php } ?>
         </div>
     </div>

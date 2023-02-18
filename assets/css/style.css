@@ -14,7 +14,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #000000;
 }
 
 a {
@@ -11018,4 +11018,126 @@ section {
 
   height: 100%;
   object-fit: cover;
+}
+
+.content-freedy.line ul li {
+  background: url(../img/line-list.png) no-repeat left center !important;
+  background-size: 1rem auto !important;
+  padding: 0 0 0 2rem;
+  margin: 0 0 0.75rem 0;
+  list-style: none;
+}
+
+
+.content-wallet .box-guide-list {
+  background: #FFFFFF;
+  border: 1px solid #0078F0;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 2rem 5rem;
+
+  text-decoration: none;
+}
+
+.content-wallet .box-guide-list h3 {
+  color: #000000;
+  margin-bottom: 0;
+
+  font-weight: 800;
+  font-size: 29px;
+  text-align: start;
+}
+
+.content-wallet .box-guide-list i {
+  color: #0078F0;
+  font-size: 35px;
+  margin-left: 1rem;
+}
+
+
+.bg-flowers-pink {
+  position: relative;
+  background: #E8F1FF;
+  display: inline-block;
+  padding: 2rem 3rem;
+  margin: auto;
+}
+
+.box-trips {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+
+  border: 2px solid #0078F0;
+  border-radius: 3px;
+}
+
+.in-crypto {
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.in-crypto span {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.in-crypto .box-crypto {
+  background: rgba(0, 120, 240, 0.25);
+  border: 1px solid #0078F0;
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.in-crypto .box-crypto p {
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.box-p-crypto {
+  background: rgba(0, 120, 240, 0.25);
+  border: 1px solid #0078F0;
+
+  padding: 1rem;
+  margin: 2rem 0;
+  display: inline-block;
+}
+
+.box-p-crypto p {
+  margin: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 575px) {
+  .content-wallet .box-guide-list {
+    padding: 2rem;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .content-wallet .box-guide-list h3 {
+    font-size: 20px;
+  }
 }
