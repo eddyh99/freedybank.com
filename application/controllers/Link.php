@@ -11,8 +11,53 @@ class Link extends CI_Controller
     public function work_with_us()
     {
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE ,
             "content"   => "auth/landingpage/work-us",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    
+    public function crypto()
+    {
+        $data = array(
+            "title"     => NAMETITLE ,
+            "content"   => "auth/landingpage/crypto",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    
+    public function soon()
+    {
+        $data = array(
+            "title"     => NAMETITLE ,
+            "content"   => "auth/landingpage/soon",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    
+    public function guide()
+    {
+        $data = array(
+            "title"     => NAMETITLE ,
+            "content"   => "auth/landingpage/guide",
+            "extra"     => "auth/landingpage/js/js_index",
+        );
+
+        $this->load->view('tamplate/wrapper', $data);
+    }
+    
+    public function guides($item)
+    {
+        $guide = base64_decode($item);
+        $data = array(
+            "title"     => NAMETITLE ,
+            "guide"     => $guide ,
+            "content"   => "auth/landingpage/guides",
             "extra"     => "auth/landingpage/js/js_index",
         );
 
@@ -22,7 +67,7 @@ class Link extends CI_Controller
     public function translate()
     {
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE ,
             "content"   => "auth/landingpage/translate",
             // "extra"     => "auth/landingpage/js/js_index",
         );
@@ -35,7 +80,7 @@ class Link extends CI_Controller
         $choose = $_GET['choose'];
 
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE ,
             "content"   => "auth/landingpage/why-choosing-us",
             "choose"   => $choose,
             // "extra"     => "auth/landingpage/js/js_index",
@@ -49,7 +94,7 @@ class Link extends CI_Controller
         $service = $_GET['service'];
 
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE ,
             "content"   => "auth/landingpage/service",
             "service"   => $service,
             "extra"     => "auth/landingpage/js/js_index",
@@ -63,7 +108,7 @@ class Link extends CI_Controller
         $features = $_GET['features'];
 
         $data = array(
-            "title"     => NAMETITLE . " - Work with us",
+            "title"     => NAMETITLE ,
             "content"   => "auth/landingpage/features",
             "features"   => $features,
             "extra"     => "auth/landingpage/js/js_index",

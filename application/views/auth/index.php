@@ -14,6 +14,8 @@
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="#contact">Contact us</a></li>
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto"
                         href="<?= base_url(); ?>link/translate">Translate</a></li>
+                <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="<?= base_url(); ?>link/guide">The
+                        guide</a></li>
                 <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-login"
                         href="<?= base_url(); ?>auth/login">Log
                         in</a>
@@ -79,7 +81,16 @@
 
             <div class="row d-flex justify-content-center">
 
-                <div class="col-12 col-sm-10 col-md-6 col-lg-4 my-2" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="box-card-freedy d-flex align-items-start flex-column">
+                        <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
+                        <h3 class="mb-auto f-lexend"><b translate="no"> Non custodial wallet </b> provided</h3>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=1" class="f-lexend">Read more</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="100">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="f-lexend">No KYC & No AML</h3>
@@ -88,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-10 col-md-6 col-lg-4 my-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="mb-auto f-lexend">Receiving funds in 10 currencies</h3>
@@ -96,15 +107,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-10 col-md-6 col-lg-4 my-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="box-card-freedy d-flex align-items-start flex-column">
-                        <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
-                        <h3 class="mb-auto f-lexend">Zero exchange fees</h3>
-                        <a href="<?= base_url(); ?>link/whychoosing?choose=4" class="f-lexend">Read more</a>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="300">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/sidikjari-bot.png" alt="" class="sidikjari-card">
                         <h3 class="mb-auto f-lexend">Convert, custody and send in 50 currencies</h3>
@@ -112,14 +115,37 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box-card-freedy d-flex align-items-start flex-column">
+                        <img src="<?= base_url(); ?>assets/img/sidikjari-bot.png" alt="" class="sidikjari-card">
+                        <h3 class="mb-auto f-lexend">Zero exchange fees</h3>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=4" class="f-lexend">Read more</a>
+                    </div>
+                </div>
 
-
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 my-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="box-card-freedy d-flex align-items-start flex-column">
                         <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
                         <h3 class="f-lexend"><b translate="no"> Freedy </b> is FREE</h3>
-                        <span class="f-lexend">Open a bank account is free of charge no monthly or yearly
+                        <span class="mb-auto f-lexend">Open a bank account is free of charge no monthly or yearly
                             fees</span>
+                        <a href="<?= base_url(); ?>auth/signup" class="f-lexend">Read more</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box-card-freedy d-flex align-items-start flex-column">
+                        <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
+                        <h3 class="mb-auto f-lexend">Buy & Sell crypto with FIAT</h3>
+                        <a href="<?= base_url(); ?>link/whychoosing?choose=6" class="f-lexend">Read more</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box-card-freedy d-flex align-items-start flex-column">
+                        <img src="<?= base_url(); ?>assets/img/incard.png" alt="" class="incard-card">
+                        <h3 class="mb-auto f-lexend">Integration into your business API/Plugin</h3>
+                        <a href="<?= base_url(); ?>link/soon" class="f-lexend">Read more</a>
                     </div>
                 </div>
 
@@ -226,7 +252,7 @@
                                         50 currencies to any bank account even not under your name </li>
                                 </ul>
                                 <div class="text-center text-lg-start">
-                                    <a href="<?= base_url(); ?>link/soon"
+                                    <a href="<?= base_url(); ?>link/crypto"
                                         class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Learn more</span>
                                     </a>
@@ -282,7 +308,7 @@
                                         class="col-12 col-sm-8 col-md-8 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
                                         <img src="<?= base_url(); ?>assets/img/service-7.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Crypto trading</h4>
-                                        <a class="f-lexend" href="<?= base_url(); ?>link/service?service=99">Learn
+                                        <a class="f-lexend" href="<?= base_url(); ?>link/service?service=7">Learn
                                             more</a>
                                     </div>
                                 </div>
@@ -304,7 +330,7 @@
                                         <img src="<?= base_url(); ?>assets/img/service-8.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Find me &
                                             Search</h4>
-                                        <a class="f-lexend" href="<?= base_url(); ?>link/service?service=99">Learn
+                                        <a class="f-lexend" href="<?= base_url(); ?>link/service?service=8">Learn
                                             more</a>
                                     </div>
                                 </div>

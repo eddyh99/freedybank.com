@@ -139,77 +139,35 @@
             <?php } ?>
 
             <?php if ($service == 3) { ?>
-            <div class="col-12 mt-5">
+            <div class="col-12 my-5">
                 <div class="logo-text text-center">
                     <img src="<?= base_url() ?>assets/img/service-3.png" alt="">
+                    <h2 class="title-top-header fw-bold">
+                        Export your capital to any<br>
+                        country legally and immediately
+                    </h2>
                 </div>
             </div>
-            <div class="col-12 mb-5">
-                <div class="col-12 col-md-8 mb-3 text-center mx-auto">
-                    <h2 class="title-top-header fw-bold">Export your capital to any
-                        country legally and immediately</h2>
-                    <p>To stay legally strictly follow the procedure below :</p>
-                </div>
-                <div class="col-12 mb-3 text-center">
-                    <div class="col-12 col-sm-8 col-lg-4 text-center mx-auto">
-                        <img src="<?= base_url() ?>assets/img/img-14.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-12 col-md-8 text-center mx-auto  mb-3">
-                        <p>
-                            Top up your <b translate="no"> Freedy </b> wallet with a domestic transfer (the top up is
-                            not
-                            a credit transfer and
-                            therefore is not fiscally relevant as it is not comparable to a payment).
-                        </p>
-                    </div>
-                    <div class="col-12 col-sm-8 col-lg-4 text-center mx-auto">
-                        <img src="<?= base_url() ?>assets/img/img-15.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-12 col-md-8 text-center mx-auto mb-3">
-                        <p>
-                            Convert without fees, into the currency of the destination country, the amount to be
-                            exported (the currency conversion is also not fiscally relevant).
-                        </p>
-                    </div>
-                    <div class="col-12 col-sm-8 col-lg-4 text-center mx-auto">
-                        <img src="<?= base_url() ?>assets/img/img-16.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-12 col-md-8 text-center mx-auto">
-                        <p>
-                            Send the converted amount to the destination country, via our platform, as a domestic
-                            transfer (with this procedure the international transfer is eliminated).
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-8 text-center mx-auto text-center my-5">
-                    <div class="container">
-                        <div>
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12 text-center">
-                                    <h2 class="title-top-header fw-bold f-lexend mb-3 col-12 mx-auto">
-                                        How we make this service possible?
-                                    </h2>
-                                    <p>
-                                        <b translate="no"> Freedy </b>, thanks to the use of the TracklessMoney gateway,
-                                        which makes use of the
-                                        huge capital and multiple offices of PBS online, in order to respect the laws in
-                                        force on the matter, will not make an international transfer but will send a
-                                        domestic transfer from the current account of the country of destination to the
-                                        current account required by the sender, in the same country and will carrying
-                                        out an internal clearing only afterwards (the internal clearing procedure is
-                                        100% legal).
-                                    </p>
-                                    <div class="text-center">
-                                        <a href="<?= base_url(); ?>auth/signup"
-                                            class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">
-                                            <span>Sign Up</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-12 mb-5 text-center">
+                <p>
+                    Given the increasingly stringent and restrictive regulations on international bank transfers,
+                    FreedyBank offers a simple, risk-free and 100% legal solution.
+                </p>
+                <h3 class="text-blue-freedy fw-bold">How do we make this service possible?</h3>
+                <p>
+                    Freedy, thanks to the use of the TracklessMoney gateway which makes use of the huge capital and
+                    multiple offices of PBS online, in order to respect the laws in force on the matter, will not make
+                    an international transfer but will send a domestic transfer from the current account of the country
+                    of destination to the current account required by the sender, in the same country, only afterwards
+                    will carry out an internal clearing (the internal clearing procedure is 100% legal).
+                </p>
+            </div>
+
+            <div class="col-12 mb-5 text-center">
+                <a href="<?= base_url(); ?>auth/signup"
+                    class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">
+                    <span>Sign Up</span>
+                </a>
             </div>
             <?php } ?>
             <?php if ($service == 4) { ?>
@@ -514,6 +472,156 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+            <?php if ($service == 7) { ?>
+            <div class="col-12 my-5">
+                <div class="logo-text text-center">
+                    <img src="<?= base_url() ?>assets/img/service-7.png" alt="">
+                    <span class="f-lexend">Crypto trading</span>
+                </div>
+            </div>
+            <div class="col-12 mb-5">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <h2 class="title-top-header fw-bold text-center">
+                            Boost your crypto exchange experience
+                        </h2>
+                    </div>
+                    <div class="col-12 text-center">
+                        <p>
+                            <b translate="no"> FreedyBank </b>, being a <b translate="no"> trade-off </b> platform, the
+                            ‘’Buy’’ and ‘’Sell’’
+                            orders are just LIMIT
+                            orders.<br>
+                            A buy limit order will be executed only at the limit price or a lower price; and a sell
+                            limit order will be executed only at the limit price or a higher one.<br>
+                            The price is guaranteed, but the filling of the order is not. Limit orders will be executed
+                            only if the price meets the order qualifications.
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-1.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Open your account</span>
+
+                                    <p class="mb-3">Simple and fast opening without documents and KYC request
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-2.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Top up your wallet</span>
+
+                                    <p class="mb-3">Topup, through a bank transfer, your <b translate="no"> Freedybank
+                                        </b> wallet with your
+                                        favorite FIAT currency and than convert any amount into USDX to start to trading
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-3.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Start buying and selling</span>
+
+                                    <p class="mb-3">You are ready to buy and sell Crypto Currencies, placing limit
+                                        orders, in an anonymous way
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 p-3">
+                                <div class="crypto-list-page d-flex flex-column px-3 py-4">
+                                    <div class="">
+                                        <img src="<?= base_url() ?>assets/img/crypto-4.png" alt="">
+                                    </div>
+                                    <span class="mb-3">Withdraw your earning</span>
+
+                                    <p class="mb-3">You will be able to withdraw, anonymously, your FIAT earnings to any
+                                        bank account
+                                        <b class="text-uppercase"> even if are not registered under you name</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+
+            <?php if ($service == 8) { ?>
+            <div class="col-12 my-5">
+                <div class="logo-text text-center">
+                    <img src="<?= base_url() ?>assets/img/service-8.png" alt="">
+                    <span class="f-lexend text-blue-freedy">Find me & Search</span>
+                </div>
+            </div>
+            <div class="col-12 mb-5">
+                <div class="col-12">
+                    <h2 class="title-top-header fw-bold">Find me</h2>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-start my-auto content-freedy">
+                            <p>
+                                <b translate="no"> Freedy Bank </b> allows you to increase the visibility of your
+                                business by including it in
+                                the search section that will be in every single wallet of all the <b translate="no">
+                                    Freedy Bank </b> users.<br>
+                                In this way your company will be easily accessible and traceable by all users who use
+                                <b translate="no"> Freedy Bank </b> for daily payments.
+                            </p>
+                            <p>
+                                <b class="text-blue-freedy fw-semibold">How to access to FIND ME service :</b><br>
+                                Send an email to contact@Freedy Bank.com with the<br>
+                                subject FIND ME<br>
+                                The email must contain the following data:
+                            </p>
+
+                            <div class="col-12 d-flex flex-column justify-content-center">
+                                <div class="content-freedy line text-start d-flex flex-row">
+                                    <ul class="ps-0 w-50">
+                                        <li class="ali">Name of the business</li>
+                                        <li class="ali">Product category</li>
+                                        <li class="ali">Google map link</li>
+                                    </ul>
+                                    <ul class="ps-0 w-50">
+                                        <li class="ali">Website link</li>
+                                        <li class="ali">Own unique code </li>
+                                        <li class="ali">Attachment of the company logo in .PNG format</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-none d-lg-grid">
+                            <img src="<?= base_url() ?>assets/img/img-38.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-6 d-none d-md-grid">
+                            <img src="<?= base_url() ?>assets/img/img-39.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-12 col-md-6 text-start content-freedy">
+                            <h2 class="title-top-header fw-bold">Search</h2>
+                            <p>
+                                With this function in your wallet you will be able to see all the activities that accept
+                                <b translate="no"> FREEDY BANK </b> as a collection and payment system.
+                            </p>
                         </div>
                     </div>
                 </div>

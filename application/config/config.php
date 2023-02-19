@@ -28,7 +28,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 }else{
     $addurl = '/'; 
 }
-$config['base_url'] = ($_SERVER['HTTPS'] == 'on') ? 'https://'.$_SERVER['HTTP_HOST'].'/' : 'http://'.$_SERVER['HTTP_HOST'].$addurl;
+$config['base_url'] = (@$_SERVER['HTTPS'] == 'on') ? 'https://'.$_SERVER['HTTP_HOST'].'/' : 'http://'.$_SERVER['HTTP_HOST'].$addurl;
 date_default_timezone_set('Asia/Singapore');
 
 /*
