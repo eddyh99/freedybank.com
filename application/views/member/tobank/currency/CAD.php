@@ -8,6 +8,13 @@
         <option value="checking">Checking</option>
     </select>
 </div>
+
+<?php if ($type == 'local') { ?>
+    <div class="d-flex flex-row align-items-center my-3">
+        <input class="form-control me-2" type="text" name="interacAccount" placeholder="Interac registered email">
+    </div>
+<?php } ?>
+
 <div class="d-flex flex-row align-items-center my-3">
     <input class="form-control me-2" type="text" name="institutionNumber" placeholder="Institution Number">
 </div>

@@ -11129,6 +11129,18 @@ section {
   font-weight: 700;
 }
 
+.powered-top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 16px;
+}
+
+.powered-top img {
+  height: 35px;
+  margin-left: 10px;
+}
+
 @media (max-width: 575px) {
   .content-wallet .box-guide-list {
     padding: 2rem;

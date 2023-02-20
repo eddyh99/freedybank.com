@@ -1,3 +1,3 @@
-<div class="mb-3">
-    <input class="form-control" type="text" name="IBAN" placeholder="IBAN">
+<div class="d-flex flex-row align-items-center my-3">
+    <input class="form-control me-2" type="text" name="IBAN" placeholder="IBAN">
 </div>

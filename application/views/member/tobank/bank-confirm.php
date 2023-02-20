@@ -10,11 +10,8 @@
                     </div>
                     <div class="col-12 infobank-list-app my-4">
                         <div class="col-12 py-4">
-                            <form action="<?= base_url() ?>bank/banknotif" method="post" id="form_submit"
-                                onsubmit="return validate()">
-                                <input type="hidden" id="token"
-                                    name="<?php echo $this->security->get_csrf_token_name(); ?>"
-                                    value="<?php echo $this->security->get_csrf_hash(); ?>">
+                            <form action="<?= base_url() ?>bank/banknotif" method="post" id="form_submit" onsubmit="return validate()">
+                                <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                                 <input type="hidden" name="transfer_type" value="<?= @$data["transfer_type"] ?>">
 
                                 <input type="hidden" name="amount" value="<?= $data["amount"] ?>">
@@ -34,8 +31,7 @@
                                 <input type="hidden" name="sortCode" value="<?= @$data["sortCode"] ?>">
                                 <input type="hidden" name="bankCode" value="<?= @$data["bankCode"] ?>">
                                 <input type="hidden" name="branchCode" value="<?= @$data["branchCode"] ?>">
-                                <input type="hidden" name="institutionNumber"
-                                    value="<?= @$data["institutionNumber"] ?>">
+                                <input type="hidden" name="institutionNumber" value="<?= @$data["institutionNumber"] ?>">
                                 <input type="hidden" name="transitNumber" value="<?= @$data["transitNumber"] ?>">
                                 <input type="hidden" name="taxId" value="<?= @$data["taxId"] ?>">
                                 <input type="hidden" name="rut" value="<?= @$data["rut"] ?>">
@@ -45,8 +41,10 @@
                                 <input type="hidden" name="ifscCode" value="<?= @$data["ifscCode"] ?>">
                                 <input type="hidden" name="clabe" value="<?= @$data["clabe"] ?>">
                                 <input type="hidden" name="email" value="<?= @$data["email"] ?>">
-                                <input type="hidden" name="dateOfBirth"
-                                    value="<?= date('Y-m-d', strtotime(@$data["dateOfBirth"])) ?>">
+                                <input type="hidden" name="interacAccount" value="<?= @$data["interacAccount"] ?>">
+                                <input type="hidden" name="customerReferenceNumber" value="<?= @$data["customerReferenceNumber"] ?>">
+                                <input type="hidden" name="billerCode" value="<?= @$data["billerCode"] ?>">
+                                <input type="hidden" name="dateOfBirth" value="<?= date('Y-m-d', strtotime(@$data["dateOfBirth"])) ?>">
 
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Recipient Name</span>
@@ -74,22 +72,22 @@
                                     ($_SESSION['currency'] == "SEK") ||
                                     ($_SESSION['currency'] == "TRY")
                                 ) { ?>
-                                <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>IBAN</span>
-                                    <span><?= @$data["IBAN"] ?></span>
-                                </div>
+                                    <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                        <span>IBAN</span>
+                                        <span><?= @$data["IBAN"] ?></span>
+                                    </div>
                                 <?php } elseif (
                                     ($_SESSION['currency'] == "MXN")
                                 ) { ?>
-                                <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Clabe</span>
-                                    <span><?= @$data["clabe"] ?></span>
-                                </div>
+                                    <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                        <span>Clabe</span>
+                                        <span><?= @$data["clabe"] ?></span>
+                                    </div>
                                 <?php } else { ?>
-                                <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                                    <span>Account Number</span>
-                                    <span><?= $data["accountNumber"] ?></span>
-                                </div>
+                                    <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                        <span>Account Number</span>
+                                        <span><?= $data["accountNumber"] ?></span>
+                                    </div>
                                 <?php } ?>
                                 <div class="col-12 list-send-wallet d-flex flex-column mb-3">
                                     <span>Amount</span>
@@ -120,10 +118,8 @@
                                     <p>If you are sure to make this transaction click confirm</p>
                                 </div>
                                 <div class="col-12 d-flex flex-row mt-5">
-                                    <a href="<?= base_url() ?>bank"
-                                        class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
-                                    <button class="btn btn-receive-bank px-5 py-2" type="submit"
-                                        id="btnconfirm">Confirm</button>
+                                    <a href="<?= base_url() ?>bank" class="btn btn-wallet-cancle py-2 me-auto">Cancel</a>
+                                    <button class="btn btn-receive-bank px-5 py-2" type="submit" id="btnconfirm">Confirm</button>
                                 </div>
                             </form>
                         </div>
@@ -139,8 +135,7 @@
         <a href="<?= base_url() ?>bank" class="d-flex align-items-center border-0">
             <div class="icon-menus d-flex align-items-center home-svg">
                 <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.875 9.5L10.125 1.25M1.875 9.5L10.125 17.75M1.875 9.5H21.125" stroke="#0078F0"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1.875 9.5L10.125 1.25M1.875 9.5L10.125 17.75M1.875 9.5H21.125" stroke="#0078F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </div>
         </a>

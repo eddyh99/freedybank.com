@@ -8,20 +8,16 @@
         <nav id="navbar" class="navbar">
             <ul class="px-5">
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="#services">Services</a></li>
-                <li><a class="f-bevietnam nav-link navbar-freedy scrollto"
-                        href="<?= base_url(); ?>link/work_with_us">Work with
+                <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="<?= base_url(); ?>link/work_with_us">Work with
                         us</a></li>
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="#contact">Contact us</a></li>
-                <li><a class="f-bevietnam nav-link navbar-freedy scrollto"
-                        href="<?= base_url(); ?>link/translate">Translate</a></li>
+                <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="<?= base_url(); ?>link/translate">Translate</a></li>
                 <li><a class="f-bevietnam nav-link navbar-freedy scrollto" href="<?= base_url(); ?>link/guide">The
                         guide</a></li>
-                <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-login"
-                        href="<?= base_url(); ?>auth/login">Log
+                <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-login" href="<?= base_url(); ?>auth/login">Log
                         in</a>
                 </li>
-                <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-signin"
-                        href="<?= base_url(); ?>auth/signup">Sign
+                <li><a class="f-bevietnam nav-link mx-0 my-2 mx-lg-2 my-lg-auto text-center btn-signin" href="<?= base_url(); ?>auth/signup">Sign
                         up</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -34,12 +30,10 @@
 <section id="" class="hero d-flex align-items-center mt-slider-8">
     <div class="container">
         <div class="row">
-            <div class="d-none d-lg-flex col-lg-6 col-xxl-4 hero-img align-items-center" data-aos="zoom-out"
-                data-aos-delay="200">
+            <div class="d-none d-lg-flex col-lg-6 col-xxl-4 hero-img align-items-center" data-aos="zoom-out" data-aos-delay="200">
                 <img src="<?= base_url(); ?>assets/img/phone.png" class="img-fluid" alt="">
             </div>
-            <div
-                class="col-12 col-lg-6 col-xxl-8 d-flex flex-column justify-content-center slider-freedy text-lg-start text-center">
+            <div class="col-12 col-lg-6 col-xxl-8 d-flex flex-column justify-content-center slider-freedy text-lg-start text-center">
                 <h1 data-aos="fade-up" class="f-lexend">Anonymous Bank System</h1>
                 <p data-aos="fade-up" class="f-lexend mt-3" data-aos-delay="400">
                     Open a <span translate="no"> Freedy </span> account and start <b>receiving - sending - paying -
@@ -57,9 +51,16 @@
                 </h2>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-center text-lg-start">
-                        <a href="<?= base_url(); ?>auth/signup"
-                            class="btn-slider-signin mt-5 scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                        <a href="<?= base_url(); ?>auth/signup" class="btn-slider-signin mt-5 scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                             <span>Sign up</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap mt-5">
+                    <div class="powered-top mb-3 me-5">
+                        <span>Empowered By</span>
+                        <a href="https://tracklessproject.com/">
+                            <img src="<?= base_url() ?>assets/img/tracklessprojects.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -163,12 +164,9 @@
             <div class="row gx-0" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-12 text-center my-5">
                     <svg width="24" height="79" viewBox="0 0 24 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10.9393 78.0607C11.5251 78.6464 12.4749 78.6464 13.0607 78.0607L22.6066 68.5147C23.1924 67.9289 23.1924 66.9792 22.6066 66.3934C22.0208 65.8076 21.0711 65.8076 20.4853 66.3934L12 74.8787L3.51472 66.3934C2.92894 65.8076 1.97919 65.8076 1.3934 66.3934C0.807615 66.9792 0.807615 67.9289 1.3934 68.5147L10.9393 78.0607ZM10.5 6.55671e-08L10.5 77L13.5 77L13.5 -6.55671e-08L10.5 6.55671e-08Z"
-                            fill="url(#paint0_linear_111_2549)" />
+                        <path d="M10.9393 78.0607C11.5251 78.6464 12.4749 78.6464 13.0607 78.0607L22.6066 68.5147C23.1924 67.9289 23.1924 66.9792 22.6066 66.3934C22.0208 65.8076 21.0711 65.8076 20.4853 66.3934L12 74.8787L3.51472 66.3934C2.92894 65.8076 1.97919 65.8076 1.3934 66.3934C0.807615 66.9792 0.807615 67.9289 1.3934 68.5147L10.9393 78.0607ZM10.5 6.55671e-08L10.5 77L13.5 77L13.5 -6.55671e-08L10.5 6.55671e-08Z" fill="url(#paint0_linear_111_2549)" />
                         <defs>
-                            <linearGradient id="paint0_linear_111_2549" x1="12" y1="38.5" x2="11" y2="38.5"
-                                gradientUnits="userSpaceOnUse">
+                            <linearGradient id="paint0_linear_111_2549" x1="12" y1="38.5" x2="11" y2="38.5" gradientUnits="userSpaceOnUse">
                                 <stop stop-color="#3430FA" />
                                 <stop offset="1" stop-color="#1893ED" />
                             </linearGradient>
@@ -192,8 +190,7 @@
                             activated immediately.
                         </p>
                         <div class="text-center text-lg-start">
-                            <a href="<?= base_url(); ?>auth/signup"
-                                class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
+                            <a href="<?= base_url(); ?>auth/signup" class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span class="f-lexend">Sign up</span>
                             </a>
                         </div>
@@ -212,8 +209,7 @@
                                     services used.
                                 </p>
                                 <div class="text-center text-lg-start">
-                                    <a href="<?= base_url(); ?>link/lern_transparency"
-                                        class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <a href="<?= base_url(); ?>link/lern_transparency" class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Learn more</span>
                                     </a>
                                 </div>
@@ -232,8 +228,7 @@
     <section id="reward" class="about">
         <div class="container p-r" data-aos="fade-up">
             <div class="row gx-0" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up"
-                    data-aos-delay="200">
+                <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <img src="<?= base_url(); ?>assets/img/img-34.png" alt="" class="bg-img-34 d-none d-lg-block">
                     <div class="row d-flex justify-content-end my-5">
                         <div class="col-lg-6 p-r mt-auto" data-aos="fade-up" data-aos-delay="200">
@@ -252,8 +247,7 @@
                                         50 currencies to any bank account even not under your name </li>
                                 </ul>
                                 <div class="text-center text-lg-start">
-                                    <a href="<?= base_url(); ?>link/crypto"
-                                        class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <a href="<?= base_url(); ?>link/crypto" class="btn-content-freedy d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span class="f-lexend">Learn more</span>
                                     </a>
                                 </div>
@@ -273,19 +267,16 @@
                 <header class="section-header">
                     <p class="f-lexend">Services For Company & Individual</p>
                 </header>
-                <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up"
-                    data-aos-delay="200">
+                <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="row d-flex justify-content-around">
                         <div class="col-12 col-md-3 service-freedy">
                             <div class="service-freedy text-center d-flex align-items-center flex-wrap">
-                                <div
-                                    class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
+                                <div class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/service-1.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Custody</h4>
                                     <a class="f-lexend" href="<?= base_url(); ?>link/service?service=1">Learn more</a>
                                 </div>
-                                <div
-                                    class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
+                                <div class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/service-2.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Essential for
                                         your trip</h4>
@@ -294,18 +285,15 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 service-freedy">
-                            <div
-                                class="service-freedy text-center d-flex justify-items-center align-items-center flex-column">
+                            <div class="service-freedy text-center d-flex justify-items-center align-items-center flex-column">
                                 <div class="text-center d-flex justify-items-center align-items-center flex-row">
-                                    <div
-                                        class="col-12 col-sm-8 col-md-8 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
+                                    <div class="col-12 col-sm-8 col-md-8 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
                                         <img src="<?= base_url(); ?>assets/img/service-3.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Capital exportation</h4>
                                         <a class="f-lexend" href="<?= base_url(); ?>link/service?service=3">Learn
                                             more</a>
                                     </div>
-                                    <div
-                                        class="col-12 col-sm-8 col-md-8 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
+                                    <div class="col-12 col-sm-8 col-md-8 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service p-3">
                                         <img src="<?= base_url(); ?>assets/img/service-7.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Crypto trading</h4>
                                         <a class="f-lexend" href="<?= base_url(); ?>link/service?service=7">Learn
@@ -317,16 +305,14 @@
                                 </div>
 
                                 <div class="text-center d-flex justify-items-center align-items-center flex-row">
-                                    <div
-                                        class=" col-12 col-sm-8 col-md-12 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4">
+                                    <div class=" col-12 col-sm-8 col-md-12 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4">
                                         <img src="<?= base_url(); ?>assets/img/service-4.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Collections &
                                             Payments</h4>
                                         <a class="f-lexend" href="<?= base_url(); ?>link/service?service=4">Learn
                                             more</a>
                                     </div>
-                                    <div
-                                        class=" col-12 col-sm-8 col-md-12 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4">
+                                    <div class=" col-12 col-sm-8 col-md-12 col-lg-5 mx-auto d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4">
                                         <img src="<?= base_url(); ?>assets/img/service-8.png" alt="">
                                         <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Find me &
                                             Search</h4>
@@ -337,16 +323,13 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-3 service-freedy">
-                            <div
-                                class="service-freedy text-center d-flex justify-items-center align-items-center flex-wrap">
-                                <div
-                                    class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
+                            <div class="service-freedy text-center d-flex justify-items-center align-items-center flex-wrap">
+                                <div class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/service-5.png" alt="">
                                     <h4 class="f-lexend mt-2 mt-md-3 mb-auto">Daily use</h4>
                                     <a class="f-lexend" href="<?= base_url(); ?>link/service?service=5">Learn more</a>
                                 </div>
-                                <div
-                                    class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
+                                <div class="col-12 col-sm-8 col-md-12 col-lg-10 d-flex flex-column align-items-center my-3 my-md-4 box-service px-2 py-4 m-auto">
                                     <img src="<?= base_url(); ?>assets/img/service-6.png" alt="">
                                     <h4 class="mt-2 mt-md-3 mb-auto">Get reward</h4>
                                     <a class="f-lexend" href="<?= base_url(); ?>link/service?service=6">Learn more</a>
@@ -364,8 +347,7 @@
     <section id="about" class="about">
         <div class="container border-bottom border-dark" data-aos="fade-up">
             <div class="row gx-0" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center my-5" data-aos="fade-up"
-                    data-aos-delay="200">
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center my-5" data-aos="fade-up" data-aos-delay="200">
                     <div class="content-freedy my-5">
                         <h2 class="f-lexend">The first debit card completely anonymous </h2>
                         <ul>
@@ -415,8 +397,7 @@
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
             <div class="row gx-0 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-12 col-lg-5 col-xxl-8 my-5 text-center text-lg-start" data-aos="fade-up"
-                    data-aos-delay="200" style="position: relative;">
+                <div class="col-12 col-lg-5 col-xxl-8 my-5 text-center text-lg-start" data-aos="fade-up" data-aos-delay="200" style="position: relative;">
                     <img src="<?= base_url(); ?>assets/img/sidephone.png" alt="" class="sidephone-1 d-none d-lg-block">
                     <div class="content-freedy">
                         <h2 class="f-lexend">
@@ -424,14 +405,12 @@
                             <span style="color: #005DF9;" translate="no">FreedyBank</span>
                         </h2>
                         <p class="f-lexend mt-5">Do you have any question? </p>
-                        <a href="<?= base_url(); ?>link/send_message"
-                            class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
+                        <a href="<?= base_url(); ?>link/send_message" class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
                             <span>Contact us</span>
                         </a>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 col-xxl-4 d-none d-lg-block" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative;">
+                <div class="col-12 col-lg-4 col-xxl-4 d-none d-lg-block" data-aos="fade-up" data-aos-delay="200" style="position: relative;">
                     <img src="<?= base_url(); ?>assets/img/phone-2.png" class="img-fluid phone-card" alt="">
                     <img src="<?= base_url(); ?>assets/img/sidephone.png" alt="" class="sidephone-2 d-none d-lg-block">
                 </div>
@@ -453,32 +432,27 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 features-freedy">
                     <div class="features-freedy text-center d-flex align-items-center flex-wrap">
-                        <div
-                            class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
+                        <div class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/features-1.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">100% Secure</h4>
                             <a class="f-lexend" href="<?= base_url(); ?>link/features?features=1">Learn more</a>
                         </div>
-                        <div
-                            class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
+                        <div class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/features-2.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Technology</h4>
                             <a class="f-lexend" href="<?= base_url(); ?>link/features?features=2">Learn more</a>
                         </div>
-                        <div
-                            class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
+                        <div class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/features-3.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Wallet</h4>
                             <a class="f-lexend" href="<?= base_url(); ?>link/features?features=3">Learn more</a>
                         </div>
-                        <div
-                            class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
+                        <div class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/features-4.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Missions</h4>
                             <a class="f-lexend" href="<?= base_url(); ?>link/features?features=4">Learn more</a>
                         </div>
-                        <div
-                            class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
+                        <div class="col-8 col-sm-5 col-md-5 col-lg-2 d-flex flex-column align-items-center my-4 box-features px-2 pt-5 pb-4 m-auto">
                             <img src="<?= base_url(); ?>assets/img/features-5.png" alt="">
                             <h4 class="f-lexend mb-auto mt-3">Work with us</h4>
                             <a class="f-lexend" href="<?= base_url(); ?>link/work_with_us">Learn more</a>
@@ -495,8 +469,7 @@
                                         ACCOUNT IN LESS
                                         THAN A MINUTE </h4>
                                     <div class="text-center">
-                                        <a href="<?= base_url(); ?>auth/signup"
-                                            class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
+                                        <a href="<?= base_url(); ?>auth/signup" class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend">
                                             <span>Sign up</span>
                                         </a>
                                     </div>
@@ -517,8 +490,7 @@
     <div class="footer-bg pt-5">
         <div class="container py-2">
             <div class="row gy-4">
-                <div
-                    class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start my-auto">
+                <div class="col-12 col-lg-3 col-md-12 footer-info d-flex align-items-center flex-column justify-content-start my-auto">
                     <a class="logo-footer d-flex align-items-center w-100">
                         <img src="<?= base_url(); ?>assets/img/logo-footer.png" alt="">
                     </a>
@@ -534,8 +506,7 @@
                         <div class="col-lg col-12 pe-2 pb-2 footer-links">
                             <h4 class="f-lexend">Contact us</h4>
                             <div class="list">
-                                <a href="mailto:freedybank@tracklessmail.com"
-                                    class="d-flex align-items-center my-1 text-decoration-none">
+                                <a href="mailto:freedybank@tracklessmail.com" class="d-flex align-items-center my-1 text-decoration-none">
                                     <i class="fa fa-envelope"></i>
                                     <span class="ms-1">
                                         freedybank@tracklessmail.com
@@ -581,5 +552,4 @@
     <img src="<?= base_url(); ?>assets/img/book-footer.png" alt="" class="book-footer">
 </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
