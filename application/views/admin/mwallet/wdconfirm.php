@@ -7,10 +7,8 @@
                     Withdraw Confirmation
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url() ?>admin/mwallet/wdnotif" method="post" id="form_submit"
-                        onsubmit="return validate()">
-                        <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
-                            value="<?php echo $this->security->get_csrf_hash(); ?>">
+                    <form action="<?= base_url() ?>admin/mwallet/wdnotif" method="post" id="form_submit" onsubmit="return validate()">
+                        <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <input type="hidden" name="transfer_type" value="<?= @$data["transfer_type"] ?>">
 
                         <input type="hidden" name="amount" value="<?= $data["amount"] ?>">
@@ -40,8 +38,10 @@
                         <input type="hidden" name="ifscCode" value="<?= @$data["ifscCode"] ?>">
                         <input type="hidden" name="clabe" value="<?= @$data["clabe"] ?>">
                         <input type="hidden" name="email" value="<?= @$data["email"] ?>">
-                        <input type="hidden" name="dateOfBirth"
-                            value="<?= date('Y-m-d', strtotime(@$data["dateOfBirth"])) ?>">
+                        <input type="hidden" name="interacAccount" value="<?= @$data["interacAccount"] ?>">
+                        <input type="hidden" name="customerReferenceNumber" value="<?= @$data["customerReferenceNumber"] ?>">
+                        <input type="hidden" name="billerCode" value="<?= @$data["billerCode"] ?>">
+                        <input type="hidden" name="dateOfBirth" value="<?= date('Y-m-d', strtotime(@$data["dateOfBirth"])) ?>">
 
                         <div class="mb-3">
                             <span class="form-label">Receptients Name</span>
@@ -69,22 +69,22 @@
                             ($_SESSION['currency'] == "SEK") ||
                             ($_SESSION['currency'] == "TRY")
                         ) { ?>
-                        <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                            <span class="form-label">IBAN</span>
-                            <span class="form-control border-0 px-0"><?= @$data["IBAN"] ?></span>
-                        </div>
+                            <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                <span class="form-label">IBAN</span>
+                                <span class="form-control border-0 px-0"><?= @$data["IBAN"] ?></span>
+                            </div>
                         <?php } elseif (
                             ($_SESSION['currency'] == "MXN")
                         ) { ?>
-                        <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                            <span class="form-label">Clabe</span>
-                            <span class="form-control border-0 px-0"><?= @$data["clabe"] ?></span>
-                        </div>
+                            <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                <span class="form-label">Clabe</span>
+                                <span class="form-control border-0 px-0"><?= @$data["clabe"] ?></span>
+                            </div>
                         <?php } else { ?>
-                        <div class="col-12 list-send-wallet d-flex flex-column mb-3">
-                            <span class="form-label">Account Number</span>
-                            <span class="form-control border-0 px-0"><?= @$data["accountNumber"] ?></span>
-                        </div>
+                            <div class="col-12 list-send-wallet d-flex flex-column mb-3">
+                                <span class="form-label">Account Number</span>
+                                <span class="form-control border-0 px-0"><?= @$data["accountNumber"] ?></span>
+                            </div>
                         <?php } ?>
                         <div class="mb-3">
                             <span class="form-label">Amount</span>
@@ -107,10 +107,8 @@
                                 <?= number_format(balanceadmin($_SESSION["currency"]) - $data["deduct"], 2, ".", ",") ?></span>
                         </div>
                         <div class="mb-3">
-                            <a href="<?= base_url() ?>admin/mwallet/withdraw"
-                                class="btn btn-freedy-white px-4 py-2 me-2 shadow-none">Cancel</a>
-                            <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none"
-                                id="btnconfirm">Confirm</button>
+                            <a href="<?= base_url() ?>admin/mwallet/withdraw" class="btn btn-freedy-white px-4 py-2 me-2 shadow-none">Cancel</a>
+                            <button class="btn btn-freedy-blue px-4 py-2 mx-2 shadow-none" id="btnconfirm">Confirm</button>
                         </div>
                     </form>
                 </div>
