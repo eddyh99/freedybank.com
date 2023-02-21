@@ -97,16 +97,17 @@ class Wallet extends CI_Controller
 
         $amount = $this->input->post("amount");
         $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
-        $_POST["amount"]=$new_amount;
+        $_POST["amount"] = $new_amount;
 
         $confirm_amount = $this->input->post("confirm_amount");
         $new_confirm_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $confirm_amount);
-        $_POST["confirm_amount"]=$new_confirm_amount;
+        $_POST["confirm_amount"] = $new_confirm_amount;
 
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('confirm_ucode', 'Confirm Unique Code', 'trim|required|matches[ucode]');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('confirm_amount', 'Confirm Amount', 'trim|required|greater_than[0]|matches[amount]');
+        $this->form_validation->set_rules('causal', 'Causal', 'trim');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
@@ -117,6 +118,7 @@ class Wallet extends CI_Controller
         $input        = $this->input;
         $ucode        = $this->security->xss_clean($input->post("ucode"));
         $amount        = $this->security->xss_clean($input->post("amount"));
+        $causal        = $this->security->xss_clean($input->post("causal"));
 
         $mdata  = array(
             "userid"    => $_SESSION["user_id"],
@@ -139,7 +141,8 @@ class Wallet extends CI_Controller
             "ucode"     => $ucode,
             "fee"     => $result->message->fee,
             "deduct"     => preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct),
-            "amount"    => $amount
+            "amount"    => $amount,
+            "causal"    => $causal
         );
 
         $data['title'] = NAMETITLE . " - Wallet to Wallet";
@@ -155,8 +158,8 @@ class Wallet extends CI_Controller
     {
         $amount = $this->input->post("amount");
         $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
-        $_POST["amount"]=$new_amount;
-        
+        $_POST["amount"] = $new_amount;
+
         $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|decimal|greater_than[0]');
 
@@ -169,12 +172,14 @@ class Wallet extends CI_Controller
         $input        = $this->input;
         $ucode        = $this->security->xss_clean($input->post("ucode"));
         $amount        = $this->security->xss_clean($input->post("amount"));
+        $causal        = $this->security->xss_clean($input->post("causal"));
 
         $mdata  = array(
             "userid"    => $_SESSION["user_id"],
             "currency"  => $_SESSION["currency"],
             "ucode"     => $ucode,
-            "amount"    => $amount
+            "amount"    => $amount,
+            "causal"    => $causal
         );
 
         $result = apitrackless(URLAPI . "/v1/member/wallet/walletTransfer", json_encode($mdata));
@@ -194,12 +199,12 @@ class Wallet extends CI_Controller
 
     public function receive()
     {
-		$srcr = base_url() . 'qr/receive/' . $_SESSION["ucode"] . $_SESSION["currency"]. '.png';
+        $srcr = base_url() . 'qr/receive/' . $_SESSION["ucode"] . $_SESSION["currency"] . '.png';
         if (@getimagesize($srcr) == FALSE) {
-            $urlqr = base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]). '/' . base64_encode($_SESSION["ucode"]);
-            $this->qrcodereceive($urlqr, $_SESSION["ucode"].$_SESSION["currency"]);
+            $urlqr = base_url() . 'auth/requestbank/' . base64_encode($_SESSION["currency"]) . '/' . base64_encode($_SESSION["ucode"]);
+            $this->qrcodereceive($urlqr, $_SESSION["ucode"] . $_SESSION["currency"]);
         }
-        
+
         $data['title'] = NAMETITLE . " - Wallet to Wallet";
 
         $this->load->view('tamplate/header', $data);
@@ -223,11 +228,11 @@ class Wallet extends CI_Controller
     {
         $amount = $this->input->post("amount");
         $new_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $amount);
-        $_POST["amount"]=$new_amount;
+        $_POST["amount"] = $new_amount;
 
         $confirm_amount = $this->input->post("confirm_amount");
         $new_confirm_amount = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $confirm_amount);
-        $_POST["confirm_amount"]=$new_confirm_amount;
+        $_POST["confirm_amount"] = $new_confirm_amount;
 
         $this->form_validation->set_rules('amount', 'Amount', 'trim|required|greater_than[0]');
         $this->form_validation->set_rules('confirm_amount', 'Confirm Amount', 'trim|required|greater_than[0]|matches[amount]');
@@ -240,7 +245,7 @@ class Wallet extends CI_Controller
 
         $input        = $this->input;
         $amount        = $this->security->xss_clean($input->post("amount"));
-        if (($amount*100) < 2) {
+        if (($amount * 100) < 2) {
             $this->session->set_flashdata('failed', 'Minimum amount is 0.02');
             redirect("wallet/request");
             return;
@@ -299,27 +304,27 @@ class Wallet extends CI_Controller
             return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
         }
     }
-    
+
     public function qrcodereceive($url, $kodeqr)
-	{
-		if ($kodeqr) {
-			$config['cacheable']    = true; //boolean, the default is true
-			$config['cachedir']     = './qr/'; //string, the default is application/cache/
-			$config['errorlog']     = './qr/'; //string, the default is application/logs/
-			$config['imagedir']     = './qr/receive/'; //direktori penyimpanan qr code
-			$config['quality']      = true; //boolean, the default is true
-			$config['size']         = '1024'; //interger, the default is 1024
-			$config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
-			$config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
-			$this->ciqrcode->initialize($config);
+    {
+        if ($kodeqr) {
+            $config['cacheable']    = true; //boolean, the default is true
+            $config['cachedir']     = './qr/'; //string, the default is application/cache/
+            $config['errorlog']     = './qr/'; //string, the default is application/logs/
+            $config['imagedir']     = './qr/receive/'; //direktori penyimpanan qr code
+            $config['quality']      = true; //boolean, the default is true
+            $config['size']         = '1024'; //interger, the default is 1024
+            $config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+            $config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+            $this->ciqrcode->initialize($config);
 
-			$image_name = $kodeqr . '.png'; //buat name dari qr code sesuai dengan nim
+            $image_name = $kodeqr . '.png'; //buat name dari qr code sesuai dengan nim
 
-			$params['data'] = $url; //data yang akan di jadikan QR CODE
-			$params['level'] = 'H'; //H=High
-			$params['size'] = 10;
-			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
-			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
-		}
-	}
+            $params['data'] = $url; //data yang akan di jadikan QR CODE
+            $params['level'] = 'H'; //H=High
+            $params['size'] = 10;
+            $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+            return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+        }
+    }
 }
