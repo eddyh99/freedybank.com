@@ -16,7 +16,7 @@ class Auth extends CI_Controller
 		$this->load->view('auth/index');
 		$this->load->view('tamplate/footer');
 	}
-	
+
 	public function page404()
 	{
 		$this->output->set_status_header('404');
@@ -47,6 +47,11 @@ class Auth extends CI_Controller
 
 	public function signup()
 	{
+		if (@$_GET['ref']) {
+			$ref = @$_GET['ref'];
+			$this->input->set_cookie("ref", @$ref, 60 * 60 * 24);
+		}
+
 		$data['title'] = NAMETITLE . " - Signup";
 
 		if ($this->session->userdata('user_id')) {
@@ -96,11 +101,15 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('confirmpass', 'Confirm Password', 'trim|required|matches[pass]');
 		$this->form_validation->set_rules('referral', 'Refferal', 'trim');
 
+		if (@$this->security->xss_clean($this->input->post("referral"))) {
+			$ref = $this->security->xss_clean($this->input->post("referral"));
+			$this->input->set_cookie("ref", @$ref, 60 * 60 * 24);
+		}
+
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('failed', "<p style='color:black'>" . validation_errors() . "</p>");
 			$this->session->set_flashdata('email', set_value('email'));
 			$this->session->set_flashdata('confirmemail', set_value('confirmemail'));
-			$this->session->set_flashdata('referral', set_value('referral'));
 			redirect(base_url() . "auth/signup");
 			return;
 		}
@@ -240,6 +249,12 @@ class Auth extends CI_Controller
 			// $srcr = base_url() . 'qr/receive/' . $result->message->ucode . '.png';
 			if (@getimagesize($src) == FALSE) {
 				$this->qrcodeuser($result->message->ucode);
+			}
+
+			$srcref = base_url() . 'qr/ref/' . $result->message->ucode . '.png';
+			$refurl = base_url() . "auth/signup?ref=" . $result->message->refcode;
+			if (@getimagesize($srcref) == FALSE) {
+				$this->qrcoderef($refurl, $result->message->ucode);
 			}
 			// if (@getimagesize($srcr) == FALSE) {
 			// 	$urlqr = base_url() . 'wallet/send?' . base64_encode('ucode=' . $_SESSION["ucode"]);
@@ -449,18 +464,41 @@ class Auth extends CI_Controller
 			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 		}
 	}
-	
-	public function requestbank($curr = '', $ucode = '', $amount=NULL)
+
+	public function qrcoderef($kodeqr, $name)
+	{
+		if ($kodeqr) {
+			$config['cacheable']    = true; //boolean, the default is true
+			$config['cachedir']     = './qr/'; //string, the default is application/cache/
+			$config['errorlog']     = './qr/'; //string, the default is application/logs/
+			$config['imagedir']     = './qr/ref/'; //direktori penyimpanan qr code
+			$config['quality']      = true; //boolean, the default is true
+			$config['size']         = '1024'; //interger, the default is 1024
+			$config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+			$config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+			$this->ciqrcode->initialize($config);
+
+			$image_name = $name . '.png'; //buat name dari qr code sesuai dengan nim
+
+			$params['data'] = $kodeqr; //data yang akan di jadikan QR CODE
+			$params['level'] = 'H'; //H=High
+			$params['size'] = 10;
+			$params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+			return  $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+		}
+	}
+
+	public function requestbank($curr = '', $ucode = '', $amount = NULL)
 	{
 		if ((empty($curr)) || (empty($ucode))) {
 			redirect(base_url());
 		}
 
 		$banks = URLAPI . "/v1/member/wallet/getAllbank";
-		$symbol = URLAPI . "/v1/trackless/currency/getsymbol?currency=".base64_decode($curr);
+		$symbol = URLAPI . "/v1/trackless/currency/getsymbol?currency=" . base64_decode($curr);
 
 		if ($amount) {
-			$data['urlamount'] = "&amount=".base64_decode(@$amount);
+			$data['urlamount'] = "&amount=" . base64_decode(@$amount);
 		}
 		$data['banks'] = apitrackless($banks)->message;
 		$data['symbol'] = apitrackless($symbol)->message;
