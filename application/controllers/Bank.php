@@ -57,7 +57,15 @@ class Bank extends CI_Controller
         $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
         $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
 
-        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_circuit_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_circuit_pct) + $bankcost->message->walletbank_circuit_fxd + $bankfee->message->walletbank_circuit_fxd;
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+            @$bankcost->message->walletbank_circuit_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->walletbank_circuit_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->referral_bank_pct) +
+            @$bankcost->message->walletbank_circuit_fxd +
+            @$bankfee->message->walletbank_circuit_fxd +
+            @$bankfee->message->referral_bank_fxd;
 
         if ((balance($_SESSION['user_id'], $_SESSION["currency"]) * 100) <= 0) {
             $fee = 0;
@@ -114,7 +122,15 @@ class Bank extends CI_Controller
         $bankcost = apitrackless(URLAPI . "/v1/admin/cost/getCost?currency=" . $_SESSION['currency']);
         $bankfee = apitrackless(URLAPI . "/v1/admin/fee/getFee?currency=" . $_SESSION['currency']);
 
-        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankcost->message->walletbank_outside_pct) + (balance($_SESSION['user_id'], $_SESSION["currency"]) * $bankfee->message->walletbank_outside_pct) + $bankcost->message->walletbank_outside_fxd + $bankfee->message->walletbank_outside_fxd;
+        $fee = (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+            @$bankcost->message->walletbank_outside_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->walletbank_outside_pct) +
+            (balance($_SESSION['user_id'], $_SESSION["currency"]) *
+                @$bankfee->message->referral_bank_pct) +
+            @$bankcost->message->walletbank_outside_fxd +
+            @$bankfee->message->walletbank_outside_fxd +
+            @$bankfee->message->referral_bank_fxd;
 
         if ((balance($_SESSION['user_id'], $_SESSION["currency"]) * 100) <= 0) {
             $fee = 0;
@@ -473,7 +489,7 @@ class Bank extends CI_Controller
         $transfer_type  = $this->security->xss_clean($input->post("transfer_type"));
         $temp["fee"]               = $result->message->fee;
         $temp["deduct"]            = preg_replace('/,(?=[\d,]*\.\d{2}\b)/', '', $result->message->deduct);
-        $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName")) . ' xxx';
+        $temp["accountHolderName"] = $this->security->xss_clean($input->post("accountHolderName"));
         $temp["amount"]            = $this->security->xss_clean($input->post("amount"));
         $temp["causal"]            = $this->security->xss_clean($input->post("causal"));
         $temp["transfer_type"]     = $transfer_type;
@@ -1029,7 +1045,7 @@ class Bank extends CI_Controller
 
         $input = $this->input;
         $transfer_type = $this->security->xss_clean($input->post("transfer_type"));
-        $accountHolderName = $this->security->xss_clean($input->post("accountHolderName"));
+        $accountHolderName = $this->security->xss_clean($input->post("accountHolderName")) . ' xxx';
         $amount = $this->security->xss_clean($input->post("amount"));
         $causal = $this->security->xss_clean($input->post("causal"));
         $transfer_type = $transfer_type;
