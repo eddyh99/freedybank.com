@@ -4,8 +4,8 @@
             <div class="col-10 col-sm-8 col-md-6 col-lg-5 box-form">
                 <div class="col-12 text-center my-auto">
                     <h3 class="fw-bold">Request Wallet</h3>
-                    <?php if ($amount) {?>
-                    <span>Amount : <?= $symbol->symbol ?> <?= number_format($amount,2) ?></span>
+                    <?php if ($amount) { ?>
+                        <span>Amount : <?= $symbol->symbol ?> <?= number_format($amount, 2) ?></span>
                     <?php } ?>
                 </div>
                 <div class="col-12">
@@ -13,18 +13,19 @@
                 </div>
                 <div class="row">
                     <?php foreach ($banks as $data) {
-                            if ($data->is_comingsoon == 'no') {
+                        if ($data->is_comingsoon == 'no') {
+                            if ($data->is_public == 'yes') {
                     ?>
 
-                    <div class="col-auto m-auto">
-                        <a href="<?= $data->site ?>/wallet/send?<?= base64_encode('cur='.$curr.'&ucode='.$ucode . @$urlamount) ?>"
-                            class="payment-bank my-3 d-flex flex-column rounded text-center">
-                            <img src="data:image/png;base64;<?= $data->logo ?>" alt="<?= $data->bank_name ?>"
-                                class="m-auto">
-                        </a>
-                    </div>
+                                <div class="col-auto m-auto">
+                                    <a href="<?= $data->site ?>/wallet/send?<?= base64_encode('cur=' . $curr . '&ucode=' . $ucode . @$urlamount) ?>" class="payment-bank my-3 d-flex flex-column rounded text-center">
+                                        <img src="data:image/png;base64;<?= $data->logo ?>" alt="<?= $data->bank_name ?>" class="m-auto">
+                                    </a>
+                                </div>
 
-                    <?php }} ?>
+                    <?php }
+                        }
+                    } ?>
                 </div>
             </div>
         </div>
