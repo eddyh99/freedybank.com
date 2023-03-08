@@ -59,7 +59,7 @@
                                     <path d="M4.875 31.5H34.125M9.75 27V15M16.25 27V15M22.75 27V15M29.25 27V15M32.5 10.5L20.189 3.39749C19.939 3.25329 19.8141 3.18119 19.68 3.15307C19.5615 3.12822 19.4385 3.12822 19.32 3.15307C19.1859 3.18119 19.061 3.25329 18.811 3.39749L6.5 10.5H32.5Z" stroke="" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
 
-                                <span class="ms-2">Wallet to Bank</span>
+                                <span class="ms-2">Send to Bank</span>
                             </a>
                             <a href="<?= base_url() ?>soon" class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue special">
                                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

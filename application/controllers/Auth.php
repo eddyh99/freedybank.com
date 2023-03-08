@@ -49,7 +49,8 @@ class Auth extends CI_Controller
 	{
 		if (@$_GET['ref']) {
 			$ref = @$_GET['ref'];
-			$this->input->set_cookie("ref", @$ref, 60 * 60 * 24);
+			$this->input->set_cookie("ref", @$ref, time()+60 * 60 * 24);
+			redirect('auth/signup');
 		}
 
 		$data['title'] = NAMETITLE . " - Signup";
