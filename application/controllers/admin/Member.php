@@ -26,8 +26,9 @@ class Member extends CI_Controller
     public function get_all()
     {
         $mdata = array(
-            "bank_id"  => BANK_ID,
-            "timezone"  => $_SESSION["time_location"]
+            "bank_id"   => BANK_ID,
+            "timezone"  => $_SESSION["time_location"],
+            "currency"  => $_SESSION["currency"]
         );
 
         $result = apitrackless(URLAPI . "/v1/trackless/user/getAll", json_encode($mdata));
