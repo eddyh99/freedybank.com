@@ -17,7 +17,9 @@
                         <div class="col-12 box-code-freedy px-4 py-3 text-center">
                             <div class="copy-uqcode mt-3 mb-5 d-flex flex-row">
                                 <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
-                                <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="">
+                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download>
+                                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR">
+                                </a>
                             </div>
                             <div class="currency-btn-setting mb-5">
                                 <a href="<?= base_url() ?>homepage/setting_currency" class="p-3">Active/Deactive
