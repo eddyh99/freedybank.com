@@ -2,6 +2,8 @@
 <section id="" class="hero d-flex align-items-center p-3 pt-md-5">
     <div class="container">
         <div class="row">
+            
+            <?php if($service != 8) {?>
             <div class="col-12">
                 <div class="link-back p-0">
                     <a href="<?= base_url() ?>">
@@ -9,6 +11,20 @@
                     </a>
                 </div>
             </div>
+            <?php }?>
+            
+            <!-- Start Button Back Shadow -->
+            <?php if($service == 8) {?>
+            <div class="col-12">
+                <div class="link-back p-0">
+                    <a href="<?= base_url() ?>">
+                        <img class="img-fluid" src="<?= base_url() ?>assets/img/backShadow.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <?php }?>
+            <!-- End Button Back Shadow -->
+
             <?php if ($service == 99) { ?>
             <div class="col-12 mt-5">
                 <div class="logo-text text-center">
@@ -162,7 +178,6 @@
                     will carry out an internal clearing (the internal clearing procedure is 100% legal).
                 </p>
             </div>
-
             <div class="col-12 mb-5 text-center">
                 <a href="<?= base_url(); ?>auth/signup"
                     class="btn-footer-signin mt-2 scrollto d-inline-flex align-items-center justify-content-center align-self-center f-lexend px-5 link-lp">
@@ -170,6 +185,7 @@
                 </a>
             </div>
             <?php } ?>
+
             <?php if ($service == 4) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
@@ -561,19 +577,20 @@
             </div>
             <?php } ?>
 
-
+            <!-- Start Find Me & Search -->
             <?php if ($service == 8) { ?>
             <div class="col-12 my-5">
                 <div class="logo-text text-center">
                     <img src="<?= base_url() ?>assets/img/service-8.png" alt="">
-                    <span class="f-lexend text-blue-freedy">Find me & Search</span>
+                    <span class="f-poppins fw-bold text-blue-findme py-1">Find me & Search</span>
                 </div>
             </div>
             <div class="col-12 mb-5">
                 <div class="col-12">
-                    <h2 class="title-top-header fw-bold">Find me</h2>
+                    <h1 class="title-top-header-findme f-lexend fw-bold pb-4">Find me</h1>
                 </div>
-                <div class="col-12 mb-3">
+                <!-- Start Findme -->       
+                <div class="col-12 f-poppins">
                     <div class="row">
                         <div class="col-12 col-lg-6 text-start my-auto content-freedy">
                             <p>
@@ -585,48 +602,65 @@
                                 <b translate="no"> Freedy Bank </b> for daily payments.
                             </p>
                             <p>
-                                <b class="text-blue-freedy fw-semibold">How to access to FIND ME service :</b><br>
-                                Send an email to contact@Freedy Bank.com with the<br>
-                                subject FIND ME<br>
-                                The email must contain the following data:
+                                <b class="text-blue-findme fw-bold">How to access to FIND ME service :</b><br>
                             </p>
-
-                            <div class="col-12 d-flex flex-column justify-content-center">
-                                <div class="content-freedy line text-start d-flex flex-row">
-                                    <ul class="ps-0 w-50">
-                                        <li class="ali">Name of the business</li>
-                                        <li class="ali">Product category</li>
-                                        <li class="ali">Google map link</li>
-                                    </ul>
-                                    <ul class="ps-0 w-50">
-                                        <li class="ali">Website link</li>
-                                        <li class="ali">Own unique code </li>
-                                        <li class="ali">Attachment of the company logo in .PNG format</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <form id="form-input-unique-code" class="w-100">
+                                <input type="text" class="input-unique-code" placeholder="Enter your Unique Code">
+                                <a href="<?= base_url(); ?>link/findme?findme=1">
+                                    <button type="button" class="btn-unique-code d-block btn my-3">
+                                        <div class="circle-btn-unique-code">
+                                            <i class="ri-arrow-right-line fs-4"></i>
+                                        </div>
+                                        <div class="pt-2 fw-semibold">
+                                            Next
+                                        </div>
+                                    </button>
+                                </a>
+                            </form>
+                            <p class="pt-5 text-black">
+                                Enter your unique code in order to validate your account, then click next and fill out all the fields that you find on the next pages, make sure to have ready an image of your business logo of and prepare the google maps link your business locations.
+                            </p>
                         </div>
                         <div class="col-md-6 d-none d-lg-grid">
                             <img src="<?= base_url() ?>assets/img/img-38.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
+                <!-- End Findme -->
+
+                <div class="col-12 mb-5">
+                    <div class="row content-freedy">
+                        <p class="col-12 col-lg-8 text-start">If you encounter problems while applying, contact our support service :</p>
+                        <p class="col-12 col-lg-4 text-start">
+                            <u>
+                                <a href="#" class="text-black fw-semibold">
+                                    contact@freedybankservice.com 
+                                </a>
+                            </u>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Start Search -->
                 <div class="col-12">
                     <div class="row">
                         <div class="col-md-6 d-none d-md-grid">
                             <img src="<?= base_url() ?>assets/img/img-39.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-12 col-md-6 text-start content-freedy">
-                            <h2 class="title-top-header fw-bold">Search</h2>
-                            <p>
+                            <h2 class="title-top-header-findme f-lexend fw-bold mb-5">Search</h2>
+                            <p class="text-black f-poppins">
                                 With this function in your wallet you will be able to see all the activities that accept
                                 <b translate="no"> FREEDY BANK </b> as a collection and payment system.
                             </p>
                         </div>
                     </div>
                 </div>
+                 <!-- End Search -->
             </div>
             <?php } ?>
+            <!-- End Find Me & Search -->
+            
         </div>
     </div>
 </section><!-- End Hero -->
