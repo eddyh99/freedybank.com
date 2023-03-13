@@ -68,11 +68,16 @@
                                 ($_SESSION["currency"] == "GBP") ||
                                 ($_SESSION["currency"] == "RON")
                             ) { ?>
-                            <button type="button" class="receive-attention d-flex flex-column text-center col-12 p-3"
+                            <button type="button" class="receive-attention f-rubik d-flex justify-content-center align-items-center flex-column text-center col-12 p-3"
                                 data-bs-toggle="modal" data-bs-target="#attention">
-                                <span class="mb-2 fw-bold title">ATTENTION!</span>
-                                <span class="mb-2 middle">Before make any topup</span>
-                                <span class="bottom">read carefully how does it work</span>
+                                <span class="mb-2 fw-bold title">IMPORTANT</span>
+                                <p class="desc fw-normal">
+                                    To maximize the privacy level, all incoming and outgoing transfers 
+                                        <span class="will-manage">
+                                            will be managed by a payment and collection gateway.
+                                        </span>
+                                    The bank details, of each currency, will be the same for all users;  excluding the ‘’causal’’ which identify the receiving wallet.
+                                </p>
                             </button>
                             <?php } ?>
                         </div>
