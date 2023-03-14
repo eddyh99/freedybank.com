@@ -189,7 +189,7 @@
                 <div class="modal-header">
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-start">
                   <ol>
                     <li>Open Google Maps</li>
                     <li>Enter your business</li>
@@ -198,7 +198,7 @@
                     <li>Paste on our form "Google maps"</li>
                   </ol>
                   <div class="d-flex justify-content-center">
-                    <img src="<?= base_url(); ?>assets/img/sharemaps.png" alt="sharemaps">
+                    <img class="img-fluid" src="<?= base_url(); ?>assets/img/sharemaps.png" alt="sharemaps">
                   </div>
                 </div>
               </div>

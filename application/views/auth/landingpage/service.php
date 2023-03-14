@@ -648,7 +648,7 @@
                             <img src="<?= base_url() ?>assets/img/img-39.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-12 col-md-6 text-start content-freedy">
-                            <h2 class="title-top-header-findme f-lexend fw-bold mb-5">Search</h2>
+                            <h2 class="title-top-header-findme f-lexend fw-bold mb-3 mb-lg-5">Search</h2>
                             <p class="text-black f-poppins">
                                 With this function in your wallet you will be able to see all the activities that accept
                                 <b translate="no"> FREEDY BANK </b> as a collection and payment system.
