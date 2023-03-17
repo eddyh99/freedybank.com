@@ -149,4 +149,72 @@ class Homepage extends CI_Controller
         );
         echo json_encode($response);
     }
+
+
+    public function card($card=null, $requestcard=null)
+    {   
+        
+        $data['title'] = NAMETITLE . " - Homepage";
+        $data['basecard'] = base_url() . 'homepage/card';
+        $data['card'] = $card;
+        $data['requestcard'] = $requestcard;
+        $footer["extra"] = "member/js/js_index";
+        
+
+
+        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
+
+        // IF REQUEST CARD
+        // if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card/requestcard']) )
+        // {
+        //     $this->load->view('tamplate/header', $data);
+        //     $this->load->view('member/card/card-request', $data);
+        //     $this->load->view('tamplate/navbar-bottom-back', $data);
+        //     $this->load->view('tamplate/footer', $footer);
+        // }
+
+        // IF ALREADY CARD 
+        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card' ]) )
+        {
+            $this->load->view('tamplate/header', $data);
+            $this->load->view('member/card/card', $data);
+            $this->load->view('tamplate/navbar-bottom-back', $data);
+            $this->load->view('tamplate/footer', $footer);
+        }
+
+    }
+
+    public function requestcard($requestcard=null,$card=null)
+    {   
+        
+        $data['title'] = NAMETITLE . " - Homepage";
+        $data['basecard'] = base_url() . 'homepage/requestcard';
+        $data['requestcard'] = $requestcard;
+        $data['card'] = $card;
+        $footer["extra"] = "member/js/js_index";
+        
+
+
+        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
+
+        // IF REQUEST CARD
+        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/requestcard']) )
+        {
+            $this->load->view('tamplate/header', $data);
+            $this->load->view('member/card/card-request', $data);
+            $this->load->view('tamplate/navbar-bottom-back', $data);
+            $this->load->view('tamplate/footer', $footer);
+        }
+
+        // IF ALREADY CARD 
+        // if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card' ]) )
+        // {
+        //     $this->load->view('tamplate/header', $data);
+        //     $this->load->view('member/card/card', $data);
+        //     $this->load->view('tamplate/navbar-bottom-back', $data);
+        //     $this->load->view('tamplate/footer', $footer);
+        // }
+
+    }
+    
 }

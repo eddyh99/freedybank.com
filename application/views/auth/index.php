@@ -531,9 +531,7 @@
                         </div>
                         <div class="col-12 col-lg-8 pt-5 pb-3" style="z-index: 99; position: relative;">
                             <div class="credits f-lexend pt-2">
-                                <br translate="no">FreedyBankService</b> (UAE) is a service subject to partnership with
-                                licensee PBS Online
-                                LLC.
+                                <br translate="no">FreedyBankService</b> (UAE)
                             </div>
                         </div>
                     </div>

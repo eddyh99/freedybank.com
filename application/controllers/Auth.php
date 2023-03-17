@@ -418,7 +418,7 @@ class Auth extends CI_Controller
 		$this->session->sess_destroy();
 
 		$this->session->set_flashdata('success', 'You Have been logged out');
-		redirect('Auth/login');
+		redirect(base_url());
 	}
 
 	public function qrcodereceive($url, $kodeqr)

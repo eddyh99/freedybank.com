@@ -15,14 +15,15 @@
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="col-12 box-code-freedy px-4 py-3 text-center">
-                            <div class="copy-uqcode mt-3 mb-5 d-flex flex-row">
-                                <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
-                                <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="">
-                            </div>
-                            <div class="currency-btn-setting mb-5">
-                                <a href="<?= base_url() ?>homepage/setting_currency" class="p-3">Active/Deactive
-                                    Currencies</a>
-                            </div>
+                                <div class="copy-uqcode mt-1 d-flex justify-content-center align-items-center text-center">
+                                    <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
+                                    <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
+                                        <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+                                        <div class="">
+                                            <i class="ri-download-line"></i>
+                                        </div>
+                                    </a>
+                                </div>
                             <span class="">Copy & share your referral link to earn money</span>
                             <div class="copy-refcode d-flex flex-row justify-content-center mb-4">
                                 <input class="col-7 me-2" type="text" name="" id="refcode" value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>
@@ -42,16 +43,31 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 menus-list-app mb-4">
-                        <div class="col-12">
-                            <a href="" class="d-flex flex-row justify-content-center align-items-center py-2 my-3">
-                                <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22.1 26.7982H3.9C3.55522 26.7982 3.22456 26.6463 2.98076 26.3759C2.73696 26.1055 2.6 25.7388 2.6 25.3564V13.8218H0L12.0796 0.422869C12.2003 0.288813 12.3437 0.182465 12.5015 0.109906C12.6593 0.0373469 12.8285 0 12.9993 0C13.1702 0 13.3394 0.0373469 13.4972 0.109906C13.655 0.182465 13.7984 0.288813 13.9191 0.422869L26 13.8218H23.4V25.3564C23.4 25.7388 23.263 26.1055 23.0192 26.3759C22.7754 26.6463 22.4448 26.7982 22.1 26.7982ZM10.4 16.7054H15.6V23.9146H20.8V12.132L13 3.48099L5.2 12.132V23.9146H10.4V16.7054Z" fill="#0078F0" />
-                                </svg>
-                                <span class="ms-2">Home</span>
+                    <div class="row my-4 btn-dashome">
+                        <div class="col-6">
+                            <a href="<?= base_url() ?>homepage/setting_currency" class=" d-flex justify-content-center align-items-center my-2">
+                                <span class="text-center">
+                                    Active/Deactive <br> Currencies
+                                </span>
                             </a>
                         </div>
+                        <div class="col-6">
+                            <a href="<?= base_url() ?>homepage/requestcard" class="d-flex justify-content-center align-items-center my-2">
+                                <div class="text-center d-flex card-dashome justify-content-center align-items-center">
+                                    <svg width="55" height="55" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.5" y="9" width="27" height="19.5" rx="2" stroke="white" stroke-width="3"/>
+                                        <path d="M10.5 22.5H10.5146" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M6 16.5H31.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                    <span class="mx-2">
+                                        Card
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
+                    <!-- End Dashboard -->
                     <div class="col-12 curencies-list-app">
                         <div class="col-12 d-flex flex-row justify-content-center align-items-center title-curencies-list">
                             <span class="me-auto">Curencies</span>
