@@ -356,26 +356,14 @@ section {
   }
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 .input-unique-code {
   display: block;
   width: 100%;
   height: 60px;
-<<<<<<< HEAD
   border: 0px none;
   border-radius: 50px;
   background-color: #ececec;
   border: 2px transparent solid;
-=======
-  border: 0px none ;
-  border-radius: 50px;
-  background-color: #ECECEC;
-  border:  2px transparent solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   padding-right: 10px;
   font-size: 16px;
   text-align: center;
@@ -391,41 +379,25 @@ section {
 
 .input-unique-code:focus {
   /* padding-left: 25px; */
-<<<<<<< HEAD
   outline: 2px #0078f0 solid;
-=======
-  outline: 2px #0078F0 solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   transition: all 0.3s;
   text-align: center;
 }
 
-<<<<<<< HEAD
 .btn-unique-code {
   width: 120px;
   height: 50px;
   background-color: #0078f0;
-=======
-.btn-unique-code{
-  width: 120px;
-  height: 50px;
-  background-color: #0078F0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   border-radius: 99999px;
   margin: auto;
 }
 
-<<<<<<< HEAD
 .btn-unique-code:hover {
-=======
-.btn-unique-code:hover{
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   background-color: #0359af;
 }
 
 .country-select {
-<<<<<<< HEAD
   background-color: #d9d9d9 !important;
   width: 100%;
   height: 60px;
@@ -440,21 +412,6 @@ section {
 .country-select:focus {
   box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
   outline: 2px #acacac solid;
-=======
-    background-color: #D9D9D9 !important;
-    width: 100% ;
-    height: 60px;
-    color: gray !important;
-    border: 0 none !important;
-    border-radius: 10px !important;
-    padding: 6px 20px !important;
-    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-.country-select:focus {
-    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);
-    outline: 2px #acacac solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 }
 
 .circle-btn-unique-code {
@@ -466,7 +423,6 @@ section {
 }
 
 .ri-arrow-right-line {
-<<<<<<< HEAD
   width: 100%;
   height: 100%;
   margin: auto;
@@ -485,9 +441,6 @@ section {
   font-size: 28px !important;
   line-height: 110%;
   color: #274d75 !important;
-=======
-  color: #0078F0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 }
 
 .drop-container {
@@ -501,8 +454,6 @@ section {
   height: 200px;
   padding: 20px;
   border-radius: 10px;
-  /* border: 2px dashed #555; */
-<<<<<<< HEAD
   background-color: #d9d9d9;
   color: #444;
   cursor: pointer;
@@ -511,16 +462,6 @@ section {
 
 .text-findme {
   font-size: 14px !important;
-=======
-  background-color: #D9D9D9;
-  color: #444;
-  cursor: pointer;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
-}
-
-.text-findme {
-  font-size: 16px !important;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 }
 
 .drop-container:hover .drop-title {
@@ -532,18 +473,10 @@ section {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-<<<<<<< HEAD
   transition: color 0.2s ease-in-out;
 }
 
 .drop-container input[type="file"] {
-=======
-  transition: color .2s ease-in-out;
-}
-
-.drop-container input[type=file] {
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
-  width: 350px;
   max-width: 100%;
   color: #444;
   padding: 5px;
@@ -552,11 +485,7 @@ section {
   border: 1px solid #555;
 }
 
-<<<<<<< HEAD
 .drop-container input[type="file"]::file-selector-button {
-=======
-.drop-container input[type=file]::file-selector-button {
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   margin-right: 20px;
   border: none;
   background: #084cdf;
@@ -564,7 +493,6 @@ section {
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
-<<<<<<< HEAD
   transition: background 0.2s ease-in-out;
 }
 
@@ -574,23 +502,12 @@ section {
 
 .circle-upload-img {
   background-color: #a0a0a0;
-=======
-  transition: background .2s ease-in-out;
-}
 
-.drop-container input[type=file]::file-selector-button:hover {
-  background: #0d45a5;
-}
-
-.circle-upload-img{
-  background-color: #A0A0A0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   width: 100px;
   height: 100px;
   border-radius: 99999px;
 }
 
-<<<<<<< HEAD
 .circle-upload-img i {
   font-size: 50px !important;
 }
@@ -626,8 +543,6 @@ section {
   color: white;
 }
 
-=======
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 500;
@@ -2955,11 +2870,7 @@ section {
 }
 
 .text-blue-findme {
-<<<<<<< HEAD
   color: #0078f0 !important;
-=======
-  color: #0078F0 !important;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 }
 
 .p-r {
@@ -5290,17 +5201,10 @@ section {
     display: block;
     width: 100%;
     height: 70px;
-<<<<<<< HEAD
     border: 0px none;
     border-radius: 50px;
     background-color: #ececec;
     border: 2px transparent solid;
-=======
-    border: 0px none ;
-    border-radius: 50px;
-    background-color: #ECECEC;
-    border:  2px transparent solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     padding-right: 30px;
     font-size: 16px;
     text-align: center;
@@ -5316,17 +5220,12 @@ section {
 
   .input-unique-code:focus {
     /* padding-left: 25px; */
-<<<<<<< HEAD
     outline: 2px #0078f0 solid;
-=======
-    outline: 2px #0078F0 solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
     transition: all 0.3s;
     text-align: center;
   }
 
-<<<<<<< HEAD
   .btn-unique-code {
     width: 120px;
     height: 50px;
@@ -5334,19 +5233,6 @@ section {
     border-radius: 99999px;
     margin: auto;
   }
-=======
-  .btn-unique-code{
-    width: 120px;
-    height: 50px;
-    background-color: #0078F0;
-    border-radius: 99999px;
-    margin: auto;
-  }
-
-
-
-
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 }
 
 @media (min-width: 576px) {
@@ -7083,15 +6969,9 @@ section {
 
   .title-top-header-findme {
     font-weight: 600;
-<<<<<<< HEAD
     font-size: 28px !important;
     line-height: 110%;
     color: #274d75 !important;
-=======
-    font-size: 24px !important;
-    line-height: 110%;
-    color: #274D75 !important;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   }
 
   .freedy-accordion-item {
@@ -7405,17 +7285,10 @@ section {
     display: block;
     width: 100%;
     height: 70px;
-<<<<<<< HEAD
     border: 0px none;
     border-radius: 50px;
     background-color: #ececec;
     border: 2px transparent solid;
-=======
-    border: 0px none ;
-    border-radius: 50px;
-    background-color: #ECECEC;
-    border:  2px transparent solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     padding-right: 30px;
     font-size: 16px;
     text-align: center;
@@ -7431,34 +7304,21 @@ section {
 
   .input-unique-code:focus {
     /* padding-left: 25px; */
-<<<<<<< HEAD
     outline: 2px #0078f0 solid;
-=======
-    outline: 2px #0078F0 solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
     transition: all 0.3s;
     text-align: center;
   }
-<<<<<<< HEAD
 
   .btn-unique-code {
     width: 120px;
     height: 50px;
     background-color: #0078f0;
-=======
-  
-  .btn-unique-code{
-    width: 120px;
-    height: 50px;
-    background-color: #0078F0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     border-radius: 99999px;
   }
 }
 
 @media (min-width: 768px) {
-<<<<<<< HEAD
   .thank-findme h1 {
     font-size: 55px !important;
     color: #274d75;
@@ -7482,24 +7342,15 @@ section {
   .text-next {
     font-size: 16px !important;
   }
-=======
-  
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
+
   .input-unique-code {
     display: block;
     width: 100%;
     height: 70px;
-<<<<<<< HEAD
     border: 0px none;
     border-radius: 50px;
     background-color: #ececec;
     border: 2px transparent solid;
-=======
-    border: 0px none ;
-    border-radius: 50px;
-    background-color: #ECECEC;
-    border:  2px transparent solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     padding-right: 30px;
     font-size: 16px;
     text-align: center;
@@ -7515,28 +7366,16 @@ section {
 
   .input-unique-code:focus {
     /* padding-left: 25px; */
-<<<<<<< HEAD
     outline: 2px #0078f0 solid;
-=======
-    outline: 2px #0078F0 solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
     transition: all 0.3s;
     text-align: center;
   }
-<<<<<<< HEAD
 
   .btn-unique-code {
     width: 120px;
     height: 50px;
     background-color: #0078f0;
-=======
-  
-  .btn-unique-code{
-    width: 120px;
-    height: 50px;
-    background-color: #0078F0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     border-radius: 99999px;
     margin: auto;
   }
@@ -9262,15 +9101,9 @@ section {
 
   .title-top-header-findme {
     font-weight: 600;
-<<<<<<< HEAD
     font-size: 28px !important;
     line-height: 110%;
     color: #274d75 !important;
-=======
-    font-size: 24px !important;
-    line-height: 110%;
-    color: #274D75 !important;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   }
 
   .freedy-accordion-item {
@@ -9575,7 +9408,6 @@ section {
 }
 
 @media (min-width: 992px) {
-<<<<<<< HEAD
   /* .form-req-card input::placeholder, 
   .form-req-card input[type="text"] {
     font-size: 16px;
@@ -9589,17 +9421,6 @@ section {
     border-radius: 50px;
     background-color: #ececec;
     border: 2px transparent solid;
-=======
-
-   .input-unique-code {
-    display: block;
-    width: 80%;
-    height: 70px;
-    border: 0px none ;
-    border-radius: 50px;
-    background-color: #ECECEC;
-    border:  2px transparent solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     padding-right: 30px;
     font-size: 16px;
     text-align: center;
@@ -9615,36 +9436,20 @@ section {
 
   .input-unique-code:focus {
     /* padding-left: 25px; */
-<<<<<<< HEAD
     outline: 2px #0078f0 solid;
-=======
-    outline: 2px #0078F0 solid;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
     transition: all 0.3s;
     text-align: center;
   }
-<<<<<<< HEAD
 
   .btn-unique-code {
     width: 120px;
     height: 50px;
     background-color: #0078f0;
-=======
-  
-  .btn-unique-code{
-    width: 120px;
-    height: 50px;
-    background-color: #0078F0;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
     border-radius: 99999px;
     margin-left: 110px;
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   .box-service-list .icon img {
     height: 65px;
   }
@@ -11732,11 +11537,7 @@ section {
     font-weight: 600;
     font-size: 45px !important;
     line-height: 110%;
-<<<<<<< HEAD
     color: #274d75 !important;
-=======
-    color: #274D75 !important;
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
   }
 
   .freedy-accordion-item {

@@ -586,12 +586,6 @@
                 </div>
             </div>
             <div class="col-12 mb-5">
-<<<<<<< HEAD
-=======
-                <div class="col-12">
-                    <h1 class="title-top-header-findme f-lexend fw-bold pb-4">Find me</h1>
-                </div>
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
                 <!-- Start Findme -->       
                 <div class="col-12 f-poppins">
                     <div class="row">
@@ -611,17 +605,10 @@
                                 <input type="text" class="input-unique-code" placeholder="Enter your Unique Code">
                                 <a href="<?= base_url(); ?>link/findme?findme=1">
                                     <button type="button" class="btn-unique-code d-block btn my-3">
-<<<<<<< HEAD
                                         <div class="circle-btn-unique-code flex justify-content-center">
                                             <i class="ri-arrow-right-line fs-4"></i>
                                         </div>
                                         <div class="pt-2 fw-semibold text-next">
-=======
-                                        <div class="circle-btn-unique-code">
-                                            <i class="ri-arrow-right-line fs-4"></i>
-                                        </div>
-                                        <div class="pt-2 fw-semibold">
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
                                             Next
                                         </div>
                                     </button>
@@ -658,11 +645,7 @@
                             <img src="<?= base_url() ?>assets/img/img-39.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-12 col-md-6 text-start content-freedy">
-<<<<<<< HEAD
                             <h2 class="title-top-header-findme f-lexend fw-bold mb-3 mb-lg-5">Search</h2>
-=======
-                            <h2 class="title-top-header-findme f-lexend fw-bold mb-5">Search</h2>
->>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
                             <p class="text-black f-poppins">
                                 With this function in your wallet you will be able to see all the activities that accept
                                 <b translate="no"> FREEDY BANK </b> as a collection and payment system.
