@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!-- Start Confirm -->
 <?php if($findme == "confirm") {?>
@@ -21,6 +22,8 @@
 <!-- End Confirm -->
 
 <?php } else { ?>
+=======
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
 <section id="" class="hero d-flex p-3 pt-md-5 " style="height: 1000px;">
   <div class="container">
     <div class="row">
@@ -112,6 +115,7 @@
           <!-- End Select Category  -->
 
           <!-- Start Other Category  -->
+<<<<<<< HEAD
           <div class="col-md-12 my-5">
           <div class="d-flex align-items-center mb-1">
               <h5 class="fw-bold text-black text-start text-findme me-3">*Other category</h5>
@@ -119,18 +123,26 @@
                 <i class="ri-question-line "></i>
               </span>
             </div>
+=======
+          <div class="col-md-12 my-5">        
+            <h5 class=" fw-bold text-black text-start mb-3 text-findme">*Other category </h5>
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
             <input class="country-select" type="text" placeholder="Link Here">
           </div>
           <!-- End Other Category  -->
 
           <!-- Start Other Category  -->
           <div class="col-md-12 mb-5">        
+<<<<<<< HEAD
           <div class="d-flex align-items-center mb-1">
               <h5 class="fw-bold text-black text-start text-findme me-3">*Other category</h5>
               <span class="mb-2">
                 <i class="ri-question-line "></i>
               </span>
             </div>
+=======
+            <h5 class=" fw-bold text-black text-start mb-3 text-findme">*Other category </h5>
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
             <input class="country-select" type="text" placeholder="Link Here">
           </div>
           <!-- End Other Category  -->
@@ -157,7 +169,11 @@
       <?php if($findme == 3){ ?>
         <div class="col-12 mb-5 pb-5">
             <div class="link-back p-0">
+<<<<<<< HEAD
                 <a href="<?= base_url(); ?>link/findme?findme=2">
+=======
+                <a href="<?= base_url(); ?>link/findme?findme=1">
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
                     <img src="<?= base_url() ?>assets/img/backShadow.png" alt="">
                 </a>
             </div>
@@ -206,8 +222,6 @@
             </div>
           </div>
            <!-- End  Modal -->
-
-
           <!-- Start logo -->
           <div class="col-md-12 my-5 pt-5">        
             <h5 class=" fw-bolder text-black text-start mb-3 text-findme">*Enter image (logo/brand)</h5>
@@ -242,7 +256,11 @@
 
     </div>
   </div>
+<<<<<<< HEAD
 </section>
 <?php }?>
 
 
+=======
+</section>
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83

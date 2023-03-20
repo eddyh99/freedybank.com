@@ -24,6 +24,16 @@
                                         </div>
                                     </a>
                                 </div>
+                            <div class="copy-uqcode mt-3 mb-5 d-flex flex-row">
+                                <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
+                                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download>
+                                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR">
+                                </a>
+                            </div>
+                            <div class="currency-btn-setting mb-5">
+                                <a href="<?= base_url() ?>homepage/setting_currency" class="p-3">Active/Deactive
+                                    Currencies</a>
+                            </div>
                             <span class="">Copy & share your referral link to earn money</span>
                             <div class="copy-refcode d-flex flex-row justify-content-center mb-4">
                                 <input class="col-7 me-2" type="text" name="" id="refcode" value="<?= base_url() ?>auth/signup?ref=<?= $_SESSION["referral"] ?>" readonly>

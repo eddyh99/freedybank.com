@@ -3,7 +3,13 @@
         <div class="col-12 box-code-freedy px-4 py-3">
             <div class="copy-uqcode mt-3 mb-4 d-flex flex-row">
                 <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?> </span>
+<<<<<<< HEAD
                 <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
+=======
+                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download>
+                    <img src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR">
+                </a>
+>>>>>>> 5276d3a392e1fdd035fc26e0b4c5ee6575efea83
             </div>
             <div class="mywallet d-flex flex-column mb-4">
                 <span class="balance">Balance</span>

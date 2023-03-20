@@ -13,6 +13,11 @@ class Homepage extends CI_Controller
 
     public function index()
     {
+        $srcref = base_url() . 'qr/ref/' . $_SESSION["ucode"] . 'Thumbnail.png';
+        if (@getimagesize($srcref) == FALSE) {
+            $this->ciqrcode->createThumbnail($_SESSION["ucode"], 'qr/ref/');
+        }
+
         $mdata = array(
             "userid" => $_SESSION["user_id"]
         );
@@ -150,7 +155,6 @@ class Homepage extends CI_Controller
         echo json_encode($response);
     }
 
-
     public function card()
     {   
         
@@ -195,3 +199,4 @@ class Homepage extends CI_Controller
     }
     
 }
+
