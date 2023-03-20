@@ -204,9 +204,9 @@ section {
 
 }
 
-.nohp-select option[value="test"]{
-  background-image:url(../img/poland.png) !important; 
-}
+
+
+
 
 .nohp-select {
   background-color: white !important;
@@ -216,17 +216,34 @@ section {
   color: #121212 !important;
   border: 0 none !important;
   border-radius: 16px !important;
-  padding: 6px 20px !important;
   box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+.nohp-select.inputPass{
+  color: #949494;
+  font-weight: 400 !important;
+  padding: 6px 20px !important;
+}
+
 
 .nohp-select.nohp-input{
   color: #949494;
   font-weight: 400 !important;
 }
 
+.nohp-select.input-nohp{
+  color: #949494;
+  font-weight: 400 !important;
+  width: 100%;
+}
 
-.card-req-activation input[type=number]::-webkit-inner-spin-button {
+
+.nohp-select.input-nohp:focus{
+  padding-left: 50px !important;
+}
+
+
+.card-req-activation input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -499,7 +516,7 @@ section {
 .bg-thank {
   height: 100vh;
   overflow-y: scroll !important;
-  background-color: #cdedff;
+  background-color: #BDFFCF;
 }
 
 .thank-findme h1 {
@@ -514,7 +531,7 @@ section {
 
 .btn-thank {
   width: 220px;
-  height: 72px;
+  height: 67px;
   background-color: #0078f0;
   font-size: 20px;
   box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.25);

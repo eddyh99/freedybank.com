@@ -23,7 +23,7 @@
                                 <span>New balance</span>
                             </div>
                             <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                <a href="<?= base_url(); ?>homepage/card/success"
+                                <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('success')?>"
                                     class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                     <span class="f-lexend">Confirm</span>
                                 </a>
@@ -43,7 +43,7 @@
                     <img src="<?= base_url()?>assets/img/check-success.png" alt="success">
                     <h1 class="text-center f-poppins text-blue-freedy my-5">YOUR CARD BALANCE WILL BE UPDATE WITHIN 2 WORKING DAYS</h1>
                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                        <a href="<?= base_url(); ?>homepage"
+                        <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                             <span class="f-lexend">Done</span>
                         </a>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     
-                        <?php if($basecard == current_url()){?>
+                        <?php if($card == 'card'){?>
                         <div class="mt-5 f-poppins row">
                             <div class="d-flex justify-content-between align-items-center card-balance my-1">
                                 <div>
@@ -136,7 +136,7 @@
                             <div style="height: 1px; width: 100%; background-color: #0099FF" class="mt-4"></div>
                         </div>
                         <div class="row my-4">
-                            <a href="<?= base_url(); ?>homepage/card/topup" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
+                            <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('topup')?>" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
                                 <span class="text-blue-freed fw-bold">
                                     Top Up Your Card
                                 </span>
@@ -184,7 +184,7 @@
                                     </div>
 
                                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                        <a href="<?= base_url(); ?>homepage/card/confirm"
+                                        <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('confirm')?>"
                                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                             <span class="f-lexend">Confirm</span>
                                         </a>

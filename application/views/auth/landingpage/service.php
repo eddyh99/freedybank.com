@@ -586,9 +586,6 @@
                 </div>
             </div>
             <div class="col-12 mb-5">
-                <div class="col-12">
-                    <h1 class="title-top-header-findme f-lexend fw-bold pb-4">Find me</h1>
-                </div>
                 <!-- Start Findme -->       
                 <div class="col-12 f-poppins">
                     <div class="row">

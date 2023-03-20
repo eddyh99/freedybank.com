@@ -52,7 +52,7 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="<?= base_url() ?>homepage/requestcard" class="d-flex justify-content-center align-items-center my-2">
+                            <a href="<?= base_url() ?>soon" class="d-flex justify-content-center align-items-center my-2">
                                 <div class="text-center d-flex card-dashome justify-content-center align-items-center">
                                     <svg width="55" height="55" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="4.5" y="9" width="27" height="19.5" rx="2" stroke="white" stroke-width="3"/>

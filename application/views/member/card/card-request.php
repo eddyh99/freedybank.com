@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center">
         <div class="col-12 col-sm-8 col-lg-5 col-xl-4">
             <div class="container" style="margin-bottom: 8rem;">
-                <div class="app-container py-5 ">
+                <div class="app-container  ">
                     <div class="row">
                         <h3 class="text-center text-blue-freedy fw-bolder f-poppins mt-5 pt-5 col-11 mx-auto">YOUR VIRTUAL CARD DETAILS</h3>
                         <div class="mt-5 wrap-border-topup p-3 p-md-4 col-10 mx-auto">
@@ -20,7 +20,7 @@
                                 <span>12 March 2023</span>
                             </div>
                             <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                <a href="<?= base_url(); ?>homepage/card"
+                                <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
                                     class="btn-card-confirm-nocard  d-inline-flex align-items-center justify-content-center align-self-center">
                                     <span class="f-lexend">Confirm</span>
                                 </a>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <?php if($requestcard == ''){?>
+                    <?php if($requestcard == 'requestcard'){?>
                         <div class="row my-5">
                             <div class="col-12">
                                 <div class="text-topup-card ">
@@ -102,7 +102,7 @@
                                         </div>
             
                                         <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                            <a href="<?= base_url(); ?>homepage/requestcard/virtual"
+                                            <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('virtual')?>"
                                                 class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                                 <span class="f-lexend">Next</span>
                                             </a>
@@ -121,7 +121,7 @@
                                         Card
                                     </h1>
                                 </div>
-                                <a href="<?= base_url(); ?>homepage/requestcard/activenow" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
+                                <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('activenow')?>" class="col-12 mx-auto card-topup d-flex align-items-center justify-content-center">
                                     <span class="text-blue-freed fw-bold text-center f-lexend fw-bold">
                                     Request Virtual Card
                                     </span>
@@ -142,40 +142,30 @@
                             <div class="col-12">
                                 <form action="POST">
                                     <div class=" row d-flex mt-5 mx-0 mx-md-2">
-                                        <h3 class="col-12  mx-auto text-start f-ubuntu">
+                                        <h3 class="col-12 col-md-10 mx-auto text-start f-ubuntu">
                                             THE MOBILE NUMBER YOU WILL ENTER WILL BE USED JUST FOR OTP NUMBER AUTHENTICATION
                                         </h3>
                                     </div>
-                                    <div class="row my-4 mx-auto d-flex justify-content-center mx-md-2">
-                                        <div class="col-4">        
-                                            <select class="custom-select nohp-select">
-                                                <option selected>
-                                                    +62
-                                                </option>
-                                                <option>+ 63</option>
-                                                <option>+ 11</option>
-                                                <option>+ 9</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-8">
-                                            <input class="nohp-select nohp-input" type="number" placeholder="*Mobile number">
+                                    <div class="row my-4 mx-auto d-flex justify-content-center">
+                                        <div class="col-12 col-md-10 mx-auto">
+                                            <input id="telephone" class="nohp-select input-nohp" type="tel">
                                         </div>
                                     </div>
                                     <div class="row d-flex  mx-0 mx-md-2">
-                                        <h4 class="text-start col-12 mx-auto f-ubuntu">
+                                        <h4 class="text-start col-12 col-md-10 mx-auto f-ubuntu">
                                             The number will be kept encrypted and it will not be linked to a card or to a person and neither the company won’t be able to provide it to anyone, either under request.
                                         </h4>  
                                     </div> 
                                     <div class="row my-5 mx-auto d-flex justify-content-center">
-                                        <div class="col-12 my-2">
-                                            <input class="nohp-select nohp-input" type="text" placeholder="*Create a password 3D Secure">
+                                        <div class="col-md-10 my-2">
+                                            <input class="nohp-select inputPass" type="text" placeholder="*Create a password 3D Secure">
                                         </div>
-                                        <div class="col-12 my-2 mt-4">
-                                            <input class="nohp-select nohp-input" type="text" placeholder="*Confirm 3D Secure password ">
+                                        <div class="col-md-10 my-2 mt-4">
+                                            <input class="nohp-select inputPass" type="text" placeholder="*Confirm 3D Secure password ">
                                         </div>
                                     </div>
                                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                        <a href="<?= base_url(); ?>homepage/requestcard/detailcard"
+                                        <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('detailcard')?>"
                                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                             <span class="f-lexend">Active Now</span>
                                         </a>
@@ -183,6 +173,19 @@
                                 </form>
                             </div>
                         </div>
+                        <script src="<?= base_url() ?>assets/vendor/intl-tel-input-master/build/js/intlTelInput.js"></script>
+
+                        <script>
+                            var inputTel = document.querySelector("#telephone");
+
+                            window.intlTelInput(inputTel, {
+                                formatOnDisplay: false,
+                                hiddenInput: "full_number",
+                                nationalMode: false,
+                                preferredCountries: ['id', 'us', 'it'],
+                                utilsScript: "<?= base_url() ?>assets/vendor/intl-tel-input-master/build/js/utils.js"
+                            });
+                        </script>
                     <?php }?>
                 </div>
             </div>

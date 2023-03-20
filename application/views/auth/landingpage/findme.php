@@ -1,5 +1,5 @@
 
-
+<!-- Start Confirm -->
 <?php if($findme == "confirm") {?>
 <section class="bg-thank d-flex justify-content-center align-items-center mt-0 pt-0">
   <div class="container ">
@@ -18,6 +18,7 @@
       </div>
   </div>
 </section>
+<!-- End Confirm -->
 
 <?php } else { ?>
 <section id="" class="hero d-flex p-3 pt-md-5 " style="height: 1000px;">
@@ -239,11 +240,6 @@
       <?php }?>
       <!-- End Name Bussiness -->
 
-      <!-- Start Name Thank u -->
-      <?php if($findme == "confirm"){ ?>
-
-      <?php }?>
-      <!-- End Name Thank u -->
     </div>
   </div>
 </section>
