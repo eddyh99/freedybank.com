@@ -61,15 +61,6 @@
 
                                 <span class="ms-2">Send to Bank</span>
                             </a>
-                            <a href="<?= base_url() ?>soon" class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue special">
-                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="5.5" y="11" width="33" height="23.8333" rx="2" stroke="" stroke-width="3" />
-                                    <path d="M12.8333 27.5H12.8511" stroke="" stroke-width="3" stroke-linecap="round" />
-                                    <path d="M7.33325 20.1667H38.4999" stroke="" stroke-width="3" stroke-linecap="round" />
-                                </svg>
-
-                                <span class="ms-2">Wallet to card</span>
-                            </a>
                             <a href="<?= base_url() ?>search" class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
                                 <span class="">History</span>
                             </a>

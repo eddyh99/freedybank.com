@@ -26,7 +26,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
+    
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -40,6 +42,7 @@
     <link href="<?= base_url() ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+     <link href="<?= base_url() ?>assets/vendor/intl-tel-input-master/build/css/intlTelInput.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">

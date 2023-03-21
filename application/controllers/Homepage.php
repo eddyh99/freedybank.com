@@ -154,4 +154,49 @@ class Homepage extends CI_Controller
         );
         echo json_encode($response);
     }
+
+    public function card()
+    {   
+        
+        $data['title'] = NAMETITLE . " - Homepage";
+        $data['basecard'] = base_url() . 'homepage/card';
+        $data['card'] = base64_decode($_GET['card']) ;
+        $data['requestcard'] = base64_decode(@$_GET['requestcard']) ;
+        $footer["extra"] = "member/js/js_index";
+
+
+        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
+        // IF ALREADY CARD 
+        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/card' ]) )
+        {
+            $this->load->view('tamplate/header', $data);
+            $this->load->view('member/card/card', $data);
+            $this->load->view('tamplate/navbar-bottom-back', $data);
+            $this->load->view('tamplate/footer', $footer);
+        }
+
+
+    }
+
+    public function requestcard()
+    {   
+        
+        $data['title'] = NAMETITLE . " - Homepage";
+        $data['basecard'] = base_url() . 'homepage/requestcard';
+        $data['requestcard'] = base64_decode($_GET['requestcard']) ;
+        $data['card'] = base64_decode(@$_GET['card']) ;
+        $footer["extra"] = "member/js/js_index";
+        // PERLU VALUE UNTUK VALIDASI, UNTUK KONDISI BELUM FIKS MASIH PERLU DIPERBAIKI
+        // IF REQUEST CARD
+        if($_SESSION['user_id'] == !isset($_GET[base_url() . 'homepage/requestcard']) )
+        {
+            $this->load->view('tamplate/header', $data);
+            $this->load->view('member/card/card-request', $data);
+            $this->load->view('tamplate/navbar-bottom-back', $data);
+            $this->load->view('tamplate/footer', $footer);
+        }
+
+    }
+    
 }
+
