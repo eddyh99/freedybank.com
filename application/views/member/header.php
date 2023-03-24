@@ -3,10 +3,13 @@
         <div class="col-12 box-code-freedy px-4 py-3">
             <div class="copy-uqcode mt-3 mb-4 d-flex flex-row justify-content-center align-items-center">
                 <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?> </span>
-                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
-                    <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
-                    <div class="">
-                        <i class="ri-download-line"></i>
+                <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download  ms-auto mt-3 d-flex flex-column align-items-center ">
+                    <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="80" height="50" >
+                    <!-- <div>
+                        <img class="img-fluid d-block d-sm-none" src="<?=base_url()?>assets/img/btn-qrdw-mobile.png" alt="dw-qr" width="15" height="auto">
+                    </div> -->
+                    <img class="img-fluid" src="<?=base_url()?>assets/img/btn-qrdw.png" alt="dw-qr" width="90" height="90" >
+                    <div>
                     </div>
                 </a>
             </div>

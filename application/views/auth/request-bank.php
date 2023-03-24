@@ -12,20 +12,20 @@
                     <span class="d-block my-3">Choose your wallet to pay : </span>
                 </div>
                 <div class="row">
+                        
                     <?php foreach ($banks as $data) {
                         if ($data->is_comingsoon == 'no') {
-                            if ($data->is_public == 'yes') {
+
                     ?>
-
-                                <div class="col-auto m-auto">
-                                    <a href="<?= $data->site ?>/wallet/send?<?= base64_encode('cur=' . $curr . '&ucode=' . $ucode . @$urlamount) ?>" class="payment-bank my-3 d-flex flex-column rounded text-center">
-                                        <img src="data:image/png;base64;<?= $data->logo ?>" alt="<?= $data->bank_name ?>" class="m-auto">
-                                    </a>
-                                </div>
-
-                    <?php }
+                        <div class="col-auto m-auto">
+                            <a href="<?= $data->site ?>/wallet/send?<?= base64_encode('cur=' . $curr . '&ucode=' . $ucode . @$urlamount) ?>" class="payment-bank my-3 d-flex flex-column rounded text-center">
+                                <img src="data:image/png;base64;<?= $data->logo ?>" alt="<?= $data->bank_name ?>" class="m-auto">
+                            </a>
+                        </div>
+                    <?php  
                         }
-                    } ?>
+                    } 
+                    ?>
                 </div>
             </div>
         </div>
