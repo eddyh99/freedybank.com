@@ -9,15 +9,15 @@
                         <div class="mt-5 wrap-border-topup p-3 p-md-4 col-10 mx-auto">
                             <div class="d-flex justify-content-between px-3  py-4 text-blue-freedy fw-bold">
                                 <span>Card number</span>
-                                <span>xxxxxxxxx</span>
+                                <span><?=$detailcard->cardnumber ?></span>
                             </div>
                             <div class="d-flex justify-content-between px-3  py-4 text-blue-freedy fw-bold">
                                 <span>CVV</span>
-                                <span>xxxxxxxxxxx</span>
+                                <span><?=$detailcard->cvv?></span>
                             </div>
                             <div class="d-flex justify-content-between px-3  py-4 text-blue-freedy fw-bold">
                                 <span>Expire date</span>
-                                <span>12 March 2023</span>
+                                <span><?=$exp?></span>
                             </div>
                             <div class="text-start d-flex justify-content-center mt-5 mb-4">
                                 <a href="<?= base_url(); ?>homepage/card?card=<?= base64_encode('card')?>"
@@ -42,6 +42,13 @@
                         <div class="row my-5">
                             <div class="col-12">
                                 <div class="text-topup-card ">
+                                    <?php if (@isset($_SESSION["failed"])) { ?>
+                                        <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                            <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    <?php } ?>
                                     <h1 class="text-blue-freedy fw-bolder f-poppins text-center ">
                                         Request Card
                                     </h1>
@@ -59,8 +66,7 @@
                                             <div class="row d-flex align-items-center w-100">
                                                 <div class="form-req-card d-flex flex-row align-items-center my-2 col-12 ms-2" style="height: 70px;">
                                                     <!-- <label for="amount"><?= $_SESSION["symbol"] ?></label> -->
-                                                    <input type="text" class="form-control text-start fw-semibold" autocomplete="off" name="amount"
-                                                        id="amount" placeholder="xxxxxxxx">
+                                                    <input type="text" class="form-control text-start fw-semibold" readonly value="<?=$_SESSION["ucode"]?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -70,8 +76,7 @@
                                             <div class="row d-flex align-items-center w-100">
                                                 <div class="form-req-card d-flex align-items-center my-2 col-12 col-md-6 col-lg-12 ms-2" style="height: 70px;">
                                                     <!-- <label for="confirmamount"><?= $_SESSION["symbol"] ?></label> -->
-                                                    <input type="text" class="form-control money-input text-start fw-bold" autocomplete="off" name="amount"
-                                                        id="confirmamount" placeholder="15 <?= $_SESSION["currency"]?>">
+                                                    <input type="text" class="form-control money-input text-start fw-bold" autocomplete="off" readonly value="<?=$price?>">&euro;
                                                 </div>
                                                 <span class="col-md-4 col-lg-12 mx-0 mt-3 mt-md-0 mx-md-5 mx-lg-0 text-req-card">Annual cost</span>
                                             </div>
@@ -116,7 +121,15 @@
                     <?php if($requestcard == 'activenow'){?>
                         <div class="row my-4 card-req-activation">
                             <div class="col-12">
-                                <form action="POST">
+                                <form action="<?=base_url()?>homepage/activecard" method="POST">
+                                <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                                    <?php if (@isset($_SESSION["failed"])) { ?>
+                                        <div class="col-12 alert alert-danger alert-dismissible fade show" role="alert">
+                                            <span class="notif-login f-poppins"><?= $_SESSION["failed"] ?></span>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    <?php } ?>
                                     <div class=" row d-flex mt-5 mx-0 mx-md-2">
                                         <h3 class="col-12 col-md-10 mx-auto text-start f-ubuntu">
                                             THE MOBILE NUMBER YOU WILL ENTER WILL BE USED JUST FOR OTP NUMBER AUTHENTICATION
@@ -124,7 +137,7 @@
                                     </div>
                                     <div class="row my-4 mx-auto d-flex justify-content-center">
                                         <div class="col-12 col-md-10 mx-auto">
-                                            <input id="telephone" class="nohp-select input-nohp" type="tel">
+                                        <input name="telp" id="telephone" autocomplate="false" class="nohp-select input-nohp" type="tel" required>
                                         </div>
                                     </div>
                                     <div class="row d-flex  mx-0 mx-md-2">
@@ -134,17 +147,18 @@
                                     </div> 
                                     <div class="row my-5 mx-auto d-flex justify-content-center">
                                         <div class="col-md-10 my-2">
-                                            <input class="nohp-select inputPass" type="text" placeholder="*Create a password 3D Secure">
+                                            <input class="nohp-select inputPass" type="password" name="passwd" placeholder="*Create a password 3D Secure" required>
                                         </div>
                                         <div class="col-md-10 my-2 mt-4">
-                                            <input class="nohp-select inputPass" type="text" placeholder="*Confirm 3D Secure password ">
+                                            <input class="nohp-select inputPass" type="password" name="confpasswd" placeholder="*Confirm 3D Secure password " required>
                                         </div>
                                     </div>
                                     <div class="text-start d-flex justify-content-center mt-5 mb-4">
-                                        <a href="<?= base_url(); ?>homepage/requestcard?requestcard=<?= base64_encode('detailcard')?>"
+                                        <button type="submit"
                                             class="btn-card-confirm d-inline-flex align-items-center justify-content-center align-self-center">
                                             <span class="f-lexend">Active Now</span>
-                                        </a>
+                                        </button>
+                                        
                                     </div>
                                 </form>
                             </div>

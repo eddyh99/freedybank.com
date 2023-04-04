@@ -113,8 +113,8 @@
                                 <div class="attention-box p-3 text-center">
                                     <span class="title mb-3 d-inline-block">Attention</span>
                                     <p>Are you sure that the data are correct? Are you sure of the sending reason?</p>
-                                    <p>The transaction is irrevesible and can not be cancelled after the confirmation.
-                                    </p>
+                                    <p>The transaction is irrevesible and can not be cancelled after the confirmation.</p>
+                                    <p>It is possible that additional costs, unknown to us, are applied by the reference bank</p>
                                     <p>If you are sure to make this transaction click confirm</p>
                                 </div>
                                 <div class="col-12 d-flex flex-row mt-5">

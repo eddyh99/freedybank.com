@@ -123,6 +123,12 @@ section {
   font-weight: bolder;
 }
 
+.card-balance div:nth-child(2) input, 
+.card-balance div:nth-child(2) input:focus {
+  border: none;
+  outline: none;
+}
+
 
 .card-number div:nth-child(1) {
   font-size: 14px;
@@ -131,6 +137,12 @@ section {
 .card-number div:nth-child(2) {
   font-size: 18px;
   font-weight: 500;
+}
+
+.card-number div:nth-child(2) input,
+.card-number div:nth-child(2) input:focus {
+  border: none;
+  outline: none;
 }
 
 .card-expire-date div:nth-child(1) {
@@ -149,6 +161,18 @@ section {
 .card-cvv div:nth-child(2) {
   font-size: 18px;
   font-weight: 500;
+}
+
+.card-cvv div:nth-child(2) input,
+.card-cvv div:nth-child(2) input:focus {
+  border: none;
+  outline: none;
+}
+
+.ri-eye-line,
+.card-number div:nth-child(2) img 
+{
+  cursor: pointer;
 }
 
 
@@ -184,6 +208,12 @@ section {
   color: black;
 }
 
+.form-control:disabled, .form-control[readonly] {
+  background-color: #ffffff !important;
+  opacity: 1;
+}
+
+
 .form-req-card input:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
@@ -195,6 +225,7 @@ section {
   padding: 1rem 3rem;
   transition: 0.5s;
   color: #fff;
+  border: none;
   background: linear-gradient(89.72deg,  #0099FF, #0087e0, #0099FF 70.75%);
   border-radius: 26.386px;
 }
@@ -308,7 +339,7 @@ section {
   padding: 1rem 3rem;
   transition: 0.5s;
   color: #fff;
-
+  border: none;
   background: linear-gradient(90deg, #0099FF 0%, #0099FF 121.48%);
   /* box-shadow: 3.23094px 10.7698px 21.5396px rgba(128, 69, 27, 0.45); */
   border-radius: 26.386px;
