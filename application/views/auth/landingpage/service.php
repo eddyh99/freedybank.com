@@ -601,18 +601,23 @@
                             <p>
                                 <b class="text-blue-findme fw-bold">How to access to FIND ME service :</b><br>
                             </p>
-                            <form id="form-input-unique-code" class="w-100">
-                                <input type="text" class="input-unique-code" placeholder="Enter your Unique Code">
-                                <a href="<?= base_url(); ?>link/findme?findme=1">
-                                    <button type="button" class="btn-unique-code d-block btn my-3">
-                                        <div class="circle-btn-unique-code flex justify-content-center">
-                                            <i class="ri-arrow-right-line fs-4"></i>
-                                        </div>
-                                        <div class="pt-2 fw-semibold text-next">
-                                            Next
-                                        </div>
-                                    </button>
-                                </a>
+                            <form id="form-input-unique-code" action="<?=base_url()?>link/getref" method="post" class="w-100">
+                                <input 
+                                    type="hidden" 
+                                    id="token"
+                                    name="<?php echo $this->security->get_csrf_token_name(); ?>"
+                                    value="<?php echo $this->security->get_csrf_hash(); ?>" 
+                                    class="input-unique-code"    
+                                >   
+                                <input type="text" name="ucode" maxlength="8" class="input-unique-code" placeholder="Enter your Unique Code">
+                                <button type="submit" class="btn-unique-code d-block btn my-3">
+                                    <div class="circle-btn-unique-code flex justify-content-center">
+                                        <i class="ri-arrow-right-line fs-4"></i>
+                                    </div>
+                                    <div class="pt-2 fw-semibold text-next">
+                                        Next
+                                    </div>
+                                </button>
                             </form>
                             <p class="pt-5 text-black">
                                 Enter your unique code in order to validate your account, then click next and fill out all the fields that you find on the next pages, make sure to have ready an image of your business logo of and prepare the google maps link your business locations.
@@ -661,3 +666,26 @@
         </div>
     </div>
 </section><!-- End Hero -->
+
+
+
+<!-- Notifikasi -->
+<?php if (@isset($_SESSION["success"])) { ?>
+<div class="alert alert-success alert-dismissible" id="success-alert" style="display: grid; position: fixed; top: 10px; z-index: 99999; padding: 1rem;
+left: 0;
+right: 0;
+max-width: 300px;
+margin: 0 auto;">
+    <?= $_SESSION["success"]; ?>
+</div>
+<?php } ?>
+
+<?php if (@isset($_SESSION["failed"])) { ?>
+<div class="alert alert-danger alert-dismissible" id="danger-alert" style="display: grid; position: fixed; top: 10px; z-index: 99999; padding: 1rem;
+left: 0;
+right: 0;
+max-width: 300px;
+margin: 0 auto;">
+    <?= $_SESSION["failed"]; ?>
+</div>
+<?php } ?>

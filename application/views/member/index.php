@@ -15,14 +15,19 @@
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="col-12 box-code-freedy px-4 py-3 text-center">
-                                <div class="copy-uqcode mt-1 d-flex justify-content-center align-items-center text-center">
+                                <div class="copy-uqcode mt-1 d-flex justify-content-center align-items-center  text-center">
                                     <span class="me-auto">UNIQUE CODE : <?= $_SESSION["ucode"] ?></span>
-                                    <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download ms-auto mt-3 d-flex flex-column align-items-center">
-                                        <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="50" height="50">
-                                        <div class="">
-                                            <i class="ri-download-line"></i>
-                                        </div>
-                                    </a>
+                                    <div class="mb-4">
+                                        <a href="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>Thumbnail.png" download class="qrcode-download  ms-auto mt-3 d-flex flex-column align-items-center ">
+                                            <img class="img-fluid" src="<?= base_url() ?>qr/ref/<?= $_SESSION["ucode"] ?>.png" alt="QR" width="80" height="50" >
+                                            <!-- <div>
+                                                <img class="img-fluid d-block d-sm-none" src="<?=base_url()?>assets/img/btn-qrdw-mobile.png" alt="dw-qr" width="15" height="auto">
+                                            </div> -->
+                                            <img class="img-fluid" src="<?=base_url()?>assets/img/btn-qrdw.png" alt="dw-qr" width="90" height="90" >
+                                            <div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             <span class="">Copy & share your referral link to earn money</span>
                             <div class="copy-refcode d-flex flex-row justify-content-center mb-4">
@@ -52,7 +57,7 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="<?= base_url() ?>soon" class="d-flex justify-content-center align-items-center my-2">
+                            <a href="<?= base_url() ?>homepage/card" class="d-flex justify-content-center align-items-center my-2">
                                 <div class="text-center d-flex card-dashome justify-content-center align-items-center">
                                     <svg width="55" height="55" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="4.5" y="9" width="27" height="19.5" rx="2" stroke="white" stroke-width="3"/>

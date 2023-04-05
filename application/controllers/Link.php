@@ -277,20 +277,21 @@ class Link extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('failed', validation_errors());
-            redirect(base_url("link/send_message"));
+            redirect(base_url("#contactus"));
             return;
         }
 
-        $input  = $this->input;
-        $email   = $this->security->xss_clean($input->post("email"));
-        $message   = $this->security->xss_clean($input->post("message"));
+        $input      = $this->input;
+        $email      = $this->security->xss_clean($input->post("email"));
+        $message    = $this->security->xss_clean($input->post("message"));
 
         $result = send_email($email, $message, $this->phpmailer_lib->load());
         if ($result) {
             $this->session->set_flashdata("success", "Message successfully sent!");
-            redirect('link/send_message');
+            redirect(base_url('#contactus'));
         } else {
             $this->session->set_flashdata("failed", 'Message failed to send!');
+            redirect(base_url('#contactus'));
         }
     }
 
@@ -326,17 +327,194 @@ class Link extends CI_Controller
         $this->load->view('tamplate/wrapper', $data);
     }
 
-    public function findme()
+     public function getref()
     {
-        $findme = $_GET['findme'];
+        $this->form_validation->set_rules('ucode', 'Unique Code', 'trim|required');
 
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url('link/service?service=8'));
+            return;
+        }
+
+        $input  = $this->input;
+        $ucode  = $this->security->xss_clean($input->post("ucode"));
+
+        $url = URLAPI . "/v1/auth/getmember_byucode?ucode=" . $ucode;
+        $result   = apitrackless($url);
+
+        if (@$result->code != 200) {
+            $this->session->set_flashdata('failed', $result->message);
+            redirect(base_url('link/service?service=8'));
+            return;
+        }else{
+            $_SESSION["findme_ucode"]=$ucode;
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+    }
+
+    public function findme()
+    {   
+        $findme = base64_decode($_GET['findme']);
+
+
+        if (!isset($_SESSION["findme_ucode"])){
+            $this->session->set_flashdata('failed', "Expired session, please try again");
+            redirect(base_url('link/service?service=8'));
+            return;
+        }
+        
+        $url = URLAPI . "/v1/member/findme/get_countrylist";
+        $country   = apitrackless($url)->message;
+        
         $data = array(
-            "title"     => NAMETITLE ,
+            "title"     => NAMETITLE . " - Find Me",
             "content"   => "auth/landingpage/findme" ,
-            "findme"   => $findme,
-            "extra"     => "auth/landingpage/js/js_index",
+            "findme"    => $findme,
+            "country"   => $country,
+            "extra"     => "auth/landingpage/js/js_findme",
         );
 
         $this->load->view('tamplate/wrapper', $data);
+    }
+    
+    public function getstate(){
+        $country    = $_GET["country"];
+        $url    = URLAPI . "/v1/member/findme/get_statelist?country=".$country;
+        $state  = apitrackless($url)->message;
+        echo json_encode($state);
+    }
+
+    public function getcity(){
+        $country    = $_GET["country"];
+        $state      = $_GET["state"];
+        $url    = URLAPI . "/v1/member/findme/get_citylist?country=".$country."&state=".$state;
+        $city   = apitrackless($url)->message;
+        echo json_encode($city);
+    }
+    
+    public function findcategory(){
+        $input      = $this->input;
+        $findme     = base64_decode($this->security->xss_clean($input->post("findme")));
+        
+        if (!isset($_SESSION["findme_ucode"])){
+            $this->session->set_flashdata('failed', "Expired session, please try again");
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+
+        $this->form_validation->set_rules('city', 'City', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+
+        $city    = $this->security->xss_clean($input->post("city"));
+        $_SESSION["city"]=$city;
+
+        $url      = URLAPI . "/v1/member/findme/get_category";
+        $category = apitrackless($url)->message;
+        
+
+        $data = array(
+            "title"     => NAMETITLE . " - Find Me",
+            "content"   => "auth/landingpage/findme" ,
+            "findme"    => $findme,
+            "category"  => $category,
+        );
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function findbusiness(){
+        $input      = $this->input;
+        $findme     = base64_decode($this->security->xss_clean($input->post("findme")));
+        
+        if (!isset($_SESSION["findme_ucode"]) || !isset($_SESSION["city"])){
+            $this->session->set_flashdata('failed', "Expired session, please try again");
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+
+        $kategori= array_filter(array_unique($this->security->xss_clean($input->post("kategori"))));
+        if (!isset($kategori[0])){
+            $this->session->set_flashdata('failed', "You should choose one category");
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+        $_SESSION["kategori"]=$kategori;
+        
+
+        $data = array(
+            "title"     => NAMETITLE . " - Find Me" ,
+            "content"   => "auth/landingpage/findme" ,
+            "findme"    => $findme,
+        );
+        $this->load->view('tamplate/wrapper', $data);
+    }
+
+    public function findconfirm(){
+        $input      = $this->input;
+        $findme     = base64_decode($this->security->xss_clean($input->post("findme")));
+        
+        if (!isset($_SESSION["findme_ucode"]) || !isset($_SESSION["city"])){
+            $this->session->set_flashdata('failed', "Expired session, please try again");
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+
+        $this->form_validation->set_rules('business', 'Business', 'trim|required');
+        $this->form_validation->set_rules('map', 'Google Map Link', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('failed', validation_errors());
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+
+        $business   = $this->security->xss_clean($input->post("business"));
+        $map        = $this->security->xss_clean($input->post("map"));
+        
+        $config['upload_path']          = FCPATH.'/qr/logo/';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['max_size']             = 1024000;
+		$config['file_name']            = $_SESSION["findme_ucode"]."-".$business;
+		$config['overwrite']            = true;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('logo')){
+    	    $this->session->set_flashdata("error",$this->upload->display_errors());
+            redirect(base_url('link/findme?findme=MQ=='));
+            return;
+        }
+        else{
+            $data   = $this->upload->data();
+            
+            $mdata=array(
+                    "city_code"     => $_SESSION["city"],
+                    "category"      => $_SESSION["kategori"],
+                    "ucode"         => $_SESSION["findme_ucode"],
+                    "business_name" => $business,
+                    "googlemap"     => $map,
+                    "logo"          => $data['file_name']
+                );
+            $url = URLAPI . "/v1/member/findme/set_business";
+            $result   = apitrackless($url, json_encode($mdata));
+            if (@$result->code != 200) {
+                $this->session->set_flashdata('failed', "Failed to submit data, please contact administrator");
+                redirect(base_url('link/findme?findme=MQ=='));
+                return;
+            }
+            
+            $data = array(
+                "title"     => NAMETITLE . " - Find Me",
+                "content"   => "auth/landingpage/findme" ,
+                "findme"    => $findme,
+            );
+            $this->load->view('tamplate/wrapper', $data);
+        }
     }
 }

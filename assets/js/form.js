@@ -128,6 +128,16 @@ $("#btn-copy-qr").click(function () {
 
 $("#time_location").val(moment.tz.guess());
 
+// Start Copy Number Card In Member
+$("#btncardnumcopy").click(function () {
+    var copyText = document.getElementById("cardnumcopy");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+});
+// End Copy Number Card In Member
+
+
 // SALDO
 var input1 = document.querySelector('#saldo'); // get the input element
 input1.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
