@@ -78,7 +78,7 @@
                                     <span>Card number</span>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <input type="text" id="cardnumcopy" class="text-end mx-3 w-50" value="<?=$detailcard->cardnumber?>" readonly>
+                                    <input type="text" id="cardnumcopy" class="text-end mx-3 w-100" value="<?=$detailcard->cardnumber?>" readonly>
                                     <span id="btncardnumcopy">
                                         <img src="<?= base_url()?>assets/img/copy.png" class="img-fluid" alt="copy">
                                     </span>
