@@ -6,7 +6,7 @@
                     <div class="col-12">
                         <div class="d-flex align-items-center flex-row mb-3">
                             <span class="me-auto f-monserat title-top-navbar">Home</span>
-                            <a href="<?= base_url() ?>soon" class="btn btn-primary p-2 d-flex align-items-center">
+                            <a href="<?= base_url() ?>search" class="btn btn-primary p-2 d-flex align-items-center">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17 17L13.1333 13.1333M8.11111 3.66667C10.5657 3.66667 12.5556 5.65651 12.5556 8.11111M15.2222 8.11111C15.2222 12.0385 12.0385 15.2222 8.11111 15.2222C4.18375 15.2222 1 12.0385 1 8.11111C1 4.18375 4.18375 1 8.11111 1C12.0385 1 15.2222 4.18375 15.2222 8.11111Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a href="<?= base_url() ?>homepage/card" class="d-flex justify-content-center align-items-center my-2">
+                            <a href="<?= base_url() ?>card" class="d-flex justify-content-center align-items-center my-2">
                                 <div class="text-center d-flex card-dashome justify-content-center align-items-center">
                                     <svg width="55" height="55" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="4.5" y="9" width="27" height="19.5" rx="2" stroke="white" stroke-width="3"/>
