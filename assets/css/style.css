@@ -78,6 +78,57 @@ section {
 
 
 /*--------------------------------------------------------------
+# Login & Register
+--------------------------------------------------------------*/
+
+.password_info {
+  background-color: #e3f6ff;
+  border: 2px dashed #325261;
+  display: none;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99999999;
+}
+
+#pswdmatch {
+  display: none;
+}
+
+.incorrectMsg {
+  display: none;
+}
+
+.password_info .invalid:before {
+  content: "\292B";
+  left: -5px;
+  position: relative;
+}
+.password_info .invalid {
+  color: red;
+  transition: all .1s ease-in;
+}
+
+.password_info .valid::before {
+  content: "\2713 ";
+  left: -5px;
+  position: relative;
+}
+
+.password_info .valid {
+  color: green;
+  transition: all .1s ease-in;
+}
+
+.password_info ul li{
+  list-style: none;
+  padding: 5px 0px;
+}
+
+
+
+/*--------------------------------------------------------------
 # Member Card
 --------------------------------------------------------------*/
 
@@ -5225,6 +5276,9 @@ section {
 }
 
 @media (min-width: 375px) {
+  .password_info {
+    top: 100px;
+  }
 
   .card-input-dlh+.card .m-dlh {
     margin-left: 10px;
