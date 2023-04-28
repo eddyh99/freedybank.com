@@ -39,7 +39,7 @@
                                 <input type="text" class="form-control my-4" name="confirm_ucode" id="confirm_ucode" placeholder="Confirm Unique code" value="<?= $ucode ?>" <?php echo (empty($ucode) ? "" : "readonly") ?>>
                                 <input type="text" class="form-control money-input my-4" name="amount" id="amount" placeholder="Amount (ex. 0.01)" value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
                                 <input type="text" class="form-control money-input my-4" name="confirm_amount" id="confirm_amount" placeholder="Confirm Amount (ex. 0.01)" value="<?= $amount ?>" <?php echo (empty($amount) ? "" : "readonly") ?>>
-                                <input type="text" class="form-control my-4" name="causal" maxlength="15">
+                                <input type="text" class="form-control" name="causal" placeholder="Causal" value="<?= $causal?>" <?php echo (empty($causal) ? "" : "readonly") ?> maxlength="10">
 
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">

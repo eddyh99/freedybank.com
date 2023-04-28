@@ -40,25 +40,14 @@
                             <input type="hidden" id="token" name="<?php echo $this->security->get_csrf_token_name(); ?>"
                                 value="<?php echo $this->security->get_csrf_hash(); ?>">
                             <div class="col-12 mb-5">
-                                <div class="input-group bg-black py-2">
-                                    <div class="input-group-text border-0 px-4">
-                                        <span>
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" class="form-control f-publicsans border-0" name="ucode"
-                                        id="ucode" placeholder="Unique code" required>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-5">
                                 <div class="input-group bg-black bg-disable py-2" id="email_div">
                                     <div class="input-group-text border-0 px-4">
                                         <span>
                                             <i class="fa fa-envelope"></i>
                                         </span>
                                     </div>
-                                    <input type="text" class="form-control f-publicsans border-0" name="email"
-                                        id="email" placeholder="Email" required disabled>
+                                    <input type="text" class="form-control text-white f-publicsans border-0" name="email"
+                                        id="email" placeholder="Email" required >
                                 </div>
                             </div>
                             <div class="col-12 mb-5">
@@ -68,8 +57,8 @@
                                             <i class="fa fa-message"></i>
                                         </span>
                                     </div>
-                                    <textarea type="text" class="form-control f-publicsans border-0" name="question"
-                                        id="question" placeholder="Message" required disabled></textarea>
+                                    <textarea type="text" class="form-control bg-transparent f-publicsans border-0" name="message"
+                                        id="message" placeholder="Message" required ></textarea>
                                 </div>
                             </div>
                             <div class="col-12 text-center">

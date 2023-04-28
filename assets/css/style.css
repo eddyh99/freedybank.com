@@ -78,8 +78,141 @@ section {
 
 
 /*--------------------------------------------------------------
+# Login & Register
+--------------------------------------------------------------*/
+
+.password_info {
+  background-color: #e3f6ff;
+  border: 2px dashed #325261;
+  display: none;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99999999;
+}
+
+#pswdmatch {
+  display: none;
+}
+
+.incorrectMsg {
+  display: none;
+}
+
+.password_info .invalid:before {
+  content: "\292B";
+  left: -5px;
+  position: relative;
+}
+.password_info .invalid {
+  color: red;
+  transition: all .1s ease-in;
+}
+
+.password_info .valid::before {
+  content: "\2713 ";
+  left: -5px;
+  position: relative;
+}
+
+.password_info .valid {
+  color: green;
+  transition: all .1s ease-in;
+}
+
+.password_info ul li{
+  list-style: none;
+  padding: 5px 0px;
+}
+
+
+
+/*--------------------------------------------------------------
 # Member Card
 --------------------------------------------------------------*/
+
+.tbl-freedy-service tr td,
+.tbl-freedy-service tr th {
+  border: 2px solid #0078F0;
+}
+
+
+.country-select-card {
+  background-color: white !important;
+  width: 100%;
+  height: 60px;
+  border: 0 none !important;
+  border-radius: 16px !important;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  color: #949494;
+  font-weight: 400 !important;
+  padding: 6px 20px !important;
+}
+
+.country-select-card:focus {
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  outline: 2px #acacac solid;
+  background-color: white !important;
+}
+
+
+
+.card-req-physical {
+  overflow-x:auto;
+}
+
+.label-dhl {
+  width: 100%;
+  font-size: 12px;
+  border-radius: 16px;
+  background-color: white !important;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-input-dlh {
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.card-input-dlh+.card {
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  height: calc(50px + 2*1rem);
+  color: rgb(0, 0, 0);
+  border: 2px solid transparent;
+  border-radius: 16px;
+}
+
+.card-input-dlh+.card:hover {
+  cursor: pointer;
+}
+
+.card-input-dlh:checked+.card {
+  border: 2px solid #2244FF;
+  -webkit-transition: border .3s;
+  -o-transition: border .3s;
+  transition: border .3s;
+
+}
+
+.card-input-dlh+.card .c-dlh {
+  border: 1px solid black;
+  width: 20px; 
+  height: 20px;
+  border-radius: 999999px;
+  margin-left: 10px;
+}
+
+.card-input-dlh:checked+.card .c-dlh {
+  background-color: #2244FF;
+  border: 1px solid #2244FF;
+}
+
+.card-input-dlh+.card .m-dlh {
+  margin-left: 10px;
+}
+
+
 
 
 .form-topup-card {
@@ -236,8 +369,16 @@ section {
 
 }
 
-
-
+.wrap-3dsecure {
+  background-color: white !important;
+  width: 100%;
+  height: 60px;
+  font-weight: 600;
+  color: #121212 !important;
+  border: 0 none !important;
+  border-radius: 16px !important;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
 
 
 .nohp-select {
@@ -255,7 +396,28 @@ section {
   color: #949494;
   font-weight: 400 !important;
   padding: 6px 20px !important;
+  width: 90%;
+  height: 60px;
+  border: 0 none !important;
+  background-color: transparent;
 }
+
+
+.wrap-3dsecure .inputPass{
+  color: #949494;
+  font-size: 14px;
+  font-weight: 400 !important;
+  padding: 6px 20px !important;
+  width: 90%;
+  height: 60px;
+  border: 0 none !important;
+  background-color: transparent;
+}
+
+.wrap-3dsecure .inputPass:focus {
+  outline: none;
+}
+
 
 
 .nohp-select.nohp-input{
@@ -287,7 +449,8 @@ section {
 
 .card-req-activation h3, 
 .card-req-activation h4 {
-  font-size: 16px !important;
+  line-height: 140%;
+  font-size: 14px !important;
 }
 
 .card-req-card {
@@ -374,6 +537,10 @@ section {
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
+.gmaps-search-val {
+  font-size: 12px;
+}
+
 .breadcrumbs {
   padding: 15px 0;
   background: #012970;
@@ -4699,7 +4866,7 @@ section {
 
   .btn-receive-bank {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 22px;
     color: #ffffff;
 
@@ -5109,6 +5276,17 @@ section {
 }
 
 @media (min-width: 375px) {
+  .password_info {
+    top: 100px;
+  }
+
+  .card-input-dlh+.card .m-dlh {
+    margin-left: 10px;
+  }
+
+  .card-input-dlh+.card .m-eur {
+    margin-right: 10px;
+  }
 
   .form-topup-card label,
   .form-topup-card input::placeholder, 
@@ -5240,6 +5418,12 @@ section {
 }
 
 @media (min-width: 576px) {
+  
+  .card-number div:nth-child(2) input,
+  .card-number div:nth-child(2) input:focus {
+    font-size: 18px;
+  }
+
   .box-service-list .icon img {
     height: 65px;
   }
@@ -7323,6 +7507,26 @@ section {
 }
 
 @media (min-width: 768px) {
+
+  .gmaps-search-val {
+    font-size: 16px !important;
+  }
+
+  .card-req-activation h3, 
+  .card-req-activation h4 {
+    font-size: 16px !important;
+  }
+
+  .card-input-dlh+.card .m-dlh {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .card-input-dlh+.card .m-eur {
+    margin-right: 15px;
+    font-size: 14px;
+  }
+
   .thank-findme h1 {
     font-size: 55px !important;
     color: #274d75;
@@ -9714,6 +9918,16 @@ section {
 }
 
 @media (min-width: 1200px) {
+  .card-input-dlh+.card .m-dlh {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .card-input-dlh+.card .m-eur {
+    margin-right: 5px;
+    font-size: 14px;
+  }
+
   .input-unique-code {
     display: block;
     width: 50%;

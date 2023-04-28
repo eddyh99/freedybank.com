@@ -12988,3 +12988,40 @@ body {
 .swap-form-icon input[readonly] {
   background: #FFFFFF !important;
 }
+
+
+
+.infowallet-list-app {
+  background: #ffffff;
+  border: 1px solid #0078F0;
+  border-radius: 5px;
+}
+
+
+.list-send-wallet span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.attention-box {
+  background: #2075FF;
+  border: 3px solid #0078F0;
+  border-radius: 10px;
+}
+
+.attention-box .title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 110%;
+  color: #ffffff;
+}
+
+.attention-box p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #e1e1e1;
+}

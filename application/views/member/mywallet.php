@@ -61,7 +61,7 @@
 
                                 <span class="ms-2">Send to Bank</span>
                             </a>
-                            <a href="<?= base_url() ?>search" class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
+                            <a href="<?= base_url() ?>history" class="d-flex flex-row justify-content-center align-items-center py-2 my-3 menus-blue">
                                 <span class="">History</span>
                             </a>
                         </div>

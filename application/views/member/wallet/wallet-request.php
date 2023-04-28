@@ -28,6 +28,8 @@
                                 <input type="text" class="form-control money-input my-4" name="confirm_amount"
                                     id="confirm_amount" placeholder="Confirm Amount">
 
+                                <input type="text" class="form-control" name="causal" id="causal" placeholder="Causal" maxlength="10">
+
                                 <div class="row">
                                     <div class="d-flex flex-row mt-4">
                                         <button class="btn btn-receive-bank px-5 py-2 ms-auto" type="submit"

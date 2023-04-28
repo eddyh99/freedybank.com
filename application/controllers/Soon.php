@@ -6,6 +6,9 @@ class Soon extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('/'));
+        }
     }
 
     public function index()
