@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <div class="row my-4 btn-dashome">
+                    <div class="row my-4 btn-dashome d-flex justify-content-center">
                         <div class="col-6">
                             <a href="<?= base_url() ?>homepage/setting_currency" class=" d-flex justify-content-center align-items-center my-2">
                                 <span class="text-center">
@@ -56,7 +56,7 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="col-6">
+                        <!-- <div class="col-6">
                             <a href="<?= base_url() ?>card" class="d-flex justify-content-center align-items-center my-2">
                                 <div class="text-center d-flex card-dashome justify-content-center align-items-center">
                                     <svg width="55" height="55" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@
                                     </span>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
                     </div>
                     <!-- End Dashboard -->
